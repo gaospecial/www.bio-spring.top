@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{{ with .Title }} {{ . }} | {{ end }}{{ .Site.Title }}</title>
+    <!-- uncomment this to add favicon -->
+    <!-- <link rel="icon" type="image/png" href="{{ "/icons/favicon.png" | relURL }}" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
+    <link rel="stylesheet" href="{{ "css/fonts.css" | relURL }}" />
+    <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}" />
+    <link rel="stylesheet" href="{{ "css/site.css" | relURL }}" />
+    {{ partial "head_custom.html" . }}
+  </head>
+
+  <body{{ if .Draft }} class="draft"{{ end }}>
+
+    <nav class="menu{{ if .Site.Params.stickyMenu }} sticky-top{{ end }}">
+    <ul>
+      <li class="left">
+        <a class="brand" href="{{ relURL "/" }}" aria-label="{{ .Site.Title }}">
+          <img class="site-logo" src="{{ "images/logo.png" | relURL }}" alt="{{ .Site.Title }}" />
+        </a>
+      </li>
+      {{ range .Site.Menus.header }}
+      <li{{ with .Pre }} class="{{ . }}"{{ end }}{{ with .Identifier }} id="{{ . }}"{{ end }}>
+        <a href="{{ .URL | relURL }}"{{ if eq .URL $.RelPermalink }} class="active"{{ end }}>{{ .Pre }}{{ .Name }}{{ .Post }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    </nav>
