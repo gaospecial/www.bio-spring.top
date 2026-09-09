@@ -8,6 +8,16 @@ menu:
     weight: 3
 ---
 
+## 2026
+
+* Zhang, Z.; **Gao, C.-H.**; Wang, F.; Hu, J.; He, H.; Wu, Y.; Qu, C.; Dai, K.; Huang, Q.; Cai, P. [Initial Cell Number Regulates Microscale Community Assembly and Structure](https://www.researchsquare.com/article/rs-10109398/latest). 2026.
+* Yu, C.; Li, X.; Qu, C.; **Gao, C.**; Wu, Y.; Xiao, J.; Dai, K.; Cai, P.; Huang, Q. [Cr (VI) Bioreduction by Fulvic Acid-Mineral-Microbe Interactions: The Critical Role of Nitrogen-Centered Environmentally Persistent Free Radicals](https://scholar.google.com/scholar?q=Cr%20%28VI%29%20bioreduction%20by%20fulvic%20acid-mineral-microbe%20interactions%3A%20The%20critical%20role%20of%20nitrogen-centered%20environmentally%20persistent%20free%20radicals). Journal of Environmental Chemical Engineering 2026, 122565.
+* Xing, Y.; He, W.; Chen, W.; **Gao, C.**; Zhang, M.; Wu, Y.; Qu, C.; Dai, K.; Huang, Q.; Cai, P. [Cadmium Stress Favours Biofilm Cooperation and Polysaccharide-Enriched Matrix Remodelling in Bacterial Consortia](https://doi.org/10.1111/1462-2920.70347). Environmental Microbiology 2026, 28 (6), e70347.
+* Wu, Y.; Yi, Y.; Kim, M.; Bickel, S.; Zhang, M.; Dai, K.; **Gao, C.**; Qu, C.; Kong, C.; Feng, M. [Extracellular Polymeric Substances: Overlooked Contributors to Soil Organic Carbon Persistence](https://scholar.google.com/scholar?q=Extracellular%20polymeric%20substances%3A%20overlooked%20contributors%20to%20soil%20organic%20carbon%20persistence). Soil Biology and Biochemistry 2026, 110299.
+* Wei, W.; **Gao, C.-H.**; Cao, B.; Qiao, J.; Jia, S.; Liu, L.; Wei, H.; Yan, Y.; Cai, P.; Yang, M. [Pathogen-Enriched Transcriptional Regulators Modulate Biofilm Formation and Virulence in Escherichia Coli O157: H7](https://scholar.google.com/scholar?q=Pathogen-enriched%20transcriptional%20regulators%20modulate%20biofilm%20formation%20and%20virulence%20in%20Escherichia%20coli%20O157%3A%20H7). International Journal of Biological Macromolecules 2026, 153822.
+* Qian, P.; Ren, P.; Zhang, M.; Dai, K.; **Gao, C.**; Qu, C.; Kong, C.; Huang, Q.; Wu, Y.; Cai, P. [The Dissemination of a Broad-Host-Range ARG-Carrying Plasmid to Putative Pathogens across Agricultural Soils](https://scholar.google.com/scholar?q=The%20dissemination%20of%20a%20broad-host-range%20ARG-carrying%20plasmid%20to%20putative%20pathogens%20across%20agricultural%20soils). Environmental Pollution 2026, 128594.
+* Luo, L.-M.; Lu, X.-Y.; Bao, X.-G.; Li, Z.-C.; Yang, Y.; Luo, W.-J.; Chen, J.; Lin, W.-M.; **Gao, C.-H.**; Lin, R.-Y. [Associations of Breed and FUT1 Genotype with the Fecal Microbiota of Weaned Piglets](https://scholar.google.com/scholar?q=Associations%20of%20Breed%20and%20FUT1%20Genotype%20with%20the%20Fecal%20Microbiota%20of%20Weaned%20Piglets). Microorganisms 2026, 14 (8), 1756.
+
 ## 2025
 
 * 方临川#; 胡紫莹; 崔庆亮; 杨阳; 梁玉婷; 蔡鹏; 渠晨晨; **高春辉**; 焦硕; 刘玉荣; 黄巧云; 谭文峰. [合成菌群构建与应用: 提升土壤健康新策略]( http://pedologica.issas.ac.cn/trxb/article/abstract/trxb202410120392). 土壤学报 2025.
@@ -15,6 +25,11 @@ menu:
 * Wei, W.; **Gao, C.-H.**; Jiang, X.; Qiao, J.; Zhang, L.; Yan, Y.; Zhao, G.; Yang, K.; Yan, J.; Yang, M#. [CARF-Dependent Preferential RNA Cleavage by Csm6 Increases Drug Susceptibility of Mycobacteria]( https://doi.org/10.1093/nar/gkaf622). Nucleic Acids Research 2025, 53 (12), gkaf622.
 * Fu, C.; Wu, Y.; Sørensen, S. J.; Zhang, M.; Dai, K.; **Gao, C.**; Qu, C.; Huang, Q.; Cai, P#. [The Mitigation of Spatial Constraint in Porous Environments Enhances Biofilm Phylogenetic and Functional Diversity]( https://doi.org/10.1186/s40168-025-02075-0). Microbiome 2025, 13 (1), 84.
 * Chen, Y.; Luo, X.; Wu, Y.; Zhang, M.; Dai, K.; **Gao, C.**; Qu, C.; Huang, Q.; Cai, P#. [Quantifying the Trade-off between Yield and Contamination in Soil EPS Extraction Using Cation Exchange Resin]( https://doi.org/10.1007/s11368-025-04063-1). Journal of Soils and Sediments 2025.
+* Wang, L.; Wang, Y.; Xing, Y.; **Gao, C.**; Wu, Y.; Qu, C.; Dai, K.; Zhang, M.; Huang, Q.; Cai, P. [Acid Deposition Fuels Pathogen Risk through a Coupled Ecological and Evolutionary Cascade](https://doi.org/10.48130/newcontam-0025-0012). New Contaminants 2025, 1 (1), 0–0.
+* Lu, X.; Li, K.; Li, Z.; Lin, A.; Zhao, L.; Shen, R.; Xu, Z.; Gao, J.; Lv, D.; Zhang, Y.; Ye, T.; Shen, J.; Chen, Y.; Huang, H.; Hao, Z.; Zeng, D.; Wang, H.; Guo, S.; Wang, W.; Xiong, Y.; Li, Y.; Li, H.; Gao, J.; Liu, Q.; Wei, B.; Shi, J.; Cheng, S.; Li, G.; Tang, Y.; Lin, E.; Xu, H.; Feng, G.; He, Y.; Sun, Y.; Liu, X.; Wang, Y.; Song, W.; Song, J.; Tian, S.; Zhang, Y.; Zhang, J.; Xu, Z.; Song, C.; Zhang, Y.; Wu, H.; **Gao, C.**; Hu, E.; Yang, C.; Lou, J.; Wang, D.; Wang, X.; Luo, P.; Yu, G.; Ge, Y. [FigureYa: A Standardized Visualization Framework for Enhancing Biomedical Data Interpretation and Research Efficiency](https://doi.org/10.1002/imm3.70005). iMetaMed 2025, 1 (1), e70005.
+* Chen, J.; Qu, C.; Wu, C.; Xing, Y.; Zhang, M.; Wu, Y.; **Gao, C.**; Dai, K.; Huang, Q.; Cai, P. [Spectroscopy Reveals Cooperation in Bacterial Biofilm Resistance: Cross-Fed Metabolites Enable Less-Resistant Species to Dominate Cd Immobilization](https://scholar.google.com/scholar?q=Spectroscopy%20Reveals%20Cooperation%20in%20Bacterial%20Biofilm%20Resistance%3A%20Cross-Fed%20Metabolites%20Enable%20Less-Resistant%20Species%20to%20Dominate%20Cd%20Immobilization). Soil & Environmental Health 2025, 100190.
+* 蔡鹏; **高春辉**; 田箐韵; 黄巧云; 吴一超; 渠晨晨; 戴珂; 朱韵林; 孔垂思; 张义杰; 和国优; 侯倩; 杨佩文; 鲁耀. 一株贝莱斯芽孢杆菌CMF18及其应用. CN120591164A, September 5, 2025.
+* 蔡鹏; **高春辉**; 田箐韵; 黄巧云; 吴一超; 渠晨晨; 戴珂; 朱韵林; 孔垂思; 张义杰; 侯倩; 和国优; 杨佩文; 鲁耀. 一株海洋沉积物芽孢杆菌CK22及其应用. CN120591163A, September 5, 2025.
 
 
 ## 2024
