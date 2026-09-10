@@ -1,7 +1,7 @@
 baseurl: "/"
 # languageCode: "en-us"
 # defaultContentLanguage: "en"
-languageCode: "zh-cn"
+locale: "zh-cn"
 defaultContentLanguage: "zh"
 title: "BIO-SPRING"
 theme: "hugo-prose"
