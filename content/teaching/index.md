@@ -1,6 +1,8 @@
 ---
 title: 教书育人
 date: 2023-11-01
+aliases:
+  - /work/
 ---
 
 ## 2025-2026-2
@@ -22,6 +24,8 @@ date: 2023-11-01
 ![](https://vnote-1251564393.cos.ap-chengdu.myqcloud.com/picgo/20260909213746921.jpg)
 
 -   【本科生】　《土壤学 C》，园林 2403（专业基础课）
+
+![](https://vnote-1251564393.cos.ap-chengdu.myqcloud.com/picgo/20260910105826581.jpg)
 
 ## 2024-2025-2
 
