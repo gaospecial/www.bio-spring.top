@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>XML-RPC on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/xml-rpc/</link>
+		<description>Recent content in XML-RPC on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 31 Dec 2010 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/xml-rpc/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>今天又发现了一个好的Blog客户端：Scribefire</title>
+				<link>www.bio-spring.top/post/2010/12/31/2010-12-31-scribefire/</link>
+				<pubDate>Fri, 31 Dec 2010 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2010/12/31/2010-12-31-scribefire/</guid>
+				<description>&lt;p&gt;这个客户端以Firefox插件的形式安装，使用方便。它可以上传图片，可以设置永久链接，似乎比Gscribble要强大不是一点点，而这正是我需要的功能。&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;img src=&#34;http://www.scribefire.com/wp-content/themes/scribefire/images/logo.png&#34; width=&#34;265&#34; height=&#34;80&#34; /&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.scribefire.com/&#34;&gt;Scribefire: Fire up your blogging&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://blog.scribefire.com/&#34;&gt;ScribeFire&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>测试：使用BloGTK发表文章</title>
+				<link>www.bio-spring.top/post/2010/10/17/2010-10-17-bloggtk-test/</link>
+				<pubDate>Sun, 17 Oct 2010 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2010/10/17/2010-10-17-bloggtk-test/</guid>
+				<description>&lt;p&gt;这是使用BloGTK 1.1发表的文章。&lt;/p&gt;&#xA;&lt;p&gt;通过XML-RPC协议，可以方便的发表文章，而不用登录后台。这在网络条件差的时候尤为方便。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

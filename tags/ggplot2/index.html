@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> Ggplot2 | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Ggplot2">
+	<meta name="twitter:description" content="Chun-Hui Gao&#39;s personal website built through Hugo and blogdown with the hugo-prose theme.">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container list">
+<main>
+
+<h1>Ggplot2</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2025/11/29/posit-conf-2025/">Posit::conf(2025) - 录播视频概览</a></h1>
+    <div>
+      <span>2025-11-29</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      117 个 Posit::Conf(2025) 录播视频精华：数据科学前沿洞察。
+[&hellip;] 来源：https://www.youtube.com/watch?v=pMVYl9fx1EE
+Posit公司的工程师Julia Silge分享了她如何克服学习Python时遇到的困难。她讲述了十年前初学Python时的挫败经历，这主要归因于两大难题：
+[&hellip;] 演讲的重点是，如今情况 &hellip;
+      <a href="www.bio-spring.top/post/2025/11/29/posit-conf-2025/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2024/02/17/monkey-peach/">猴子吃桃问题</a></h1>
+    <div>
+      <span>2024-02-17</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      寒假作业上有一道题：一只猴子有很多桃子，每天都吃一半加 1 个，最后在第 4 天的时候只剩下 1 个桃子。问它原来有几个桃子？
+这是一个迭代的问题，往前数第 \(n\) 天的桃子数量是 \(f(n)\)，且 \(f(n) = (f(n-1)+1) * 2\)。若 \(n = 0\)，则 \(f(0) =1\)。可以写成下面的形式。
+taozi = function(n){ if (n == 0) &hellip;
+      <a href="www.bio-spring.top/post/2024/02/17/monkey-peach/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2021/05/08/ggvenndiagram-reborn/">ggVennDiagram 的新生</a></h1>
+    <div>
+      <span>2021-05-08</span>
+      <span>Chun-Hui Gao</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      &gopf;gVennDiagram 是一个用于绘制 Venn 图的 R 语言软件包。最初，我只是在需要画 Venn 图的时候，发现没有一件趁手的工具，而最终不得不写了一个给自己用的工具。随后， 抱着试一试的态度发布到了 GitHub 和 CRAN 上面。结果引起了用户持续的关注和好评， 截止今日已经获得了超过 100 个小星星。
+[&hellip;] 在 CRAN 上面也已经被累计下载了 2 万多次了。 &hellip;
+      <a href="www.bio-spring.top/post/2021/05/08/ggvenndiagram-reborn/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2021/03/01/release-ggvenndiagram-0-5-0/">发布 `ggVennDiagram` 0.5.0</a></h1>
+    <div>
+      <span>2021-03-01</span>
+      <span>Chun-Hui Gao</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      昨天正式发布了 ggVennDiagram 0.5.0. 上一个在 CRAN 的版本是 0.3，之所以中间跳了 一下，是因为当初自己还不清楚如何更新已经发布在 CRAN 上的 R 包。
+这次是通过 devtools::release() 来自动化发布的。不得不说这个工具的出现，真的大大 方便了 R 包的开发。对包作者的崇敬之情油然而生。
+简单来说还是分成以下几个步骤：
+[&hellip;] 新版本 &hellip;
+      <a href="www.bio-spring.top/post/2021/03/01/release-ggvenndiagram-0-5-0/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2019/09/24/anova-turkeyhsd-plotting/">ANOVA &#43; TurkeyHSD 分析及作图</a></h1>
+    <div>
+      <span>2019-09-24</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      先载入一个示例数据。该数据是研究摄入 VC 对小鼠牙齿生长作用的实验结果。VC 给药分成两种方式：VC-给予VC药片；OJ-给予相当量的橙汁。给药的量都包括0.5,1,2等三个梯度。
+从散点图上看，不同给药量之间应该有显著差异。
+data(&quot;ToothGrowth&quot;) head(ToothGrowth) ## len supp dose ## 1 4.2 VC 0.5 ## 2 &hellip;
+      <a href="www.bio-spring.top/post/2019/09/24/anova-turkeyhsd-plotting/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2019/09/23/basic-stats-in-r/">常用假设检验方法的R语言实现</a></h1>
+    <div>
+      <span>2019-09-23</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      常用的统计方法见下表所示。
+[&hellip;] Mann-Whitney-Wilcoxon检验也被称为Wilcoxon检验。 In statistics, the Mann–Whitney U test (also called the Mann–Whitney–Wilcoxon (MWW), Wilcoxon rank-sum test, or Wilcoxon–Mann–Whitney &hellip;
+      <a href="www.bio-spring.top/post/2019/09/23/basic-stats-in-r/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2019/07/17/ggplot-label-placement/">ggplot label placement</a></h1>
+    <div>
+      <span>2019-07-17</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      本文曾经发表在 biobabble 微信公众号 链接
+ggplot在绘制label的时候很容易出现字体溢出，位置难以调整的问题。Y叔曾经在公众号上吐槽过。
+实际上，标签如何在图片中展示，还真不是一个简单的问题。有一个领域“Automatic label placement”就是研究该问题的。
+下面介绍一下如何处理这个标签定位的问题。
+[&hellip;] 我们从mpg数据集中提取10行数据画图，默 &hellip;
+      <a href="www.bio-spring.top/post/2019/07/17/ggplot-label-placement/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2018/11/26/enrichplot-fancy-label/">在enrichplot中使用更好的Label</a></h1>
+    <div>
+      <span>2018-11-26</span>
+      <span>gao</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      例如下面这个样子:
+# 可重复运行的代码拿去 library(clusterProfiler) library(org.Hs.eg.db) library(ggplot2) data(geneList, package = &quot;DOSE&quot;) gene &lt;- names(geneList)[abs(geneList)&gt;3] gene.df &lt;- &hellip;
+      <a href="www.bio-spring.top/post/2018/11/26/enrichplot-fancy-label/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2018/11/13/rt-pcr-data-visualization-one/">RT-PCR数据可视化之一</a></h1>
+    <div>
+      <span>2018-11-13</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      &Qopf;uantStudio Real-Time PCR software 是我们经常使用的 RT-PCR 软件, 它上面的可视化只能简单看看, 不满足发论文的需求. 如果需要得到发表级的图片, 还是需要 用 ggplot 大法加持.
+为了能够使用这些数据, 首先需要导出文件. 为了方便操作, 文件导出时, 选择 *.txt 格式, 每个面板导出成一个单独文件. 将文件放在 data 文件夹中. &hellip;
+      <a href="www.bio-spring.top/post/2018/11/13/rt-pcr-data-visualization-one/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2018/10/22/plot-pca-using-ggplot2/">排序分析结果作图</a></h1>
+    <div>
+      <span>2018-10-22</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      &lopf;ibrary(vegan) ## Loading required package: permute ## Loading required package: lattice ## This is vegan 2.6-4 data(&quot;varespec&quot;) pca &lt;- rda(varespec) 首先看一下结果：
+summary(pca) ## ## Call: ## &hellip;
+      <a href="www.bio-spring.top/post/2018/10/22/plot-pca-using-ggplot2/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+
+
+
+		<ul class="pagination pagination-default">
+			<li class="page-item disabled">
+				<a aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
+			</li>
+		<li class="page-item disabled">
+			<a aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
+		</li>
+			<li class="page-item active">
+				<a aria-current="page" aria-label="Page 1" class="page-link" role="button">1</a>
+			</li>
+			<li class="page-item">
+				<a href="www.bio-spring.top/tags/ggplot2/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+			</li>
+		<li class="page-item">
+			<a href="www.bio-spring.top/tags/ggplot2/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+		</li>
+			<li class="page-item">
+				<a href="www.bio-spring.top/tags/ggplot2/page/2/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+			</li>
+		</ul>
+
+
+
+
+
+</main>
+</div>
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  <div class="footer hidden">
+  
+
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

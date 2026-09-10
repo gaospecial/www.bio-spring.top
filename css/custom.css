@@ -1,0 +1,43 @@
+.list main > .post-card {
+  flex: 0 0 100%;
+}
+
+.post-card td:nth-child(1) {width: 15%}
+.post-card td:nth-child(2) {width: 10%}
+
+.article-list h1 {
+  border-bottom: none;
+}
+
+/* ===== 导航栏 Logo ===== */
+
+/* 让品牌区域在菜单栏中垂直居中 */
+.menu li.left {
+  display: flex;
+  align-items: center;
+}
+
+.menu .left a.brand {
+  display: block;
+  line-height: 0;
+  margin: 0;
+  padding: 0 5px 0 0;
+  text-decoration: none;
+}
+
+/* 悬停/聚焦时避免出现“灰底胶囊”，保留可访问性的焦点轮廓 */
+.menu .left a.brand:hover {
+  background: transparent;
+}
+.menu .left a.brand:focus-visible {
+  background: transparent;
+  outline: 2px solid darkslategray;
+  outline-offset: 2px;
+}
+
+/* 高度取与菜单 line-height 相同的 1.5em，使 logo 与导航文字等高、自然对齐 */
+.site-logo {
+  display: block;
+  height: 1.5em;
+  width: auto;
+}

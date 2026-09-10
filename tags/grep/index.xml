@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Grep on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/grep/</link>
+		<description>Recent content in Grep on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 11 Mar 2011 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/grep/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Linux grep的用法</title>
+				<link>www.bio-spring.top/post/2011/03/11/2011-03-11-linux-grep-usage/</link>
+				<pubDate>Fri, 11 Mar 2011 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2011/03/11/2011-03-11-linux-grep-usage/</guid>
+				<description>&lt;div align=&#34;left&#34;&gt;&#xA;&lt;p&gt;在文件夹中搜索其中的js文件&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;p&gt;[bash]grep function *.js[/bash]&lt;/p&gt;&#xA;&lt;p&gt;在当前文件夹和子文件夹中搜索所有文件&lt;br&gt;&#xA;[bash]grep -d recurse -i ‘function_input’ *[/bash]&lt;br&gt;&#xA;注意，在此处使用*.*和*，结果会有所不同。&lt;/p&gt;&#xA;&lt;p&gt;从文件中读取**&lt;u&gt;Pattern&lt;/u&gt;**&lt;br&gt;&#xA;[bash]grep -f pattern_file search_file[/bash]&lt;br&gt;&#xA;需要注意的是，在pattern_file中，不能有空行存在，如果有空行存在，得不到想要的结果。这个bug困扰了我好久啊。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

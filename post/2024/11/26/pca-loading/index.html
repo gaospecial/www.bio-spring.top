@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> PCA loading | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="PCA loading">
+	<meta name="twitter:description" content="PCA 分析确定主成分后，每一个主成分都是变量的映射，变量有自己的 loading。
+PCA Loading 以下是使用 R 进行 PCA 分析并绘制 PCA loading 图的完整代码示例：
+示例代码 # 加载必要的包 library(ggplot2) library(ggrepel) ## Warning: package &#39;ggrepel&#39; was built under R version 4.3.3 # 加载数据集 data(iris) # 去掉分类列，仅保留数值列用于 PCA iris_data = iris[, 1:4] # 执行 PCA pca_result = prcomp(iris_data, scale. = TRUE) # 提取 PCA loading loadings = as.data.frame(pca_result$rotation) loadings$Features = rownames(loadings) # 计算解释度 explained_variance = pca_result$sdev^2 / sum(pca_result$sdev^2) pc1_label = paste0(&#34;PC1 (&#34;, round(explained_variance[1] * 100, 1), &#34;%)&#34;) pc2_label = paste0(&#34;PC2 (&#34;, round(explained_variance[2] * 100, 1), &#34;%)&#34;) # 绘制 PCA loading 图 ggplot(loadings, aes(x = 0, y = 0, xend = PC1, yend = PC2, label = Features)) &#43; geom_segment(arrow = arrow(length = unit(0.2, &#34;cm&#34;)), color = &#34;steelblue&#34;, linewidth = 1) &#43; geom_text_repel(aes(x = PC1, y = PC2), size = 5) &#43; labs( title = &#34;PCA Loading Plot&#34;, x = pc1_label, y = pc2_label ) &#43; theme_bw() 代码说明 prcomp 方法：">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container single">
+<main>
+
+<div class="article-meta">
+<h1><span class="title">PCA loading</span></h1>
+
+<h3 class="author">
+gaoch
+</h3>
+
+<h3 class="date">2024-11-26</h3>
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/%E5%85%B6%E5%AE%83">其它</a> <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF">信息技术</a> 
+  
+  
+  
+  Tags: <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0">学习笔记</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0">机器学习</a> 
+  
+  
+</p>
+</div>
+
+<div class="article">
+<p>PCA 分析确定主成分后，每一个主成分都是变量的映射，变量有自己的 loading。</p>
+<h2 id="pca-loading">PCA Loading</h2>
+<p>以下是使用 R 进行 PCA 分析并绘制 PCA loading 图的完整代码示例：</p>
+<h3 id="示例代码">示例代码</h3>
+<pre><code class="language-r"># 加载必要的包
+library(ggplot2)
+library(ggrepel)
+</code></pre>
+<pre><code>## Warning: package 'ggrepel' was built under R version 4.3.3
+</code></pre>
+<pre><code class="language-r"># 加载数据集
+data(iris)
+
+# 去掉分类列，仅保留数值列用于 PCA
+iris_data = iris[, 1:4]
+
+# 执行 PCA
+pca_result = prcomp(iris_data, scale. = TRUE)
+
+# 提取 PCA loading
+loadings = as.data.frame(pca_result$rotation)
+loadings$Features = rownames(loadings)
+
+# 计算解释度
+explained_variance = pca_result$sdev^2 / sum(pca_result$sdev^2)
+pc1_label = paste0(&quot;PC1 (&quot;, round(explained_variance[1] * 100, 1), &quot;%)&quot;)
+pc2_label = paste0(&quot;PC2 (&quot;, round(explained_variance[2] * 100, 1), &quot;%)&quot;)
+
+# 绘制 PCA loading 图
+ggplot(loadings, aes(x = 0, y = 0, xend = PC1, yend = PC2, label = Features)) +
+  geom_segment(arrow = arrow(length = unit(0.2, &quot;cm&quot;)), color = &quot;steelblue&quot;, linewidth = 1) +
+  geom_text_repel(aes(x = PC1, y = PC2), size = 5) +
+  labs(
+    title = &quot;PCA Loading Plot&quot;,
+    x = pc1_label,
+    y = pc2_label
+  ) +
+  theme_bw()
+</code></pre>
+<img src="www.bio-spring.top/post/2024/11/26/pca-loading/index.zh_files/figure-html/pca-loading-1.png" width="672" />
+<h3 id="代码说明">代码说明</h3>
+<ol>
+<li>
+<p><strong><code>prcomp</code> 方法</strong>：</p>
+<ul>
+<li>用于主成分分析。</li>
+<li>参数 <code>scale. = TRUE</code> 标准化数据以消除变量的量纲影响。</li>
+</ul>
+</li>
+<li>
+<p><strong>提取 Loading</strong>：</p>
+<ul>
+<li>使用 <code>pca_result$rotation</code> 获取每个变量在各主成分方向的载荷。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>ggplot2</code> 绘图</strong>：</p>
+<ul>
+<li><code>geom_segment</code> 用于绘制箭头，表示变量方向和大小。</li>
+<li><code>geom_text_repel</code> 防止标签重叠。</li>
+</ul>
+</li>
+</ol>
+<h3 id="输出解释">输出解释</h3>
+<ul>
+<li><strong>PCA Loading 图</strong>：显示变量在主成分方向上的贡献大小和方向。箭头越长，表示该变量对对应主成分的贡献越大。</li>
+<li><strong>PC1 和 PC2</strong>：分别表示第一和第二主成分，可以解释大部分数据的方差。</li>
+</ul>
+<p>运行上述代码将生成一个清晰的 PCA loading 图，用于分析变量如何投影到主成分空间中。</p>
+<h2 id="pc1-loading">PC1 Loading</h2>
+<p>如果仅需要展示 <strong>PC1 上各个指标的 loading</strong>，可以将 PCA 的 <code>rotation</code> 数据提取并按降序排列，随后绘制柱状图或条形图来展示。以下是完整的实现代码：</p>
+<h3 id="示例代码-1">示例代码</h3>
+<pre><code class="language-r"># 加载必要的包
+library(ggplot2)
+
+# 加载数据集
+data(iris)
+
+# 去掉分类列，仅保留数值列用于 PCA
+iris_data = iris[, 1:4]
+
+# 执行 PCA
+pca_result = prcomp(iris_data, scale. = TRUE)
+
+# 提取 PC1 的 loading 数据
+pc1_loadings = pca_result$rotation[, &quot;PC1&quot;]
+loading_data = data.frame(Feature = names(pc1_loadings), Loading = pc1_loadings)
+
+# 按 PC1 loading 的绝对值降序排列
+loading_data = loading_data[order(abs(loading_data$Loading), decreasing = TRUE), ]
+
+# 绘制柱状图
+ggplot(loading_data, aes(x = reorder(Feature, Loading), y = Loading)) +
+  geom_bar(stat = &quot;identity&quot;, fill = &quot;steelblue&quot;) +
+  coord_flip() +  # 让柱状图横向展示
+  labs(
+    title = &quot;PC1 Loadings&quot;,
+    x = &quot;Features&quot;,
+    y = &quot;Loading Value&quot;
+  ) +
+  theme_bw()
+</code></pre>
+<img src="www.bio-spring.top/post/2024/11/26/pca-loading/index.zh_files/figure-html/pc1-loading-1.png" width="672" />
+<h3 id="代码说明-1">代码说明</h3>
+<ol>
+<li>
+<p><strong>提取 PC1 loading</strong>：</p>
+<ul>
+<li>使用 <code>pca_result$rotation[, &quot;PC1&quot;]</code> 获取各指标在 PC1 上的载荷。</li>
+</ul>
+</li>
+<li>
+<p><strong>排序</strong>：</p>
+<ul>
+<li>按照 <code>abs(Loading)</code> 对特征的载荷绝对值进行降序排列，更突出贡献最大的特征。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>ggplot2</code> 绘图</strong>：</p>
+<ul>
+<li>使用 <code>geom_bar(stat = &quot;identity&quot;)</code> 绘制柱状图。</li>
+<li>使用 <code>coord_flip()</code> 横向显示，方便阅读长标签。</li>
+</ul>
+</li>
+</ol>
+<h3 id="输出结果">输出结果</h3>
+<ul>
+<li><strong>柱状图</strong>：展示 PC1 上各指标的 loading 值，柱状高度和方向表示指标对 PC1 的正负贡献和大小。</li>
+<li><strong>排序</strong>：指标按贡献大小排序，最高贡献的指标排在最上面。</li>
+</ul>
+<h2 id="变量数目过多">变量数目过多</h2>
+<p>下面生成了一个包含 100 个变量和 150 个观察值的随机数据框。接下来，使用这个数据进行 PCA 和绘制主成分分析图。</p>
+<p>以下是更新后的代码，使用这个随机数据集来进行 PCA 分析，并绘制最重要的 6 个变量的 PCA loading 图：</p>
+<h3 id="更新后的代码">更新后的代码</h3>
+<pre><code class="language-r"># 加载必要的包
+library(ggplot2)
+library(ggrepel)
+library(dplyr)
+</code></pre>
+<pre><code>## 
+## Attaching package: 'dplyr'
+</code></pre>
+<pre><code>## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+</code></pre>
+<pre><code>## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+</code></pre>
+<pre><code class="language-r"># 生成随机数据框（100个变量）
+set.seed(42)
+n_obs = 150
+n_vars = 100
+random_data = matrix(rnorm(n_obs * n_vars), nrow = n_obs, ncol = n_vars)
+colnames(random_data) = paste0(&quot;Var&quot;, 1:n_vars)
+df_random = as.data.frame(random_data)
+
+# 执行 PCA
+pca_result = prcomp(df_random, scale. = TRUE)
+
+# 提取 PCA loading
+loadings = as.data.frame(pca_result$rotation)
+loadings$Features = rownames(loadings)
+
+# 计算解释度
+explained_variance = pca_result$sdev^2 / sum(pca_result$sdev^2)
+pc1_label = paste0(&quot;PC1 (&quot;, round(explained_variance[1] * 100, 1), &quot;%)&quot;)
+pc2_label = paste0(&quot;PC2 (&quot;, round(explained_variance[2] * 100, 1), &quot;%)&quot;)
+
+# 计算 PC1 和 PC2 的 loading 的绝对值
+loadings$PC1_abs = abs(loadings$PC1)
+loadings$PC2_abs = abs(loadings$PC2)
+
+# 按照 PC1 或 PC2 的 loading 绝对值排序，选择前 6 个变量
+top_loadings_pc1 = loadings[order(loadings$PC1_abs, decreasing = TRUE), ][1:10, ]
+top_loadings_pc2 = loadings[order(loadings$PC2_abs, decreasing = TRUE), ][1:10, ]
+
+# 合并两个选择的变量，避免重复
+top_loadings = bind_rows(list(PC1 = top_loadings_pc1, PC2 = top_loadings_pc2), .id = &quot;id&quot;)
+
+# 绘制 PCA loading 图
+ggplot(top_loadings, aes(x = 0, y = 0, xend = PC1, yend = PC2, label = Features, color = id)) +
+  geom_segment(arrow = arrow(length = unit(0.2, &quot;cm&quot;)), linewidth = 1, alpha = 1/2) +
+  geom_text_repel(aes(x = PC1, y = PC2), size = 5, show.legend = FALSE) +
+  labs(
+    title = &quot;Top 10 PCA Loading Plot&quot;,
+    x = pc1_label,
+    y = pc2_label
+  ) +
+  theme_bw()
+</code></pre>
+<img src="www.bio-spring.top/post/2024/11/26/pca-loading/index.zh_files/figure-html/pca-loading-top-1.png" width="672" />
+<h3 id="代码解释">代码解释</h3>
+<ol>
+<li><strong>生成随机数据</strong>：使用 <code>matrix(rnorm(...))</code> 创建一个 150 行 100 列的矩阵，并将其转换为数据框 <code>df_random</code>。</li>
+<li><strong>执行 PCA</strong>：在生成的随机数据框 <code>df_random</code> 上执行 PCA。</li>
+<li><strong>选择最重要的 10 个变量</strong>：根据 PC1 和 PC2 的绝对加载值选择最重要的 10 个变量，并绘制它们的箭头。</li>
+<li><strong>绘制 PCA loading 图</strong>：绘制了具有最高加载值的 10 个变量的 PCA loading 图。</li>
+</ol>
+<p>您可以运行这段代码以可视化随机数据集中的最重要变量的 PCA loading 图。</p>
+
+</div>
+</main>
+
+<section class="appendix">
+
+
+<div>
+  <div class="side side-left"><h3>作者简介</h3></div>
+  <div>
+
+
+
+
+
+<div>Chun-Hui Gao is a Research Associate at <a href="http://www.hzau.edu.cn">Huazhong Agricultural University</a>.</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div>
+  <div class="side side-left"><h3>重复使用</h3></div>
+  Text and figures are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution CC BY 4.0</a>. The source code is licensed under MIT. The full source is available at <a href="https://github.com/yihui/hugo-prose">https://github.com/yihui/hugo-prose</a>.
+</div>
+
+
+
+<div>
+  <div class="side side-left"><h3>欢迎修订</h3></div>
+  
+  
+  
+    
+  
+  如果您发现本文里含有任何错误（包括错别字和标点符号），欢迎<a href="https://github.com/gaospecial/bio-spring/edit/master/content/post/2024-11-26-pca-loading/index.zh.Rmd" id="edit-link">在本站的 GitHub 项目里提交修订意见。</a>
+</div>
+
+
+
+
+<div>
+  <div class="side side-left"><h3>引用本文</h3></div>
+  <p>如果您使用了本文的内容，请按照以下方式引用：</p>
+  <pre><code>gaoch (2024). PCA loading. BIO-SPRING. www.bio-spring.top/post/2024/11/26/pca-loading/</code></pre>
+  <p>BibTeX citation</p>
+  <pre><code>@misc{
+  title = "PCA loading",
+  author = "gaoch",
+  year = "2024",
+  journal = "BIO-SPRING",
+  note = "www.bio-spring.top/post/2024/11/26/pca-loading/"
+}</code></pre>
+</div>
+
+</section>
+
+
+
+<nav class="post-nav">
+  <span class="nav-next">&larr; <a href="www.bio-spring.top/post/2024/11/26/random-forest-gini-index/" title=下一篇&#32;(旧)>绘制随机森林模型的Gini重要性</a></span>
+  &hercon;
+  <span class="nav-prev"><a href="www.bio-spring.top/post/2024/12/29/clusterprofiler-metabolite-enrichment-analysis/" title=上一篇&#32;(新)>ClusterProfiler做代谢物富集分析</a> &rarr;</span>
+</nav>
+
+
+
+
+<section class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var disqus_js = '//bio-spring.disqus.com/embed.js';
+    var d = document, s = d.createElement('script');
+    s.src = disqus_js; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    var t = d.getElementById('disqus_thread');
+    var b = false, l = function(scroll) {
+      if (b) return;
+      (d.head || d.body).appendChild(s); b = true;
+      if (scroll) t.scrollIntoView();
+    }
+    s.onerror = function(e) {
+      if (sessionStorage.getItem('failure-note')) return;
+      t.innerText = 'Sorry, but you cannot make comments because Disqus failed to load for some reason. It is known to be blocked in China. If you are sure it is not blocked in your region, please refresh the page. 中国大陆地区读者需要翻墙才能发表评论。';
+      t.style.border = '1px dashed';
+      t.style.padding = '.5em';
+      t.style.background = 'lightyellow';
+      sessionStorage.setItem('failure-note', true);
+    };
+    
+    if (location.hash.match(/^#comment-[0-9]+$/)) return l(true);
+    var c = function() {
+      if (b) return;
+      var rect = t.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) l();
+    };
+    window.addEventListener('load', c);
+    d.addEventListener('scroll', c);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+</div>
+
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+<script src="//yihui.org/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+<script src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils/js/number-sections.min.js,npm/@xiee/utils/js/toc.min.js,npm/@xiee/utils/js/toc-highlight.min.js,npm/@xiee/utils/js/sidenotes.min.js,npm/@xiee/utils/js/right-quote.min.js,npm/@xiee/utils/js/center-img.min.js,npm/@xiee/utils/js/fix-pandoc.min.js,npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/prism-xcode.min.css">
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

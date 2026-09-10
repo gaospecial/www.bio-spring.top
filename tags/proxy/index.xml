@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Proxy on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/proxy/</link>
+		<description>Recent content in Proxy on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 28 Oct 2019 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/proxy/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>为 R 代理</title>
+				<link>www.bio-spring.top/post/2019/10/28/r-proxy/</link>
+				<pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2019/10/28/r-proxy/</guid>
+				<description>&lt;p&gt;今天想用 scholar 包抓一下自己的 Google Scholar profile，发现不翻墙打不开。&lt;/p&gt;&#xA;&lt;p&gt;要设代理，参考了 @GuangchuangYu 发表的&lt;a href=&#34;https://guangchuangyu.github.io/cn/2018/09/proxychains/&#34;&gt;一次解决所有代理问题&lt;/a&gt;，&#xA;却仍然没有解决自己的问题。&lt;/p&gt;&#xA;&lt;p&gt;因为我用的是 Windows，proxychains 却只能用于类 Unix 系统。&lt;/p&gt;&#xA;&lt;p&gt;经过 3 个小时的探索，终于发现了一个途径，居然比 proxychains 还要简单很多。&lt;/p&gt;&#xA;&lt;p&gt;那就是，设置 Renviron 环境变量的方法。&lt;/p&gt;&#xA;&lt;p&gt;新建一个 Renviron 文件，内容如下：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;CURL_SSL_BACKEND=openssl&#xA;&#xA;http_proxy=http://127.0.0.1:8080&#xA;https_proxy=http://127.0.0.1:8080&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;这个文件：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;如果放在 &amp;ldquo;&lt;code&gt;~/.Renviorn&lt;/code&gt;&amp;rdquo; 下面，那么每次 R 运行的时候都会设置使用相应的代理。&lt;/li&gt;&#xA;&lt;li&gt;如果放在 R project 文件夹下面（如“&lt;code&gt;/path/to/project/.Renviron&lt;/code&gt;”），那么只对相应的项目生效。&lt;/li&gt;&#xA;&lt;li&gt;如果放在一个普通文件中（如“&lt;code&gt;proxy.Renviron&lt;/code&gt;”），则只在调用的时候生效。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;采用最后一种方法，在需要设置代理的脚本中，加入一行，就可以确保后续访问网络时使用代理设置。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;readRenviron(&amp;quot;proxy.Renviron&amp;quot;)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h1 id=&#34;说明&#34;&gt;说明&lt;/h1&gt;&#xA;&lt;p&gt;网上有很多关于设置 &lt;code&gt;http(s)_proxy&lt;/code&gt; 变量来代理上网的方法，但是只设置这项是没有用的。&lt;/p&gt;&#xA;&lt;p&gt;这是因为，当 R 从网上下载时，curl 包默认是采用的 &lt;strong&gt;Windows Cert Store&lt;/strong&gt; 的后端，而该后端是不支持 https 协议代理上网的。&lt;/p&gt;&#xA;&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;rcurl SSL Backends&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;Secure Channel&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;OpenSSL&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;trust certificates&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Windows Cert Store&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;curl-ca-bundle.crt file&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;works on corporate networks&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Usually Yes&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Maybe not&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;support http proxy server&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Yes&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Yes&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;support https proxy server&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;&lt;strong&gt;No&lt;/strong&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Yes&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;support client certificate authentication&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;No&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Yes&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;因此，需要先设置 &lt;code&gt;CURL_SSL_BACKEND=openssl&lt;/code&gt;，然后在设置代理服务器。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

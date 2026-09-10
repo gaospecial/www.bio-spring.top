@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Git on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/git/</link>
+		<description>Recent content in Git on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 11 Nov 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/git/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>配置私有 Git LFS 服务器</title>
+				<link>www.bio-spring.top/post/2024/11/11/private-git-lfs-server/</link>
+				<pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2024/11/11/private-git-lfs-server/</guid>
+				<description>&lt;p&gt;在 Git 项目中使用大文件已经成为非常普遍的事情了，例如在 Hugging face 下面的仓库中这样的情况比比皆是。&lt;/p&gt;&#xA;&lt;p&gt;为了能够“专业地”存储大文件，或许可以有以下几种方式：&lt;/p&gt;&#xA;&lt;h2 id=&#34;使用-nas-服务器&#34;&gt;使用 NAS 服务器&lt;/h2&gt;&#xA;&lt;p&gt;要将 NAS 作为 Git LFS 服务器，关键是让 NAS 提供 HTTP 或 SSH 文件存储服务，并将其作为 LFS 对象的存储端点。具体步骤如下：&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-在-nas-上设置文件存储服务&#34;&gt;1. 在 NAS 上设置文件存储服务&lt;/h3&gt;&#xA;&lt;p&gt;确保 NAS 服务器支持 HTTP、HTTPS 或 SSH 服务，以便用于存储 LFS 对象。以下是常见设置方式：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;HTTP/HTTPS&lt;/strong&gt;：如果 NAS 支持 Web 服务器功能，可以配置一个虚拟主机用于存储 LFS 对象。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;SSH&lt;/strong&gt;：确保 SSH 服务已启用，并为 LFS 服务器创建一个专门用户。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;2-初始化-git-仓库&#34;&gt;2. 初始化 Git 仓库&lt;/h3&gt;&#xA;&lt;p&gt;在本地创建或初始化一个 Git 仓库，并使用 &lt;code&gt;git lfs&lt;/code&gt; 初始化 LFS 配置：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git init&#xA;git lfs install&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h3 id=&#34;3-配置-lfs-远程端点&#34;&gt;3. 配置 LFS 远程端点&lt;/h3&gt;&#xA;&lt;p&gt;将 LFS 端点配置为 NAS 的 HTTP 或 SSH 地址。编辑 &lt;code&gt;.lfsconfig&lt;/code&gt; 文件，并添加以下内容：&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Git 添加多个 remote</title>
+				<link>www.bio-spring.top/post/2023/09/13/git-add-multiple-remotes/</link>
+				<pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2023/09/13/git-add-multiple-remotes/</guid>
+				<description>&lt;p&gt;在 Git 中设置，从一个源 pull，向多个源 push，实现修改后一键 push 到多个服务器（如 GitHub + Gitee）。&lt;/p&gt;&#xA;&lt;p&gt;将 GitHub 作为主源，本地修改同时 push 到 GitHub 和 Gitee。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git remote add origin git@github.com:user/repository.git&#xA;git remote set-url --add --push origin git@github.com:user/repository.git&#xA;git remote set-url --add --push origin git@gitee.com:user/repository.git&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;查看配置结果。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git remote show origin&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;删掉无用的源&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git remote set-url --delete --push origin git@gitee.com:user/repository.git&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;实在不行，还可以直接修改 &lt;code&gt;.git/config&lt;/code&gt; 文件。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Git 和 GitHub 使用指北</title>
+				<link>www.bio-spring.top/post/2019/09/29/git-github-tutorial/</link>
+				<pubDate>Sun, 29 Sep 2019 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2019/09/29/git-github-tutorial/</guid>
+				<description>&lt;p&gt;今天&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=Mzg3NTA1MTM0NQ==&amp;amp;mid=100000025&amp;amp;idx=1&amp;amp;sn=f060e32833de25870a2a29a47870b643&amp;amp;chksm=4ec6212779b1a8312d1cb4f27823477e3168473ae4058cb89f1e3a6e96793f002e655b6a7407&amp;amp;scene=18&amp;amp;key=5b7091b0813876942fc85075a8cc8f984e6d4d87ecd805316b742ba8b7794eb227a20a153ace81fd88748619448f3068bd5e2e38cc501ad515cb9e6b4bfe1be54018f8e337780e22607fdb65e336bb4d&amp;amp;ascene=1&amp;amp;uin=NDI5ODQ5OTc1&amp;amp;devicetype=Windows+10&amp;amp;version=62060833&amp;amp;lang=zh_CN&amp;amp;pass_ticket=ETbgcY5wOJmK6csItr5E373xuGaeAaR3QUgLT8wGyYhEjdGAp%2FMxQxWTejbUuRqX&#34;&gt;小丫画图&lt;/a&gt;群里在讨论 GitHub 的使用。大家都说GitHub的使用挺简单的，我觉得也是。但是，要找一个比较系统的介绍的话，我还真没找到。所以，说说自己的使用经历吧。&lt;strong&gt;这些都是干货。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;我对 GitHub 的使用时间不长，但是觉得真是个好东西。总的来说，特别适合于存放&lt;strong&gt;文本文件&lt;/strong&gt;，例如代码，markdown写成的文档，rmarkdown写成的书等。&lt;/p&gt;&#xA;&lt;p&gt;GitHub其实是支持Git版本控制软件的公共仓库，&lt;a href=&#34;#github-alternative&#34;&gt;类似的网站&lt;/a&gt;其实不止一个，但是GitHub是最流行的一个。&lt;/p&gt;&#xA;&lt;p&gt;所以，要想使用GitHub，你必须做的只有两件事：一、安装一个Git客户端&lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;点击下载&lt;/a&gt;。二、在GitHub注册一个账号&lt;a href=&#34;https://github.com&#34;&gt;点击注册&lt;/a&gt;。这两步操作按住不提。&lt;/p&gt;&#xA;&lt;h1 id=&#34;使用-git&#34;&gt;使用 Git&lt;/h1&gt;&#xA;&lt;p&gt;在Windows下面，安装完Git客户端之后，鼠标右键菜单中会多出来两个命令：“Git GUI here”和“Git Bash here”。前者打开一个图形界面，后者打开一个终端。使用这两个传送门便可以进入Git的世界。&lt;/p&gt;&#xA;&lt;p&gt;如果当前的目录是一个Git目录，则自动会被Git识别出来。否则，你可以选择“新建一个”或者“克隆”一个。&lt;/p&gt;&#xA;&lt;h2 id=&#34;git-常用操作&#34;&gt;Git 常用操作&lt;/h2&gt;&#xA;&lt;p&gt;Git常用的命令有下面几个：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;git init sample&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;在当前目录新建一个“sample”目录，在目录中启用Git版本控制系统。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;git clone https://github.com/GuangchuangYu/course_bioinfo_training.git&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;从GitHub克隆一个软件源到当前目录。这将在当前目录新建一个“course_bioinfo_training”文件夹，其中包含所有文件和版本历史。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;显示当前Git仓库的状态。如果有修改，新建，删除等操作，将会自动列举出来。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;git add newfile.R&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;newfile.R 是一个新建的文件，其中我写了一些代码。要使用Git纪录版本历史，必须将其添加进来。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;git commit&lt;/code&gt; 或者 &lt;code&gt;git commit -a&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;这个命令将生成一次操作，系统会打开默认的文本编辑器，让你写一下操作的主要内容。&lt;/p&gt;&#xA;&lt;h1 id=&#34;github-的使用&#34;&gt;GitHub 的使用&lt;/h1&gt;&#xA;&lt;p&gt;GitHub 事实上提供了一个远程 Git 仓库。这个远程仓库与本地仓库是关联在一起的，但有相互独立。在上面，我们已经使用过了 &lt;code&gt;git pull&lt;/code&gt; 命令，这个命令就是从远程向本地输送。与之对应，&lt;code&gt;git push&lt;/code&gt; 是本地向远程服务器传输，将本地的修改记录在服务器中。&lt;/p&gt;&#xA;&lt;p&gt;在 push 的过程中，需要验证身份，因此，我们需要配置认证信息。&lt;/p&gt;&#xA;&lt;h2 id=&#34;github-配置-ssh-密钥&#34;&gt;GitHub 配置 SSH 密钥&lt;/h2&gt;&#xA;&lt;p&gt;SSH 密钥是成对的，包括公钥和私钥，公钥登记到 GitHub 网站，私钥存储在本地计算机（私有）。&lt;/p&gt;&#xA;&lt;p&gt;密钥在本地生成。点击鼠标右键，选择“Git Bash here”，输入下列命令将生成一对SSH密钥。&#xA;默认情况下，私钥保存在 “&lt;code&gt;~/.ssh/id_rsa&lt;/code&gt;” 文件中，公钥保存在 “&lt;code&gt;~/.ssh/id_rsa.pub&lt;/code&gt;&amp;ldquo;文件中&#xA;（没错，在Windows下的Git bash下面也可以使用~代表家目录）。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>RStudio 中使用 Git push 时要求输入用户名和密码</title>
+				<link>www.bio-spring.top/post/2019/09/20/rstudio-git-push/</link>
+				<pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2019/09/20/rstudio-git-push/</guid>
+				<description>&lt;p&gt;昨天遇到一个怪事，同一个 Git 目录，使用 Git Shell 时，可以直接 Push；而在 RStudio 中 push 时，则会请求输入账户名和密码。&lt;/p&gt;&#xA;&lt;p&gt;在 Google 中以 “Rstudio git push need username” 搜索，在第三条结果的第三个高票回答中找到了解决方法。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;&#xA;git remote show origin&#xA;&#xA;#  Push  URL: https://github.com/username/reponame.git&#xA;&#xA;git remote set-url origin git+ssh://git@github.com/username/reponame.git&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;想起来，似乎是因为设置 &lt;code&gt;usethis&lt;/code&gt; &amp;ldquo;options&amp;rdquo; 时候选择了 “usethis.protocol = &amp;ldquo;ssh&amp;rdquo; ” 所致。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;# usethis options&#xA;options(&#xA;  usethis.full_name = &amp;quot;Chun-Hui Gao&amp;quot;,&#xA;  usethis.description = list(&#xA;    `Authors@R` = &#39;person(&amp;quot;Chun-Hui&amp;quot;, &amp;quot;Gao&amp;quot;, email = &amp;quot;gaospecial@gmail.com&amp;quot;, role = c(&amp;quot;aut&amp;quot;, &amp;quot;cre&amp;quot;), comment = c(ORCID = &amp;quot;0000-0002-1445-7939&amp;quot;))&#39;,&#xA;    License = &amp;quot;GPL3 + file LICENSE&amp;quot;,&#xA;    Version = &amp;quot;0.0.1&amp;quot;&#xA;  ),&#xA;  usethis.protocol  = &amp;quot;ssh&amp;quot;&#xA;)&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+			</item>
+			<item>
+				<title>使用腾讯云开发平台代码托管服务</title>
+				<link>www.bio-spring.top/post/2019/07/08/tencent-dev/</link>
+				<pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2019/07/08/tencent-dev/</guid>
+				<description>&lt;p&gt;腾讯云开发平台几大优势：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;国内访问快&lt;/li&gt;&#xA;&lt;li&gt;免费空间大&lt;/li&gt;&#xA;&lt;li&gt;仓库私有&lt;/li&gt;&#xA;&lt;li&gt;用户名好起（gaoch通过了）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;对于已有的Git项目，可以通过下列途径关联。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;# 首先在服务器控制面板创建一个同名项目&#xA;# 参考这里：https://dev.tencent.com/help/git-import-tencentcloud&#xA;&#xA;# 事实上，不用这么麻烦&#xA;git remote rm origin&#xA;git remote add origin https://git.dev.tencent.com/gaoch/myproject.git&#xA;git push --set-upstream origin master&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;然后我发现了腾讯云开发平台代码托管服务的一大缺点是：&lt;strong&gt;URL太长了&lt;/strong&gt;。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>设置私有 Git 服务器</title>
+				<link>www.bio-spring.top/post/2018/12/29/private-git-server/</link>
+				<pubDate>Sat, 29 Dec 2018 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2018/12/29/private-git-server/</guid>
+				<description>&lt;p&gt;既然说到 Git，GitHub 你一定是了解的。GitHub 对于私有仓库是收费的。如果你项目还在进行中，需要一个仓库却又不想付高昂的服务费。使用自己的服务器当然也是可以的，而且很方便。&lt;/p&gt;&#xA;&lt;p&gt;自己的服务器可以是阿里云这样的主机服务商，也可以是你能访问的任意一台Linux主机。只要能够 SSH 登录即可。&lt;/p&gt;&#xA;&lt;h1 id=&#34;从服务器中开始&#34;&gt;从服务器中开始&lt;/h1&gt;&#xA;&lt;p&gt;如果你的文件目前存储在服务器端，想在本地开展工作并使用服务器同步更新，可以参考下面的操作。&lt;/p&gt;&#xA;&lt;h2 id=&#34;服务器端配置&#34;&gt;服务器端配置&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;添加一个新用户(也可以使用原有用户).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-{bash}&#34;&gt;adduser git&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;在添加用户git时, 会创建 &lt;code&gt;/home/git&lt;/code&gt; 目录, 同时还会创建 &lt;code&gt;git&lt;/code&gt; 用户组.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;在服务器上创建一个git仓库(&amp;ldquo;sample&amp;rdquo;).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-{bash}&#34;&gt;cd /home/git&#xA;mkdir sample.git&#xA;git init --bare sample.git&#xA;# 由于使用的是 root 用户新建的文件夹, 需要修订文件夹权限&#xA;chown -R git:git sample.git&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;添加git的ssh认证.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-{bash}&#34;&gt;mkdir /home/git/.ssh&#xA;cat ~/.ssh/authorized_keys &amp;lt;&amp;lt; EOF&#xA;将你的 ssh.pub 公钥粘贴到这里, 每行一个人.&#xA;将合作用户的 公钥粘贴到这里, 每行一个人.&#xA;EOF&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;你的 ssh.pub 公钥可以在本地电脑上使用&lt;code&gt;cat ~/.ssh/id_rsa.pub&lt;/code&gt;查看.&lt;/p&gt;&#xA;&lt;h2 id=&#34;客户端操作&#34;&gt;客户端操作&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;从服务器clone repository.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-{bash}&#34;&gt;git clone git@remote.com:/home/git/sample.git&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;添加内容, 修改, 更新&amp;hellip;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-{bash}&#34;&gt;cd sample&#xA;cat &amp;gt; README &amp;lt;&amp;lt; EOF&#xA;This is readme. For test.&#xA;EOF&#xA;git add .&#xA;git commit --message &amp;quot;Initial Commit&amp;quot;&#xA;&#xA;git push&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h1 id=&#34;从本地开始&#34;&gt;从本地开始&lt;/h1&gt;&#xA;&lt;p&gt;如果你本地有一个 Git 仓库，想把它上传到服务器中以便于随时随地访问和多人协同作业，则可以参考下面的操作。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>不要在RStudio中使用Git GUI</title>
+				<link>www.bio-spring.top/post/2018/10/24/donot-use-the-git-gui-of-rstudio/</link>
+				<pubDate>Wed, 24 Oct 2018 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2018/10/24/donot-use-the-git-gui-of-rstudio/</guid>
+				<description>&lt;p&gt;有一个数据分析的小项目，使用Git记录分析过程。&lt;/p&gt;&#xA;&lt;p&gt;在添加了一些文件、删除了一些文件之后，在RStudio的Git标签页下面点击复选框Stage，界面失去响应。反复重启，仍然如此。&lt;/p&gt;&#xA;&lt;p&gt;上网查了一下，确实很多人吐槽类似的问题。&lt;/p&gt;&#xA;&lt;p&gt;不过，在当前Git目录下打开Git GUI使用，一切正常。&lt;/p&gt;&#xA;&lt;p&gt;RStudio的Git GUI性能确实比较差。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

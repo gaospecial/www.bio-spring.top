@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> MatLab中国地图进阶：以不同的颜色表示各省数据的差异 | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="MatLab中国地图进阶：以不同的颜色表示各省数据的差异">
+	<meta name="twitter:description" content="使用MatLab绘制中国地图十分方便，我在前文中已经有相应阐述。实际应用中，我们常常需要将不同的区域以不同的颜色展示出来，这就是本文要阐述的内容。
+本文使用MatLab将各省人口数据展示出来，人口越多颜色越黄，人口越少颜色越绿。最终结果如下图所示（点击看大图）。
+绘制过程如下：
+%-- 分省中国地图在MATLAB中的画法 --% % Author: gaospecial@gmail.com % Date: 2012-6-5 14:04:01 % 地图数据来源：国家基础地理信息系统网站 % 人口数据来源：国家统计年鉴2011版 载入地图数据 载入各省的多边形数据
+sheng=shaperead(&#39;maps/bou2_4p.shp&#39;, &#39;UseGeoCoords&#39;, true); % 省 % 检查数据发现中午名称为乱码，可能是由于字符编码引起的，需要纠正文件导入时出现的乱码 % 中文名称记录在相应的dbf文件中，可以使用Excel打开，并且不会出现乱码，截取其中的中文保存为文本文件 % 然后在导入工作区，并将其保存为*.mat格式文件，随用随取。 % 依次替换sheng数据中的乱码【算是变通之法，有谁知道更好的方法一定告诉我哦】 load chinese_name.mat% 省，省会，主要城市的正确中文 for i=1:length(sheng) sheng(i).NAME=sheng_chinese_name{i}; % 纠正中文显示错误 end unique(sheng_chinese_name) % 含有34个省（直辖市）的数据 length(sheng) % 共分为925个区块 ans = &#39;上海市&#39; &#39;云南省&#39; &#39;内蒙古自治区&#39; &#39;北京市&#39; &#39;台湾省&#39; &#39;吉林省&#39; &#39;四川省&#39; &#39;天津市&#39; &#39;宁夏回族自治区&#39; &#39;安徽省&#39; &#39;山东省&#39; &#39;山西省&#39; &#39;广东省&#39; &#39;广西壮族自治区&#39; &#39;新疆维吾尔自治区&#39; &#39;江苏省&#39; &#39;江西省&#39; &#39;河北省&#39; &#39;河南省&#39; &#39;浙江省&#39; &#39;海南省&#39; &#39;湖北省&#39; &#39;湖南省&#39; &#39;甘肃省&#39; &#39;福建省&#39; &#39;空&#39; &#39;西藏自治区&#39; &#39;贵州省&#39; &#39;辽宁省&#39; &#39;重庆市&#39; &#39;陕西省&#39; &#39;青海省&#39; &#39;香港特别行政区&#39; &#39;黑龙江省&#39; ans = 925 导入2011年各省人口数据 使用importdata向导导入2011年全国31个省的人口数据：data为人口数目 textdata为省名称">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container single">
+<main>
+
+<div class="article-meta">
+<h1><span class="title">MatLab中国地图进阶：以不同的颜色表示各省数据的差异</span></h1>
+
+<h3 class="author">
+gaoch
+</h3>
+
+<h3 class="date">2012-06-05</h3>
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/%E5%85%B6%E5%AE%83">其它</a> <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF">信息技术</a> 
+  
+  
+  
+  Tags: <a href="/tags/%E6%97%A7%E6%96%87">旧文</a> <a href="/tags/wordpress">WordPress</a> <a href="/tags/matlab">MATLAB</a> <a href="/tags/%E5%9C%B0%E5%9B%BE">地图</a> 
+  
+  
+</p>
+</div>
+
+<div class="article">
+<p>使用MatLab绘制中国地图十分方便，我在<a href="http://bio-spring.top/?p=165" title="使用Matlab画中国地图">前文</a>中已经有相应阐述。实际应用中，我们常常需要将不同的区域以不同的颜色展示出来，这就是本文要阐述的内容。</p>
+<p>本文使用MatLab将各省人口数据展示出来，人口越多颜色越黄，人口越少颜色越绿。最终结果如下图所示（点击看大图）。</p>
+<p><a href="https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2012/06/fig735025.6086.png"><img src="https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2012/06/fig735025.6086-300x225.png" title="fig735025.6086" class="alignnone size-medium wp-image-356" sizes="(max-width: 300px) 100vw, 300px" srcset="https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2012/06/fig735025.6086-300x225.png 300w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2012/06/fig735025.6086-1024x768.png 1024w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2012/06/fig735025.6086.png 1201w" width="300" height="225" /></a></p>
+<p>绘制过程如下：</p>
+<div class="content">
+<pre><code class="language-codeinput">%-- 分省中国地图在MATLAB中的画法 --%
+% Author: gaospecial@gmail.com
+% Date: 2012-6-5 14:04:01
+% 地图数据来源：国家基础地理信息系统网站
+% 人口数据来源：国家统计年鉴2011版
+</code></pre>
+<h2 id="载入地图数据">载入地图数据<span id="2"></span></h2>
+<p>载入各省的多边形数据</p>
+<pre><code class="language-codeinput">sheng=shaperead('maps/bou2_4p.shp', 'UseGeoCoords', true); % 省
+% 检查数据发现中午名称为乱码，可能是由于字符编码引起的，需要纠正文件导入时出现的乱码
+% 中文名称记录在相应的dbf文件中，可以使用Excel打开，并且不会出现乱码，截取其中的中文保存为文本文件
+% 然后在导入工作区，并将其保存为*.mat格式文件，随用随取。
+% 依次替换sheng数据中的乱码【算是变通之法，有谁知道更好的方法一定告诉我哦】
+load chinese_name.mat% 省，省会，主要城市的正确中文
+for i=1:length(sheng)
+    sheng(i).NAME=sheng_chinese_name{i}; % 纠正中文显示错误
+end
+unique(sheng_chinese_name) % 含有34个省（直辖市）的数据
+length(sheng) % 共分为925个区块
+</code></pre>
+<pre><code class="language-codeoutput">ans = 
+
+    '上海市'
+    '云南省'
+    '内蒙古自治区'
+    '北京市'
+    '台湾省'
+    '吉林省'
+    '四川省'
+    '天津市'
+    '宁夏回族自治区'
+    '安徽省'
+    '山东省'
+    '山西省'
+    '广东省'
+    '广西壮族自治区'
+    '新疆维吾尔自治区'
+    '江苏省'
+    '江西省'
+    '河北省'
+    '河南省'
+    '浙江省'
+    '海南省'
+    '湖北省'
+    '湖南省'
+    '甘肃省'
+    '福建省'
+    '空'
+    '西藏自治区'
+    '贵州省'
+    '辽宁省'
+    '重庆市'
+    '陕西省'
+    '青海省'
+    '香港特别行政区'
+    '黑龙江省'
+
+ans =
+
+   925
+</code></pre>
+<h2 id="导入2011年各省人口数据">导入2011年各省人口数据<span id="3"></span></h2>
+<p>使用importdata向导导入2011年全国31个省的人口数据：data为人口数目
+textdata为省名称</p>
+<pre><code class="language-codeinput">d=importdata('renkou.txt');
+data=d.data; % 人口数目
+textdata=d.textdata; % 相对应的省的名称
+</code></pre>
+<h2 id="定义地图参数">定义地图参数<span id="4"></span></h2>
+<p>针对不同省份，分别设置不同的颜色（FaceColor） 定义颜色</p>
+<pre><code class="language-codeinput">k=128;
+mycolormap=summer(k);
+% 生成不同区域按大小的颜色，按照人口数目多少分别指定不同的颜色
+% 人口越多，颜色越突出
+geoname={sheng.NAME}';
+max_data = max(data);
+n=length(data);
+mysymbolspec=cell(1,n);% 预定义变量可以加快处理速度
+for i=1:n
+    count=data(i);
+    mycoloridx=floor( k * count / max_data );
+    mycoloridx(mycoloridx&lt;1)=1;
+    myprovince=textdata{i};
+    geoidx=strmatch(myprovince, geoname);
+    if numel(geoidx) &gt; 0
+        province_name=geoname( geoidx(1) );
+        mysymbolspec{i} = {'NAME', char(province_name), 'FaceColor', mycolormap( mycoloridx, :) };
+    end
+end
+</code></pre>
+<h2 id="显示地图">显示地图<span id="5"></span></h2>
+<pre><code class="language-codeinput">figure
+ax=worldmap('china'); % 使用worldmap的坐标轴作图
+setm(ax,'grid','off') % 关闭grid
+setm(ax,'frame','off') % 关闭边框
+setm(ax,'parallellabel','off') % 关闭坐标轴标记
+setm(ax,'meridianlabel','off') % 关闭坐标轴标记
+
+% 最关键的两个语句
+symbols=makesymbolspec('Polygon',{'default','FaceColor',[0.9 0.9 0.8],...
+    'LineStyle,'--','LineWidth',0.2,...
+    'EdgeColor',[0.8 0.9 0.9]},...
+    mysymbolspec{:}...
+    );
+geoshow(sheng,'SymbolSpec',symbols); % 此处用mapshow投影会不正确
+</code></pre>
+<h2 id="图的标注">图的标注<span id="6"></span></h2>
+<pre><code class="language-codeinput">% 在图像右侧显示bar
+colormap(summer(k))
+hcb=colorbar('EastOutside');
+step=round(max_data/11);
+set(hcb,'YTick',(0:.1:1))
+set(hcb,'YTickLabel',num2cell(0:step:max_data))
+
+% 给图像加标题
+title('中国2011年各省人口数（万人）')
+</code></pre>
+</div>
+<p>下载本文附件，包括M文件和输出结果（附件已更新2012-6-14）。<br>
+<a href="https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2012/06/china_map1.zip">china_map</a></p>
+
+</div>
+</main>
+
+<section class="appendix">
+
+
+<div>
+  <div class="side side-left"><h3>作者简介</h3></div>
+  <div>
+
+
+
+
+
+<div>Chun-Hui Gao is a Research Associate at <a href="http://www.hzau.edu.cn">Huazhong Agricultural University</a>.</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div>
+  <div class="side side-left"><h3>重复使用</h3></div>
+  Text and figures are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution CC BY 4.0</a>. The source code is licensed under MIT. The full source is available at <a href="https://github.com/yihui/hugo-prose">https://github.com/yihui/hugo-prose</a>.
+</div>
+
+
+
+<div>
+  <div class="side side-left"><h3>欢迎修订</h3></div>
+  
+  
+  
+    
+    
+  
+  如果您发现本文里含有任何错误（包括错别字和标点符号），欢迎<a href="https://github.com/gaospecial/bio-spring/edit/master/content/post/2012-06-05-matlab-chinamap-coloring/index.zh.md" id="edit-link">在本站的 GitHub 项目里提交修订意见。</a>
+</div>
+
+
+
+
+<div>
+  <div class="side side-left"><h3>引用本文</h3></div>
+  <p>如果您使用了本文的内容，请按照以下方式引用：</p>
+  <pre><code>gaoch (2012). MatLab中国地图进阶：以不同的颜色表示各省数据的差异. BIO-SPRING. www.bio-spring.top/post/2012/06/05/2012-06-05-matlab-chinamap-coloring/</code></pre>
+  <p>BibTeX citation</p>
+  <pre><code>@misc{
+  title = "MatLab中国地图进阶：以不同的颜色表示各省数据的差异",
+  author = "gaoch",
+  year = "2012",
+  journal = "BIO-SPRING",
+  note = "www.bio-spring.top/post/2012/06/05/2012-06-05-matlab-chinamap-coloring/"
+}</code></pre>
+</div>
+
+</section>
+
+
+
+<nav class="post-nav">
+  <span class="nav-next">&larr; <a href="www.bio-spring.top/post/2012/06/05/2012-06-05-the_content-the_excerpt/" title=下一篇&#32;(旧)>the_content()和the_excerpt()</a></span>
+  &hercon;
+  <span class="nav-prev"><a href="www.bio-spring.top/post/2012/08/16/2012-08-16-sam-format/" title=上一篇&#32;(新)>生物信息学中的 SAM 格式介绍</a> &rarr;</span>
+</nav>
+
+
+
+
+<section class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var disqus_js = '//bio-spring.disqus.com/embed.js';
+    var d = document, s = d.createElement('script');
+    s.src = disqus_js; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    var t = d.getElementById('disqus_thread');
+    var b = false, l = function(scroll) {
+      if (b) return;
+      (d.head || d.body).appendChild(s); b = true;
+      if (scroll) t.scrollIntoView();
+    }
+    s.onerror = function(e) {
+      if (sessionStorage.getItem('failure-note')) return;
+      t.innerText = 'Sorry, but you cannot make comments because Disqus failed to load for some reason. It is known to be blocked in China. If you are sure it is not blocked in your region, please refresh the page. 中国大陆地区读者需要翻墙才能发表评论。';
+      t.style.border = '1px dashed';
+      t.style.padding = '.5em';
+      t.style.background = 'lightyellow';
+      sessionStorage.setItem('failure-note', true);
+    };
+    
+    if (location.hash.match(/^#comment-[0-9]+$/)) return l(true);
+    var c = function() {
+      if (b) return;
+      var rect = t.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) l();
+    };
+    window.addEventListener('load', c);
+    d.addEventListener('scroll', c);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+</div>
+
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+<script src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils/js/number-sections.min.js,npm/@xiee/utils/js/toc.min.js,npm/@xiee/utils/js/toc-highlight.min.js,npm/@xiee/utils/js/sidenotes.min.js,npm/@xiee/utils/js/right-quote.min.js,npm/@xiee/utils/js/center-img.min.js,npm/@xiee/utils/js/fix-pandoc.min.js,npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/prism-xcode.min.css">
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

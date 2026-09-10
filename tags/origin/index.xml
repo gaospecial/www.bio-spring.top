@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Origin on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/origin/</link>
+		<description>Recent content in Origin on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 21 Jun 2017 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/origin/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Origin：使用上标、下标、数学公式和希腊字母等特殊格式的文本</title>
+				<link>www.bio-spring.top/post/2017/06/21/2017-06-21-using-text-formatting-commands-in-origin/</link>
+				<pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2017/06/21/2017-06-21-using-text-formatting-commands-in-origin/</guid>
+				<description>&lt;p&gt;Origin是一个优秀的科学作图软件。在实际使用过程中，经常需要在坐标轴标签（Tick&#xA;Label，axis&#xA;label）中使用诸如上标、下标等特殊格式的文本。坐标轴标签可以直接用其中的内置编辑器，然而常用的Tick&#xA;Label则一直不清楚如何设置。&lt;/p&gt;&#xA;&lt;p&gt;那么，如何在Tick&#xA;Label中使用特殊格式的文本呢？答案在于Origin提供的一系列格式化函数中。&lt;/p&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/06/origin-text-formatting-commands-421x500.jpg&#34; class=&#34;alignnone size-medium wp-image-871&#34; sizes=&#34;(max-width: 421px) 100vw, 421px&#34; srcset=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/06/origin-text-formatting-commands-421x500.jpg 421w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/06/origin-text-formatting-commands-768x913.jpg 768w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/06/origin-text-formatting-commands-862x1024.jpg 862w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/06/origin-text-formatting-commands.jpg 1072w&#34; width=&#34;421&#34; height=&#34;500&#34; /&gt;&#xA;&lt;p&gt;如图所示，Origin提供了诸如上标、下标、上下标、斜体、粗体、希腊字母、指定字体、字号等各种各样的函数。&lt;/p&gt;&#xA;&lt;p&gt;例如我们要在Tick&#xA;Label中使用水（H2O）作为标记，那么只需要在数据表格中填写 &lt;strong&gt;H\-(2)O&lt;/strong&gt;&#xA;就会转变为H&lt;sub&gt;2&lt;/sub&gt;O的格式。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

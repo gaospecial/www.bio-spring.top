@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>错误 on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/%E9%94%99%E8%AF%AF/</link>
+		<description>Recent content in 错误 on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 29 Dec 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/%E9%94%99%E8%AF%AF/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Mac OS 安装 PicGo 提示“文件已损坏”</title>
+				<link>www.bio-spring.top/post/2023/12/29/mac-os-picgo/</link>
+				<pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2023/12/29/mac-os-picgo/</guid>
+				<description>&lt;p&gt;安装完成后，打开终端，运行下面的命令。&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;sudo xattr -d com.apple.quarantine &amp;quot;/Applications/PicGo.app/&amp;quot;&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;这个命令的作用是删除指定文件或目录的扩展属性（extended attributes）中的“com.apple.quarantine”属性。在 macOS 中，文件或应用程序首次从互联网上下载并存储在磁盘上时，系统可能会自动添加“com.apple.quarantine”属性，用于标记文件的来源，并在首次运行时显示安全提示。&lt;/p&gt;&#xA;&lt;p&gt;具体来说，&lt;code&gt;sudo xattr -d com.apple.quarantine &amp;quot;/Applications/PicGo.app/&amp;quot;&lt;/code&gt; 这个命令尝试删除 &amp;ldquo;/Applications/PicGo.app/&amp;rdquo; 目录的 quarantine 属性。这样，当你运行 PicGo 应用程序时，就不会再收到系统的安全提示，因为你已经明确告诉系统这个应用是可信的。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Fix “getopts.pl can not be located in @INC” error in SSPACE_Standard_v3.0.pl</title>
+				<link>www.bio-spring.top/post/2015/08/16/2015-08-16-sspace-getopts-error/</link>
+				<pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2015/08/16/2015-08-16-sspace-getopts-error/</guid>
+				<description>&lt;p&gt;SSPACE是一个常用的Scaffolding软件.当你有新的测序数据时,你可以使用SSPACE将原有的contigs延长,scaffolding等.&lt;/p&gt;&#xA;&lt;p&gt;在Ubuntu&#xA;14.04系统中运行该软件v3.0会出现错误.谷歌也没有发现好的解决方法,最终通过研究源代码,发现这是一个简单的问题,修订源代码之后,终于能够成功运行.&lt;/p&gt;&#xA;&lt;p&gt;两处修订如下:&lt;/p&gt;&#xA;&lt;p&gt;[cc lang=”perl”]&lt;br&gt;&#xA;#~ require “getopts.pl”;&lt;br&gt;&#xA;use Getopt::Std;&lt;br&gt;&#xA;[/cc]&lt;/p&gt;&#xA;&lt;p&gt;[cc lang=”perl”]&lt;br&gt;&#xA;#~ &amp;amp;Getopts(‘m:o:v:p:k:a:z:s:b:n:l:x:T:g:r:S:’);&lt;br&gt;&#xA;getopt(‘m:o:v:p:k:a:z:s:b:n:l:x:T:g:r:S:’);&lt;br&gt;&#xA;[/cc]&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>怎么办，ubuntu系统中的sda变成了sdb了？</title>
+				<link>www.bio-spring.top/post/2011/09/21/2011-09-21-sda-sdb-ubuntu/</link>
+				<pubDate>Wed, 21 Sep 2011 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2011/09/21/2011-09-21-sda-sdb-ubuntu/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;使用UUID的方法挂载分区&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;打开电脑发现，系统中各个盘符都挂载到/media下面了，导致很多程序不能正常运行了。使用“sudo&#xA;umount -a”命令全部卸载，然好再使用“sudo mount&#xA;-a”，重新按照/etc/fstab中的设置挂载，结果出现错误。经过查看，发现硬盘的分区从sda变成了sdb了。原来的sda5现在变成了sdb5,而fstab中的设置中是将/dev/sda5挂载到/var/ftp怪不得挂载不上了。如下：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;# /etc/fstab: static file system information.&lt;br&gt;&#xA;#&lt;br&gt;&#xA;# &amp;lt;file system&amp;gt; &amp;lt;mount point&amp;gt;   &amp;lt;type&amp;gt; &#xA;&amp;lt;options&amp;gt;       &amp;lt;dump&amp;gt;  &amp;lt;pass&amp;gt;&lt;br&gt;&#xA;# /dev/sda7&lt;br&gt;&#xA;/dev/sda7          /var/ftp               ext3      relatime          &#xA;0             2&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;怎么办？&lt;br&gt;&#xA;这么办。我们使用UUID来标示设备，这样就不会出现这种错误了(点击查看wiki百科)。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://zh.wikipedia.org/wiki/UUID&#34;&gt;一组 UUID，系由一串 16 位组（亦称 16 字节，或 128&#xA;位）的16进位数字所构成，是故UUID理论上的总数为2&lt;sup&gt;16 x&#xA;8&lt;/sup&gt;=2&lt;sup&gt;128&lt;/sup&gt;，约等于3.4 x&#xA;10&lt;sup&gt;38&lt;/sup&gt;。也就是说若每奈秒产生1兆个UUID，要花100亿年才会将所有UUID用完。&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;输入命令，得到各设备的UUID。&lt;br&gt;&#xA;[cc lang=”bash”]ls -l /dev/disk/by-uuid/[/cc]&lt;/p&gt;&#xA;&lt;p&gt;根据得到的UUID，将fstab中的设置更改一下，上面的例子，改为：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;# /etc/fstab: static file system information.&lt;br&gt;&#xA;#&lt;br&gt;&#xA;# &amp;lt;file system&amp;gt;                       &amp;lt;mount point&amp;gt;      &#xA;&amp;lt;type&amp;gt;  &amp;lt;options&amp;gt;  &amp;lt;dump&amp;gt; &amp;lt;pass&amp;gt;&lt;br&gt;&#xA;# /dev/sda7&lt;br&gt;&#xA;UUID=d51b2056-6825-456c-957d-ebb16edd349d    /var/ftp      ext3      &#xA;relatime     0   2&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

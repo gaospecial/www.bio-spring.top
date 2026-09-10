@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>BED on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/bed/</link>
+		<description>Recent content in BED on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 14 Oct 2015 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/bed/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>A Genbank to BED converter</title>
+				<link>www.bio-spring.top/post/2015/10/14/2015-10-14-a-genbank-to-bed-converter/</link>
+				<pubDate>Wed, 14 Oct 2015 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2015/10/14/2015-10-14-a-genbank-to-bed-converter/</guid>
+				<description>&lt;p&gt;Like &lt;a href=&#34;http://bio-spring.top/a-genbenk-gtf-converter-derived-from-bioperl/&#34;&gt;the previous Genbank -&amp;gt; GTF&#xA;converter&lt;/a&gt;,&#xA;this script is also depended on BioPerl, so you need firstly get the&#xA;module installed in your system (&lt;a href=&#34;http://bio-spring.top/reinstall-bioperl/&#34;&gt;Install&#xA;BioPerl&lt;/a&gt;). To check whether&#xA;BioPerl is ready, just refer to this post:&#xA;&lt;a href=&#34;http://bio-spring.top/check-bioperl/&#34;&gt;bio-spring.top/check-bioperl/&lt;/a&gt; .&lt;/p&gt;&#xA;&lt;h2 id=&#34;synopsis&#34;&gt;SYNOPSIS&lt;/h2&gt;&#xA;&lt;p&gt;&lt;code&gt;     gb2bed.pl [options] filename&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;Options:&lt;br&gt;&#xA;&amp;ndash;help -h display this message&lt;br&gt;&#xA;&amp;ndash;input -i NCBI GenBank file&lt;br&gt;&#xA;&amp;ndash;out -o filename of bed output. [STDOUT]&lt;br&gt;&#xA;&amp;ndash;filter -f GenBank primary tag that will be filtered, may be set to&#xA;&amp;lsquo;gene&amp;rsquo;, &amp;lsquo;CDS&amp;rsquo;, &amp;lsquo;rRNA&amp;rsquo;, etc.&lt;br&gt;&#xA;&amp;ndash;keep -k GenBank primary tag will be keep. Default is CDS. [CDS]&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> 信息技术 | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="信息技术">
+	<meta name="twitter:description" content="Chun-Hui Gao&#39;s personal website built through Hugo and blogdown with the hugo-prose theme.">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container list">
+<main>
+
+<h1>信息技术</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2011/06/28/2011-06-28-print_china_map/">使用Matlab画中国地图</a></h1>
+    <div>
+      <span>2011-06-28</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      使用Matlab绘制中国地图十分方便，使用Mapping工具箱中的几条命令。
+介绍如下：
+设置坐标轴：setm命令。
+因为地球是圆的，所以地图的绘制涉及到投影的问题，跟普通的2-D或者3-D作图差别明显。setm命令专门用来设置map axis。例如：
+[cc lang=”matlab”]
+ax=worldmap(‘china’); %worldmap命令生成一个map axis，其各项属性可以用 &hellip;
+      <a href="www.bio-spring.top/post/2011/06/28/2011-06-28-print_china_map/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2011/06/25/2011-06-25-matlab-colourful-barplot/">在MATLAB中创建色彩绚丽的柱状图</a></h1>
+    <div>
+      <span>2011-06-25</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      首先，看一下效果图。
+默认条件下的柱状图
+漂亮的柱状图
+渐变着色的柱状图
+代码如下：
+[cc lang=”matlab”]
+% 彩色柱状图
+%% 用到的数据
+n = 13;
+Z = rand(n,1);
+%% 默认图片
+bar(Z);
+%% 简单的作图
+% 这个图根据数据列中值的大小着色。每列中的
+% 值越大，颜色越突出
+figure
+h=bar(Z);
+colormap(summer(n)); &hellip;
+      <a href="www.bio-spring.top/post/2011/06/25/2011-06-25-matlab-colourful-barplot/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2011/06/25/2011-06-25-linux-in-windows/">在windows中获得Linux使用环境</a></h1>
+    <div>
+      <span>2011-06-25</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      &hopf;ttp://www.virtualbox.org/
+http://www.cygwin.com/
+http://unxutils.sourceforge.net/
+Linux系统中的一些优越性特别是bash的优越性是windows系统不具备的。然而Linux运行在PC上，却又无法提供如Windows般的优越的用户界面，特别是office之类的常用软件。
+为了同时得到Windows和Linux提供 &hellip;
+      <a href="www.bio-spring.top/post/2011/06/25/2011-06-25-linux-in-windows/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2011/06/21/2011-06-21-jian-dang-wei-ye/">私密：有见地《建党伟业》影评</a></h1>
+    <div>
+      <span>2011-06-21</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      源地址：http://blog.renren.com/GetEntry.do?id=732997367&owner=262715242
+[&hellip;] 《建党伟业》从开拍到现在都没什么好评，全是调侃和负面的言论吧，15号首映，豆瓣出现大面积的1分评分，大家对于这个电影似乎有着一种本能的敌意。有人给我留言说，不会花钱去看马屁片。
+那么这个是不是一个马屁片呢？
+我觉得不是的 &hellip;
+      <a href="www.bio-spring.top/post/2011/06/21/2011-06-21-jian-dang-wei-ye/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2011/05/09/2011-05-09-zotero-dup-remove/">“破解”zotero：打开zotero查找重复的功能</a></h1>
+    <div>
+      <span>2011-05-09</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      在文献管理软件EndNote中，有一项功能“查找重复”，个人觉得很有用。但是你一旦发现作为一个后期之秀，免费开源的文献管理软件——zotero，却没有这个功能，很纠结对不？
+我是很纠结。所以我一发现可以打开zotero的查找重复功能之后，马上分享给大家。
+在查看zotero的源代码的时候，我发现zotero本身带有“Show Duplicates”的菜单项，只是被开发者隐藏了。可能是正在开发中，但 &hellip;
+      <a href="www.bio-spring.top/post/2011/05/09/2011-05-09-zotero-dup-remove/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2011/04/18/2011-04-18-biological-databases-ncbi-swissprot/">Biological DataBases: NCBI与SwissProt</a></h1>
+    <div>
+      <span>2011-04-18</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      人们使用数据库管理数据，对于生物数据来说，一个优秀的数据库有以下优点：
+然而，生物数据的迅速增大，带来很多问题：
+相对来说，NCBI收录生物数据时力求完整不遗漏，所以数据库内容是冗余的，有很多重复性条目，无意义条目。
+与之相对的，SwissProt数据库则力求注释完整，在收录数据会进行合并和归档，以保证量不重复。
+
+      <a href="www.bio-spring.top/post/2011/04/18/2011-04-18-biological-databases-ncbi-swissprot/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2011/04/11/2011-04-11-song-ci-stats/">全宋词词频统计：东风何处是人间</a></h1>
+    <div>
+      <span>2011-04-11</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      东风何处是人间 « Yixuan’s Blog
+对全宋词中词频统计之后的结果很有意思。
+[&hellip;] 不知各位看官看到上面这些既熟悉又悠远的话语又将作何感想？或许，她们就是我们千百年来的精神寄托吧。
+[&hellip;] 结果（排在第一的是无效字符，这跟数据源有关）：
+
+      <a href="www.bio-spring.top/post/2011/04/11/2011-04-11-song-ci-stats/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2011/04/11/2011-04-11-team-members/">团队中的猪, 鸡, 和鹦鹉</a></h1>
+    <div>
+      <span>2011-04-11</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      转载自软件工程 之 动物世界 – SoftwareTeacher – 博客园
+在一个神奇的国度里生活着许多动物, 其中有猪, 鸡, 和鹦鹉。
+它们每天搞头脑风暴, 琢磨如何创业, 最后鹦鹉提议它们合伙开一个早餐店:
+具体分工如下:
+[&hellip;] 猪: 提供猪肉, 做熏猪肉 (bacon)
+鸡: 提供鸡蛋, 做煎蛋
+鹦鹉: 提供咨询, 它会每天阅读大量博客, 给其他团队成员提供建议, 例如最 &hellip;
+      <a href="www.bio-spring.top/post/2011/04/11/2011-04-11-team-members/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2011/04/05/2011-04-05-win7-usb-disk-readonly-error/">Windows7下移动硬盘只读，不能写，处于写保护状态的故障解决办法</a></h1>
+    <div>
+      <span>2011-04-05</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      移动硬盘在win7系统中，处于只读状态。打开文件夹，不能新建文件，也不能粘贴文件，相关的菜单没有显示。发送文件到硬盘中时，提示“硬盘处于写保护状态”。在系统磁盘管理器中，右键单击磁盘，选择属性，会有硬盘只读的提示。
+硬盘一直能够正常运行，而且在别的电脑中均使用正常，不管是win7,windowsXP或者是linux系统。仅仅一台电脑不能正常使用而已。所以说不是硬件的问题，只能是系统配置或设置的问题 &hellip;
+      <a href="www.bio-spring.top/post/2011/04/05/2011-04-05-win7-usb-disk-readonly-error/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2011/04/01/2011-04-01-vi-cheatsheet/">VIM快捷键中英对照图</a></h1>
+    <div>
+      <span>2011-04-01</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      两张VIM快捷键的图，一个是英文原版一个是中文翻译的。
+附加 VI tutorial 完整版。
+http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html
+
+      <a href="www.bio-spring.top/post/2011/04/01/2011-04-01-vi-cheatsheet/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+
+
+
+		<ul class="pagination pagination-default">
+			<li class="page-item">
+				<a href="www.bio-spring.top/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+			</li>
+		<li class="page-item">
+			<a href="www.bio-spring.top/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/page/13/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+		</li>
+			<li class="page-item">
+				<a href="www.bio-spring.top/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/page/12/" aria-label="Page 12" class="page-link" role="button">12</a>
+			</li>
+			<li class="page-item">
+				<a href="www.bio-spring.top/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/page/13/" aria-label="Page 13" class="page-link" role="button">13</a>
+			</li>
+			<li class="page-item active">
+				<a aria-current="page" aria-label="Page 14" class="page-link" role="button">14</a>
+			</li>
+			<li class="page-item">
+				<a href="www.bio-spring.top/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/page/15/" aria-label="Page 15" class="page-link" role="button">15</a>
+			</li>
+			<li class="page-item">
+				<a href="www.bio-spring.top/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/page/16/" aria-label="Page 16" class="page-link" role="button">16</a>
+			</li>
+		<li class="page-item">
+			<a href="www.bio-spring.top/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/page/15/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+		</li>
+			<li class="page-item">
+				<a href="www.bio-spring.top/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/page/19/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+			</li>
+		</ul>
+
+
+
+
+
+</main>
+</div>
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  <div class="footer hidden">
+  
+
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>挂载 on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/%E6%8C%82%E8%BD%BD/</link>
+		<description>Recent content in 挂载 on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 23 Aug 2015 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/%E6%8C%82%E8%BD%BD/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>整合 OSS 开放存储到 WordPress 系统</title>
+				<link>www.bio-spring.top/post/2015/08/23/2015-08-23-cloudfs-wp-uploads/</link>
+				<pubDate>Sun, 23 Aug 2015 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2015/08/23/2015-08-23-cloudfs-wp-uploads/</guid>
+				<description>&lt;p&gt;使用 OSS 存储 WordPress 相当于将 云服务器 的存储免费扩大了。&lt;/p&gt;&#xA;&lt;h3 id=&#34;安装cloudfs&#34;&gt;安装cloudfs&lt;/h3&gt;&#xA;&lt;p&gt;-在云市场搜索cloudfs，获取下载链接。&lt;br&gt;&#xA;-将下载的安装包上传至云服务器。&lt;br&gt;&#xA;-安装依赖包。&lt;br&gt;&#xA;-以默认设置安装。&lt;/p&gt;&#xA;&lt;p&gt;[cc lang=”bash”]&lt;br&gt;&#xA;# Install dependence&lt;br&gt;&#xA;apt-get install libcurl4-openssl-dev libssl-dev pkg-config libxml2&#xA;libxml2-dev libfuse-dev libunwind8-dev&lt;br&gt;&#xA;[/cc]&lt;/p&gt;&#xA;&lt;h3 id=&#34;配置cloudfs&#34;&gt;配置cloudfs&lt;/h3&gt;&#xA;&lt;p&gt;[cc lang=”bash”]&lt;br&gt;&#xA;vi /usr/local/cloudfs/conf/cloudfs.conf&lt;br&gt;&#xA;[/cc]&lt;/p&gt;&#xA;&lt;p&gt;需要配置的项目有： HOST 、ID 、KEY 、BUCKET 等 4 项必须；若干可选项。&lt;/p&gt;&#xA;&lt;h3 id=&#34;测试&#34;&gt;测试&lt;/h3&gt;&#xA;&lt;p&gt;[cc lang=”bash”]&lt;br&gt;&#xA;# Start cloudfs&lt;br&gt;&#xA;service cloudfs start&lt;br&gt;&#xA;service cloudfs status&lt;br&gt;&#xA;# 目录和文件测试，在 OSS 控制台会看到相应变化&lt;br&gt;&#xA;mkdir /mnt/oss/test&lt;br&gt;&#xA;touch /mnt/oss/test/test.txt&lt;br&gt;&#xA;[/cc]&lt;/p&gt;&#xA;&lt;h3 id=&#34;迁移和设置媒体库&#34;&gt;迁移和设置媒体库&lt;/h3&gt;&#xA;&lt;p&gt;[cc lang=”bash”]&lt;br&gt;&#xA;# 设置 WordPress 媒体库位置&lt;br&gt;&#xA;cd /mnt/oss&lt;br&gt;&#xA;mkdir wp_uploads&lt;br&gt;&#xA;# 将原有媒体库内容迁移过来&lt;br&gt;&#xA;cp -R /var/www/html/wp-content/uploads/* wp_uploads/&lt;br&gt;&#xA;# 备份原有媒体库，同时腾出挂载点&lt;br&gt;&#xA;mv /var/www/html/wp-content/uploads/&#xA;/var/www/html/wp-content/uploads_bak&lt;br&gt;&#xA;# 挂载 OSS cloudfs 到 WordPress 媒体库&lt;br&gt;&#xA;ln -s /mnt/oss/wp_uploads/ /var/www/html/wp-content/uploads&lt;br&gt;&#xA;[/cc]&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>怎么办，ubuntu系统中的sda变成了sdb了？</title>
+				<link>www.bio-spring.top/post/2011/09/21/2011-09-21-sda-sdb-ubuntu/</link>
+				<pubDate>Wed, 21 Sep 2011 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2011/09/21/2011-09-21-sda-sdb-ubuntu/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;使用UUID的方法挂载分区&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;打开电脑发现，系统中各个盘符都挂载到/media下面了，导致很多程序不能正常运行了。使用“sudo&#xA;umount -a”命令全部卸载，然好再使用“sudo mount&#xA;-a”，重新按照/etc/fstab中的设置挂载，结果出现错误。经过查看，发现硬盘的分区从sda变成了sdb了。原来的sda5现在变成了sdb5,而fstab中的设置中是将/dev/sda5挂载到/var/ftp怪不得挂载不上了。如下：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;# /etc/fstab: static file system information.&lt;br&gt;&#xA;#&lt;br&gt;&#xA;# &amp;lt;file system&amp;gt; &amp;lt;mount point&amp;gt;   &amp;lt;type&amp;gt; &#xA;&amp;lt;options&amp;gt;       &amp;lt;dump&amp;gt;  &amp;lt;pass&amp;gt;&lt;br&gt;&#xA;# /dev/sda7&lt;br&gt;&#xA;/dev/sda7          /var/ftp               ext3      relatime          &#xA;0             2&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;怎么办？&lt;br&gt;&#xA;这么办。我们使用UUID来标示设备，这样就不会出现这种错误了(点击查看wiki百科)。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://zh.wikipedia.org/wiki/UUID&#34;&gt;一组 UUID，系由一串 16 位组（亦称 16 字节，或 128&#xA;位）的16进位数字所构成，是故UUID理论上的总数为2&lt;sup&gt;16 x&#xA;8&lt;/sup&gt;=2&lt;sup&gt;128&lt;/sup&gt;，约等于3.4 x&#xA;10&lt;sup&gt;38&lt;/sup&gt;。也就是说若每奈秒产生1兆个UUID，要花100亿年才会将所有UUID用完。&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;输入命令，得到各设备的UUID。&lt;br&gt;&#xA;[cc lang=”bash”]ls -l /dev/disk/by-uuid/[/cc]&lt;/p&gt;&#xA;&lt;p&gt;根据得到的UUID，将fstab中的设置更改一下，上面的例子，改为：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;# /etc/fstab: static file system information.&lt;br&gt;&#xA;#&lt;br&gt;&#xA;# &amp;lt;file system&amp;gt;                       &amp;lt;mount point&amp;gt;      &#xA;&amp;lt;type&amp;gt;  &amp;lt;options&amp;gt;  &amp;lt;dump&amp;gt; &amp;lt;pass&amp;gt;&lt;br&gt;&#xA;# /dev/sda7&lt;br&gt;&#xA;UUID=d51b2056-6825-456c-957d-ebb16edd349d    /var/ftp      ext3      &#xA;relatime     0   2&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

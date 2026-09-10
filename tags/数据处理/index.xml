@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>数据处理 on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</link>
+		<description>Recent content in 数据处理 on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 18 Feb 2011 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>在MATLAB中创建带有误差线（误差标记）的柱状图</title>
+				<link>www.bio-spring.top/post/2011/02/18/2011-02-18-bar-with-errorbar/</link>
+				<pubDate>Fri, 18 Feb 2011 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2011/02/18/2011-02-18-bar-with-errorbar/</guid>
+				<description>&lt;p&gt;在MATLAB中，使用一个函数errorbar来定义图形中的误差线。可以用于折线图，柱状图等各种图形。实例如下：&lt;/p&gt;&#xA;&lt;p&gt;[cc lang=”matlab”]&lt;br&gt;&#xA;% 生成示例数据&lt;br&gt;&#xA;x=1:10;&lt;br&gt;&#xA;y=cumsum(randn(1,10));&lt;br&gt;&#xA;lower = y – (rand(1,10));&lt;br&gt;&#xA;upper = y + (rand(1,10));&lt;/p&gt;&#xA;&lt;p&gt;% 由于errorbar函数使用相对差值在图形上绘图，所以&lt;br&gt;&#xA;% 需要将绝对差值转变为相对差值。&lt;br&gt;&#xA;L = y – lower;&lt;br&gt;&#xA;U = upper -y;&lt;/p&gt;&#xA;&lt;p&gt;% 绘图时需要设定 hold on&lt;br&gt;&#xA;% 柱状图&lt;br&gt;&#xA;clf;&lt;br&gt;&#xA;figure(1);&lt;br&gt;&#xA;hold on;&lt;br&gt;&#xA;bar(x,y);&lt;br&gt;&#xA;% 此处需要隐藏折线&lt;br&gt;&#xA;errorbar(x,y,L,U,’Marker’,’none’,’LineStyle’,’none’);&lt;/p&gt;&#xA;&lt;p&gt;% 折线图&lt;br&gt;&#xA;figure(2);&lt;br&gt;&#xA;hold(‘on’);&lt;br&gt;&#xA;plot( x, y);&lt;br&gt;&#xA;errorbar( x, y, L, U);&lt;br&gt;&#xA;[/cc]&lt;/p&gt;&#xA;&lt;p&gt;效果如下图所示：&lt;br&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2011/02/errorbar.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2011/02/errorbar2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;refer：http://stackoverflow.com/questions/3748310/how-to-define-error-bar-in-matlab&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

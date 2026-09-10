@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Ssh on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/ssh/</link>
+		<description>Recent content in Ssh on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 10 Oct 2018 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>设置VirtualBox Ubuntu虚拟机的SSH登录</title>
+				<link>www.bio-spring.top/post/2018/10/10/2018-10-10-ssh-login-virtualbox-server/</link>
+				<pubDate>Wed, 10 Oct 2018 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2018/10/10/2018-10-10-ssh-login-virtualbox-server/</guid>
+				<description>&lt;h2 id=&#34;为什么要设置虚拟机ssh登录&#34;&gt;为什么要设置虚拟机SSH登录？&lt;/h2&gt;&#xA;&lt;p&gt;我的工作环境是Windows，但要时常用到Linux，于是在VirtualBox中部署了Ubuntu&#xA;Linux系统。&lt;/p&gt;&#xA;&lt;p&gt;以前都是打开虚拟机上使用，但是虚拟机毕竟有桌面，占用资源比较多。窗口切来切去也不方便。&lt;/p&gt;&#xA;&lt;p&gt;设置虚拟机SSH登录可以让虚拟机作为一个进程运行在后台，很Linux。&lt;/p&gt;&#xA;&lt;h2 id=&#34;虚拟机linux系统的ssh环境配置&#34;&gt;虚拟机Linux系统的ssh环境配置&lt;/h2&gt;&#xA;&lt;p&gt;要安装SSH server。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-wp-block-code&#34;&gt;sudo apt-get install openssh-server&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;生成密钥。公钥用来认证，私钥用来登录。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://bio-spring.top/setup-putty-login-in-fedora/&#34;&gt;密钥的处理参考之前的一篇文章&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;h2 id=&#34;虚拟机的设置&#34;&gt;虚拟机的设置&lt;/h2&gt;&#xA;&lt;p&gt;在虚拟机-设置-网络中，添加一个端口转发规则，指向子系统SSH服务端口22。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.cnblogs.com/lxg0/p/6413965.html&#34;&gt;参考这里&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;putty的设置&#34;&gt;Putty的设置&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://bio-spring.top/setup-putty-login-in-fedora/&#34;&gt;putty的设置也参考之前的一篇文章&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;服务器IP设为127.0.0.1或localhost，端口设为转发端口，用户名设为Linux系统的用户名，密钥选择前面生成的ppk密钥。保存为一个新的session，以后就可以一键登录了。&lt;/p&gt;&#xA;&lt;h2 id=&#34;后台运行虚拟机&#34;&gt;后台运行虚拟机&lt;/h2&gt;&#xA;&lt;p&gt;使用VBoxManage命令来管理虚拟机。其在Windows系统下的程序名称为VBoxManage.exe。&lt;/p&gt;&#xA;&lt;p&gt;打开命令提示符，进入VirtualBox的安装目录，可以找到该程序。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-wp-block-code&#34;&gt;cd /d &amp;quot;C:\Program Files\Oracle\VirtualBox&amp;quot;&#xA;# 列出所有的虚拟机&#xA;VBoxManage.exe list vms&#xA;&#xA;# 在后台运行选定的虚拟机&#xA;VBoxManage.exe startvm &amp;quot;vms Name&amp;quot; -type headless&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;其它一些有用的命令有：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-wp-block-code&#34;&gt;# 列出正在运行的虚拟机&#xA;VBoxManage.exe list runningvms&#xA;&#xA;# 关闭虚拟机&#xA;VBoxManage controlvm &amp;lt;vm_name&amp;gt; acpipowerbutton&#xA;&#xA;&#xA;# 强制关闭虚拟机&#xA;VBoxManage controlvm &amp;lt;vm_name&amp;gt; poweroff&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/kl28978113/article/details/54340683&#34;&gt;参考资料&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>在 Fedora 14 上配置 putty 自动认证</title>
+				<link>www.bio-spring.top/post/2012/02/23/2012-02-23-setup-putty-login-in-fedora/</link>
+				<pubDate>Thu, 23 Feb 2012 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2012/02/23/2012-02-23-setup-putty-login-in-fedora/</guid>
+				<description>&lt;p&gt;配置要点：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;在Fedora（服务器）端生成公钥和私钥；&lt;/li&gt;&#xA;&lt;li&gt;设置公钥和私钥的权限；&lt;/li&gt;&#xA;&lt;li&gt;下载或者拷贝私钥到要运行 putty 的电脑上（客户端）；&lt;/li&gt;&#xA;&lt;li&gt;导入私钥到putty中，保存配制；&lt;/li&gt;&#xA;&lt;li&gt;完成。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;strong&gt;具体操作&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;以下在服务器端完成。&lt;/p&gt;&#xA;&lt;p&gt;[cc lang=”bash”]&lt;br&gt;&#xA;ssh-keygen -t rsa&lt;br&gt;&#xA;cp .ssh/id_rsa.pub .ssh/authorized_keys&lt;br&gt;&#xA;chmod go-w .ssh&lt;br&gt;&#xA;chmod go-w .ssh/authorized_keys&lt;br&gt;&#xA;[/cc]&lt;/p&gt;&#xA;&lt;p&gt;将私钥拷贝到客户端计算机上，也可以使用“PSFTP”下载到客户端上，然后依下列操作导入密钥&lt;/p&gt;&#xA;&lt;p&gt;打开“PUTTYGEN.EXE”以便导入私钥。&lt;/p&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2012/02/1.png&#34; width=&#34;475&#34; height=&#34;460&#34; /&gt;&#xA;&lt;p&gt;将私钥导出为putty使用的“*.ppk”格式文件&lt;/p&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2012/02/2.png&#34; width=&#34;477&#34; height=&#34;460&#34; /&gt;&#xA;&lt;p&gt;退出该软件，打开putty配置文件&lt;/p&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2012/02/3.png&#34; width=&#34;448&#34; height=&#34;435&#34; /&gt;&#xA;&lt;p&gt;在“Private key for authorization”项目下面选择刚才生成的ppk文档。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2012/02/4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;保存配置文件。&lt;/p&gt;&#xA;&lt;p&gt;打开putty，便可以不再输入密码而直接通过认证了。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

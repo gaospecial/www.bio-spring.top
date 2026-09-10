@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>作图 on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/%E4%BD%9C%E5%9B%BE/</link>
+		<description>Recent content in 作图 on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 01 Dec 2020 21:13:14 -0500</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/%E4%BD%9C%E5%9B%BE/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Hello R Markdown</title>
+				<link>www.bio-spring.top/post/2020/12/01/hello-r-markdown/</link>
+				<pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
+				<guid>www.bio-spring.top/post/2020/12/01/hello-r-markdown/</guid>
+				<description>&lt;h1 id=&#34;r-markdown&#34;&gt;R Markdown&lt;/h1&gt;&#xA;&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;You can embed an R code chunk like this:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;summary(cars)&#xA;##      speed           dist       &#xA;##  Min.   : 4.0   Min.   :  2.00  &#xA;##  1st Qu.:12.0   1st Qu.: 26.00  &#xA;##  Median :15.0   Median : 36.00  &#xA;##  Mean   :15.4   Mean   : 42.98  &#xA;##  3rd Qu.:19.0   3rd Qu.: 56.00  &#xA;##  Max.   :25.0   Max.   :120.00&#xA;fit &amp;lt;- lm(dist ~ speed, data = cars)&#xA;fit&#xA;## &#xA;## Call:&#xA;## lm(formula = dist ~ speed, data = cars)&#xA;## &#xA;## Coefficients:&#xA;## (Intercept)        speed  &#xA;##     -17.579        3.932&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h1 id=&#34;including-plots&#34;&gt;Including Plots&lt;/h1&gt;&#xA;&lt;p&gt;You can also embed plots. See Figure &lt;a href=&#34;#fig:pie&#34;&gt;1&lt;/a&gt; for example:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>ggplot2作图中不使用科学计数法</title>
+				<link>www.bio-spring.top/post/2017/11/16/2017-11-16-ggplot2-no-scinum/</link>
+				<pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2017/11/16/2017-11-16-ggplot2-no-scinum/</guid>
+				<description>&lt;p&gt;科学计数法（1E+5）这种形式不适合大多数图片。拒绝使用的方法有很多，一个比较简单粗暴的方法是设置scipen参数：&lt;span&#xA;class=&#34;lang:r decode:true crayon-inline&#34;&gt;options(scipen = 200)&lt;/span&gt; 。&lt;/p&gt;&#xA;&lt;p&gt;非常好用。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Origin：使用上标、下标、数学公式和希腊字母等特殊格式的文本</title>
+				<link>www.bio-spring.top/post/2017/06/21/2017-06-21-using-text-formatting-commands-in-origin/</link>
+				<pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2017/06/21/2017-06-21-using-text-formatting-commands-in-origin/</guid>
+				<description>&lt;p&gt;Origin是一个优秀的科学作图软件。在实际使用过程中，经常需要在坐标轴标签（Tick&#xA;Label，axis&#xA;label）中使用诸如上标、下标等特殊格式的文本。坐标轴标签可以直接用其中的内置编辑器，然而常用的Tick&#xA;Label则一直不清楚如何设置。&lt;/p&gt;&#xA;&lt;p&gt;那么，如何在Tick&#xA;Label中使用特殊格式的文本呢？答案在于Origin提供的一系列格式化函数中。&lt;/p&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/06/origin-text-formatting-commands-421x500.jpg&#34; class=&#34;alignnone size-medium wp-image-871&#34; sizes=&#34;(max-width: 421px) 100vw, 421px&#34; srcset=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/06/origin-text-formatting-commands-421x500.jpg 421w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/06/origin-text-formatting-commands-768x913.jpg 768w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/06/origin-text-formatting-commands-862x1024.jpg 862w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/06/origin-text-formatting-commands.jpg 1072w&#34; width=&#34;421&#34; height=&#34;500&#34; /&gt;&#xA;&lt;p&gt;如图所示，Origin提供了诸如上标、下标、上下标、斜体、粗体、希腊字母、指定字体、字号等各种各样的函数。&lt;/p&gt;&#xA;&lt;p&gt;例如我们要在Tick&#xA;Label中使用水（H2O）作为标记，那么只需要在数据表格中填写 &lt;strong&gt;H\-(2)O&lt;/strong&gt;&#xA;就会转变为H&lt;sub&gt;2&lt;/sub&gt;O的格式。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>作图神器PowerPoint：三角瓶</title>
+				<link>www.bio-spring.top/post/2016/03/22/2016-03-22-drawing-conical-flask-with-powerpoint/</link>
+				<pubDate>Tue, 22 Mar 2016 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2016/03/22/2016-03-22-drawing-conical-flask-with-powerpoint/</guid>
+				<description>&lt;p&gt;PowerPoint其实是一个作图神器，加上一点技巧，加上一点耐心，可以作出高水平的科技图片。&lt;/p&gt;&#xA;&lt;p&gt;PowerPoint&#xA;2010版本以后，隐藏了一个“强悍的形状工具”，使得我们可以通过烧脑想想，动手作出很多实用的形状来。打开方法在这里：&lt;a href=&#34;http://jingyan.baidu.com/article/4f34706ed01613e387b56da8.html&#34;&gt;百度经验&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2016/03/2.png&#34; class=&#34;size-full wp-image-801 aligncenter&#34; width=&#34;212&#34; height=&#34;71&#34; alt=&#34;2&#34; /&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;如下图所示，便是绘制一个三角瓶的主要步骤。&lt;/p&gt;&#xA;&lt;p&gt; &lt;br&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2016/03/flask-500x292.png&#34; class=&#34;wp-image-805 size-medium aligncenter&#34; sizes=&#34;(max-width: 500px) 100vw, 500px&#34; srcset=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2016/03/flask-500x292.png 500w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2016/03/flask-768x448.png 768w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2016/03/flask-1024x597.png 1024w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2016/03/flask.png 1360w&#34; width=&#34;500&#34; height=&#34;292&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;很好很强大，是不是？&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Hello R Markdown</title>
+				<link>www.bio-spring.top/post/2015/07/23/r-rmarkdown/</link>
+				<pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+				<guid>www.bio-spring.top/post/2015/07/23/r-rmarkdown/</guid>
+				<description>&lt;h1 id=&#34;r-markdown&#34;&gt;R Markdown&lt;/h1&gt;&#xA;&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;You can embed an R code chunk like this:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;summary(cars)&#xA;##      speed           dist       &#xA;##  Min.   : 4.0   Min.   :  2.00  &#xA;##  1st Qu.:12.0   1st Qu.: 26.00  &#xA;##  Median :15.0   Median : 36.00  &#xA;##  Mean   :15.4   Mean   : 42.98  &#xA;##  3rd Qu.:19.0   3rd Qu.: 56.00  &#xA;##  Max.   :25.0   Max.   :120.00&#xA;fit &amp;lt;- lm(dist ~ speed, data = cars)&#xA;fit&#xA;## &#xA;## Call:&#xA;## lm(formula = dist ~ speed, data = cars)&#xA;## &#xA;## Coefficients:&#xA;## (Intercept)        speed  &#xA;##     -17.579        3.932&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h1 id=&#34;including-plots&#34;&gt;Including Plots&lt;/h1&gt;&#xA;&lt;p&gt;You can also embed plots. See Figure &lt;a href=&#34;#fig:pie&#34;&gt;1&lt;/a&gt; for example:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>在MATLAB中创建色彩绚丽的柱状图</title>
+				<link>www.bio-spring.top/post/2011/06/25/2011-06-25-matlab-colourful-barplot/</link>
+				<pubDate>Sat, 25 Jun 2011 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2011/06/25/2011-06-25-matlab-colourful-barplot/</guid>
+				<description>&lt;p&gt;首先，看一下效果图。&lt;/p&gt;&#xA;&lt;p&gt;默认条件下的柱状图&lt;br&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2011/06/fig1.png&#34; width=&#34;400&#34; /&gt;&lt;br&gt;&#xA;漂亮的柱状图&lt;br&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2011/06/fig2.png&#34; width=&#34;400&#34; /&gt;&lt;br&gt;&#xA;渐变着色的柱状图&lt;br&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2011/06/fig3.png&#34; width=&#34;400&#34; /&gt;&lt;br&gt;&#xA;代码如下：&lt;/p&gt;&#xA;&lt;p&gt;[cc lang=”matlab”]&lt;br&gt;&#xA;% 彩色柱状图&lt;br&gt;&#xA;%% 用到的数据&lt;br&gt;&#xA;n = 13;&lt;br&gt;&#xA;Z = rand(n,1);&lt;br&gt;&#xA;%% 默认图片&lt;br&gt;&#xA;bar(Z);&lt;br&gt;&#xA;%% 简单的作图&lt;br&gt;&#xA;% 这个图根据数据列中值的大小着色。每列中的&lt;br&gt;&#xA;% 值越大，颜色越突出&lt;br&gt;&#xA;figure&lt;br&gt;&#xA;h=bar(Z);&lt;br&gt;&#xA;colormap(summer(n));&lt;br&gt;&#xA;ch = get(h,’Children’);&lt;br&gt;&#xA;fvd = get(ch,’Faces’);&lt;br&gt;&#xA;fvcd = get(ch,’FaceVertexCData’);&lt;br&gt;&#xA;[~, izs] = sortrows(Z,1);&lt;br&gt;&#xA;for i = 1:n&lt;br&gt;&#xA;row = izs(i);&lt;br&gt;&#xA;fvcd(fvd(row,:)) = i;&lt;br&gt;&#xA;end&lt;br&gt;&#xA;set(ch,’FaceVertexCData’,fvcd)&lt;br&gt;&#xA;%% 更加漂亮的图片&lt;br&gt;&#xA;% 图片会以渐变的方式着色，效果非常不错&lt;br&gt;&#xA;figure&lt;br&gt;&#xA;h=bar(Z);&lt;br&gt;&#xA;ch = get(h,’Children’);&lt;br&gt;&#xA;fvd = get(ch,’Faces’);&lt;br&gt;&#xA;fvcd = get(ch,’FaceVertexCData’);&lt;br&gt;&#xA;[zs, izs] = sortrows(Z,1);&lt;br&gt;&#xA;k = 128; % 准备生成128 *3 行的colormap&lt;br&gt;&#xA;colormap(summer(k)); % 这样会产生一个128 * 3的矩阵，分别代表[R G&#xA;B]的值&lt;br&gt;&#xA;% 检视数据&lt;br&gt;&#xA;whos ch fvd fvcd zs izs&lt;br&gt;&#xA;%&lt;br&gt;&#xA;% Name Size Bytes Class Attributes&lt;br&gt;&#xA;%&lt;br&gt;&#xA;% ch 1×1 8 double&lt;br&gt;&#xA;% fvcd 66×1 528 double&lt;br&gt;&#xA;% fvd 13×4 416 double&lt;br&gt;&#xA;% izs 13×1 104 double&lt;br&gt;&#xA;% zs 13×1 104 double&lt;br&gt;&#xA;%&lt;br&gt;&#xA;shading interp % Needed to graduate colors&lt;br&gt;&#xA;for i = 1:n&lt;br&gt;&#xA;color = floor(k*i/n); % 这里用取整函数获得color在colormap中行&lt;br&gt;&#xA;row = izs(i); % Look up actual row # in data&lt;br&gt;&#xA;fvcd(fvd(row,1)) = 1; % Color base vertices 1st index&lt;br&gt;&#xA;fvcd(fvd(row,4)) = 1;&lt;br&gt;&#xA;fvcd(fvd(row,2)) = color; % Assign top vertices color&lt;br&gt;&#xA;fvcd(fvd(row,3)) = color;&lt;br&gt;&#xA;end&lt;br&gt;&#xA;set(ch,’FaceVertexCData’, fvcd); % Apply the vertex coloring&lt;br&gt;&#xA;set(ch,’EdgeColor’,’k’)&lt;br&gt;&#xA;[/cc]&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>在MATLAB中创建带有误差线（误差标记）的柱状图</title>
+				<link>www.bio-spring.top/post/2011/02/18/2011-02-18-bar-with-errorbar/</link>
+				<pubDate>Fri, 18 Feb 2011 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2011/02/18/2011-02-18-bar-with-errorbar/</guid>
+				<description>&lt;p&gt;在MATLAB中，使用一个函数errorbar来定义图形中的误差线。可以用于折线图，柱状图等各种图形。实例如下：&lt;/p&gt;&#xA;&lt;p&gt;[cc lang=”matlab”]&lt;br&gt;&#xA;% 生成示例数据&lt;br&gt;&#xA;x=1:10;&lt;br&gt;&#xA;y=cumsum(randn(1,10));&lt;br&gt;&#xA;lower = y – (rand(1,10));&lt;br&gt;&#xA;upper = y + (rand(1,10));&lt;/p&gt;&#xA;&lt;p&gt;% 由于errorbar函数使用相对差值在图形上绘图，所以&lt;br&gt;&#xA;% 需要将绝对差值转变为相对差值。&lt;br&gt;&#xA;L = y – lower;&lt;br&gt;&#xA;U = upper -y;&lt;/p&gt;&#xA;&lt;p&gt;% 绘图时需要设定 hold on&lt;br&gt;&#xA;% 柱状图&lt;br&gt;&#xA;clf;&lt;br&gt;&#xA;figure(1);&lt;br&gt;&#xA;hold on;&lt;br&gt;&#xA;bar(x,y);&lt;br&gt;&#xA;% 此处需要隐藏折线&lt;br&gt;&#xA;errorbar(x,y,L,U,’Marker’,’none’,’LineStyle’,’none’);&lt;/p&gt;&#xA;&lt;p&gt;% 折线图&lt;br&gt;&#xA;figure(2);&lt;br&gt;&#xA;hold(‘on’);&lt;br&gt;&#xA;plot( x, y);&lt;br&gt;&#xA;errorbar( x, y, L, U);&lt;br&gt;&#xA;[/cc]&lt;/p&gt;&#xA;&lt;p&gt;效果如下图所示：&lt;br&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2011/02/errorbar.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2011/02/errorbar2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;refer：http://stackoverflow.com/questions/3748310/how-to-define-error-bar-in-matlab&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

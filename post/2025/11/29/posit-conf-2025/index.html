@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> Posit::conf(2025) - 录播视频概览 | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Posit::conf(2025) - 录播视频概览">
+	<meta name="twitter:description" content="117 个 Posit::Conf(2025) 录播视频精华：数据科学前沿洞察。
+告别挫败：我如何轻松驾驭Python (Julia Silge, Posit) | posit::conf(2025) 来源：https://www.youtube.com/watch?v=pMVYl9fx1EE
+Posit公司的工程师Julia Silge分享了她如何克服学习Python时遇到的困难。她讲述了十年前初学Python时的挫败经历，这主要归因于两大难题：
+复杂的环境管理：当时Python的包管理工具混乱，经常导致“依赖地狱”（dependency hell）问题，让安装和管理软件包变得异常痛苦。 缺乏合适的IDE：通用的代码编辑器对于数据科学的探索性工作流程支持不佳，而Jupyter Notebook的状态管理模式也让她因担心工作的可复现性而却步。 演讲的重点是，如今情况已大为改观。对于环境管理，她推荐使用现代化工具uv，它是一个极其快速、一体化的解决方案，极大地降低了环境管理的难度。对于IDE，她推荐Positron，这款专为数据科学设计的工具，提供了更流畅的探索性分析体验。
+最后，她强调，如果你过去学习Python时感到困难，很可能不是你的问题，而是当时生态工具链的挑战所致。现在有了更好的工具，是重新尝试并“解困”Python的好时机。
+超越视觉：是什么让数据可视化值得信赖？ (Kieran Healy, Duke University) | posit::conf(2025) 来源：https://www.youtube.com/watch?v=ZamPCbvBAgE
+这段视频是社会学家 Kieran Healy 在 Posit Conf 上的主题演讲，核心探讨了数据可视化的信任 (trustworthiness) 问题。
+Healy 认为，一张图表是否可信，并不单单取决于其视觉设计（如坐标轴是否从零开始），而是源于其背后整个数据生成、分析和呈现的社会与制度生态系统。
+他通过几个案例阐述了这一观点：
+历史案例：分析股票趋势的“图表师”(chart men) 使用了真实的数据和绘制精良的图表，但他们讲述的“头肩顶”等故事却是无稽之谈，问题出在解读和叙事上。 现代工具：像 ggplot2 这样的现代工具解决了许多技术和视觉感知问题，让图表自带一种“貌似可信的光环”，但这并不能自动保证其内容和结论的真实性。 信任与可靠：Healy 区分了技术的“可靠性”(reliability) 和基于承诺的“可信赖”(trustworthiness)。一个可信赖的系统不仅要履行承诺，也要懂得拒绝无法履行的承诺。 最后，他指出了当前维护信任体系面临的三大挑战：
+数据造假：科学体系建立在信任之上，难以防范蓄意欺诈。 大型语言模型 (LLM)：它们倾向于“过度承诺”并编造看似流畅的答案，而不是承认“不知道”，因此难以信任。 公共数据基础设施的侵蚀：我们严重依赖的公共机构数据收集能力正面临威胁。 结论：数据可视化的信任根植于一个由人、组织、规范和持续承诺构成的复杂协作网络。维护这个信任网络，是数据科学领域当前面临的巨大挑战。
+人机共舞：驾驭AI赋能数据科学新范式 (Hadley Wickham, Joe Cheng) 来源：https://www.youtube.com/watch?v=tSFHQWGyRzo
+Posit公司的Hadley Wickham和Joe Cheng在这场主题演讲中，探讨了如何在数据科学中负责任地使用人工智能（AI）及大语言模型（LLM）。
+Hadley Wickham 首先指出了AI的双面性：它既强大又存在风险。他强调，数据科学家应利用现有的编程技能来增强LLM，并通过紧密的人机回圈（human-in-the-loop）来引导AI。他介绍了Posit开发的R包ellmer，并解释了“工具（Tools）”这一核心概念，即通过函数让LLM与外部世界（如运行代码、获取数据）交互。
+Hadley展示了几个实际应用：
+结构化数据提取：从非结构化文本或图片中高效提取信息并整理成表格。 QueryChat：在仪表盘中用自然语言生成SQL查询，以安全、可控的方式进行数据筛选。 ggbot2：一个通过对话式交互创建ggplot2图表的AI助手，展示了在专家引导下AI如何高效辅助数据可视化。 Joe Cheng 接着介绍了两款集成在Positron IDE中的AI代理（Agent）：">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container single">
+<main>
+
+<div class="article-meta">
+<h1><span class="title">Posit::conf(2025) - 录播视频概览</span></h1>
+
+<h3 class="author">
+gaoch
+</h3>
+
+<h3 class="date">2025-11-29</h3>
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF">信息技术</a> 
+  
+  
+  
+  Tags: <a href="/tags/posit">Posit</a> <a href="/tags/positron">Positron</a> <a href="/tags/r">R</a> <a href="/tags/python">Python</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6">数据科学</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91">软件开发</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB">软件分享</a> <a href="/tags/ai">AI</a> <a href="/tags/ggplot2">ggplot2</a> <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD">人工智能</a> 
+  
+  
+</p>
+</div>
+
+<div class="article">
+<p>117 个 Posit::Conf(2025) 录播视频精华：数据科学前沿洞察。</p>
+<h2 id="告别挫败我如何轻松驾驭python-julia-silge-posit--positconf2025">告别挫败：我如何轻松驾驭Python (Julia Silge, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=pMVYl9fx1EE">https://www.youtube.com/watch?v=pMVYl9fx1EE</a></p>
+<p>Posit公司的工程师Julia Silge分享了她如何克服学习Python时遇到的困难。她讲述了十年前初学Python时的挫败经历，这主要归因于两大难题：</p>
+<ol>
+<li><strong>复杂的环境管理</strong>：当时Python的包管理工具混乱，经常导致“依赖地狱”（dependency hell）问题，让安装和管理软件包变得异常痛苦。</li>
+<li><strong>缺乏合适的IDE</strong>：通用的代码编辑器对于数据科学的探索性工作流程支持不佳，而Jupyter Notebook的状态管理模式也让她因担心工作的可复现性而却步。</li>
+</ol>
+<p>演讲的重点是，如今情况已大为改观。对于环境管理，她推荐使用现代化工具<code>uv</code>，它是一个极其快速、一体化的解决方案，极大地降低了环境管理的难度。对于IDE，她推荐<code>Positron</code>，这款专为数据科学设计的工具，提供了更流畅的探索性分析体验。</p>
+<p>最后，她强调，如果你过去学习Python时感到困难，很可能不是你的问题，而是当时生态工具链的挑战所致。现在有了更好的工具，是重新尝试并“解困”Python的好时机。</p>
+<h2 id="超越视觉是什么让数据可视化值得信赖-kieran-healy-duke-university--positconf2025">超越视觉：是什么让数据可视化值得信赖？ (Kieran Healy, Duke University) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=ZamPCbvBAgE">https://www.youtube.com/watch?v=ZamPCbvBAgE</a></p>
+<p>这段视频是社会学家 Kieran Healy 在 Posit Conf 上的主题演讲，核心探讨了数据可视化的<strong>信任 (trustworthiness)</strong> 问题。</p>
+<p>Healy 认为，一张图表是否可信，并不单单取决于其视觉设计（如坐标轴是否从零开始），而是源于其背后<strong>整个数据生成、分析和呈现的社会与制度生态系统</strong>。</p>
+<p>他通过几个案例阐述了这一观点：</p>
+<ol>
+<li><strong>历史案例</strong>：分析股票趋势的“图表师”(chart men) 使用了真实的数据和绘制精良的图表，但他们讲述的“头肩顶”等故事却是无稽之谈，问题出在<strong>解读和叙事</strong>上。</li>
+<li><strong>现代工具</strong>：像 ggplot2 这样的现代工具解决了许多技术和视觉感知问题，让图表自带一种“貌似可信的光环”，但这并不能自动保证其内容和结论的真实性。</li>
+<li><strong>信任与可靠</strong>：Healy 区分了技术的“可靠性”(reliability) 和基于承诺的“可信赖”(trustworthiness)。一个可信赖的系统不仅要履行承诺，也要懂得拒绝无法履行的承诺。</li>
+</ol>
+<p>最后，他指出了当前维护信任体系面临的三大挑战：</p>
+<ol>
+<li><strong>数据造假</strong>：科学体系建立在信任之上，难以防范蓄意欺诈。</li>
+<li><strong>大型语言模型 (LLM)</strong>：它们倾向于“过度承诺”并编造看似流畅的答案，而不是承认“不知道”，因此难以信任。</li>
+<li><strong>公共数据基础设施的侵蚀</strong>：我们严重依赖的公共机构数据收集能力正面临威胁。</li>
+</ol>
+<p><strong>结论</strong>：数据可视化的信任根植于一个由人、组织、规范和持续承诺构成的复杂协作网络。维护这个信任网络，是数据科学领域当前面临的巨大挑战。</p>
+<h2 id="人机共舞驾驭ai赋能数据科学新范式-hadley-wickham-joe-cheng">人机共舞：驾驭AI赋能数据科学新范式 (Hadley Wickham, Joe Cheng)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=tSFHQWGyRzo">https://www.youtube.com/watch?v=tSFHQWGyRzo</a></p>
+<p>Posit公司的Hadley Wickham和Joe Cheng在这场主题演讲中，探讨了如何在数据科学中负责任地使用人工智能（AI）及大语言模型（LLM）。</p>
+<p><strong>Hadley Wickham</strong> 首先指出了AI的双面性：它既强大又存在风险。他强调，数据科学家应利用现有的编程技能来增强LLM，并通过紧密的人机回圈（human-in-the-loop）来引导AI。他介绍了Posit开发的R包<code>ellmer</code>，并解释了“工具（Tools）”这一核心概念，即通过函数让LLM与外部世界（如运行代码、获取数据）交互。</p>
+<p><img src="https://vnote-1251564393.cos.ap-chengdu.myqcloud.com/picgo/20251128202620105.png" alt=""></p>
+<p><img src="https://vnote-1251564393.cos.ap-chengdu.myqcloud.com/picgo/20251128202714647.png" alt=""></p>
+<p>Hadley展示了几个实际应用：</p>
+<ol>
+<li><strong>结构化数据提取</strong>：从非结构化文本或图片中高效提取信息并整理成表格。</li>
+<li><strong>QueryChat</strong>：在仪表盘中用自然语言生成SQL查询，以安全、可控的方式进行数据筛选。</li>
+<li><strong>ggbot2</strong>：一个通过对话式交互创建<code>ggplot2</code>图表的AI助手，展示了在专家引导下AI如何高效辅助数据可视化。</li>
+</ol>
+<p><strong>Joe Cheng</strong> 接着介绍了两款集成在Positron IDE中的AI代理（Agent）：</p>
+<ol>
+<li><strong>Positron Assistant</strong>：一个通用的编码助手，可以读写代码、解释错误和生成图表。</li>
+<li><strong>Databot</strong>：一个专注于探索性数据分析（EDA）的工具。它通过“提问-生成代码-执行-观察结果-提出建议”的循环，与用户共同探索数据。Joe以一个实例说明，Databot能快速发现人类分析师都忽略的深层数据质量问题。</li>
+</ol>
+<p>最后，Joe Cheng特别强调，这些AI工具是“<strong>能力增强器，而非替代品</strong>”，并打比方说“Databot不是救生圈”。他警告说，用户不能被动依赖AI，而必须作为积极的、具备专业知识的参与者，来引导、评估并纠正AI，其最终目标是加深对数据的理解，而不是简单地获取一个答案。</p>
+<h2 id="打破孤狼神话技术团队的心理学自救指南-cat-hicks-catharsis-consulting--positconf2025">打破“孤狼”神话：技术团队的心理学自救指南 (Cat Hicks, Catharsis Consulting) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=B-bMX_l3nkk">https://www.youtube.com/watch?v=B-bMX_l3nkk</a></p>
+<p>心理学家 Cat Hicks 博士在这场演讲中，深入探讨了技术团队普遍存在的心理困境及其解决方案。</p>
+<p>她首先指出一个核心矛盾：尽管编程等技术工作本质上是依赖于模仿、分享和迭代的社会性学习过程（她称之为“累积文化”），但许多技术从业者却感到被忽视、压力巨大且身心俱疲。</p>
+<p>Hicks 博士将此归因于一种有害的思维定式——“瓶中大脑”（Brains-in-Jars）模型。该模型错误地将技术人员视为孤立、没有情感、仅靠认知能力工作的个体，并导致了三大陷阱：</p>
+<ol>
+<li><strong>脆弱的生产力 (Brittle Productivity)</strong>：追求短期高压的“埋头苦干”，导致伪装和燃尽。</li>
+<li><strong>冰冷的氛围 (Chilly Climate)</strong>：压抑情感，充满恐惧，不利于创新。</li>
+<li><strong>孤狼天才神话 (Lone Genius Trap)</strong>：过分迷信少数“10倍效能”的开发者，忽视团队的集体力量。</li>
+</ol>
+<p>通过多项原创研究，Hicks 博士有力地驳斥了这一模型：</p>
+<ul>
+<li><strong>数据分析</strong>：对数万名开发者工作效率的大规模数据分析显示，并不存在持续稳定的“10倍开发者”，个人表现波动巨大且极其依赖环境。</li>
+<li><strong>AI焦虑研究</strong>：在面对AI带来的变革时，“孤狼天才”文化会使开发者的焦虑感加倍，而重视学习和归属感的团队则能有效缓解压力并提升效率。</li>
+<li><strong>心理干预实验</strong>：一项针对“代码审查焦虑”的心理学干预实验证明，通过教授自我关怀而非技术技巧，能显著降低开发者的焦虑感和工作回避行为。</li>
+</ul>
+<p><strong>核心结论</strong>：技术团队必须摒弃“瓶中大脑”这一非人化的模型。培养一个鼓励社会性学习、提供心理安全感、并认可工作过程价值的环境，并非可有可无的“软性福利”，而是实现团队长期健康、可持续创新和高效产出的根本基石。</p>
+<h2 id="posit-ai全家桶四大工具赋能数据科学新流程-george-stagg-winston-chang-and-tomasz-kalinowski---positconf2025">Posit AI全家桶：四大工具赋能数据科学新流程 (George Stagg, Winston Chang, and Tomasz Kalinowski ) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=9ZW2tx5fHjk">https://www.youtube.com/watch?v=9ZW2tx5fHjk</a></p>
+<p>本视频简要介绍了Posit的四款生成式AI工具：</p>
+<ol>
+<li>
+<p><strong>Positron Assistant</strong>: 这是一个深度集成在Positron IDE中的AI助手。它的核心优势在于能感知并利用IDE中的上下文，如控制台的错误信息、加载的数据和图表。用户可以通过它来解释数据、修复代码，并可选择三种不同权限的模式：Ask（问答）、Edit（编辑文件）和Agent（执行复杂任务，如将脚本自动打包）。</p>
+</li>
+<li>
+<p><strong>Databot</strong>: 一个用于探索性数据分析（EDA）的聊天机器人。它能像一个分析伙伴一样，根据对话指令自动完成数据导入、生成可视化图表、创建交互式Shiny应用以及撰写Quarto分析报告，极大地简化了数据探索流程。</p>
+</li>
+<li>
+<p><strong>Ragnar</strong>: 一个R语言包，旨在通过“检索增强生成”（RAG）技术解决大语言模型的“幻觉”问题。它可以将可信的文档（如官方文档）转换为一个知识库，让AI在回答问题前先从中检索相关信息，从而确保答案的准确性。</p>
+</li>
+<li>
+<p><strong>chatlas</strong>: 一个Python包，功能上相当于R语言的<code>elmer</code>。它提供了一个统一的接口来连接和使用不同的大语言模型。用户可以为其提供Python函数作为“工具”来扩展其能力（如获取实时数据），并能通过Pydantic强制模型输出结构化的数据。</p>
+</li>
+</ol>
+<h2 id="工具塑造思想数据科学工具的下一个十年-jonathan-mcpherson--positconf2025">工具塑造思想：数据科学工具的下一个十年 (Jonathan McPherson) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=tGrePGYj7Uw">https://www.youtube.com/watch?v=tGrePGYj7Uw</a></p>
+<p>本次 posit::conf 的主题演讲由 Jonathan McPherson 发表，探讨了数据科学工具的设计哲学。他以哲学家尼采因视力下降而使用打字机，进而改变其写作风格为例，引出核心观点：<strong>我们使用的工具会反过来塑造我们的思想和工作成果</strong>。</p>
+<p>McPherson 总结了打造优秀数据科学工具的几个关键原则：</p>
+<ol>
+<li>
+<p><strong>为人设计 (Making tools for people)</strong>：</p>
+<ul>
+<li><strong>聆听并观察用户</strong>：开发者应直接与用户沟通，但更重要的是观察他们如何实际使用工具，因为用户常常不知道自己想要什么，或只有少数“声音大”的用户会提需求。例如，通过观察发现用户常把 RStudio 当计算器用，启发了 Positron 的快速计算功能。</li>
+<li><strong>化繁为简</strong>：好的工具应将复杂性内化（如 RStudio 的断点调试功能），为用户提供简洁的界面。</li>
+<li><strong>满足当下需求</strong>：工具应符合人体工程学，不应为追求“最佳实践”而牺牲灵活性，例如 RStudio 允许用户在没有项目的情况下工作，为临时性任务提供了便利。</li>
+</ul>
+</li>
+<li>
+<p><strong>赋能用户 (Empower your users)</strong>：</p>
+<ul>
+<li>通过提供扩展API（如 RStudio Add-ins 和 Positron 的扩展系统），让社区能够构建丰富的“长尾”功能，极大地激发创造力。</li>
+</ul>
+</li>
+<li>
+<p><strong>为成果而设计 (Making tools for results)</strong>：</p>
+<ul>
+<li>McPherson 提出了演讲的核心理念：<strong>“工具是你希望世界变成样子的宣言”</strong> (A tool is a statement about what you want the world to become)。</li>
+<li>Posit 的工具致力于推动科学的 <strong>“可复现性”</strong>（如通过生成代码而非直接修改数据）和 <strong>“开放性”</strong>（如将 Positron 的 R 语言核心组件开源，供其他编辑器使用）。</li>
+</ul>
+</li>
+</ol>
+<p>最后，他澄清 Positron <strong>不会取代</strong> RStudio。两者如同工具箱中的多功能螺丝刀（Positron，支持多语言、扩展性强）和专用螺丝刀（RStudio，为 R 语言深度优化），各有其适用场景，将长期共存。</p>
+<h2 id="五分钟上手positron一站式数据科学新体验-isabella-velásquez-posit--positconf2025">五分钟上手Positron：一站式数据科学新体验 (Isabella Velásquez, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=MOpJYbhLgyc">https://www.youtube.com/watch?v=MOpJYbhLgyc</a></p>
+<p>这篇视频简要介绍了 Posit 公司推出的新款集成开发环境（IDE）—— Positron。</p>
+<p>演讲者通过一个“最初五分钟”的快速演示，展示了 Positron 如何将数据科学工作流（编码、数据探索、绘图、查阅文档）整合到同一个界面中，从而减少窗口切换，提升工作效率。</p>
+<p>演示的核心步骤包括：</p>
+<ol>
+<li>直接从 Git 克隆项目。</li>
+<li>运行 Python 脚本，在控制台查看输出。</li>
+<li>使用内置的<strong>数据查看器 (Viewer)</strong> 和<strong>数据表格 (Data Table)</strong>，以类似电子表格的方式交互式地排序、筛选和分析数据框。</li>
+<li>在<strong>绘图窗口 (Plot Viewer)</strong> 中查看生成的图表，并可以方便地在不同版本的图表间切换。</li>
+<li>在不离开 IDE 的情况下，直接调用<strong>帮助面板 (Help Pane)</strong> 查阅函数文档。</li>
+</ol>
+<p>视频接着介绍了 Positron 灵活的界面布局，包括活动栏、编辑器、控制台以及集成了数据、绘图和帮助等功能的侧边栏。此外，还提及了 Git 集成、扩展市场、一键发布内容至 Posit Connect 以及 AI 助手（Positron Assistant）等更多高级功能。</p>
+<p>总而言之，Positron 是一个为 R 和 Python 用户设计的强大而灵活的 IDE，旨在通过一站式工具集简化和加速整个数据科学开发流程。</p>
+<h2 id="告别依赖地狱renv实用指南三步走-shannon-pileggi-the-pcctc--positconf2025">告别依赖地狱：renv实用指南三步走 (Shannon Pileggi, The PCCTC) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=l01u7Ue9pIQ">https://www.youtube.com/watch?v=l01u7Ue9pIQ</a></p>
+<p>该视频为 R 语言用户，特别是对 <code>renv</code> 包感到困惑的用户，提供了实用指南。</p>
+<p>演讲者指出，许多用户在使用 <code>renv::restore()</code> 恢复项目环境时会遇到失败和挫败感。其核心问题通常源于 <strong>R 版本与包版本的不匹配</strong>。特别是，当用户尝试用一个较新版本的 R 去恢复一个使用旧版 R 创建的项目时，<code>renv</code> 往往无法找到匹配的预编译包（二进制文件），导致从源码编译失败。</p>
+<p>演讲者将这种“新 R 版本 + 旧包版本”的组合称为生态系统中的“不自然”状态，并强烈建议避免。</p>
+<p>为此，她提出了三种应对策略：</p>
+<ol>
+<li><strong>冻结 (Freeze)</strong>：要处理旧项目，最可靠的方法是使用 <code>rig</code> 等工具将 R 版本<strong>切换回项目创建时的旧版本</strong>，然后再执行 <code>restore</code>。</li>
+<li><strong>管理 (Manage)</strong>：在维持当前 R 版本不变的情况下，仅更新个别包。这是一种短期方案。</li>
+<li><strong>更新 (Update)</strong>：对于活跃项目，最佳实践是定期将 R、<code>renv</code> 和所有包都更新到最新版本。这是最可持续的“快乐路径”。</li>
+</ol>
+<p><strong>总结</strong>：成功使用 <code>renv</code> 的关键在于理解其工作原理，并有意识地管理版本依赖，而不是盲目地依赖 <code>renv::restore()</code>。对于旧项目应“向后兼容”R 版本，对于活跃项目则应“向前更新”。</p>
+<h2 id="轻取海量地理数据arrow技术实战-cari-gostic-sonoma-technology--positconf2025">轻取海量地理数据：Arrow技术实战 (Cari Gostic, Sonoma Technology) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=EHygzKGK854">https://www.youtube.com/watch?v=EHygzKGK854</a></p>
+<p>演讲者介绍了如何使用 Apache Arrow 技术，解决海量地理空间数据在交互式应用中加载缓慢的问题。</p>
+<p>他们的团队创建了一个名为 &ldquo;Firelytics&rdquo; 的加州历史野火数据库，数据量巨大。为了让用户能通过仪表盘（Dashboard）快速查询，他们面临性能挑战。</p>
+<p>解决方案是采用 Arrow 的地理空间工具套件（包括 geoparquet 文件格式和相关的 R 语言包）。其核心优势在于，它允许在数据完全读入内存前就进行高效的筛选和查询。这样，仪表盘每次只需加载用户请求的一小部分数据，从而实现了轻量化和快速响应，大大提升了用户体验。</p>
+<h2 id="同一数据双语复刻r与python可视化对决-olivia-hebner-summit">同一数据，双语复刻：R与Python可视化对决 (Olivia Hebner, Summit)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=OJBLpeuHQ4s">https://www.youtube.com/watch?v=OJBLpeuHQ4s</a></p>
+<p>该演讲分享了一个项目：使用R和Python两种语言，复刻社会学家W.E.B. Du Bois于1900年创作的一幅经典历史数据可视化地图。</p>
+<p>演讲者的团队被分成R和Python两组，挑战重现同一张作品。他们分享了两个团队都使用的共通技术，例如手动选择字体、提取颜色，以及通过叠加半透明的地理图层来模仿原作的水彩阴影效果。</p>
+<p>接着，演讲者分别简要介绍了两组的代码实现思路：</p>
+<ul>
+<li><strong>Python团队</strong>：使用<code>matplotlib</code>，通过创建子图（subplots）网格，并手动设置精确坐标来布局地图、图例和标题。</li>
+<li><strong>R团队</strong>：使用<code>ggplot2</code>创建基础图表，然后借助<code>grid</code>包的“视口”（viewports）功能，将不同的图表和文本元素组合、定位到最终页面上。</li>
+</ul>
+<p>最终对比结果显示，尽管实现路径不同，两个团队用不同语言创作的作品在视觉上几乎完全相同。演讲者由此得出结论：在数据可视化领域，扎实的设计原则比具体的编程工具更重要。只要方法得当，工具的选择是次要的，因此可以大胆尝试和学习新的技术。</p>
+<h2 id="两人团队如何用r和quarto打造专业级选举之夜直播网站-andrew-heiss--gabe-osterhout--positconf2025">两人团队如何用R和Quarto打造专业级选举之夜直播网站 (Andrew Heiss &amp; Gabe Osterhout) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=UCloM4GcfVY">https://www.youtube.com/watch?v=UCloM4GcfVY</a></p>
+<p>该视频讲述了爱达荷州州务卿办公室（Idaho Secretary of State&rsquo;s office）如何利用R语言和Quarto，以一个仅有两人的小团队，为2024年选举成功打造了一个实时、准确且可视化的选举结果网站。</p>
+<p>面对2020年选举后对选举结果的高度审视和不信任，团队的目标是创建一个官方、透明且值得信赖的数据来源，以抗衡错误信息，并与《纽约时报》等拥有庞大团队的媒体竞争。</p>
+<p>主要挑战包括：</p>
+<ol>
+<li><strong>极高的准确性要求</strong>：任何错误都可能引发争议。</li>
+<li><strong>实时更新</strong>：需每隔几分钟更新超过400场选举的数据。</li>
+<li><strong>资源有限</strong>：团队仅两人，且开发时间紧迫。</li>
+</ol>
+<p>他们的解决方案是构建一个完全在R生态系统内运行的自动化工作流，包括一个用于处理数据的ETL管道和一个用于生成网站的Quarto管道。他们利用<code>targets</code>包提高数据处理效率，并动态生成包含交互式地图和表格的静态网页，最终部署在Netlify上。</p>
+<p>最终，该网站在选举之夜运行稳定，更新迅速，其“势均力敌的竞选”页面等功能大受欢迎，成功地成为了本州选民和媒体信赖的首选信息来源。</p>
+<h2 id="ai赋能新idepositron如何重塑数据科学工作流-ryan-johnson-posit--positconf2025">AI赋能新IDE：Positron如何重塑数据科学工作流 (Ryan Johnson, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=Ve7cNChzq5Q">https://www.youtube.com/watch?v=Ve7cNChzq5Q</a></p>
+<p>这段视频介绍了为数据科学设计的全新多语言AI集成开发环境（IDE）——Positron。它融合了RStudio面向数据科学的优化设计（如变量和绘图窗格）与VS Code的多语言支持、高可定制性及AI能力。</p>
+<p>视频重点展示了两个核心AI功能：</p>
+<ol>
+<li>
+<p><strong>Positron Assistant</strong>：一个内置的AI助手。其最大特点是具备“上下文感知”能力，能自动读取用户的代码、环境变量、控制台输出等信息，从而无需手动复制粘贴就能精准地帮助调试错误和提供代码修改建议。该工具支持用户接入自己选择的大语言模型，而非绑定特定模型。</p>
+</li>
+<li>
+<p><strong>Databot</strong>：一个用于探索性数据分析（EDA）的Positron扩展。它通过自动编写和执行代码来分析数据集，然后提出下一步的分析建议供用户选择，形成一个高效的探索循环。分析结束后，用户仅需一个简单命令 (<code>/report</code>) 就能让Databot自动生成一份完整的Quarto分析报告。</p>
+</li>
+</ol>
+<p>总之，这些AI工具旨在简化和加速从编码、调试到数据探索和报告生成的整个数据科学工作流程。</p>
+<h2 id="终极数据浏览器positron如何让海量数据探索如丝般顺滑-wes-mckinney-posit--positconf2025">终极数据浏览器：Positron如何让海量数据探索如丝般顺滑 (Wes McKinney, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=R71WCIO6RyY">https://www.youtube.com/watch?v=R71WCIO6RyY</a></p>
+<p>Posit软件架构师、Pandas项目创始人Wes McKinney深入介绍了Positron中的新功能——数据浏览器（Data Explorer）。他指出，开发此工具旨在解决传统数据查看工具的痛点，例如：处理大型数据集时性能低下、响应迟缓、信息密度低以及在编码与数据检视间切换繁琐等问题。</p>
+<p><strong>数据浏览器的核心特性包括：</strong></p>
+<ol>
+<li><strong>高性能与高响应性</strong>：采用定制的虚拟数据网格技术，确保即使面对海量数据（如上万列或十亿行）也能实现即时滚动和流畅操作，且内存占用低。</li>
+<li><strong>实时更新</strong>：当代码中的数据框（DataFrame）或磁盘上的文件（如CSV、Parquet）发生变化时，浏览器视图会即时刷新，无需手动操作。</li>
+<li><strong>深度集成</strong>：无缝支持Python和R环境，可从变量窗格、命令行魔法函数（<code>%view</code>）或直接点击文件启动，实现了与开发流程的自然融合。</li>
+<li><strong>丰富的信息展示</strong>：侧边的摘要面板提供各列的统计图表（如直方图）和关键指标，帮助用户快速洞察数据分布、缺失值和异常值。</li>
+<li><strong>强大的交互功能</strong>：支持灵活的筛选、多列排序、行列固定（Pinning）以便于对比，并且可以将当前视图的操作一键转换为Python或R代码，极大提高了数据处理效率。</li>
+</ol>
+<p>未来的规划包括直接支持Ibis表达式、更好地展示复杂数据类型（如列表列），以及集成数据库连接，实现对远程数据库表的直接浏览。团队鼓励用户提供反馈，以共同完善这个强大的数据探索工具。</p>
+<h2 id="打破文档的诅咒如何写出真正有用的用户指南-michael-chow-posit--positconf2025">打破文档的“诅咒”：如何写出真正有用的用户指南 (Michael Chow, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=ML8z8xkqIA0">https://www.youtube.com/watch?v=ML8z8xkqIA0</a></p>
+<p>讲者 Michael Chow 提出了“被诅咒的文档”（cursed documentation）这一概念。他用希腊神话中的坦塔罗斯作比喻：这类文档看似信息量巨大，但用户真正需要解决问题时，却发现答案“可望而不可及”，无法有效利用。</p>
+<p>问题的核心在于，许多开源工具的文档只有酷炫的“示例库”（examples gallery）和庞大而琐碎的“API参考”（API reference），两者之间存在巨大鸿沟。用户虽然能看到最终成果，并拥有大量零散的函数说明，但缺少将两者联系起来的“中间层”知识，不知道如何将示例拆解、重组以解决自己的问题。</p>
+<p>讲者认为，解决这个问题的关键是编写一份优秀的用户指南（user guide）。用户指南的作用是提供“中等粒度”的概念，将复杂示例和零散函数连接起来。以 <code>Great Tables</code> 库为例，用户指南将功能归纳为“结构 (structure)”、“格式化 (formatting)”和“样式化 (styling)”等核心策略，帮助用户理解工具的内在逻辑，从而能够举一反三。</p>
+<p>最后，他提出了创建用户指南的五个步骤：</p>
+<ol>
+<li><strong>收集示例</strong>：收集符合“WRST”原则（完整、真实、简单、典型）的案例。</li>
+<li><strong>划定概念</strong>：将示例拆解成核心概念模块。</li>
+<li><strong>规划入门引导</strong>：设计一个让新手能了解“全局”的引导流程。</li>
+<li><strong>详述其余概念</strong>：使用“概念矩阵”等方法，揭示不同函数间的共性。</li>
+<li><strong>起草工作坊</strong>：通过实践检验文档的有效性，确保它“接地气”。</li>
+</ol>
+<h2 id="从rstudio到positron三条建议助你平滑过渡-mauro-lepore-recast--positconf2025">从RStudio到Positron：三条建议助你平滑过渡 (Mauro Lepore, Recast) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=X6PZ_RiZp44">https://www.youtube.com/watch?v=X6PZ_RiZp44</a></p>
+<p>该视频为 RStudio 用户提供了三条实用建议，帮助他们更平滑、更高效地过渡到使用 Positron。</p>
+<p>演讲者分享了自己从 RStudio 切换到 Positron 的经历，发现过程比预想的要困难，如同从自动挡车换到手动挡车。为了避免生产力下降，他建议不要直接“硬切换”，而是在 RStudio 中提前调整工作流程。</p>
+<p>三个核心建议是：</p>
+<ol>
+<li><strong>多用命令面板 (Commands Palette)</strong>：这是 Positron 的主要交互方式。在 RStudio 中提前习惯通过输入命令而非点击菜单来操作，可以让你熟悉这种模式和相关命令。</li>
+<li><strong>多用终端 (Terminal)</strong>：终端是两个 IDE 乃至所有开发环境中都通用的高效工具。熟练使用终端可以减少对特定 IDE 的依赖。</li>
+<li><strong>善用 AI 工具</strong>：特别是那些能通过命令行（CLI）运行的 AI 代理工具。它们能根据指令直接修改代码，让你在不熟悉新 IDE 界面的情况下也能高效完成任务，就像有了一个帮你开车的司机。</li>
+</ol>
+<h2 id="提速百倍quarto的下一代极速渲染引擎揭秘-carlos-scheidegger-posit--positconf2025">提速百倍：Quarto的下一代极速渲染引擎揭秘 (Carlos Scheidegger, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=OBHppBRztO4">https://www.youtube.com/watch?v=OBHppBRztO4</a></p>
+<p>Quarto 技术负责人 Carlos Scheidegger 介绍了团队为解决 Quarto 渲染速度慢的问题所做的努力。他指出，目前的性能瓶颈主要在于 Pandoc，它耗费了大量时间来解析 Markdown，这不仅拖慢了整体速度，也阻碍了并行处理和增量渲染（即只更新改动部分）等高级功能的实现。</p>
+<p>为解决此问题，团队正在用 Rust 语言重写一个全新的、超高速的 Markdown 解析器。这一举措将带来三大核心优势：</p>
+<ol>
+<li><strong>极致速度</strong>：解析速度预计提升约100倍。</li>
+<li><strong>更佳的错误提示</strong>：能够像代码检查工具一样，在渲染前就提供精准的 Markdown 语法错误定位和修改建议。</li>
+<li><strong>解锁新功能</strong>：性能的提升将使并行渲染和增量渲染成为可能，从而彻底改善开发体验。</li>
+</ol>
+<p>这些功能预计将在2026年初的 Quarto 1.9 版本中正式落地。</p>
+<h2 id="告别繁琐用quarto自动化生成数百份报告的实战经验-keaton-wilson">告别繁琐：用Quarto自动化生成数百份报告的实战经验 (Keaton Wilson)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=vHrI17AeYGs">https://www.youtube.com/watch?v=vHrI17AeYGs</a></p>
+<p>这份视频摘要介绍了市场研究公司KS&amp;R的解决方案开发者Keaton，分享了他们团队如何利用Quarto和R来自动化生成PDF报告的经验。</p>
+<p>演讲者首先用一张难以辨认且不易扩展的祖传食谱作比喻，生动地说明了他们旧的数据报告流程所面临的挑战：文档过时、缺乏版本控制、技术陈旧，且核心知识掌握在已离职的员工手中。</p>
+<p>面对为数百名问卷受访者每周生成个性化PDF报告的任务，团队使用R、Quarto和Tidyverse工具集从零开始重建了自动化流程。该流程通过一个主脚本，结合参数化的Quarto模板和辅助函数，批量生成报告。</p>
+<p>在项目实践中，他们解决了两个关键问题：</p>
+<ol>
+<li><strong>平衡自动化与灵活性</strong>：他们选择了一个折中方案，允许团队成员通过简单修改脚本（如日期范围）来满足临时的、特定的报告需求。</li>
+<li><strong>改进报告设计</strong>：他们对PDF格式做了微小但有效的改进（如增加小标题、优化间距），这不仅提升了客户的信任度和体验，也加快了内部的质检速度。格式修改目前依赖LaTeX，但因维护困难，计划未来转向Typst。</li>
+</ol>
+<p>最终，这个新流程使项目团队的效率提升了50%，获得了客户的好评，并成功将知识从个人头脑中转移到一个文档齐全、可复现的共享基础设施上，促进了团队协作和技能提升。</p>
+<h2 id="你的ai应用靠谱吗用vitals轻松评估llm质量-simon-p-couch-posit--positconf2025">你的AI应用靠谱吗？用vitals轻松评估LLM质量 (Simon P. Couch, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=HciRoc9TzMc">https://www.youtube.com/watch?v=HciRoc9TzMc</a></p>
+<p>这篇演讲介绍了用于评估大型语言模型（LLM）应用的R语言工具包<code>vitals</code>。</p>
+<p>演讲者Simon Couch首先以一个用R包<code>Ellmer</code>和<code>Shinychat</code>构建的会议日程聊天机器人为例，指出虽然现在构建LLM应用变得非常简单，但要将其从演示版推向生产环境，则需要可靠的测试和评估方法，而不能仅凭“感觉测试”。</p>
+<p>他提出了两个核心观点：</p>
+<ol>
+<li><strong>应该做评估</strong>：为了快速迭代和提升AI应用质量，系统性的评估（evals）至关重要，就像软件开发中的单元测试一样。</li>
+<li><strong>能够做评估</strong>：如果你已经能用<code>Ellmer</code>构建应用，那么使用<code>vitals</code>进行评估也同样简单，因为它是“即插即用”的。</li>
+</ol>
+<p><code>vitals</code>的评估流程包含三个核心部分：</p>
+<ul>
+<li><strong>数据集 (Dataset)</strong>：包含用户输入和对应的标准答案/评分标准。</li>
+<li><strong>求解器 (Solver)</strong>：直接使用你已有的<code>Ellmer</code>应用。</li>
+<li><strong>评分器 (Scorer)</strong>：通常利用另一个LLM来判断应用的输出是否符合标准。</li>
+</ul>
+<p>通过<code>vitals</code>，开发者可以获得一个直观的日志查看器，它不仅能展示整体的准确率，还能让开发者深入分析每一个失败案例的具体原因，从而有效地调试和改进应用。总之，<code>vitals</code>为R用户提供了一套结构化、易于上手的方法来系统性地提升LLM应用的质量。</p>
+<h2 id="化ai的错为己用与ai协作的艺术-ryan-timpe-the-lego-group--positconf2025">化AI的“错”为己“用”：与AI协作的艺术 (Ryan Timpe, The LEGO Group) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=vJrIahZWCw4">https://www.youtube.com/watch?v=vJrIahZWCw4</a></p>
+<p>演讲者是乐高集团的一位数据科学家，他分享了在工作中如何与AI（特别是大型语言模型LLM）协作的经验。他强调，AI并非完美无缺，关键在于如何应对并利用其犯下的错误来提升效率。</p>
+<p>他总结了几个核心观点：</p>
+<ol>
+<li>
+<p><strong>指令要精确</strong>：在学习Python时，他发现模糊的指令会导致AI混淆不同工具库（如PySpark和Pandas），造成代码错误。解决方法是提供清晰、精确的指令，明确告知AI所需的工具、数据和输出格式。</p>
+</li>
+<li>
+<p><strong>避免过度依赖</strong>：他曾因过度依赖AI写代码，而发现自己并未真正掌握Python。他意识到必须从被动审查转为主动学习，并利用AI来解释代码背后的逻辑，将其当作学习工具。</p>
+</li>
+<li>
+<p><strong>人机协作，而非替代</strong>：在处理复杂任务（如根据学术论文建立模型）时，应由人类提供业务背景、关键信息和数据，引导AI生成初版代码，再由人来审核和修正。人类应保持在数据和业务理解上的专家地位。</p>
+</li>
+<li>
+<p><strong>通过迭代建立信任</strong>：他通过一个将宠物狗照片转为乐高马赛克的项目来测试AI。尽管AI初次尝试失败，但通过不断引导和修正，最终成功完成任务。这证明了只要持续验证和引导，AI的产出是可以信赖的。</p>
+</li>
+</ol>
+<p>总之，AI是强大的协作者而非全能的替代品。数据科学家应保持主导，通过清晰指令、小步迭代、主动学习和持续验证，才能真正驾驭AI，使其成为提升工作效率和质量的强大力器。</p>
+<h2 id="信任但要验证在大型医疗系统中部署llm的经验教训-timothy-keyes">信任但要验证：在大型医疗系统中部署LLM的经验教训 (Timothy Keyes)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=HYQaZTLb2Co">https://www.youtube.com/watch?v=HYQaZTLb2Co</a></p>
+<p>这份视频摘要介绍了斯坦福医疗保健的数据科学家如何监控应用于电子健康记录（EHR）的大语言模型（LLM）系统，以确保其长期可靠、有用且安全。</p>
+<p>讲者首先介绍了他们开发的工具ChatEHR，一个帮助临床医生通过自然语言查询海量、非结构化病历信息的聊天机器人。随后，他分享了在部署和维护该系统过程中学到的三点经验：</p>
+<ol>
+<li>
+<p><strong>宏观视角</strong>：从运维（MLOps）角度看，LLM与其他统计模型无异，都需要关注系统完整性、模型性能和业务影响这三大支柱。其中，如何准确定义和监控LLM的性能最具挑战性。</p>
+</li>
+<li>
+<p><strong>具体实践</strong>：监控LLM性能有其独特性。</p>
+<ul>
+<li><strong>人机交互</strong>：由于临床医生会与LLM的文本输出进行深度互动，因此监控性能的关键是追踪专家（即“人机回圈”中的人类）对模型建议的“同意率”。</li>
+<li><strong>第三方模型更新</strong>：主流LLM由外部公司更新，模型本身会变化。团队通过建立内部基准（benchmark）测试集来评估新模型版本的性能。</li>
+<li><strong>失败模式</strong>：LLM过于灵活，无法测试所有应用场景。因此，团队专注于识别和监控已知的失败模式，例如通过“事实分解”（fact decomposition）算法来量化模型的“幻觉”（hallucination）率，并淘汰表现不佳的模型。</li>
+</ul>
+</li>
+<li>
+<p><strong>实践者心态</strong>：讲者鼓励数据科学家，指出他们已具备使用LLM所需的技能，如创建测试集（基准测试）、探索性数据分析（识别失败模式）等，不必畏惧新技术。</p>
+</li>
+</ol>
+<h2 id="无需编程用quarto轻松创建专业网页问卷-john-paul-helveston-gwu--positconf2025">无需编程，用Quarto轻松创建专业网页问卷 (John Paul Helveston, GWU) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=VwoeFKNvN5k">https://www.youtube.com/watch?v=VwoeFKNvN5k</a></p>
+<p>该视频介绍了由乔治华盛顿大学教授 J.P. Helveston 及其团队开发的 R 语言包 <code>surveydown</code>。</p>
+<p><code>surveydown</code> 旨在解决传统网页问卷工具（如 Google Forms）存在的<strong>难以复现、版本控制混乱、功能有限且不开源</strong>等问题。它的核心理念是将 Quarto 的强大功能应用于问卷制作，让用户可以通过编写简单的 Quarto（<code>.qmd</code>）纯文本文档来创建功能丰富的网页问卷。</p>
+<p>其技术架构是一个整合了多种开源技术的生态系统：</p>
+<ul>
+<li><strong>Quarto</strong>：用于定义问卷的界面、内容和结构。</li>
+<li><strong>Shiny</strong>：作为后端的网页应用框架，处理交互逻辑。</li>
+<li><strong>PostgreSQL</strong>：作为数据库后端存储问卷数据（推荐使用免费的 Supabase 服务）。</li>
+</ul>
+<p>主要功能亮点包括：</p>
+<ol>
+<li><strong>丰富的题型</strong>：支持文本、单选、多选、滑块等多种标准题型。</li>
+<li><strong>强大的逻辑控制</strong>：可通过代码轻松实现问题的条件显示（<code>sd_show_if</code>）和页面跳转（<code>sd_skip_if</code>）。</li>
+<li><strong>高度可扩展</strong>：由于基于 Shiny，可以集成各种高级功能，如交互式地图（leaflet）和实时投票图表。</li>
+<li><strong>AI 辅助</strong>：可以利用大语言模型（LLM）快速生成问卷的 Quarto 代码。</li>
+<li><strong>图形化界面</strong>：为不熟悉代码的用户提供了配套包 <code>sdstudio</code>，提供一个仪表盘来通过点击创建问卷，并能自动生成可复现的代码。</li>
+</ol>
+<p>最后，演讲者强调 <code>surveydown</code> 是一个完全免费和开源的解决方案，并鼓励社区参与贡献。</p>
+<h2 id="一键适配深色模式quarto品牌主题新玩法-gordon-woodhull-posit--positconf2025">一键适配深色模式：Quarto品牌主题新玩法 (Gordon Woodhull, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=WNwsgS-klMA">https://www.youtube.com/watch?v=WNwsgS-klMA</a></p>
+<p>演讲者 Gordon Woodhull 介绍了如何使用 Quarto 轻松创建同时支持浅色和深色（dark mode）模式的文档。</p>
+<p>他指出，由于用户偏好不同，为两种模式设计非常重要。核心工具是 <strong>Brand YAML</strong>，一个用于统一配置品牌颜色、字体和标志的简单语言。在 Quarto 1.8 版本中，用户可以在同一个 Brand YAML 文件里为浅色和深色模式分别定义颜色与标志。此外，Quarto 1.7 引入的 <code>respect-user-color-scheme</code> 选项，能让文档自动跟随用户的系统设置，无需手动切换。</p>
+<p>对于图表（如 Matplotlib、Plotly 等），Quarto 提供了一个单元格选项 <code>first-renderings: [light, dark]</code>，使其能为两种模式分别生成适配的图表，确保视觉效果与主题背景一致。该功能由 Quarto 的 R 和 Python 包支持，最终语法将在近期发布。</p>
+<h2 id="告别手动修改用quarto在word中高效协作-bill-pikounis-jj">告别手动修改：用Quarto在Word中高效协作 (Bill Pikounis, J&amp;J)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=4-dQ2Q985A0">https://www.youtube.com/watch?v=4-dQ2Q985A0</a></p>
+<p>这段视频的讲者是强生公司的一位统计学家，他参与了用于治疗血癌的CAR-T细胞疗法项目。</p>
+<p>他分享的核心内容是在一个受严格监管（如FDA）且节奏快的工作环境中，如何高效地生成符合要求的Word格式分析报告。</p>
+<p><strong>主要挑战：</strong>
+由于数据会频繁更新，他需要快速、反复地重新生成报告。手动在Word中修改图表、标题和交叉引用非常耗时且容易出错。</p>
+<p><strong>解决方案：</strong>
+他利用R语言和Quarto创建了一套自动化工作流程。该流程能将分析代码、图表和文本整合，并直接“一键渲染”成格式规范的Word文档，主要实现了以下功能：</p>
+<ol>
+<li><strong>自动生成标题</strong>：为图表和表格自动编号和添加标题，并能控制格式（如让图的标题在下方且为斜体）。</li>
+<li><strong>自动交叉引用</strong>：在正文中方便地引用特定的图表。</li>
+</ol>
+<p><strong>局限性：</strong>
+当合作者直接在生成的Word文档上进行修改和评论后，他仍需手动将这些变动同步回源代码。</p>
+<p><strong>结论：</strong>
+尽管存在局限，但这套自动化工作流程极大地提升了他的工作效率，确保了在严苛的监管要求下能够快速、可靠地交付报告。</p>
+<h2 id="在生产环境中使用ai先和信息安全部门喝杯茶-andrie-de-vries--positconf2025">在生产环境中使用AI？先和信息安全部门喝杯茶 (Andrie de Vries) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=5jQ7UjegpP0">https://www.youtube.com/watch?v=5jQ7UjegpP0</a></p>
+<p>主讲人分享了他在公司内部构建AI应用的经验。他使用大语言模型（LLM）整合了来自Salesforce、Zendesk等多个数据源的信息，为业务带来了巨大价值。</p>
+<p>然而，这引起了信息安全（InfoSec）部门对数据安全的担忧，主要风险包括：</p>
+<ol>
+<li><strong>数据泄露</strong>：整合敏感信息后，意外泄露给无权限的用户。</li>
+<li><strong>数据污染</strong>：LLM生成错误信息并写回生产数据库。</li>
+<li><strong>模型训练数据外泄</strong>：公司数据被用于训练第三方模型。</li>
+</ol>
+<p>为解决这些问题，他建议采取以下策略：严格的用户授权、使用如AWS Bedrock等能保证数据隔离的安全托管服务、以及控制写入权限。</p>
+<p>他的核心结论是：在处理敏感数据时，应尽早与信息安全部门沟通并获得许可，而不是“先斩后奏”。</p>
+<h2 id="purrr进化轻松实现并行与分布式计算-charlie-gao-posit--positconf2025">purrr进化：轻松实现并行与分布式计算 (Charlie Gao, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=j1yHjMvbnQM">https://www.youtube.com/watch?v=j1yHjMvbnQM</a></p>
+<p>该视频介绍了 R 语言 <code>purrr</code> 包中新增的并行与分布式计算功能，这一功能由新的 <code>mirai</code> 包作为后端驱动。</p>
+<p><code>mirai</code> 是一个为生产环境设计的现代化并行计算框架，它具有高性能、高扩展性以及清晰可靠的评估模型，能够轻松部署在本地、远程服务器或高性能计算集群上。新的并行 <code>purrr</code> 正是结合了 <code>purrr</code> 的可靠编程风格与 <code>mirai</code> 的强大能力。</p>
+<p>演讲者通过代码示例演示了分布式计算的三种核心应用场景：</p>
+<ol>
+<li><strong>替代本地计算</strong>：将计算任务从性能较弱的本地电脑转移到强大的远程服务器上。</li>
+<li><strong>扩展本地计算</strong>：同时利用本地和远程机器的计算核心，共同完成任务。</li>
+<li><strong>差异化计算</strong>：利用 <code>mirai</code> 的“计算配置文件”功能，将工作流中需要特定硬件（如 GPU）的部分，定向发送到拥有该硬件的远程机器上执行。</li>
+</ol>
+<p>总而言之，<code>mirai</code> 赋能的并行 <code>purrr</code> 为 R 用户提供了一个简单、强大且可靠的并行与分布式计算解决方案。</p>
+<h2 id="让基因组可视化像搭乐高一样简单-rishabh-sharma-vemuri--abiye-berhanu">让基因组可视化像搭乐高一样简单 (Rishabh Sharma Vemuri &amp; Abiye Berhanu)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=PW_liIFne2g">https://www.youtube.com/watch?v=PW_liIFne2g</a></p>
+<p>两位来自北卡罗来纳大学教堂山分校的本科生介绍了一款他们开发的桌面应用，旨在让强大的R语言基因组数据可视化包 <code>PlotGardener</code> 更易于使用。</p>
+<p>该视频主要内容如下：</p>
+<ol>
+<li><strong>问题</strong>：<code>PlotGardener</code> 虽然功能强大，能制作出版级别的复杂图表，但需要用户具备R语言编程能力，这对于许多只想快速作图的生物学家来说门槛过高。</li>
+<li><strong>解决方案</strong>：他们开发了一款跨平台的桌面应用，为 <code>PlotGardener</code> 提供了图形用户界面（GUI）。用户无需编写任何代码，只需通过点击、填写参数和上传数据，就能生成高质量图表。</li>
+<li><strong>核心功能</strong>：
+<ul>
+<li><strong>无代码操作</strong>：用户通过简单的界面即可完成所有设置。</li>
+<li><strong>代码生成与学习</strong>：应用会自动生成背后的R代码，用户可以下载该代码，从而反向学习R语言。</li>
+<li><strong>可重用与分享</strong>：用户可以保存和分享自己的作图会话，方便协作和后续修改。</li>
+</ul>
+</li>
+<li><strong>技术与影响</strong>：该应用采用Electron和React构建，其核心技术是将R包解析为JSON格式，再动态生成前端界面。这一模式不仅降低了 <code>PlotGardener</code> 的使用门槛，也为其他R包提供了类似的简化思路，让复杂的数据可视化变得像“搭乐高”一样简单直观。</li>
+</ol>
+<h2 id="用quarto统一教学全流程从幻灯片到交互练习-claus-wilke-ut-austin--positconf2025">用Quarto统一教学全流程：从幻灯片到交互练习 (Claus Wilke, UT Austin) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=Q7y0YqCuvHc">https://www.youtube.com/watch?v=Q7y0YqCuvHc</a></p>
+<p>这位讲者是一位数据科学教师，他分享了如何利用 <strong>Quarto</strong> 框架来简化基于 R 语言的教学工作流程。</p>
+<p><strong>核心痛点：</strong>
+以往的教学需要混合使用多种工具（如 xaringan 做幻灯片、learnr 做交互练习），过程复杂、技术门槛高且容易出错，例如交互练习需要架设服务器，学生制作 PDF 作业也很麻烦。</p>
+<p><strong>解决方案：</strong>
+讲者采用 <strong>Quarto</strong> 作为统一的解决方案，整合了所有教学环节：</p>
+<ul>
+<li><strong>幻灯片：</strong> Quarto + Reveal.js</li>
+<li><strong>课程网站：</strong> Quarto Websites</li>
+<li><strong>交互练习：</strong> Quarto Live (无需服务器)</li>
+<li><strong>作业提交：</strong> Quarto + typst (轻松生成高质量 PDF)</li>
+<li><strong>范例 App：</strong> Shiny Live (将 Shiny App 部署为静态网页)</li>
+</ul>
+<p><strong>主要优点：</strong>
+这个方法为师生提供了一个<strong>统一、简洁、高效</strong>的框架，大幅降低了技术复杂度和服务器成本，让学生能更专注于学习内容本身。</p>
+<p><strong>挑战与建议：</strong>
+讲者也提到转换过程需要学习成本，且 Quarto 功能强大有时让文档搜索变得困难。尽管如此，他仍然强烈推荐这种方法，认为其带来的简化效益远大于投入的成本。</p>
+<h2 id="代码在跑不如玩会游戏让等待不再无聊-alex-rossell-hayes--positconf2025">代码在跑，不如玩会游戏：让等待不再无聊 (Alex Rossell Hayes) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=LYqYZd4IaJk">https://www.youtube.com/watch?v=LYqYZd4IaJk</a></p>
+<p>这段视频介绍了一个名为 <code>player</code> 的R语言包，它为R用户提供了一个在代码长时间运行时进行娱乐的选择。</p>
+<p>核心观点是：与其为优化代码而烦恼，不如将漫长的等待时间变成一个放松和玩游戏的机会。该包巧妙地利用了R控制台的交互功能，让用户可以通过输入数字、单词或句子来玩各种小游戏，例如五张牌扑克、猜词游戏和魔法8号球。此外，它还能通过快速清空和重绘屏幕的方式，在控制台内实现像“2048”这类游戏的简单动画效果。总之，<code>player</code>包让你在等待数据分析结果时，也能享受到一些轻松有趣的互动体验。</p>
+<h2 id="r与python混编技术同理心是成功的关键-michael-thomas-ketchbrook-analytics--positconf2025">R与Python混编？“技术同理心”是成功的关键 (Michael Thomas, Ketchbrook Analytics) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=frxq6fz1JbM">https://www.youtube.com/watch?v=frxq6fz1JbM</a></p>
+<p>该视频的演讲者是一位首席数据科学家，他分享了如何成功管理一个同时使用 R 和 Python 的“多语言”数据科学团队。</p>
+<p>他认为 R 与 Python 之争已无意义，因为两种语言的优秀功能已相互借鉴。他主张团队同时使用这两种语言，可以扩大招聘范围、解决特定问题并为客户提供更多选择。</p>
+<p>成功的关键在于“技术同理心”（technical empathy），并将其分解为三个核心支柱：</p>
+<ol>
+<li><strong>环境管理</strong>：通过使用 <code>renv</code>(R) 和 <code>uv</code>(Python) 等工具，确保团队成员在操作系统、语言版本和包版本上保持一致，避免“在我的电脑上能运行”的问题。</li>
+<li><strong>包的选择</strong>：选择语法相似的包，以降低跨语言代码审查和协作的难度。例如，数据处理可使用 R 的 <code>dplyr</code> 和 Python 的 <code>polars</code>；数据可视化可使用 R 的 <code>ggplot2</code> 和 Python 的 <code>plotnine</code>；此外，<code>DuckDB</code> 提供了跨语言的高效 SQL 解决方案。</li>
+<li><strong>文档规范</strong>：将文档视为一等公民。无论是函数文档，还是标准化的 Git 工作流程（如结构清晰的 Issues 和 Pull Requests），都能为团队协作（包括未来的自己）提供清晰的指引。</li>
+</ol>
+<p>总之，通过在这三个方面践行技术同理心，数据科学团队可以高效地结合 R 和 Python 的优势，提升整体生产力。</p>
+<h2 id="让dplyr再次伟大用duckplyr为大数据分析提速-kirill-müller-cynkra">让dplyr再次伟大：用duckplyr为大数据分析提速 (Kirill Müller, cynkra)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=gMQC9Thf958">https://www.youtube.com/watch?v=gMQC9Thf958</a></p>
+<p>这段视频介绍了 <code>duckplyr</code> R包。它基于高性能的嵌入式分析数据库 DuckDB，旨在为 R 用户提供更快速、更原生的 <code>dplyr</code> 数据处理体验。</p>
+<p><code>duckplyr</code> 的主要优势在于：</p>
+<ol>
+<li><strong>高效处理大型数据</strong>：能直接从 Parquet 文件或 URL 读取数据，无需预先加载到内存，并通过“审慎”(Prudence) 机制防止内存溢出。</li>
+<li><strong>显著提升性能</strong>：可将现有缓慢的 <code>dplyr</code> 数据处理流程提速数倍乃至一个数量级。</li>
+<li><strong>与 R 生态无缝集成</strong>：与传统的 <code>dbplyr</code> 不同，<code>duckplyr</code> 直接返回一个真正的 R 数据框 (data frame)，无需手动调用 <code>collect()</code>，因此能直接被 <code>ggplot2</code> 等工具使用。</li>
+</ol>
+<p>视频还介绍了 <code>duckplyr</code> 的两种主要使用模式：默认的“尽力而为”(best effort)模式会自动尝试加速，失败则回退到原生<code>dplyr</code>；而“定点优化”(targeted)模式则允许用户只针对代码中的性能瓶颈进行优化，更为安全可控。此外，通过 <code>dd::</code> 语法，用户还可以直接调用 DuckDB 的原生函数。</p>
+<p>总之，<code>duckplyr</code> 是一个能让用户以极小代码改动成本，显著加速 <code>dplyr</code> 数据分析流程的强大工具。</p>
+<h2 id="用duckdb给你的shiny应用安上涡轮增压-melissa-albino-hegeman-nys-ogs--positconf2025">用DuckDB给你的Shiny应用安上“涡轮增压” (Melissa Albino Hegeman, NYS OGS) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=2sLJSosz1OY">https://www.youtube.com/watch?v=2sLJSosz1OY</a></p>
+<p>该视频介绍了如何使用 DuckDB 解决 R Shiny 应用的性能瓶颈。</p>
+<p>演讲者所在的团队开发了一个供内部使用的 Shiny 应用，但随着功能增加，应用因频繁查询远程 SQL 服务器（每次查询耗时约8秒）而变得异常缓慢和卡顿。</p>
+<p>他们的解决方案是引入 DuckDB 作为本地缓存。具体做法如下：</p>
+<ol>
+<li>在 Shiny 应用启动时，一次性从 SQL 服务器拉取所有需要的数据。</li>
+<li>在本地对数据进行预处理和聚合计算。</li>
+<li>将原始数据和所有计算结果一并存入一个本地的 DuckDB 文件中。</li>
+<li>之后，应用内的所有交互都直接查询这个本地文件，响应速度几乎是瞬时的。</li>
+</ol>
+<p>这种方法的优点是：极大地提升了应用性能和用户体验，且实现成本极低，无需新增服务器或IT部门的复杂审批。</p>
+<p>同时，演讲者也指出了两个需要注意的潜在问题：</p>
+<ul>
+<li><strong>数据同步</strong>：由于数据缓存在本地，不同用户在不同时间启动应用，可能会导致他们的数据版本不一致。</li>
+<li><strong>数据权限</strong>：如果将包含原始数据的数据库文件存储在本地，需要确保所有用户都有权限查看这些数据，否则会带来安全风险。</li>
+</ul>
+<h2 id="解锁quarto的隐藏力量lua过滤器入门-christophe-dervieux-posit--positconf2025">解锁Quarto的隐藏力量：Lua过滤器入门 (Christophe Dervieux, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=u9ev3mvC-p0">https://www.youtube.com/watch?v=u9ev3mvC-p0</a></p>
+<p>该视频简要介绍了Quarto的高级功能——Lua过滤器，旨在帮助用户解决Quarto内置功能无法满足的特定需求。</p>
+<p>主要内容如下：</p>
+<ol>
+<li><strong>功能定位</strong>：Lua过滤器如同R或Python中的自定义函数，是为解决特定、个性化问题而设计的强大工具，能让你突破Quarto的默认限制。</li>
+<li><strong>工作原理</strong>：Quarto在渲染文档时，会先将文档解析成一个名为“抽象语法树”（AST）的结构化对象。Lua过滤器就是一些函数，它们可以遍历这棵树，精准地定位并修改特定元素（如标题、段落、字符串等）。</li>
+<li><strong>实例演示</strong>：视频通过两个例子说明了其用法：
+<ul>
+<li>自动为文档中所有出现的公司名称添加商标符号™。</li>
+<li>根据标题级别（如H2或H3）为其添加不同的装饰图标。</li>
+</ul>
+</li>
+<li><strong>复用与分享</strong>：你可以将编写好的Lua过滤器打包成Quarto扩展，方便在不同项目间复用，或通过GitHub分享给他人，使用者通过简单的<code>quarto add</code>命令即可安装。</li>
+</ol>
+<p>总之，该演讲鼓励用户不必畏惧其“高级”定位，将其视为解决特定问题的实用工具，并介绍了学习和使用所需的基本知识和资源。</p>
+<h2 id="告别应用运维烦恼posit-connect扩展工具一览-toph-allen--positconf2025">告别应用运维烦恼：Posit Connect扩展工具一览 (Toph Allen) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=lLEMcxl5-yA">https://www.youtube.com/watch?v=lLEMcxl5-yA</a></p>
+<p>这段视频由Posit的软件工程师Toph主讲，详细介绍了Posit Connect的一个新功能：<strong>Connect Gallery</strong>。该功能旨在通过提供一系列扩展工具，帮助用户更轻松地管理和维护发布在Connect上的长期应用（如仪表板、API等）。</p>
+<p>视频重点介绍了四个旨在简化维护工作的扩展工具：</p>
+<ol>
+<li><strong>使用情况指标仪表板 (Usage Metrics Dashboard)</strong>：通过数据分析了解哪些内容最重要、使用最频繁，从而帮助用户确定维护工作的优先级。</li>
+<li><strong>内容健康监视器 (Content Health Monitor)</strong>：可以监控指定的关键内容，并在其无法访问时自动发送邮件警报，让用户第一时间发现问题。</li>
+<li><strong>运行时版本扫描器 (Runtime Version Scanner)</strong>：快速找出正在使用特定旧版本R或Python的内容，以便进行必要的更新。</li>
+<li><strong>软件包漏洞扫描器 (Package Vulnerability Scanner)</strong>：检测内容中使用的软件包是否存在已知的安全漏洞，并提供修复建议。</li>
+</ol>
+<p>演讲者现场演示了如何安装和配置“运行时版本扫描器”和“内容健康监视器”。此外，视频强调这些扩展工具的代码是完全开源的，用户可以根据自身需求进行定制。Gallery中的新内容和更新也可以独立于Connect服务器版本进行安装，非常灵活。最后，Posit团队鼓励用户提供反馈，并欢迎大家在GitHub上参与贡献。</p>
+<h2 id="plumber焕然一新下一代r语言api框架登场-thomas-lin-pedersen-posit--positconf2025">Plumber焕然一新：下一代R语言API框架登场 (Thomas Lin Pedersen, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=Ey_gXEBte-k">https://www.youtube.com/watch?v=Ey_gXEBte-k</a></p>
+<p>该视频介绍了 R 语言中一个全新的包 <code>plumber2</code>，它是对流行 API 框架 <code>plumber</code> 的一次彻底重写。</p>
+<p>演讲者解释说，已有近十年历史的 <code>plumber</code> 包虽然非常成功，但积累了大量技术债，导致难以维护和添加新功能。因此，团队决定开发 <code>plumber2</code> 作为解决方案。</p>
+<p><code>plumber2</code> 的主要特点和新功能包括：</p>
+<ol>
+<li><strong>熟悉的体验</strong>：对于老用户，其语法和注解方式（现基于 <code>Roxygen2</code>）依然亲切，但功能更强大。</li>
+<li><strong>异步执行</strong>：通过简单的 <code>@async</code> 标签，可以轻松实现异步操作，避免耗时任务阻塞服务器。</li>
+<li><strong>集成 Shiny 和 Quarto</strong>：可以直接在 <code>plumber2</code> 应用中托管和运行一个或多个 Shiny 应用及 Quarto 报告。</li>
+<li><strong>增强的安全性</strong>：内置了对 CORS（跨域资源共享）等网络安全最佳实践的支持，解决了老版本中的一个常见痛点。</li>
+</ol>
+<p>最后，演讲者宣布 <code>plumber2</code> 即将登陆 CRAN。原有的 <code>plumber</code> 包将继续保留，确保现有应用能正常工作，用户可以根据自己的节奏逐步迁移到新版本。</p>
+<h2 id="告别电脑跑不动数据科学家的扩容三部曲-austin-dickey-posit--positconf2025">告别“电脑跑不动”：数据科学家的扩容三部曲 (Austin Dickey, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=I748784S7WI">https://www.youtube.com/watch?v=I748784S7WI</a></p>
+<p>这篇演讲为数据科学家提供了一个应对数据规模增长的清晰解决方案路径。</p>
+<p>核心观点是，当数据和工作流的规模超出笔记本电脑的处理能力时，我们需要能“与你一同成长”的工具。演讲者提出了一个三阶段的方案：</p>
+<ol>
+<li>
+<p><strong>使用现代数据处理工具</strong>：在本地电脑上，利用如 DuckDB、Polars 等工具，并通过像 Ibis 这样的库进行操作。这些工具采用懒加载（lazy evaluation）、只读取必要数据（predicate pushdown）和并行计算等策略，使得在普通笔记本上也能高效处理远超内存大小的数据集。</p>
+</li>
+<li>
+<p><strong>利用远程SSH功能</strong>：当本地资源依然不足时，可以使用 Positron 桌面版免费的远程SSH功能。用户可以将本地IDE连接到一台更强大的远程服务器（如云虚拟机），所有计算任务都在服务器上运行，从而利用其更强的计算能力。此功能的一大亮点是支持断开并重新连接长时间运行的任务。</p>
+</li>
+<li>
+<p><strong>部署 Posit Workbench</strong>：对于需要更强管理、安全性和协作功能的企业团队，Posit Workbench 是一个企业级解决方案。它提供了统一的开发环境、集群管理和安全审计功能，被称为“增强版的SSH”，适合大规模、高标准的开发需求。</p>
+</li>
+</ol>
+<h2 id="如何让你的python包更贴心-rich-iannone-posit--positconf2025">如何让你的Python包更“贴心”？ (Rich Iannone, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=J6e2BKjHyPg">https://www.youtube.com/watch?v=J6e2BKjHyPg</a></p>
+<p>这段视频简明扼要地介绍了如何让 Python 包对用户更友好（“nice”）。演讲者以他开发的 <code>Pointblank</code> 和 <code>Great Tables</code> 两个包为例，分享了四个核心实践：</p>
+<ol>
+<li><strong>支持多样化输入</strong>：为了满足不同用户的需求，<code>Pointblank</code> 包通过集成其他库，实现了对 Pandas、Polars、数据库表等多种数据源的直接支持，免去了用户转换数据的麻烦。</li>
+<li><strong>简化复杂操作</strong>：<code>Great Tables</code> 包引入了列选择器（column selectors），允许用户通过 <code>starts_with()</code> 等简洁的函数批量操作列，极大简化了代码。</li>
+<li><strong>打造卓越文档</strong>：通过创建包含用户指南、示例库、API 参考和博客的综合性文档网站，并采用“先看结果后看代码”等方法，有效降低了用户的学习成本。</li>
+<li><strong>提供内置数据集</strong>：在包内提供丰富的数据集，方便用户随时进行功能测试和学习，无需自己准备数据。</li>
+</ol>
+<p>总结而言，在包中加入这些贴心设计，能有效降低用户的使用门槛，提升效率，并增强项目的信誉度和影响力。</p>
+<h2 id="用targets轻松管理地理空间分析工作流-eric-scott-uarizona--positconf2025">用targets轻松管理地理空间分析工作流 (Eric Scott, UArizona) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=RmTtugX1CoE">https://www.youtube.com/watch?v=RmTtugX1CoE</a></p>
+<p>该视频介绍了R语言的<code>geotargets</code>扩展包。</p>
+<p>演讲者Eric Scott解释说，<code>targets</code>是一个强大的工作流管理工具，但它在处理<code>terra</code>包创建的地理空间数据时会因外部指针失效而报错。为了解决这个问题，他与同事合作开发了<code>geotargets</code>包。</p>
+<p><code>geotargets</code>作为<code>targets</code>的扩展，通过提供简化的函数，让用户可以无缝地在工作流中集成栅格和矢量等地理空间数据，从而使分析流程更高效、更具可复现性。该包已经过rOpenSci审查，是<code>targets</code>生态系统的一部分。</p>
+<h2 id="主题美化如此简单brandyml入门指南-garrick-aden-buie-posit--positconf2025">主题美化如此简单：brand.yml入门指南 (Garrick Aden-Buie, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=DPaoNM8Ux04">https://www.youtube.com/watch?v=DPaoNM8Ux04</a></p>
+<p>该演讲介绍了 <code>brand.yml</code>，一个旨在简化和自动化数据产品（如 Shiny 应用和 Quarto 文档）品牌主题设置的新工具。</p>
+<p>演讲者首先回顾了一场启发性的演讲，强调了即使是简单的应用，经过精心的视觉“打磨”也能产生巨大的商业价值。然而，为每个项目单独进行美化既耗时又难以复用。</p>
+<p><code>brand.yml</code> 正是为解决此问题而生。它通过一个简洁的 YAML 文件，将公司的品牌指南（Brand Guidelines）转化为机器可读的结构化数据。该文件主要包含四个核心部分：</p>
+<ol>
+<li><strong><code>meta</code></strong>：定义公司名称、链接等元数据。</li>
+<li><strong><code>color</code></strong>：设置品牌色板（palette）以及主色、辅助色等语义颜色。</li>
+<li><strong><code>typography</code></strong>：指定标题、正文等所用的字体及其来源。</li>
+<li><strong><code>logo</code></strong>：管理不同情境下使用的 Logo 图像。</li>
+</ol>
+<p>用户只需创建此文件并将其放入项目根目录，Shiny 或 Quarto 就能自动应用这些设定，瞬间获得统一且专业的外观。此外，<code>brand.yml</code> 本身也是数据，可以通过 R 或 Python 包读取，用于统一图表（如 ggplot）的样式，实现更深层次的品牌一致性。</p>
+<p>总之，<code>brand.yml</code> 让品牌化主题设置变得简单快捷，帮助用户无需花费大量时间进行繁琐定制，即可轻松地为其数据产品带来专业、精美的视觉效果。</p>
+<h2 id="air如空气般轻快的r代码格式化神器-davis-vaughn--lionel-henry-posit--positconf2025">Air：如空气般轻快的R代码格式化神器 (Davis Vaughn &amp; Lionel Henry, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=DJVSEOjvwb8">https://www.youtube.com/watch?v=DJVSEOjvwb8</a></p>
+<p>该视频介绍了一款名为 <strong>Air</strong> 的 R 代码格式化工具，旨在解决代码格式混乱、手动整理费时费力的问题。</p>
+<p><strong>Air 的核心优势包括：</strong></p>
+<ol>
+<li><strong>极高的性能</strong>：Air 使用 Rust 编写，速度极快。它可以在“保存时自动格式化”代码，其速度之快几乎让用户无法察觉，从而不影响开发流程。</li>
+<li><strong>减少协作摩擦</strong>：通过在团队中强制执行统一的代码风格，它能有效避免成员在代码审查中因格式问题产生的争论，让审查者更专注于代码逻辑。</li>
+<li><strong>灵活的控制</strong>：尽管 Air 是一款配置项很少的“严格”格式化工具（以避免在配置上产生分歧），但用户依然可以通过<strong>手动增删换行符</strong>来控制代码的垂直/水平布局，或使用**“魔法指令”**（如 <code>skip</code> 或 <code>tabular</code>）来处理特殊情况，例如自动对齐 <code>tribble</code> 数据。</li>
+<li><strong>广泛的适用性</strong>：Air 是一个<strong>面向整个 R 社区的工具</strong>。它不仅内置于 Positron，也通过语言服务器协议（LSP）支持 <strong>RStudio、VSCode</strong> 等各种主流 IDE。</li>
+</ol>
+<p>总之，Air 旨在通过自动化代码美化，提升开发效率、改善协作，为 R 语言开发者带来愉悦的编程体验。相比于旧的 <code>styler</code> 工具，Air 在速度和功能上都有显著优势。</p>
+<h2 id="ide选择困难症找到你的灵魂伴侣工具-isabel-zimmerman-posit--positconf2025">IDE选择困难症？找到你的“灵魂伴侣”工具 (Isabel Zimmerman, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=GrSWg8o_SFQ">https://www.youtube.com/watch?v=GrSWg8o_SFQ</a></p>
+<p>该视频以一种有趣的方式，将为数据科学家选择集成开发环境（IDE）比作做“杂志小测试”来寻找“IDE灵魂伴侣”。</p>
+<p>演讲者主要比较了三种主流IDE：<strong>JupyterLab</strong>、<strong>VS Code</strong> 和 <strong>Positron</strong>，并从以下四个维度进行评估：</p>
+<ol>
+<li><strong>编程交互性</strong>：对控制台（Console）、脚本和笔记本（Notebook）等不同交互模式的支持程度。</li>
+<li><strong>数据探索</strong>：内置的数据查看和分析界面。</li>
+<li><strong>虚拟环境管理</strong>：处理多个Python环境的便捷性。</li>
+<li><strong>文档编写</strong>：对Quarto等工具的集成和支持。</li>
+</ol>
+<p>视频的核心观点是：<strong>不必局限于单一的IDE</strong>。IDE就像软件包一样是工具，应当为不同的任务选择最合适的工具。演讲者本人就会根据工作内容（如编写Python包或TypeScript）在Positron和VS Code之间切换。最终，视频鼓励数据从业者尝试不同的IDE，找到适合自己工作流程的最佳组合。</p>
+<h2 id="r与python是对手还是队友-jeroen-janssens--positconf2025">R与Python：是对手还是队友？ (Jeroen Janssens) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=4Lg6g1WA7Fw">https://www.youtube.com/watch?v=4Lg6g1WA7Fw</a></p>
+<p>这名演讲者通过几个个人经历，探讨了在数据科学项目中结合使用R和Python的“多语言”（polyglot）方法。</p>
+<p>他认为，数据科学家不应拘泥于单一语言，而应根据具体情况灵活选择工具。他分享了几个案例：</p>
+<ol>
+<li><strong>在Python环境中使用R</strong>：为了在Python项目中使用R的<code>ggplot2</code>进行可视化，他借助了<code>rpy2</code>库。</li>
+<li><strong>“保存与加载”模式</strong>：当用R构建的模型需要部署在只支持Python的环境中时，他通过将中间结果（如模型）保存到磁盘或数据库，再由Python进程加载使用，实现了两种语言的解耦协作。</li>
+<li><strong>命令行管道</strong>：他指出，Unix的管道操作符是实现多工具协作的经典方法，通过文本流连接不同语言编写的程序。</li>
+<li><strong>警示故事</strong>：一个R与Python混合的复杂ETL流程因性能低下、难以维护，最终被迫用Python和Polars重写，说明了混合语言会增加复杂性、时间和风险，有时统一语言（monoglot）反而是更优解。</li>
+</ol>
+<p><strong>核心观点</strong>：在R和Python之间不存在绝对的好坏，而是一个选择的光谱。数据科学家应具备识别何时适合混合使用语言、何时应坚持使用单一语言的判断力，并善用<code>rpy2</code>、<code>reticulate</code>、<code>Arrow</code>等工具，在 pragmatism（实用主义）和 complexity（复杂性）之间取得平衡。</p>
+<h2 id="用python自动化会议排程从200小时到20小时的效率飞跃-becky-hodge-procogia--positconf2025">用Python自动化会议排程：从200小时到20小时的效率飞跃 (Becky Hodge, ProCogia) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=9z5Gu0NfTPQ">https://www.youtube.com/watch?v=9z5Gu0NfTPQ</a></p>
+<p>这段视频的中文摘要如下：</p>
+<p>演讲者Becky Hodge分享了她为亚特兰大作家协会（Atlanta Writers Club）的会议自动化活动排程的经验。该会议的与会者是为与特定文学经纪人或编辑见面而单独报名，组织者需在后台为数百人安排无时间冲突的日程。过去，这项工作在Excel中手动进行，耗时超过200小时。</p>
+<p>Becky利用Python编写了一个自动化程序，该程序只需更新Excel输入文件，就能自动生成所有日程。此举不仅将排程时间缩短至约20小时，还能自动批量发送含个性化日程的邮件，并生成名牌、参会名单等会议材料，极大地提高了会议筹备效率。</p>
+<h2 id="告别脏数据像做菜一样搞定数据验证-arnav-patel-synovus">告别脏数据：像做菜一样搞定数据验证 (Arnav Patel, Synovus)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=OEcpFF0VQ4A">https://www.youtube.com/watch?v=OEcpFF0VQ4A</a></p>
+<p>这位演讲者将数据验证比作烹饪，并介绍了如何使用R语言包<code>pointblank</code>来打造一套成功的数据验证“食谱”。</p>
+<p>她指出，传统的数据验证方法通常是零散、无结构且被动的，就像没有食谱的糟糕烹饪。而<code>pointblank</code>提供了一套结构化、主动且统一的解决方案：</p>
+<ol>
+<li><strong>审视数据 (Scanning)</strong>：像检查食材一样，使用<code>scan_data</code>函数快速生成数据报告，了解数据概况和潜在问题。</li>
+<li><strong>执行验证 (Cooking)</strong>：创建一个“代理人” (agent)，它如同一个“副厨”，帮助执行一系列预设的验证规则。与传统过滤方法会悄悄删除不合规数据不同，<code>pointblank</code>会主动报告问题（例如，发现了无效的分数值），让用户能够调查并修复数据。</li>
+<li><strong>提取与分离 (Plating)</strong>：在识别并修复问题后，可以轻松地分离出“好的数据”用于后续分析，确保最终结果的准确性。</li>
+<li><strong>分享与复用 (Sharing the Recipe)</strong>：可以将整套验证方案导出为YAML文件。这个“食谱”不仅记录了所有步骤，还可以轻松地复用在新的数据集上，甚至可以跨语言（如Python）共享，极大地提高了效率。</li>
+</ol>
+<p>总之，<code>pointblank</code>通过这套“食谱”方法，将数据验证从被动的、分散的工作，转变为一个主动、结构化且可复用的流程，显著提升了数据质量和工作效率。</p>
+<h2 id="positron高手秘籍来自核心开发者的实用技巧-sharon-wang--melissa-barca--positconf2025">Positron高手秘籍：来自核心开发者的实用技巧 (Sharon Wang &amp; Melissa Barca) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=7Tog8OkrIWI">https://www.youtube.com/watch?v=7Tog8OkrIWI</a></p>
+<p>这段视频分享了 Positron 代码编辑器的多个实用技巧，旨在帮助新旧用户提升工作效率。内容主要分为三部分：</p>
+<ol>
+<li>
+<p><strong>个性化与导航</strong>：介绍了如何使用<strong>命令面板 (Command Palette)</strong> 快速访问所有功能，自定义界面<strong>布局</strong>（如切换到类似 RStudio 的四窗格视图），管理 R 和 Python 的<strong>多个控制台会话</strong>，以及设置<strong>自定义键盘快捷键</strong>。</p>
+</li>
+<li>
+<p><strong>数据探索与编辑</strong>：展示了强大的<strong>数据浏览器 (Data Explorer)</strong>，它可以直接预览数据框、CSV 甚至压缩文件。同时，也介绍了<strong>固定编辑器标签页</strong>以方便管理，以及让<strong>图表外观能自动适配编辑器主题</strong>（如暗黑模式）的贴心功能。</p>
+</li>
+<li>
+<p><strong>AI 助手 (Positron Assistant)</strong>：详细介绍了处于预览阶段的 AI 助手。其核心是利用**「上下文 (Context)」<strong>和</strong>「工具 (Tools)」<strong>。助手可以读取当前会话中的变量、图表、文件等信息来提供更精准的帮助，例如辅助绘图或解释代码。用户可以精确控制共享哪些上下文以保护隐私。一个实用的例子是，助手可以根据你的代码变更</strong>自动生成 Git 提交信息**。</p>
+</li>
+</ol>
+<p>总之，视频展示了 Positron 作为一个功能强大、可高度定制的开发环境，如何通过其独特的工具和 AI 功能提升数据科学家的工作效率。</p>
+<h2 id="数据沟通的艺术如何向任何听众讲好数据故事-freda-warner-cihr--positconf2025">数据沟通的艺术：如何向任何听众讲好数据故事 (Freda Warner, CIHR) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=8G0r_JvkWME">https://www.youtube.com/watch?v=8G0r_JvkWME</a></p>
+<p>该视频的主讲人是一位从流行病学家转型为数据科学家的专家，她分享了如何向非数据背景的听众进行有效的数据报告。</p>
+<p>她强调，成功的报告关键在于**引领（Lead）**听众，而不是让他们在“数据的森林”中迷失。核心要点如下：</p>
+<ol>
+<li>
+<p><strong>明确核心信息</strong>：在制作演示文稿之前，首先要确定你希望听众记住的<strong>唯一一件最重要的事</strong>。这是你所有内容的“目的地”。</p>
+</li>
+<li>
+<p><strong>精选支撑证据</strong>：只选择与核心信息直接相关的必要数据和分析，避免信息过载。可以将额外细节放入补充幻灯片，以备提问时使用。</p>
+</li>
+<li>
+<p><strong>善用视觉辅助</strong>：视觉材料是辅助你讲解的工具，而非演示的主体。应保持幻灯片<strong>简洁</strong>，遵循“一事一页”的原则。演讲者必须主动引导观众解读图表（如解释坐标轴和关键数据点），而不是假定其不言自明。</p>
+</li>
+<li>
+<p><strong>练习口头表达</strong>：多次大声练习能让表达更自然，并帮助你营造一个鼓励提问的环境。提问是听众理解并产生兴趣的体现，因此应积极引导互动（例如给幻灯片编号，方便观众提问时定位）。</p>
+</li>
+</ol>
+<p>总之，演讲的最终目标是成为听众的向导，清晰地传达一个核心信息，从而确保你的数据和发现能产生更广泛的影响。</p>
+<h2 id="数据背后的故事用r数据包传递知识的力量-kelly-mcconville-bucknell--positconf2025">数据背后的故事：用R数据包传递知识的力量 (Kelly McConville, Bucknell) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=bzyGINaigyE">https://www.youtube.com/watch?v=bzyGINaigyE</a></p>
+<p>这段视频的演讲者分享了她在数据科学教学中的一个重要发现：为数据提供充足的背景知识（context）至关重要。</p>
+<p>她发现，起初学生虽然能用代码处理数据并制作图表，但由于缺乏对数据背后故事的理解，其分析解读非常肤浅。</p>
+<p>一个偶然的机会，她将一个关于波特兰树木的数据集制作成了R数据包（R data package）。她发现这是一种绝佳的解决方案，因为R包将数据与丰富的文档（如提供快速概览的README、解释变量细节的帮助文件，以及展示完整分析案例的Vignette）紧密结合在一起。这使得学生可以轻松获取背景信息，从而做出更有深度的分析，真正理解并讲述数据背后的故事。</p>
+<p>最终，演讲者总结道，背景知识是高质量数据工作的关键，而R数据包是分享数据并有效传递其背景知识的绝佳工具。</p>
+<h2 id="人人可用的语义搜索duckdb低成本实战指南-marcos-huerta-carmax--positconf2025">人人可用的语义搜索：DuckDB低成本实战指南 (Marcos Huerta, Carmax) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=casO6fLXxLw">https://www.youtube.com/watch?v=casO6fLXxLw</a></p>
+<p>这段视频简要介绍了如何为个人或小型项目实现低成本、高效的语义搜索。</p>
+<p>演讲者以自己开发的“语义化表情符号搜索”网站为例，说明了传统方法（使用SentenceTransformer库）因内存占用过高（1.45GB）而难以部署在低配置服务器上的问题。</p>
+<p>解决方案的关键在于两款在2024年初迎来更新的开源工具：<strong>LlamaCPP</strong> 和 <strong>DuckDB</strong>。</p>
+<ol>
+<li><strong>LlamaCPP</strong>：它能以极低的内存（约120MB）运行模型来生成文本向量，解决了实时编码的内存瓶颈。</li>
+<li><strong>DuckDB</strong>：它支持将向量作为数据类型直接存入数据库，并内置了向量相似度计算功能（如余弦相似度）。</li>
+</ol>
+<p>通过这个新组合，开发者可以预先将所有待搜索内容的向量存储在DuckDB中，然后实时使用LlamaCPP对用户输入进行编码，最后在数据库内快速完成语义匹配。这套方案不仅成功应用于表情符号搜索，还被用在了另一个法案搜索网站上，证明了其在低资源环境下的可行性和高效性。</p>
+<p>总而言之，视频提供了一个结合LlamaCPP和DuckDB来构建轻量级语义搜索系统的实用指南。</p>
+<h2 id="不只是部署构建可治理的机器学习模型之道-tom-shafer-elder-research--positconf2025">不只是部署：构建可治理的机器学习模型之道 (Tom Shafer, Elder Research) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=ZbMTCS50Sqk">https://www.youtube.com/watch?v=ZbMTCS50Sqk</a></p>
+<p>这段演讲的核心观点是：机器学习模型的部署并非终点，而是长期维护与治理的开始。为了确保模型能持续创造价值，我们应在开发阶段就采纳良好的软件工程实践，以简化未来的维护工作。</p>
+<p>演讲者提出了四个核心实践，并强调它们相辅相成：</p>
+<ol>
+<li><strong>打包 (Packaging):</strong> 即使是内部项目，也应将其打包。这能提供标准化的项目结构、有效管理依赖项、进行版本控制，并为自动化测试和部署提供基础。</li>
+<li><strong>文档 (Documentation):</strong> 为代码编写文档，不仅能帮助未来的自己或同事理解，也能明确函数的功能（形成一种“契约”），并能充分利用IDE的自动补全等辅助功能。</li>
+<li><strong>测试 (Testing):</strong> 测试是未来修改代码时的“安全带”。它能确保当前功能正常，并在代码变更（如依赖项更新或重构）后及时发现潜在问题。</li>
+<li><strong>编写清晰的代码 (Legible Code):</strong> 提倡使用如R语言的S3对象和方法等特性来封装复杂逻辑，建立更具表达力且符合语言习惯的API（如 <code>predict</code> 函数），从而提高代码的可读性和可维护性。</li>
+</ol>
+<p>总结来说，通过结合这些原则，我们可以建立一个稳健、可维护的模型系统，使其能够应对未来的需求变更和技术架构迁移。尽管视频以R语言为例，但这些理念同样适用于Python等其他语言。</p>
+<h2 id="数据技能改变社区普通人的公民黑客行动-sharon-machlis--positconf2025">数据技能改变社区：普通人的公民黑客行动 (Sharon Machlis) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=fSAoCcZD--Y">https://www.youtube.com/watch?v=fSAoCcZD--Y</a></p>
+<p>这段视频的演讲者是一位退休技术记者，她分享了如何利用数据技能为本地社区做贡献。她提倡一种“看见问题，就用代码解决”的方法，无需长期投入或参加会议，即可解决身边的小问题。</p>
+<p>她通过几个具体案例进行了展示：</p>
+<ol>
+<li><strong>社区历史资料</strong>：将杂乱的PDF历史简报，转变为可全文搜索、并配有AI聊天机器人进行问答的网站。</li>
+<li><strong>市政会议记录</strong>：创建一个能跨所有部门文件进行搜索的工具，解决了官方网站只能单独搜索的痛点。</li>
+<li><strong>地方选举数据</strong>：将静态的PDF选举结果，转化为交互式地图和热力图等数据可视化图表。</li>
+<li><strong>其他应用</strong>：通过网络抓取制作可搜索的本地活动日历，为复杂的垃圾分类规则创建问答机器人等。</li>
+</ol>
+<p>演讲者强调，在所有项目中都提供原始数据链接，以便用户核实信息来源。她希望通过这些例子，激励更多人运用自己的技术能力，为社区做出实际贡献。</p>
+<h2 id="精准医疗普惠化用tidymodels验证巴西人群的乳腺癌风险-flávia-rius--positconf">精准医疗普惠化：用Tidymodels验证巴西人群的乳腺癌风险 (Flávia Rius) | posit::conf</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=phh8p2ImBMQ">https://www.youtube.com/watch?v=phh8p2ImBMQ</a></p>
+<p>来自巴西Mendelix公司的数据科学家Flávia，介绍了她如何应用R语言的tidymodels工具包来验证一项乳腺癌多基因风险评分（PRS）在巴西人群中的有效性。</p>
+<p>她首先指出，现有的PRS绝大多数基于欧洲人群开发，而巴西人口的遗传背景极其多样化，因此验证其适用性至关重要。</p>
+<p>在分析过程中，讲者将选择数据科学工具的困惑比作在异国超市购物时的不知所措。她发现tidymodels提供了一套清晰、整合的解决方案，将数据预处理（recipes）、模型设定（parsnip）、工作流构建（workflows）等步骤流畅地串联起来，极大地简化了复杂的验证流程。</p>
+<p>研究结果表明，欧洲开发的PRS在巴西人群中总体有效，PRS分数越高，乳腺癌风险也越高，最高风险人群的风险等级堪比已知的中等风险基因。</p>
+<p>最终，这项成功的验证工作不仅发表为科学论文，还促使其公司开发了包含该PRS的商业基因检测产品，为推动精准医疗在多元化人群中的应用迈出了重要一步。</p>
+<h2 id="ai编程助手是炒作帮手还是障碍-rebecca-barter-arine--positconf2025">AI编程助手：是炒作、帮手还是障碍？ (Rebecca Barter, Arine) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=1hfu1AvQkLw">https://www.youtube.com/watch?v=1hfu1AvQkLw</a></p>
+<p>本视频探讨了AI编程助手究竟是“炒作”（Hype）、“帮助”（Help）还是“障碍”（Hindrance）。演讲者以Positron Assistant（底层为GitHub Copilot和Claude）为例，分三部分阐述了她的观点。</p>
+<ol>
+<li>
+<p><strong>炒作 (Hype)</strong>：演讲者展示了一个让AI自动完成整个数据分析报告的例子。虽然结果看似强大，但她指出这夸大了AI的能力。没有编程基础的用户在遇到bug时将束手无策。因此，AI目前还不会完全取代人类的工作。</p>
+</li>
+<li>
+<p><strong>帮助 (Help)</strong>：这是AI助手最有价值的部分。它能显著提高效率，具体功能包括：</p>
+<ul>
+<li><strong>代码自动补全</strong>：用于提示函数名、生成重复性代码。</li>
+<li><strong>行内/文件编辑器</strong>：用于修改和重构代码，例如去除科学计数法、将代码从Tidyverse转换为base R。</li>
+<li><strong>聊天和Agent功能</strong>：用于调试、解释代码、生成项目模板和文档。
+演讲者分享，借助这些工具，她能将原本需要一周的工作在数小时内完成。</li>
+</ul>
+</li>
+<li>
+<p><strong>障碍 (Hindrance)</strong>：AI助手也存在一些障碍和风险：</p>
+<ul>
+<li>会引入bug和低效代码。</li>
+<li>可能导致开发者过度依赖。</li>
+<li>存在数据安全和隐私泄露的风险，尤其是在处理敏感数据时。</li>
+<li>对于熟练的程序员，某些功能（如自动补全）可能反而会干扰工作。</li>
+</ul>
+</li>
+</ol>
+<p><strong>总结</strong>：AI编程助手集三者于一身，但“帮助”远大于“炒作”和“障碍”。它改变了数据科学家的工作方式，使其成为一个强大的辅助工具，而非替代品。</p>
+<h2 id="告别安装烦恼webr和pyodide如何革新编程教学-ted-laderas-fred-hutch--positconf2025">告别安装烦恼：WebR和Pyodide如何革新编程教学 (Ted Laderas, Fred Hutch) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=EQ9_MP2PYL8">https://www.youtube.com/watch?v=EQ9_MP2PYL8</a></p>
+<p>该视频介绍如何利用 WebR 和 Pyodide 技术改善编程教学，特别是针对容易受挫的初学者。演讲者以自身职业培训经验为例，指出 RStudio 等复杂工具会给新手带来巨大认知负荷，甚至导致他们放弃学习。</p>
+<p>WebR 和 Pyodide 能让 R 和 Python 代码直接在浏览器中运行，无需安装配置，极大地降低了入门门槛。其主要应用价值体现在三个方面：</p>
+<ol>
+<li><strong>降低认知负荷</strong>：通过在网页中嵌入简单的交互式练习并提供即时反馈，可以减少学习者对“搞坏软件”的恐惧，让他们专注于代码逻辑本身。</li>
+<li><strong>促进主动学习</strong>：可以将代码块直接嵌入幻灯片或教程中，让学习者边学边练，即时动手尝试和修改代码，巩固知识。</li>
+<li><strong>增强社交学习</strong>：方便学习者进行结对编程或实时分享、讨论代码。例如，在可视化工作坊中，学员可以修改图表代码并分享自己的设计，从而引发讨论、共同进步。</li>
+</ol>
+<p>总之，WebR 和 Pyodide 是一个强大的教学辅助工具，通过创造一个低风险的实践环境，可以有效地帮助学习者逐步建立信心，实现从引导式学习到自主学习的平稳过渡。</p>
+<h2 id="驾驭llm的艺术如何让ai成为你的高效生产力伙伴-nic-crane-nc-data-labs--positconf2025">驾驭LLM的艺术：如何让AI成为你的高效生产力伙伴 (Nic Crane, NC Data Labs) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=_nhDYt0f5yc">https://www.youtube.com/watch?v=_nhDYt0f5yc</a></p>
+<p>R顾问Nic Crane分享了她使用大型语言模型（LLM）提高编程效率的经验。她认为，为了高效使用LLM，应该思考以下三个问题：</p>
+<ol>
+<li>
+<p><strong>任务应该多难？</strong> Crane发现LLM在处理“伸展区”（stretch zone）的任务时最有效。太简单的任务自己做更快，太难的任务则无法有效审查和修复LLM生成的代码。只有当任务有一定挑战、但自己又有足够知识来审查和修改时，LLM才能发挥最大价值。</p>
+</li>
+<li>
+<p><strong>LLM应扮演什么角色？</strong> 她建议将LLM用作“智能导师”而非单纯的“代码生成器”。通过让LLM帮助设立学习目标、寻找资源和制定学习计划，她成功地自主学会了新技能。这种方式让她感觉更有掌控力，并实现了真正的学习。</p>
+</li>
+<li>
+<p><strong>何时应选择向人求助？</strong> 在一个更复杂的项目中，Crane发现LLM在解释概念和调试方面是很好的助手，但当遇到需要项目特定背景和经验判断的问题时，人类导师的指导变得不可或缺。她强调， mentorship 和人际连接在职业发展中扮演着LLM无法替代的角色。</p>
+</li>
+</ol>
+<p><strong>总结：</strong> 高效利用LLM的关键在于选择难度适中的任务，将其作为学习的辅助工具，并清楚何时应该依赖人类的专业知识和 mentorship。这种方法能将我们从被动使用工具转变为主动学习，从而实现长期的技能提升和生产力增长。</p>
+<h2 id="教成年人编程这三个秘诀你必须知道-kristin-bott-posit--positconf2025">教成年人编程？这三个秘诀你必须知道 (Kristin Bott, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=UZIB-JSdkLk">https://www.youtube.com/watch?v=UZIB-JSdkLk</a></p>
+<p><strong>视频主题：如何有效地教成年人编程</strong></p>
+<p>来自Posit的Kristen Bott分享了有效成人编程教育的三个核心要素，这些经验源于Posit Academy项目的实践。</p>
+<ol>
+<li>
+<p><strong>分散学习时间 (Time over Time):</strong> 作者指出，高强度的短期工作坊（如一天）效果不佳，因为根据“遗忘曲线”理论，人们会很快忘记大部分内容。更有效的方法是将学习内容分散到更长的时间段（如数周），通过持续、小量的练习来对抗遗忘，巩固知识。</p>
+</li>
+<li>
+<p><strong>在可及范围内进行相关练习 (Relevant Practice Within Reach):</strong> 练习不仅要频繁，还应具备两个特点：</p>
+<ul>
+<li><strong>相关性 (Relevance):</strong> 练习项目应尽可能贴近学习者的实际工作领域，而不是使用与他们无关的通用数据集（如企鹅数据）。这能缩小学习与应用之间的差距。</li>
+<li><strong>可及性 (Within Reach):</strong> 学习任务应采用“脚手架”或阶梯式设计，从有明确指引的简单任务开始，逐步增加难度和开放性，确保学习者能够循序渐进，建立信心。</li>
+</ul>
+</li>
+<li>
+<p><strong>建立实践社群 (Community of Practice):</strong> 学习不应孤立进行。一个支持性的社群（如小组学习）至关重要。通过导师的引导，可以创造一个安全的学习环境，让学习者（尤其是习惯于当专家的成年人）能够坦然面对犯错和“我不知道”的时刻，并从中获得鼓励和支持，共同解决问题。</p>
+</li>
+</ol>
+<h2 id="shiny与react合体用ai轻松构建定制化web应用-winston-chang-posit--positconf2025">Shiny与React合体：用AI轻松构建定制化Web应用 (Winston Chang, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=Kh8xDym8sTg">https://www.youtube.com/watch?v=Kh8xDym8sTg</a></p>
+<p>该演讲介绍了 &ldquo;Shiny React&rdquo;，一个将 Shiny 的强大后端（用于 R/Python）与 React 的灵活前端（JavaScript）相结合的新工具。</p>
+<p>核心思想是通过 <code>useShinyInput</code> 和 <code>useShinyOutput</code> 这两个函数，实现前端与后端之间响应式的数据通信。这使得开发者可以利用 React 生态中丰富的 UI 组件库和现代 Web 技术来构建高度定制化的用户界面，同时继续在 Shiny 服务器上利用 R 或 Python 进行复杂的数据计算和处理。</p>
+<p>演讲者强调，AI 编程助手（如 Claude）非常擅长编写 React 代码，这大大降低了开发门槛。他还提供了一个项目模板 (<code>create-shiny-react-app</code>)，帮助用户快速搭建开发环境。</p>
+<p>总而言之，&ldquo;Shiny React&rdquo; 为那些希望在 Shiny 应用中获得更强 UI 控制力、更好地与现有网站集成，或希望将数据科学项目与专业 Web 开发流程结合的开发者，提供了一个实验性但潜力巨大的解决方案。</p>
+<h2 id="复刻百年经典从杜波依斯图表中学到的设计真经-simi-ndaba">复刻百年经典：从杜波依斯图表中学到的设计真经 (Simi Ndaba)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=RxwU1cZ5FiA">https://www.youtube.com/watch?v=RxwU1cZ5FiA</a></p>
+<p>该演讲者分享了她复刻 W.E.B. 杜波依斯（W.E.B. Du Bois）在1900年为巴黎博览会创作的经典数据可视化图表的经验。她首先赞扬了杜波依斯以及其他历史先驱（如南丁格尔）作品的清晰度、创意和影响力。</p>
+<p>演讲核心在于解析杜波依斯图表的独特之处：</p>
+<ol>
+<li><strong>独特的布局</strong>：将不同形状和风格的图表组合在一起。</li>
+<li><strong>丰富的叙事</strong>：在图表上直接加入文字解释，提供数据背景。</li>
+<li><strong>多样的字体</strong>：运用不同字体引导读者视线。</li>
+<li><strong>大胆的色彩</strong>：使用鲜明的泛非色彩（红、黑、绿等）突出重点。</li>
+</ol>
+<p>接着，她详细介绍了如何使用R语言（主要是 <code>ggplot2</code> 及其相关包）重现这些图表。她将复杂的图表分解为数据、布局、颜色、字体等基本元素，并通过代码一步步重建，例如将数据从宽格式转为长格式，组合地图与饼图，以及手动设置颜色和字体。</p>
+<p>通过这一过程，她总结出了一套“可复现的视觉设计原则”，包括明确意图、定义输入元素、构建结构、选择编码方式和确保可分享性。最后，她展示了如何将这些原则应用于一个全新的生成艺术项目，证明了通过解构和学习历史经典，可以提升自己的数据可视化能力，创作出更清晰、更具创意的作品。</p>
+<h2 id="两全其美r-multiverse如何革新r包发布生态-will-landau-eli-lilly--positconf2025">两全其美：R-multiverse如何革新R包发布生态 (Will Landau, Eli Lilly) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=UseltnRVoFo">https://www.youtube.com/watch?v=UseltnRVoFo</a></p>
+<p>该视频介绍了 R Multiverse，一个旨在结合传统中央仓库（如CRAN）和自发布（如GitHub）两者优点的新型R包发布平台。</p>
+<p>演讲者首先指出了现有两种发布模式的痛点：</p>
+<ol>
+<li><strong>中央仓库</strong>：虽然可信度高，但审核流程漫长、严格，开发者控制权小。</li>
+<li><strong>自发布</strong>：虽然自由快捷，但难以获得用户信任，且包不易被发现和管理。</li>
+</ol>
+<p>R Multiverse 提供了一个中间解决方案，它是一个基于 R-Universe 构建的双仓库系统：</p>
+<ol>
+<li>
+<p><strong>社区仓库 (Community Repository)</strong>：一个汇集了所有注册包最新发布版 (release) 的中央平台。开发者提交门槛极低（只需包合法、开源、无恶意代码），通过在GitHub上创建新release就能自动更新。这为开发者提供了极大的便利，也为用户提供了一个统一的安装来源。</p>
+</li>
+<li>
+<p><strong>生产仓库 (Production Repository)</strong>：为高稳定性和可靠性要求的生产环境设计。它每季度会从“社区仓库”中筛选出通过了严格自动化检查（如<code>R CMD check</code>无错误警告、其依赖项也健康）的包，生成一个稳定的快照版本 (snapshot)，确保整个生态系统的兼容性。</p>
+</li>
+</ol>
+<p>总结来说，R Multiverse 既为开发者提供了类似自发布的便捷与控制权，又通过中心化管理和自动化质量控制为用户提供了信任与便利。项目目前已上线，并邀请开发者提交自己的R包，或加入成为审核员。</p>
+<h2 id="两行代码让数据可视化惠及所有人-jooyoung-seo--positconf2025">两行代码，让数据可视化惠及所有人 (JooYoung Seo) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=QR7mdgM8Hf0">https://www.youtube.com/watch?v=QR7mdgM8Hf0</a></p>
+<p>这段视频的演讲者JooYoung Seo是一位盲人教授，他介绍了数据可视化领域存在的“数字鸿沟”——即传统图表严重依赖视觉，将视障人士排除在外。</p>
+<p>他批评了以往“为他们设计”（design for them）的模式，即健视者创建图表后，再补充文本描述给盲人，这是一种不平等的单向信息传递。</p>
+<p>为此，他提出了一个名为<strong>MAIDR</strong>的解决方案，倡导“为我们设计”（design for us）的理念。MAIDR是一个多模态交互式数据呈现框架，它在不放弃可视化的基础上，为同一份数据增添了多种感知模式：</p>
+<ol>
+<li><strong>可触摸盲文</strong>：通过盲文点字器感受数据的起伏。</li>
+<li><strong>数据声化</strong>：将数据模式转化为音高和声像的变化来“聆听”图表。</li>
+<li><strong>可读文本</strong>：提供数据摘要和具体数值。</li>
+<li><strong>对话式AI</strong>：用户可以通过聊天的方式向数据提问。</li>
+</ol>
+<p>最关键的是，MAIDR的实现非常简单。对于使用Python (Matplotlib, Seaborn)的开发者来说，只需增加两行代码（<code>import maidr</code> 和 <code>maidr.show()</code>），就能自动将现有图表转化为功能强大的多模态图表，且性能开销极小。</p>
+<p>演讲者呼吁大家共同构建一个更具包容性的未来，MAIDR不仅是一个工具，更代表了一种全新的、让所有人都能平等获取数据洞察的思维方式。</p>
+<h2 id="从开发到生产posit-connect如何让数据科学落地如此简单-adam-wang">从开发到生产：Posit Connect如何让数据科学落地如此简单 (Adam Wang)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=JAGZJtR2j6Q">https://www.youtube.com/watch?v=JAGZJtR2j6Q</a></p>
+<p>该视频的演讲者是一位数据科学家，他分享了团队如何简化数据科学项目从本地开发到生产环境部署的流程。</p>
+<p>演讲者首先指出了一个普遍痛点：数据科学家开发的模型和报告很难高效地投入生产，供决策者使用。他们团队早期尝试使用Windows任务计划程序来自动化R脚本，但遇到了监控困难、代码同步混乱等问题，效率低下。</p>
+<p>为了解决这些问题，他们转向使用 <strong>Posit Connect</strong>。演讲者强调了Posit Connect的几大核心优势：</p>
+<ol>
+<li><strong>简化部署</strong>：它提供了开箱即用的任务调度、监控和告警功能，省去了繁琐的配置。</li>
+<li><strong>保持开发习惯</strong>：数据科学家可以继续使用自己熟悉的IDE（如RStudio）和编程语言（R/Python），只需将代码推送到Git仓库。</li>
+<li><strong>自动化流程</strong>：Posit Connect能与Git集成，自动拉取最新代码并完成部署，无需复杂的CI/CD设置。</li>
+<li><strong>整合展示与计算</strong>：它不仅能执行计算任务，还提供了一个用户界面，可以直接展示报告、仪表盘和Shiny应用。</li>
+</ol>
+<p>最后，演讲者展示了他们以Posit Connect为核心的整套架构：通过与数据库（Snowflake）和包管理器（Posit Package Manager）的结合，团队建立了一个高效、低摩擦的工作流，使数据洞察能够快速、稳定地转化为可供业务使用的生产力。</p>
+<h2 id="涟漪效应拥抱r语言我们改变的不只是代码-yvonne-kienast-cihi--positconf2025">涟漪效应：拥抱R语言，我们改变的不只是代码 (Yvonne Kienast, CIHI) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=azQvYftzszk">https://www.youtube.com/watch?v=azQvYftzszk</a></p>
+<p>该演讲分享了演讲者所在团队（加拿大健康信息研究所 CIHI）从专有软件迁移到开源语言 R 的转型经历。演讲者强调，这次变革的关键并非仅仅是学习编码，而是一场思维模式与工作方式的变革，如同“涟漪效应”一般，由小及大。</p>
+<p>为成功实现转型，她提出了三个核心原则：</p>
+<ol>
+<li><strong>从目标着手</strong>：不要被海量的教程淹没。应首先明确团队的实际需求，并找到一位能引导方向、解释理念的“R领头人”（R Champion），同时培养整个团队的开源协作思维。</li>
+<li><strong>协作，而非竞争</strong>：打破个人“单打独斗”和代码保密的旧习惯。通过设立固定的团队学习交流会，鼓励提问与互助，将知识视为共同构建的财富。</li>
+<li><strong>在实践中学习</strong>：将学习 R 与解决实际项目问题相结合。管理者应为团队固定留出学习时间（如每周几小时），让成员在解决手头任务的过程中积累经验，将错误视为学习机会。</li>
+</ol>
+<p>最终，演讲者号召每个人都可以成为那颗引发变革的“小石子”，通过分享、实践和协作，将转型的阻力变为进步的动力。</p>
+<h2 id="mlops并非遥不可及用vetiver轻松入门-myles-mitchell-jumping-rivers--positconf2025">MLOps并非遥不可及：用vetiver轻松入门 (Myles Mitchell, Jumping Rivers) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=C9tTH1iTxvY">https://www.youtube.com/watch?v=C9tTH1iTxvY</a></p>
+<p>主讲人Miles是一位数据科学家，他通过分享自己的个人经历，为初学者揭开了MLOps（机器学习运维）的神秘面纱。</p>
+<p>他指出，许多初学者在刚接触MLOps时，常被其复杂的架构图、繁多的工具选择和高昂的云服务成本所困扰，感到不知所措。他的转折点来自于一次被要求教授MLOps工作坊的经历，这促使他找到了一个更平易近人的学习路径。</p>
+<p>这个关键工具就是Posit公司开发的<code>vetiver</code>包。它有以下优点：</p>
+<ul>
+<li><strong>免费开源</strong>：无需成本即可开始学习。</li>
+<li><strong>跨语言</strong>：同时支持R和Python。</li>
+<li><strong>简化流程</strong>：将模型版本化、部署、监控等复杂步骤封装成简单的函数。</li>
+<li><strong>对初学者友好</strong>：允许用户先在本地免费部署模型进行练习，熟悉API交互，之后再考虑上云。</li>
+</ul>
+<p>最后，他总结了三个核心观点：</p>
+<ol>
+<li>可以利用<code>vetiver</code>这样的免费工具立即开始学习MLOps。</li>
+<li>在进行技术分享时，应多考虑听众，避免使用过于复杂的图表。</li>
+<li>“以教为学”是掌握一个新领域的绝佳方法。</li>
+</ol>
+<h2 id="让你的shiny应用不再劝退日常应用的设计之道-casey-aguilar-gervase--maya-gans-atorus--positconf2025">让你的Shiny应用不再“劝退”：日常应用的设计之道 (Casey Aguilar-Gervase &amp; Maya Gans, Atorus) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=RQod46DSkiA">https://www.youtube.com/watch?v=RQod46DSkiA</a></p>
+<p>这是一场关于如何设计实用、清晰且值得信赖的 Shiny 应用程序的演讲。讲者强调，好的设计不仅是追求美观，更核心的是提升应用的可用性，避免让用户感到困惑和挫败。</p>
+<p>演讲通过一个改造前后的应用范例，提出了四个关键的设计维度：</p>
+<ol>
+<li><strong>布局 (Layout)</strong>：布局应保持一致和可预测。建议遵循网格系统，善用留白让页面呼吸，并将导航置于用户习惯的 Z 字形阅读路径上（如顶部水平导航）。</li>
+<li><strong>色彩 (Color)</strong>：色彩应用于引导用户注意力，而非制造干扰。建议从黑白稿开始设计，严格限制色彩数量，并将颜色策略性地用于高亮显示和互动状态。</li>
+<li><strong>字体 (Typography)</strong>：字体用于建立清晰的信息层级。应使用品牌字体，并通过字重、大小写和一致的尺寸变化来区分主次信息，而非仅仅改变字号。</li>
+<li><strong>组件 (Components)</strong>：应用的互动组件必须提供实时反馈。用户的每一个操作都应有对应的视觉变化（如进度条、确认弹窗），并通过工具提示等方式实现「渐进式揭示」，避免一次性呈现过多信息。</li>
+</ol>
+<p>总结来说，通过在布局、色彩、字体和组件上进行深思熟虑的设计，可以将一个令人困惑的应用转变为引导性强、响应迅速的产品，从而显著提升用户体验和产品的采纳率。</p>
+<h2 id="r与python在生产环境中的爱情故事-claudia-penaloza-continental-tires--positconf2025">R与Python在生产环境中的“爱情故事” (Claudia Penaloza, Continental Tires) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=hYKqgYNb3bc">https://www.youtube.com/watch?v=hYKqgYNb3bc</a></p>
+<p>该视频分享了在德国马牌轮胎公司的一个真实项目中，如何在生产环境中成功结合 R 和 Python 语言的经验。</p>
+<p>项目目标是构建一个机器学习模型来预测轮胎性能，以缩短研发周期。项目初期以 R 语言为主，但在进入投产阶段时，核心 R 开发者休假，团队变为以 Python 开发者为主。面对“用 Python 重写全部代码”的提议，团队最终决定不重写，而是探索两种语言的共存之道。</p>
+<p>他们成功的关键策略包括：</p>
+<ol>
+<li><strong>数据交换标准化</strong>：规定脚本之间使用 Parquet 文件，与外部系统则通过 PostgreSQL 数据库交互。</li>
+<li><strong>务实的开发与审查</strong>：允许开发者使用自己熟悉的语言（“舒适区编程”），但实行跨语言代码审查，重点关注文档、命名等核心原则。</li>
+<li><strong>环境管理与容器化</strong>：使用 <code>renv</code> (R) 和 <code>uv</code> (Python) 管理依赖，并为两种语言分别创建独立的 Docker 容器，以保证环境的一致性和可靠性。</li>
+<li><strong>语言无关的编排</strong>：利用 MLOps 平台（Valohai）来调度整个工作流，该平台不关心每个步骤具体使用哪种语言，只负责串联各个任务。</li>
+</ol>
+<p>最终，这个多语言混合模型成功部署，为上百名开发者提供隔夜预测服务，证明了通过明确的规则和现代化的部署工具，R 和 Python 完全可以在生产环境中高效协作。</p>
+<h2 id="结对编程让你的项目又快又稳又有趣-kris-fabick--kristin-carr">结对编程：让你的项目又快又稳又有趣 (Kris Fabick &amp; Kristin Carr)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=tAo2nCwt-F0">https://www.youtube.com/watch?v=tAo2nCwt-F0</a></p>
+<p>这段视频由两位来自日产公司的数据科学家主讲，分享了他们如何通过<strong>结对编程（Pair Programming）<strong>来实现高效且稳健的</strong>自足式项目部署（Sufficient Deployment）</strong>。</p>
+<p>核心观点如下：</p>
+<ol>
+<li><strong>部署的核心挑战</strong>：项目部署需要在“快速响应业务变化”（Reactivity）和“确保方案长期稳定”（Stability）这两个看似矛盾的目标间取得平衡。</li>
+<li><strong>结对编程是解决方案</strong>：结对编程是解决这一挑战的关键。研究表明，它虽然可能增加少量开发时间，但能显著减少代码缺陷，提升产品质量和开发者满意度。</li>
+<li><strong>灵活的结对方式</strong>：演讲介绍了多种结对编程模式，重点推荐了“非结构化异步”模式（他们戏称为 “pair”allel programming）。即团队成员可以分头独立编码，但必须定期共同进行<strong>代码重构（Refactoring）</strong>，以确保知识同步和代码质量。</li>
+<li><strong>实践案例</strong>：他们以一个预测集装箱利用率的机器学习项目为例，展示了如何结合使用R、Python及Posit Connect等工具，并通过结对编程的方式，成功由业务团队自身完成了项目的开发与部署。</li>
+<li><strong>关键经验</strong>：成功的关键在于将结对编程视为一种思维模式，利用成员间的技能互补，并通过代码重构和共同撰写文档等方式建立检查点，从而实现“慢下来，以便更快地前进”。</li>
+</ol>
+<h2 id="像教宝宝一样解释positron化繁为简的沟通艺术-ryan-johnson">像教宝宝一样解释Positron：化繁为简的沟通艺术 (Ryan Johnson)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=NVOmCKPzokY">https://www.youtube.com/watch?v=NVOmCKPzokY</a></p>
+<p>这位演讲者以一本名为《给宝宝的量子计算》的儿童读物为例，分享了如何将复杂概念简单化，以便向任何受众（无论是同事、家人还是初学者）进行解释。</p>
+<p>他重点介绍了三种核心技巧：</p>
+<ol>
+<li><strong>搭梯子 (Laddering):</strong> 从一个所有人都理解的基础概念（如一个球）开始，一步步增加信息（如位、字节、数据），最终搭建起通往复杂主题（如数据）的知识阶梯。</li>
+<li><strong>避免行话 (Avoiding Jargon):</strong> 尽量避免使用专业术语。如果无法避免，则应在提供了足够背景信息后才引入，并加以解释。</li>
+<li><strong>使用比喻 (Using Metaphors):</strong> 将抽象概念与人们熟悉的日常事物（如工具、食物、天气等）进行类比，以帮助理解。</li>
+</ol>
+<p>演讲者运用这些技巧来解释Posit的新产品Positron IDE。例如，他将支持多种编程语言 (polyglot) 的Positron比作一把“多功能叉勺 (spork)”，它结合了叉子（好比R语言）和勺子（好比Python语言）的功能，是一个为数据科学设计的强大集成工具。最终，他通过一本自创的《给宝宝的Positron》展示了这些方法的实际应用，鼓励大家在沟通复杂问题时运用这些技巧。</p>
+<h2 id="糟糕我意外搞出了个生产级应用-jonathan-keane-posit--positconf2025">糟糕！我意外搞出了个生产级应用 (Jonathan Keane, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=dFkmJcIB5M8">https://www.youtube.com/watch?v=dFkmJcIB5M8</a></p>
+<p>演讲者分享了一次将概念验证（POC）项目意外变成“生产级”应用的经历。他制作的一个仪表板在无意中被公司CEO每天使用，这让他意识到项目的重要性远超预期。</p>
+<p>他用“在融雪中行走”作比喻，说明数据科学项目常处于一个危险的中间地带：看似安全，实则可能因缺乏维护而“滑倒”。</p>
+<p>为了应对这种情况，他提出了两步走的策略：</p>
+<ol>
+<li>
+<p><strong>识别是否为生产级应用</strong>：关键在于进行<strong>使用情况监控 (usage monitoring)</strong>。通过Posit Connect的内置功能、Google Analytics或ShinyTelemetry等工具，可以了解谁在用、何时用、用多久，从而判断一个项目是否已成为关键应用。</p>
+</li>
+<li>
+<p><strong>管理真正的生产级应用</strong>：一旦确认，就应借鉴软件工程的最佳实践来提升其稳定性和可维护性：</p>
+<ul>
+<li><strong>模块化 (Modularity)</strong>：将长代码拆分为逻辑清晰的小单元。</li>
+<li><strong>测试 (Testing)</strong>：为模块编写测试，确保代码质量。</li>
+<li><strong>持续集成 (CI)</strong>：利用GitHub Actions等工具自动运行测试。</li>
+<li><strong>依赖管理 (Dependency Management)</strong>：通过Dependabot等工具自动更新软件包，保持项目最新。</li>
+</ul>
+</li>
+</ol>
+<p>核心观点是：<strong>不要对所有项目都过度投入</strong>。先通过监控来识别哪些项目真正重要，然后将精力集中在这些关键应用上，从而将“糟糕，我意外搞出了个生产应用”的恐慌，转变为“太棒了，我成功交付了一个生产应用”的喜悦。</p>
+<h2 id="用rust为r语言插上翅膀扩展而非替代-andrés-quintero-ixpantia--positconf2025">用Rust为R语言插上翅膀：扩展而非替代 (Andrés Quintero, ixpantia) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=bAA_O_gNhfI">https://www.youtube.com/watch?v=bAA_O_gNhfI</a></p>
+<p>这位来自哥伦比亚的数据专家Andres Quintero，分享了如何使用Rust语言来增强R语言的生态系统。</p>
+<p>他首先从个人经历谈起：在哥伦比亚资源有限的医疗保健领域工作时，他曾面临R语言性能不足、难以扩展的挑战。Rust以其卓越的性能成功解决了这个问题，这也是他推崇Rust的原因。</p>
+<p>Rust是一种旨在让所有人都能构建<strong>可靠、高效</strong>软件的编程语言，其三大核心承诺是：<strong>性能（Performance）</strong>、<strong>可靠性（Reliability）<strong>和</strong>生产力（Productivity）</strong>。它的关键优势之一是能与其他语言（如R和Python）轻松整合。</p>
+<p>演讲者指出，R生态系统可以从三个主要方面受益于Rust：</p>
+<ol>
+<li>
+<p><strong>R包（Packages）</strong>：通过<code>rextender</code>这个工具包（类似于Rcpp），开发者可以将性能要求高的代码用Rust实现，并在R中直接调用。他展示了一个简单范例，性能提升了18倍，并介绍了他们团队开发的、已在CRAN上发布的 高性能图形查询包<code>Orbweaver</code>。</p>
+</li>
+<li>
+<p><strong>工具（Tools）</strong>：许多高效、可靠的R社区工具是用Rust编写的。例如，R版本管理工具<code>rig</code>和R代码自动格式化工具<code>air</code>，它们都因Rust而变得极其快速和稳定，大大提升了开发者的工作效率。</p>
+</li>
+<li>
+<p><strong>文化（Culture）</strong>：Rust社区的创新文化和高质量的工具链（如<code>cargo</code>）正在激励和影响R社区，推动了R生态系统中新工具的开发和进步，促进了整个社区的技术革新。</p>
+</li>
+</ol>
+<p><strong>核心结论</strong>：演讲者强调，引入Rust的目标是**「扩展而非替代」（Extend, not Replace）**。组织不需要完全抛弃现有的R或Python代码，而应在关键的性能瓶颈处，利用Rust来增强和优化现有系统，以更低的成本实现更高的效率。</p>
+<h2 id="拥抱一次性应用用ai快速构建即时影响力-james-wade-dow--positconf2025">拥抱“一次性”应用：用AI快速构建即时影响力 (James Wade, Dow) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=smnrmTtoiOM">https://www.youtube.com/watch?v=smnrmTtoiOM</a></p>
+<p>演讲者 James Wade 提出了一个核心观点：<strong>我们应该构建更多用完即弃的“一次性 Shiny 应用”</strong>。</p>
+<p>这种应用专为单次会议或沟通而设计，其价值在于<strong>即时影响力</strong>，而非长期可用性。他将其比作鼓励互动的“儿童博物馆展品”，与被动观赏的“画作”（传统PPT）形成对比，能有效提升会议的参与感和沟通效率。</p>
+<p>实现这一点的关键在于，<strong>AI 编程助手</strong>（如 Positron Assistant）已将应用开发的门槛和时间成本降至极低。演讲者以一个“双胞胎如厕训练”应用为例，展示了如何在十几分钟内完成从构思、AI生成代码到部署的全过程。</p>
+<p>他强调，这种应用<strong>无需考虑长期维护</strong>，就像白板上的草图一样，用完即可抛弃。最后，他鼓励开发者转变思维，在下次准备演示时，优先尝试构建一个一次性应用，以创造更大的即时价值。</p>
+<h2 id="人人都能成为ggplot2扩展开发者一个社群的邀请-gina-reynolds--positconf2025">人人都能成为ggplot2扩展开发者：一个社群的邀请 (Gina Reynolds) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=V6Cgsecotg8">https://www.youtube.com/watch?v=V6Cgsecotg8</a></p>
+<p>这段视频是对一个名为 “ggplot2 extenders” 的社群的介绍。</p>
+<p>演讲者 Gina Reynolds 解释说，这个社群并非要盘点现有的 ggplot2 扩展包，而是为了帮助更多人参与到扩展开发中来。该社群成立于2022年，旨在降低扩展开发的门槛，让它不再像一个“专属俱乐部”。</p>
+<p>社群的主要活动是定期举办线上会议，成员们会分享各自的项目、动机和遇到的挑战。社群也提供学习资源，并鼓励成员在会议之外进行交流。演讲者强调，加入社群的方式非常简单，只需填写网站上的表格即可，社群非常欢迎新人。</p>
+<p>演讲者将 ggplot2 的易用性比作“所想即所得”的直观体验，但当基础功能无法满足复杂需求时，扩展开发就显得尤为重要。最后，她以 <code>ggsprings</code> 包为例，展示了社群如何帮助成员将创意变成实际的、更强大的软件包，并再次热情邀请感兴趣的人加入他们。</p>
+<h2 id="医生与数据科学家如何有效沟通秘诀是合作式好奇心-max-hockstein-georgetown--positconf2025">医生与数据科学家如何有效沟通？秘诀是“合作式好奇心” (Max Hockstein, Georgetown) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=x0AijVNlhg8">https://www.youtube.com/watch?v=x0AijVNlhg8</a></p>
+<p>演讲者Max是一位医生，他探讨了临床医生与数据科学家之间普遍存在的沟通鸿沟。他指出，问题的核心在于两种职业的思维范式截然不同：医生在医学训练和实践中习惯于用<strong>确定性</strong>的二元逻辑（如“阳性/阴性”、“正常/异常”）进行沟通和决策，常常忽略连续变量的细微变化和统计误差。相比之下，数据科学家则在<strong>不确定性</strong>的框架下工作，重视误差范围、置信区间和模型的稳健性。</p>
+<p>为了弥合这一差距，Max提出了“合作式的好奇心”（Partnership in Nosiness）的解决方案。他鼓励双方互相探究对方的工作流程、术语和“集成开发环境”（IDE）——对医生而言是ICU病房和病历系统，对数据科学家则是代码和模型。通过积极提问和耐心解释，医生可以理解数据模型的原理，数据科学家也能领会临床背景的意义，最终实现更有效的合作，得出更深刻的研究见解。</p>
+<h2 id="巧用llm将杂乱数据轻松变为结构化表格-dylan-pieper--positconf2025">巧用LLM：将杂乱数据轻松变为结构化表格 (Dylan Pieper) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=Lo4vewuapI8">https://www.youtube.com/watch?v=Lo4vewuapI8</a></p>
+<p>该视频介绍了如何在 R 语言中使用大语言模型（LLM）进行数据分类。主讲人演示了使用 <code>elmer</code> 包将文本、图片等非结构化数据转换为结构化的数据框。</p>
+<p>核心观点和方法包括：</p>
+<ol>
+<li><strong>简化提示 (Prompting)</strong>：与其编写复杂的提示语，不如专注于定义清晰的输出数据结构。</li>
+<li><strong>评估与验证</strong>：要求 LLM 返回其预测的“不确定性”或“置信度”分数，这个分数通常能反映模型的实际表现。</li>
+<li><strong>结合传统方法</strong>：LLM 在某些任务（如区分细微差异）上可能不如传统的机器学习模型。最佳实践是将 LLM 与传统模型结合使用，例如用 LLM 进行初步数据标注，或在生产中作为“第二意见”来发现不一致的结果并交由人工审核。</li>
+</ol>
+<p>总之，LLM 是一个强大且易于使用的工具，但不应完全取代传统机器学习，而应作为辅助工具来提升数据处理工作流的效率和准确性。</p>
+<h2 id="让政府数据应用更可信更易用更无障碍-cameron-race--sarah-wong-brown--positconf2025">让政府数据应用更可信、更易用、更无障碍 (Cameron Race &amp; Sarah Wong-Brown) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=33doZkPSUqY">https://www.youtube.com/watch?v=33doZkPSUqY</a></p>
+<p>该视频介绍了由英国政府统计师开发的R包 <code>shinyGovstyle</code>。其主要目的是帮助开发者快速构建符合政府标准的、生产就绪的R Shiny应用，以应对疫情期间对数据仪表盘的激增需求。</p>
+<p>视频核心围绕该包解决的三大挑战展开：</p>
+<ol>
+<li>
+<p><strong>可访问性 (Accessibility)</strong>：确保应用对所有用户（包括有视觉或操作障碍、使用屏幕阅读器等辅助技术的用户）都友好。该包通过引入高对比度样式、提供清晰的链接描述、遵循Web内容可访问性指南（WCAG）等方式，显著提升了应用的可访问性。</p>
+</li>
+<li>
+<p><strong>可信度 (Trustworthiness)</strong>：为了赢得IT部门和公众的信任，该包集成了英国政府官方网站（gov.uk）的统一设计系统。这让应用拥有专业、熟悉的外观，从而增强了用户对数据和应用的信赖感。</p>
+</li>
+<li>
+<p><strong>实用性 (Usefulness)</strong>：作为一个由志愿者维护的开源项目，开发团队需要明智地分配资源。他们通过优先处理对R Shiny用户有独特价值的功能（如美化表格），同时避免与更广泛的政府设计决策（如“深色模式”）相冲突，来最大化其工作价值。</p>
+</li>
+</ol>
+<p>总之，<code>shinyGovstyle</code> 成功降低了政府分析师发布高质量仪表盘的门槛，使其在英国多个政府部门得到广泛应用。</p>
+<h2 id="positron新功能多会话助你轻松应对多任务开发-dhruvi-sompura-posit--positconf2025">Positron新功能：多会话助你轻松应对多任务开发 (Dhruvi Sompura, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=sItCFWvLDJQ">https://www.youtube.com/watch?v=sItCFWvLDJQ</a></p>
+<p>这段视频介绍了 Positron IDE 新增的“多会话” (multiple sessions) 功能，它极大地改善了多任务工作流。</p>
+<p>主要内容如下：</p>
+<ol>
+<li><strong>功能核心</strong>：用户可以在同一个 IDE 窗口内同时运行多个独立的解释器会话（也称控制台会话）。每个会话的状态（如日志、变量、历史记录）都是独立的。</li>
+<li><strong>操作方式</strong>：通过控制台窗格，用户可以轻松创建、切换和重命名会话。IDE 界面会通过图标清晰地显示每个会话是空闲还是正在运行代码。</li>
+<li><strong>“活动会话”概念</strong>：当前选中的会话是“活动会话”，IDE 的代码补全、诊断、绘图和变量显示等功能都会与此会话同步。切换活动会话，整个 IDE 的上下文会即时更新。</li>
+<li><strong>主要优势和应用场景</strong>：
+<ul>
+<li><strong>并行处理</strong>：在一个会话中运行耗时长的任务，同时在另一个会话中进行其他分析，无需再开启后台任务或多个 IDE 实例。</li>
+<li><strong>版本兼容性测试</strong>：可同时运行不同版本的 R 或 Python，方便开发者测试和比较代码在不同环境下的表现。</li>
+<li><strong>多语言开发</strong>：支持同时运行不同语言的会话（如 Python 和 R），让用户可以结合不同语言的优势，例如用 Python 清理数据，用 R 进行可视化。</li>
+</ul>
+</li>
+</ol>
+<p>总之，多会话功能让 Positron 的多任务和多语言开发变得更加无缝和高效。</p>
+<h2 id="打造数据科学界的迪士尼乐园一个跨语言社区的成功秘诀-melissa-van-bussel-statcan--positconf2025">打造数据科学界的“迪士尼乐园”：一个跨语言社区的成功秘诀 (Melissa Van Bussel, StatCan) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=A8tvYRK40rQ">https://www.youtube.com/watch?v=A8tvYRK40rQ</a></p>
+<p>演讲者 Melissa Van Bussel 是加拿大统计局的高级分析师，她分享了如何成功建立一个大型、包容的跨语言（polyglot）数据科学社区。她将这个社区比作迪士尼乐园，一个充满“魔力”、能让每个人都找到归属感的地方。</p>
+<p>她所在的“R与Python用户组”（RPUG）拥有超过1000名成员，其核心理念是：社区本身比成员使用的具体编程语言更重要。</p>
+<p>她分享了三个关键策略来打造这样一个成功的社区：</p>
+<ol>
+<li>
+<p><strong>建立统一的品牌形象</strong>：创建一个不局限于单一语言的独特品牌，让所有成员都能认同。例如，RPUG使用了一个可爱的“海盗哈巴狗”Logo，并衍生出许多版本，制作成贴纸和周边产品，极大地增强了团队凝聚力。</p>
+</li>
+<li>
+<p><strong>提供多样化的活动</strong>：像迪士尼的不同主题公园一样，社区也应满足不同成员的需求。这包括：</p>
+<ul>
+<li><strong>学习与探索</strong>：举办主题广泛的技术分享会和提供内部教程。</li>
+<li><strong>实践与求助</strong>：组织低压力的编程挑战和设立志愿者“答疑时间”（Office Hours）。</li>
+<li><strong>纯粹的乐趣</strong>：举办与编程无关的社交活动（如知识竞赛、手工活动），以增进成员间的友谊。</li>
+</ul>
+</li>
+<li>
+<p><strong>鼓励全员参与</strong>：采用“由用户为用户”的草根模式，让每个成员都能参与社区的组织和内容贡献。例如，任何人都可以为社区周报和网站贡献内容，也可以加入核心委员会参与策划。</p>
+</li>
+</ol>
+<p>最后，她鼓励大家，特别是那些正在创建新社区或为社区发展发愁的人，尝试这种跨语言模式，因为它能扩大社区的潜在成员和影响力，最终创造一个让所有人都感到受欢迎、乐于学习和交流的空间。</p>
+<h2 id="零代码构建ai智能体positron与aws-strands-agents实战-greg-headley--shun-mao-aws">零代码构建AI智能体：Positron与AWS Strands Agents实战 (Greg Headley &amp; Shun Mao, AWS)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=jLyudeHXjJc">https://www.youtube.com/watch?v=jLyudeHXjJc</a></p>
+<p>这篇视频介绍了AWS与Posit如何合作，帮助开发者和数据科学家构建从开发到生产级别的AI智能体（Agent）应用。</p>
+<p>核心内容围绕AWS最新发布的开源SDK——<strong>Strands Agents</strong>展开。其主要特点是：</p>
+<ol>
+<li><strong>简化开发</strong>：通过整合<strong>提示（Prompt）</strong>、**大语言模型（LLM）<strong>和</strong>工具（Tools）**三大核心组件，开发者仅需少量代码即可构建功能强大的智能体。</li>
+<li><strong>模型选择灵活</strong>：支持包括Amazon Bedrock、本地部署模型（通过Ollama）及OpenAI在内的多种大语言模型。</li>
+<li><strong>强大的工具集成</strong>：
+<ul>
+<li>提供计算器、文件操作等内置工具。</li>
+<li><strong>亮点功能</strong>：能轻松将任何现有的Python函数（只需添加描述性文档字符串）转换为智能体可调用的工具，对数据科学家极其友好。</li>
+<li>支持调用第三方API（如网页搜索）和连接企业知识库（如Pinecone向量数据库）。</li>
+</ul>
+</li>
+</ol>
+<p>视频最后在Positron环境中进行了现场演示，展示了如何逐步为一个智能体添加计算器、自定义Python函数、API调用等多种工具，并最终将其打包成一个可交互的Streamlit应用，证明了整个过程的简便与高效。</p>
+<h2 id="告别会议重开让你的shiny应用拥有存档和读档功能-eric-nantz-eli-lilly--positconf2025">告别会议重开：让你的Shiny应用拥有“存档”和“读档”功能 (Eric Nantz, Eli Lilly) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=69bnkXD3e6w">https://www.youtube.com/watch?v=69bnkXD3e6w</a></p>
+<p>这个视频介绍了一个名为 <code>shinystate</code> 的 R 包，它旨在增强 Shiny 应用的状态保存与恢复功能。</p>
+<p>演讲者指出，在处理输入项繁多的复杂 Shiny 应用时，尤其是在多人协作会议中，快速恢复到之前的特定状态非常困难。虽然 Shiny 内置了书签功能 (bookmarkable state)，但其 URL 方式对复杂应用有限制，而服务器端保存方式则将状态文件锁定在服务器上，用户难以访问和管理。</p>
+<p><code>shinystate</code> 通过以下关键增强解决了这些痛点：</p>
+<ol>
+<li><strong>灵活的存储位置</strong>：通过与 <code>pins</code> 包集成，用户可以将应用状态保存到 S3、Posit Connect 等多种后端，而不仅限于服务器本地。</li>
+<li><strong>附加元数据</strong>：保存状态时可以添加名称、描述等元数据，方便后续查找和管理。</li>
+<li><strong>促进协作</strong>：最核心的功能是实现状态共享。一个用户可以保存自己的会话状态，团队其他成员可以轻松加载，极大地提升了协作效率，就像共享云文档一样。</li>
+</ol>
+<p>总而言之，<code>shinystate</code> 让 Shiny 应用的状态管理更加灵活、透明和可协作，为复杂应用的工作流（如可追溯性、自动化报告）开启了新的可能性。</p>
+<h2 id="这个r包靠谱吗一种数据驱动的评估方法-colin-s-gillespie-jumping-rivers--positconf2025">这个R包靠谱吗？一种数据驱动的评估方法 (Colin S Gillespie, Jumping Rivers) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=g6QU16jOt0g">https://www.youtube.com/watch?v=g6QU16jOt0g</a></p>
+<p>该视频探讨了如何系统、客观地评估R语言包（package）的可信度。演讲者指出，用户在选择R包时常面临矛盾的信号（如包的作者知名但项目已不再维护），且不同用户（从学生到有严格合规需求的制药公司）的风险偏好各不相同，仅依赖“是否在CRAN上”这样的简单标准已远远不够。</p>
+<p>为此，演讲者介绍了他们开发的“Litmus”评估系统。该系统通过收集多维度指标（如代码覆盖率、依赖关系、社区活跃度、安全漏洞等），并采用数据驱动的相对评分法（例如，将一个包的指标与CRAN所有包进行比较），来生成一个综合信任分数。此方法将客观指标与可由用户自定义的权重分离开，同时能高亮标记出许可证不合规或存在安全漏洞等重大风险。</p>
+<p>最终，该系统通过一个公开的仪表盘（dashboard）展示评估结果，帮助用户直观地比较不同R包的优劣。其目标是为个人和组织提供一个正式、透明的决策框架，以支持他们选择安全、可靠的R包，从而有效管理风险。</p>
+<h2 id="让你的api飞起来r语言api性能优化两大策略-joe-kirincic-restore-skills--positconf2025">让你的API飞起来：R语言API性能优化两大策略 (Joe Kirincic, RESTORE-Skills) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=4el3AGk8SUE">https://www.youtube.com/watch?v=4el3AGk8SUE</a></p>
+<p>这个视频讲解了如何提升 R 语言 Plumber API 的性能，主要提出了两种策略：</p>
+<ol>
+<li>
+<p><strong>最小化序列化成本</strong>：序列化是将 R 对象转换为网络传输格式（如 JSON）的过程。通过使用比默认 <code>jsonlite</code> 更快的包（如 <code>yyjsonr</code>），可以显著减少这一过程耗时，从而提升 API 响应速度。这只需要少量代码修改，就能为所有 API 接口带来性能提升。</p>
+</li>
+<li>
+<p><strong>使用异步编程最大化响应性</strong>：R 是单线程的，默认情况下 Plumber 会按顺序处理请求，一个慢请求会阻塞后续所有请求。通过使用 <code>mirai</code> 等包实现异步（多进程）编程，主进程可以将请求分发给多个子进程并行处理。这避免了请求排队，大大提高了 API 的并发处理能力和响应性。</p>
+</li>
+</ol>
+<p><strong>核心结论</strong>：结合这两种策略可以有效扩展 Plumber API 的能力，以应对高流量。演讲者强调，R 拥有强大的生产工具，优秀的架构设计比单纯更换编程语言更为关键。</p>
+<h2 id="实时追踪疫情一部手机app如何改变公共卫生监测-hugo-fitipaldi-lund-university">实时追踪疫情：一部手机App如何改变公共卫生监测 (Hugo Fitipaldi, Lund University)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=3-UsetFXFlk">https://www.youtube.com/watch?v=3-UsetFXFlk</a></p>
+<p>这段视频介绍了「新冠症状研究」（COVID Symptom Study）项目，这是一个在疫情初期（2020年）于英、美、瑞典等多国启动的大型公卫研究计划。</p>
+<p>研究核心是通过一款手机App，收集了数百万用户每日的健康状况、症状和新冠检测结果。研究的关键成果包括：</p>
+<ol>
+<li><strong>早期发现关键症状</strong>：该研究率先发现「嗅觉丧失」是新冠病毒感染的强烈预测指标。</li>
+<li><strong>建立预测模型</strong>：团队利用有检测结果的用户数据，建立了一个仅靠症状就能预测新冠感染的模型。</li>
+<li><strong>实时追踪疫情</strong>：运用此模型，研究人员得以估算未检测人群的感染率，从而实时绘制出病毒在国家和地区层面的传播地图。</li>
+<li><strong>模型迭代与应用</strong>：研究展示了模型如何根据实际情况进行修正（如加入时间依赖性以校正数据偏差），并成功结合住院数据，提前一周预测了住院人数的高峰。</li>
+</ol>
+<p>总结来说，这个项目成功展示了如何利用手机App和数据科学工具进行快速、有效的实时疾病监测，为应对未来的公共卫生危机提供了宝贵经验和方法。</p>
+<h2 id="告别一次性工作将数据整理变成可复用的数据产品-clara-amorosi-bms--positconf">告别一次性工作：将数据整理变成可复用的“数据产品” (Clara Amorosi, BMS) | posit::conf</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=RrBdbbinS1E">https://www.youtube.com/watch?v=RrBdbbinS1E</a></p>
+<p>该视频介绍了一个名为 <code>daapr</code>（Data as a Product in R）的框架，旨在解决数据整理（data wrangling）工作耗时、一次性且难以复现与协作的问题。</p>
+<p><strong>核心思想：</strong>
+讲者将采用可复现研究方法比作“第二类乐趣（Type 2 Fun）”——过程辛苦，但回报丰厚。<code>daapr</code> 框架的核心是将经过整理的数据打包成一个版本化、可复现、可共享的“数据产品”（Data Product），将一次性的数据工作转化为可复用的资产。</p>
+<p><strong>主要原则与流程：</strong></p>
+<ol>
+<li>
+<p><strong>版本化一切 (Version all the things)</strong>：</p>
+<ul>
+<li><strong>代码</strong>：使用 Git/GitHub 进行版本控制。</li>
+<li><strong>环境</strong>：使用 <code>renv</code> 包追踪和管理依赖。</li>
+<li><strong>数据</strong>：使用 <code>pins</code> 包对输入数据进行版本化管理。</li>
+</ul>
+</li>
+<li>
+<p><strong>工作流程</strong>：</p>
+<ul>
+<li><strong>初始化</strong>：设置项目、Git仓库和远程存储。</li>
+<li><strong>输入快照</strong>：将原始数据文件版本化并同步到远程。</li>
+<li><strong>构建</strong>：编写数据处理代码（衍生代码），生成分析就绪的数据集。</li>
+<li><strong>版本化与部署</strong>：提交所有代码、环境和数据元信息，并将最终的数据产品推送到远程，供团队成员使用和迭代。</li>
+</ul>
+</li>
+</ol>
+<p><strong>推广与挑战：</strong>
+为了鼓励团队采用，讲者分享了降低使用门槛的经验，包括：提供全面的培训、设置不同级别的用户角色（读者、贡献者、所有者）让人逐步适应，以及通过展示最终成果（如报告、Shiny应用）来证明其价值。同时，视频也提到了常见的障碍，如证书管理、Git学习曲线和企业环境配置问题，并给出了相应的解决方案。</p>
+<p>总之，<code>daapr</code> 提供了一个结构化的方法，通过强制版本化和协作流程，帮助数据科学家团队构建可靠、可复现的数据分析管道。</p>
+<h2 id="ambiorix一个为r语言打造的灵活网页开发框架-kennedy-mwavu--john-coene--positconf2025">Ambiorix：一个为R语言打造的灵活网页开发框架 (Kennedy Mwavu &amp; John Coene) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=2xZwPJHx4z8">https://www.youtube.com/watch?v=2xZwPJHx4z8</a></p>
+<p><strong>Ambiorix：一个为 R 语言打造的灵活网页开发框架</strong></p>
+<p>这段视频介绍了 R 语言的网页开发框架 <strong>Ambiorix</strong>。它由 John Coene 创建，灵感来源于 JavaScript 的 Express.js 框架。</p>
+<p><strong>核心特点与优势：</strong></p>
+<ol>
+<li><strong>与 Shiny 的区别</strong>：Ambiorix 并非 Shiny 的替代品，而是一种根本不同的开发模式。Shiny 是“开箱即用”型，自带 UI 组件和响应式系统；而 Ambiorix 则需要开发者“从零搭建”，提供了极高的自由度和定制空间，允许使用任何前端技术。</li>
+<li><strong>多页面应用与 API 支持</strong>：它解决了 Shiny 难以实现多页面应用（无法分享特定页面链接）和原生不支持创建 API 接口的问题。开发者可以用同一套 R 代码，同时构建供用户访问的 HTML 网页和供程序调用的 JSON API。</li>
+<li><strong>精确控制</strong>：开发者可以深入控制 HTTP 的“请求-响应”循环，处理动态路由（如 <code>/data/:name</code>）、查询参数（如 <code>?limit=10</code>）以及返回标准的 HTTP 状态码（如 404 Not Found）。</li>
+</ol>
+<p>视频通过一个简单的数据看板演示，展示了如何为同一份数据集（如 <code>mtcars</code>）同时提供美观的 HTML 页面和结构化的 JSON 数据接口。</p>
+<p>总之，Ambiorix 适合那些需要高度定制化、构建多页面网站或希望在 R 生态中同时开发网页和 API 的开发者。它带来了无与伦比的灵活性，但也要求开发者承担更多底层构建工作。</p>
+<h2 id="posit商业产品全景从ai助手到云原生部署-get-the-latest-on-posits-commercial-products--positconf2025">Posit商业产品全景：从AI助手到云原生部署 (Get the Latest on Posit&rsquo;s Commercial Products) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=N5h2JlTOsUo">https://www.youtube.com/watch?v=N5h2JlTOsUo</a></p>
+<p>这份视频摘要介绍了Posit商业产品系列的最新功能和全新产品，旨在解决企业在规模化应用开源数据科学时面临的挑战，如安全性、合规性及效率等。</p>
+<p>主要亮点包括：</p>
+<ol>
+<li>
+<p><strong>核心产品更新</strong>:</p>
+<ul>
+<li><strong>Posit Workbench</strong>: 集成了全新的多语言IDE <strong>Positron</strong>，并内置了具备上下文感知能力的<strong>生成式AI助手</strong>。同时增强了管理员功能，如可观测性指标和用于合规的审计作业。</li>
+<li><strong>Posit Package Manager</strong>: 新增了关键的<strong>身份验证功能</strong>，支持单点登录（SSO）和API令牌，以实现对软件包仓库更精细的访问控制和安全性。</li>
+<li><strong>Posit Connect</strong>: 引入了革命性的<strong>内置容器化</strong>功能。用户无需编写Dockerfile，Connect即可自动将其部署的应用（如Shiny、Quarto）打包成独立的容器镜像，极大地简化了部署流程并保证了可重复性。</li>
+</ul>
+</li>
+<li>
+<p><strong>全新工具与服务</strong>:</p>
+<ul>
+<li><strong>Chronicle</strong>: 一款免费的新工具，帮助客户深入了解其Posit产品的使用情况，数据完全保留在客户自己的环境中。</li>
+<li><strong>Posit Connect Cloud</strong>: 一个完全托管的云发布平台（SaaS），现已支持从IDE直接部署，并为团队提供了协作、SSO和高级安全控制。</li>
+<li><strong>Snowflake原生应用</strong>: 将完整的Posit Team（Workbench、Connect等）作为原生应用直接在客户的Snowflake账户内部署和运行。这实现了分钟级设置、零运维负担，并与Snowflake的数据、安全性和AI功能（如Cortex）无缝集成。</li>
+<li><strong>Posit Team Dedicated</strong>: 一项全新的托管服务，由Posit专家在客户自己的云账户（如AWS）中部署和维护一个专用的Posit环境，解决了数据主权和复杂网络环境下的托管需求。</li>
+</ul>
+</li>
+</ol>
+<p>总之，Posit正通过产品创新和多样化的部署选项，为不同规模和需求的企业提供更灵活、强大且安全的端到端数据科学平台解决方案。</p>
+<h2 id="ecocommons让生态建模人人可及的云平台-jenna-wraith-qcif--positconf2025">EcoCommons：让生态建模人人可及的云平台 (Jenna Wraith, QCIF) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=FXmA0QxEX3c">https://www.youtube.com/watch?v=FXmA0QxEX3c</a></p>
+<p>该视频介绍了 EcoCommons，一个旨在让生态建模变得普及和易用的免费、开源云平台。</p>
+<p>演讲者 Jenna Raif 博士首先分享了她早年研究中靠邮寄U盘获取数据的经历，以此点明了传统生态研究中数据分散、共享困难、效率低下的痛点。</p>
+<p>为解决这些问题，EcoCommons 平台应运而生。它集成了海量、标准化的生物多样性与环境数据集，并内置了基于 R 语言包开发的可靠分析模型。平台提供两种使用方式：一是为非编程人员设计的“点击式”操作界面，二是为高级用户提供的 R 和 Python 编程环境，同时利用云端计算解决了个人电脑算力不足的问题。</p>
+<p>视频通过一个“假如考拉生活在美国”的有趣建模演示，直观展示了平台的功能。演讲者强调，该平台不仅是理论工具，更在实际保护工作中发挥作用，例如帮助研究人员为极度濒危的鸟类预测并找到了新的潜在栖息地。</p>
+<p>总而言之，EcoCommons 致力于打破技术和数据壁垒，通过构建一个开放、可复现的科研社区，让学生、研究人员和环保组织都能平等地获取工具和数据，从而为全球生物多样性保护提供有力支持。</p>
+<h2 id="posit与现代数据栈ai如何打通云端数据分析-james-blair">Posit与现代数据栈：AI如何打通云端数据分析 (James Blair)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=D3UAslMqEZc">https://www.youtube.com/watch?v=D3UAslMqEZc</a></p>
+<p>这段视频介绍了 Posit 的 AI 工具（Positron Assistant 和 Databot）如何与 Snowflake、Databricks 等企业级云端数据平台高效整合。</p>
+<p>核心优势在于，这些 AI 工具能够在不将海量数据下载到本地环境的情况下，直接对远程数据库进行分析。视频通过两个实例进行演示：</p>
+<ol>
+<li><strong>Positron Assistant</strong>: 在 Python 环境下，使用 <code>ibis</code> 库连接 Snowflake，并让 Assistant 自动生成探索性分析的代码。</li>
+<li><strong>Databot</strong>: 在 R 环境下，使用 <code>sparklyr</code> 连接 Databricks，通过对话式交互，引导 Databot 执行探索性数据分析。</li>
+</ol>
+<p>两种情况下，AI 工具都会智能地生成相应的查询指令，将计算任务推送到远程的 Snowflake 或 Databricks 执行，从而充分利用了云平台的计算能力，同时 也确保了数据的安全性和合规性。讲者最后也指出，这种整合方式能让开发者构建的 AI 应用遵循企业底层数据库设定的权限规则（如行级安全性）。</p>
+<h2 id="一个r包的诞生我的怀孕日记如何变成开源项目-ella-kaye-university-of-warwick--positconf2025">一个R包的诞生：我的怀孕日记如何变成开源项目 (Ella Kaye, University of Warwick) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=d2KYt1JMjzQ">https://www.youtube.com/watch?v=d2KYt1JMjzQ</a></p>
+<p>R包开发者Ella Kaye分享了她如何将在怀孕期间为自己创建的个人R包，发展成一个名为<code>pregnancy</code>的通用软件包。她的核心目标是让这个包使用起来轻松愉快且充满个性化。</p>
+<p>为实现这一目标，她运用了几个关键技巧：</p>
+<ol>
+<li><strong>使用“选项”(Options) 和 “空值合并操作符” (<code>%||%</code>)</strong>：用户只需在<code>.Rprofile</code>中设置一次预产期，之后调用函数时就无需重复输入参数。</li>
+<li><strong>利用<code>rlang</code>和<code>cli</code>包</strong>：创建格式美观、信息明确的提示和错误信息，不仅告知用户问题所在，还指导他们如何解决。</li>
+<li><strong>提供辅助函数</strong>：简化常用设置。</li>
+</ol>
+<p>视频通过<code>pregnancy</code>包的实例，向其他开发者展示了如何运用这些技巧，让自己的R包变得更加人性化、易于使用。</p>
+<h2 id="借助posit-workbench用机器学习解密衰老之谜-varun-dwaraka--positconf2025">借助Posit Workbench，用机器学习解密衰老之谜 (Varun Dwaraka) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=JzDS3tadXC4">https://www.youtube.com/watch?v=JzDS3tadXC4</a></p>
+<p>该视频是TruDiagnostic公司的研究总监Varun的演讲。他介绍了公司如何利用表观遗传学（特别是DNA甲基化）来评估和追踪个人健康状况。与一次性的基因检测不同，DNA甲基化会受生活方式等环境因素影响而动态变化，因此可以用于预测生物学年龄、器官健康等。</p>
+<p>演讲的核心是，随着数据科学团队的成长，他们面临着工作流程难以扩展的挑战。<strong>Posit Workbench成为了关键解决方案</strong>，它提供了一个统一的云端平台，让科学家可以自行、灵活地使用R和Python等工具，并按需扩展计算资源，从而摆脱了对工程团队的依赖。</p>
+<p>Varun通过三个案例展示了Posit Workbench带来的价值：</p>
+<ol>
+<li><strong>加速科研</strong>：通过标准化的报告流程，快速与学术伙伴合作并发表了30多篇论文。</li>
+<li><strong>节省开发时间</strong>：在一个需要训练数千个机器学习模型的项目中，将原本耗时数月的工作大大缩短。</li>
+<li><strong>赋能内部团队</strong>：通过Shiny应用，使非技术人员也能方便地展示和解释数据。</li>
+</ol>
+<p>总之，Posit Workbench帮助该公司实现了高效、可扩展的生物信息学和机器学习工作流，是其科研与商业成功的关键工具。</p>
+<h2 id="加粗代表负数如何优雅地处理带格式的脏数据-luis-d-verde-arregoitia-instituto-de-ecología-ac--positconf2025">加粗代表负数？如何优雅地处理“带格式”的脏数据 (Luis D. Verde Arregoitia, Instituto De Ecología, A.c.) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=NJz0779Seto">https://www.youtube.com/watch?v=NJz0779Seto</a></p>
+<p>该视频探讨了在电子表格中将数据信息编码为单元格格式（如用加粗代表负数，用颜色区分单位或状态）的普遍现象及其弊端。这种做法虽直观，但会导致数据难以被程序（如R或Python）读取，并带来无障碍访问问题。</p>
+<p>演讲者介绍了多种应对策略，重点推荐了他自己开发的解决方案：</p>
+<ol>
+<li><strong><code>unheadr</code> R包</strong>：可以提取单元格的格式信息（如颜色、字体样式），并将其作为文本附加到数据中，从而使隐藏的信息变得明确且可被机器读取。</li>
+<li><strong><code>forgts</code> R/Python包</strong>：可将带格式的电子表格直接转换为精美的<code>gt</code>表格，方便报告和展示。</li>
+</ol>
+<p>演讲者通过帮助南极研究员自动识别以颜色标记的采样日期的实例，展示了这些工具的实用性。他总结道，尽管最佳实践是避免这种数据记录方式，但我们已拥有有效的工具来应对这些“混乱”的电子表格，实现与它们的“共存”。</p>
+<h2 id="ai帮你写测试shiny-for-python自动化测试新纪元-karan-gathani-posit">AI帮你写测试：Shiny for Python自动化测试新纪元 (Karan Gathani, Posit)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=gxcAadq0Bmk">https://www.youtube.com/watch?v=gxcAadq0Bmk</a></p>
+<p>这段视频介绍了一个为 <strong>Shiny for Python</strong> 设计的新功能：<strong>使用 AI 自动为应用生成测试代码</strong>。</p>
+<p>演讲者首先用“内向的蚱蜢在特定条件下会聚集成破坏性的蝗虫”的比喻，形象地说明了代码中潜伏的 bug 在被触发时可能引发严重问题，而编写测试就是防止这种情况发生的关键。</p>
+<p>该功能的核心是增强版的 <code>shiny add test</code> 命令行工具。它集成了大型语言模型（如 OpenAI、Anthropic），工作流程如下：</p>
+<ol>
+<li>用户在终端运行命令，并提供自己的 AI 模型 API 密钥。</li>
+<li>工具会分析 Shiny 应用的源代码，并连同关于如何使用 Shiny “controller”（控制器）的专门指令一起发送给 AI。</li>
+<li>AI 在几秒钟内就能生成一个完整、高质量且使用官方推荐写法的测试文件。</li>
+</ol>
+<p>相比直接使用通用 AI（如 ChatGPT），该工具的优势在于：</p>
+<ul>
+<li><strong>实时性</strong>：它了解最新的 Shiny 功能，不会因 AI 模型的知识库过时而受限。</li>
+<li><strong>简洁高效</strong>：利用内置的 “controller” 概念，生成的代码比通用 AI 产出的更简洁、更可靠。</li>
+<li><strong>高质量</strong>：通过内部评估框架 (<code>InspectAI</code>) 检验 AI 生成结果的质量，有效减少了 AI “幻觉”（hallucination）带来的错误。</li>
+</ul>
+<p>最后，讲者建议用户使用高质量的 AI 模型以获得最佳效果，并指出该功能目前已在 PyPI (1.5 版本) 中提供，但短期内没有为 Shiny for R 推出类似功能的计划。</p>
+<h2 id="从精算师到首席数据官一位数据领导者的成长之路-rachael-dempsey-posit--matthew-montero-genre--positconf2025">从精算师到首席数据官：一位数据领导者的成长之路 (Rachael Dempsey, Posit &amp; Matthew Montero, GenRe) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=mvb43mAcCL8">https://www.youtube.com/watch?v=mvb43mAcCL8</a></p>
+<p>这段视频是Posit数据科学交流活动的一场访谈，嘉宾是全球再保险公司Gen Re的首席数据官（CDO）Matthew Montero。他分享了自己从精算师转型为数据领导者的经历，以及在企业中推动数据科学和建立团队的宝贵经验。</p>
+<p>核心要点如下：</p>
+<ol>
+<li><strong>CDO的角色</strong>：Matthew认为CDO的核心职责是<strong>充当IT与业务部门间的桥梁</strong>，将复杂的技术概念转化为业务语言，并负责建立企业级数据架构、数据工程、治理和生产支持模型。</li>
+<li><strong>推广新技术</strong>：要说服精算师等用户从Excel转向R，关键在于**“展示而非说教”**。通过构建能解决实际问题的应用来证明其价值，并获得高层领导的支持，从而形成“滚雪球效应”。</li>
+<li><strong>建立内部社区</strong>：成功建立数据科学社区需要有<strong>专人负责、IT与业务部门的支持、以及在各部门寻找并赋能“拥护者”（champions）</strong>。社区为成员提供了分享、学习和获得认可的平台。</li>
+<li><strong>从技术走向管理</strong>：他建议想进入领导岗位的技术人员，即使不再频繁编码，也要保持“工程思维”以理解技术实现。他推荐了《高效能人士的七个习惯》这本书，并强调了<strong>掌控自我情绪对领导力的重要性</strong>。</li>
+<li><strong>职业建议</strong>：始终保持积极心态，将“问题（problems）”视为“挑战（challenges）”，因为挑战意味着有待解决的机遇，这有助于推动个人和团队的成长。</li>
+</ol>
+<h2 id="告别混乱用自动化实现数据处理的一致性-kristin-mussar-pfizer--positconf2025">告别混乱：用自动化实现数据处理的一致性 (Kristin Mussar, Pfizer) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=I6OtAXDcoMo">https://www.youtube.com/watch?v=I6OtAXDcoMo</a></p>
+<p>主讲人 Kristin 介绍了她和团队如何通过自动化来解决数据不一致的挑战。在制药行业，他们处理来自多个供应商的临床试验数据，这些数据格式各异，导致质量控制（QC）过程耗时且难以规模化。</p>
+<p>为应对此问题，他们开发了一个名为 “WrangleIt” 的自定义 R 包。该工具的核心在于，它是一个统一的处理流程，但通过“规约文件”（specification files）来适应不同数据的独特性。这些规约文件（如CSV或YAML）定义了数据结构、QC规则等，将变化的配置与标准化的代码分离，从而在保持灵活性的同时实现了处理的一致性。</p>
+<p>整个系统实现了自动化运行，并通过提供一致、快速的报告来简化下游用户的工作，从而提高了用户采纳度。最终，这种方法不仅提升了数据处理效率和数据价值，更重要的是，它能加快新药研发，更快地惠及患者。其核心思想对其他行业同样具有借鉴意义。</p>
+<h2 id="模块化魔法打造可定制易维护的shiny仪表盘-kim-schouten-de-nza">模块化魔法：打造可定制、易维护的Shiny仪表盘 (Kim Schouten, De NZa)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=HJs2HVltpcs">https://www.youtube.com/watch?v=HJs2HVltpcs</a></p>
+<p>该视频由荷兰医疗保健局（NZA）的数据科学家Kim主讲，介绍了他如何通过构建一个模块化、支持“布局即代码”（layout-as-code）的Shiny仪表盘，来改进医疗监管工作。</p>
+<p>核心要点如下：</p>
+<ol>
+<li>
+<p><strong>问题背景</strong>：最初，他们为多个监管机构开发了一个共享的仪表盘，但因涉及不同机构的隐私法规和数据权限问题，该共享模式被迫中止。</p>
+</li>
+<li>
+<p><strong>解决方案</strong>：他们重新设计了一个模块化的仪表盘。主要特点包括：</p>
+<ul>
+<li><strong>模块化与权限控制</strong>：将仪表盘拆分成独立的模块（如页面、图块、内容），并为不同用户组分配不同模块的访问权限，从而遵守了隐私法规（GDPR）。</li>
+<li><strong>代码结构优化</strong>：这种模块化设计将原本复杂、难以维护的“意大利面式代码”（spaghetti code）重构为清晰、结构化的“华夫饼式结构”（waffle structure），提高了代码的可维护性和可扩展性。</li>
+<li><strong>布局即代码（Layout-as-Code）</strong>：使用JSON文件来定义仪表盘的布局。应用在启动时读取JSON，动态生成界面。这不仅能为不同用户群提供定制化视图，还避免了因权限不足而出现的页面空白或错误信息。</li>
+<li><strong>用户个性化</strong>：该架构甚至允许用户在运行时自行添加、移除或调整模块，并将个性化布局保存到其个人JSON配置中。</li>
+</ul>
+</li>
+<li>
+<p><strong>成果</strong>：这个新仪表盘成功地为数百名来自不同组织的用户提供了服务，不仅解决了合规性问题，还因其清晰的模块化结构而更易于维护和开发，方便了团队新成员的加入。</p>
+</li>
+</ol>
+<h2 id="告别latex用r轻松生成合规的精美pdf报告-becca-krouse-gsk">告别LaTeX：用R轻松生成合规的精美PDF报告 (Becca Krouse, GSK)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=SWt-lcnYlNM">https://www.youtube.com/watch?v=SWt-lcnYlNM</a></p>
+<p>该视频介绍了一个名为 <strong>Docorator</strong> 的R语言包，其目的是解决制药行业在使用R语言生成报告时的一个关键痛点：如何创建格式传统、符合监管要求的PDF输出文件。</p>
+<p>演讲者将Docorator比作房屋改造节目，它能将标准的R输出（如用<code>gt</code>包制作的表格或<code>ggplot</code>图形）“翻新”成让利益相关者感到熟悉和舒适的精美报告。</p>
+<p><strong>核心要点：</strong></p>
+<ol>
+<li><strong>问题背景</strong>：制药行业正大规模转向使用R等开源工具，但在生成具有复杂页眉页脚、分页和特定传统外观的生产级PDF报告方面存在空白。</li>
+<li><strong>解决方案</strong>：Docorator通过封装R Markdown/Quarto和LaTeX技术，提供了一个简单的R函数接口。用户无需深入了解底层技术，只需使用<code>as_docorator()</code>和<code>render_pdf()</code>等函数，就能轻松地将表格或图形对象转换为格式化的PDF。</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li><strong>简化工作流</strong>：将复杂的PDF生成过程简化为几行R代码。</li>
+<li><strong>灵活的页眉页脚</strong>：支持通过<code>fancyhead</code>函数灵活定义多行、多列（左、中、右）的页眉和页脚内容，满足溯源和格式要求。</li>
+<li><strong>智能调整</strong>：能够自动缩放过宽的表格，以适应页面宽度。</li>
+</ul>
+</li>
+<li><strong>未来展望</strong>：该包的框架设计具有扩展性，未来可支持RTF等其他输出类型，并期待利用<code>typst</code>等新技术替代LaTeX，以简化维护并提供更强的定制能力。</li>
+</ol>
+<p>总之，Docorator填补了R在制药行业端到端报告流程中的一个重要缺环，证明了R有能力胜任从数据分析到最终报告输出的全过程。该包已在GitHub开源，并计划提交至CRAN和pharmaverse。</p>
+<h2 id="用otel洞察性能为你的shiny应用装上透视镜-barret-schloerke-posit--positconf2025">用Otel洞察性能：为你的Shiny应用装上“透视镜” (Barret Schloerke, Posit) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=zwxhFKRlQLs">https://www.youtube.com/watch?v=zwxhFKRlQLs</a></p>
+<p>这段视频介绍了如何使用 OpenTelemetry (Otel) 来观测和优化 R Shiny 应用程序的性能。</p>
+<p>讲者首先以一个调用大型语言模型（LLM）来查询天气的聊天 App 为例，展示了虽然应用表面上运行顺畅，但其内部的复杂计算过程（如 API 请求、工具调用）的耗时却是个黑盒子。</p>
+<p>OpenTelemetry 是一个观测工具，它能将这些后端操作可视化，生成详细的“火焰图”（span chart），让开发者能清楚地看到每个步骤的耗时，从而精准定位性能瓶颈。</p>
+<p>相较于 <code>profvis</code> 等仅适用于本地开发的工具，Otel 更适合生产环境，并且能追踪跨越多个进程（如使用 <code>mirai</code> 套件的背景任务）的复杂应用。</p>
+<p>整合 Otel 的步骤很简单：</p>
+<ol>
+<li>安装 <code>otel</code> 和 <code>otel-sdk</code> 套件。</li>
+<li>设置环境变量，将遥测数据发送到指定的收集服务。</li>
+</ol>
+<p>最后，讲者提出了一套优化流程：使用 Otel 发现耗时长的环节，再结合 <code>profvis</code> 等工具进行具体分析，并通过代码优化、使用缓存或非阻塞异步操作来提升应用性能。未来的开发方向包括更好的错误报告、与 Posit Connect 的原生整合以及对 Shiny for Python 的支持。</p>
+<h2 id="少即是多用行为科学打造让用户爱不释手的仪表盘-jeremy-winget-crossstack--positconf">少即是多：用行为科学打造让用户爱不释手的仪表盘 (Jeremy Winget, CrossStack) | posit::conf</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=QvMnUZLQ-oo">https://www.youtube.com/watch?v=QvMnUZLQ-oo</a></p>
+<p>这段视频探讨了仪表板（dashboard）设计中的一个常见痛点：过多的筛选器和选项虽然功能强大，却常常让用户感到困惑和不知所措，导致使用率低下。</p>
+<p>演讲者Jeremy是一位心理学家，他提出核心观点：许多仪表板的失败并非技术问题，而是心理学问题。他引用「选择悖论」（The Paradox of Choice）等行为科学理论，说明过多选项会让使用者陷入瘫痪，而非赋予其能力。</p>
+<p>为此，他介绍了一个名为「行为洞察设计」（BID）的框架和一个配套的R语言包<code>bidux</code>。该工具能帮助开发者系统性地应用心理学原理：</p>
+<ol>
+<li><strong>分析现状</strong>：通过分析用户遥测数据（telemetry data）或开发者的观察，识别设计中的「摩擦点」，如认知过载。</li>
+<li><strong>提供建议</strong>：自动建议应对策略，如采用「渐进式披露」（Progressive Disclosure）来隐藏非必要的复杂性。</li>
+<li><strong>优化设计</strong>：将摘要和关键指标放在最显眼的位置，引导用户逐步深入细节。</li>
+</ol>
+<p>视频通过一个客户案例展示了改造前后的巨大差异：一个原本复杂的仪表板被重构成简洁、重点突出的界面后，用户的互动率和回访率都得到了显著提升。</p>
+<p><strong>结论是：优秀的仪表板不需要更多功能，而是需要更少的障碍，其设计核心应是帮助用户更轻松地获得洞察。</strong></p>
+<h2 id="我们到底在统计什么用数据量化r语言的采纳度-ben-arancibia-gsk--positconf2025">我们到底在统计什么？用数据量化R语言的采纳度 (Ben Arancibia, GSK) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=oRc_fF4Fhrk">https://www.youtube.com/watch?v=oRc_fF4Fhrk</a></p>
+<p>这篇演讲介绍了葛兰素史克（GSK）研发部门如何量化追踪开源软件（特别是R语言）的采纳情况。</p>
+<p>演讲者面临的挑战是回答管理层提出的一个简单但棘手的问题：“我们的开源软件采纳进展如何？” 为了解决这个问题，他们利用了公司强制所有项目使用GitHub进行版本控制的规定。</p>
+<p>核心解决方案是：</p>
+<ol>
+<li><strong>利用GitHub API</strong>：通过GitHub API自动收集每个代码仓库（repository）中不同编程语言（如R与SAS）的代码量统计数据。</li>
+<li><strong>确定关键指标</strong>：他们重点关注四个指标：R语言代码的相对大小、使用R的仓库总数、R代码占比超过特定目标的仓库数量，以及R语言使用量的增长趋势。</li>
+<li><strong>搭建自动化流程</strong>：他们使用R语言和Posit Connect构建了一个自动化数据管道。该流程每周从GitHub拉取数据，经过处理后，更新到一个动态仪表板（Dashboard），供管理层随时查看最新的采纳进展。</li>
+</ol>
+<p>这个项目不仅成功地回答了领导的问题，还衍生出两个新应用：</p>
+<ul>
+<li><strong>GitHub健康度监控</strong>：通过分析合并冲突等指标，主动识别并帮助在使用GitHub上遇到困难的团队。</li>
+<li><strong>工具目录</strong>：分析代码中使用的软件包，以评估内部工具和开源包的投资回报率（ROI）。</li>
+</ul>
+<p>最终，这个数据驱动的方法将一个模糊的管理问题转化为了清晰、可量化的指标，使公司能准确掌握开源软件的采纳现状。</p>
+<h2 id="从一次性项目到可持续产品如何驾驭滚雪球式需求-blake-abbenante-suffolk-construction">从一次性项目到可持续产品：如何驾驭“滚雪球”式需求 (Blake Abbenante, Suffolk Construction)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=Jui_T5yxbtE">https://www.youtube.com/watch?v=Jui_T5yxbtE</a></p>
+<p>本视频分享了如何应对一个成功应用因需求不断 snowballing（滚雪球式增长）而变得难以维护的问题。演讲者提出，关键在于将应用从“一次性项目”转变为“可持续发展的产品”，并遵循以下三个核心原则：</p>
+<ol>
+<li>
+<p><strong>智能应用设计 (Smart App Design):</strong> 明确区分“概念验证”（POC）和“最小可行产品”（MVP）。POC用于快速验证想法，可以比较粗糙；而MVP则应作为未来扩展的坚实基础来构建。</p>
+</li>
+<li>
+<p><strong>技术分离 (Technical Separation):</strong> 将代码逻辑解耦。通过创建内部包（internal packages）来存放通用的辅助函数（例如，同时维护功能对等的 R 和 Python 包），并通过API来封装核心业务逻辑。这样一来，即使后端技术栈（如从R迁移到Python）发生变化，前端应用也无需修改。</p>
+</li>
+<li>
+<p><strong>团队可扩展性 (Team Scalability):</strong> 通过API定义清晰的“契约”（即输入和输出的约定），使前端、后端等不同团队可以并行独立工作，互不影响。这允许团队灵活选择最适合的语言（R或Python）和开发流程。</p>
+</li>
+</ol>
+<p>总之，实现应用可持续扩展的秘诀在于：有纪律性地进行规划、通过API和包进行智能解耦，并建立让团队能够并行工作的框架，最终从“代码优先”的思维模式转变为“产品优先”。</p>
+<h2 id="posit与snowflake强强联手在数据云中原生运行r与python-jonathan-regenstein-snowflake--positconf2025">Posit与Snowflake强强联手：在数据云中原生运行R与Python (Jonathan Regenstein, Snowflake) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=c__jOYgess4">https://www.youtube.com/watch?v=c__jOYgess4</a></p>
+<p>该视频介绍了 Snowflake 与 Posit 之间强大的新合作关系，特别是两者间的原生集成。这次合作将 Posit 顶尖的数据科学工具（如 RStudio、Positron）与 Snowflake 强大的数据云平台结合，旨在为数据科学提供一个统一、高效且安全的环境。</p>
+<p><strong>核心要点：</strong></p>
+<ol>
+<li><strong>统一与安全：</strong> Posit Workbench 作为一个原生应用直接在 Snowflake 内部运行。这意味着数据、计算和机器学习工具都在同一个受治理的环境中，Posit 应用会自动继承 Snowflake 严格的安全与治理策略，这对于金融等受监管行业至关重要。</li>
+<li><strong>高效性能：</strong> 由于 Posit 在 Snowflake 容器服务中运行，紧邻数据，因此避免了数据的来回移动，显著提升了性能和安全性。</li>
+<li><strong>强大的数据生态：</strong> 用户可以无缝访问 Snowflake 平台上的海量内部数据，以及通过其市场（Marketplace）获取的丰富外部数据（如宏观经济数据、金融数据等）。</li>
+<li><strong>简化的生产路径：</strong> 视频演示了如何在 Positron 中使用 R 和 <code>tidymodels</code> 进行建模，并通过 <code>orbital</code> 包将模型转化为 Snowflake 对象，以便在生产环境中利用 Snowflake 的计算引擎进行推理。这极大地简化了将 R 代码投入生产的流程，未来还将集成 Posit Connect 以支持动态仪表板。</li>
+</ol>
+<p>总之，Snowflake 和 Posit 的合作为数据科学家提供了一个从数据获取、模型开发到部署的无缝、安全且高效的端到端工作流。</p>
+<h2 id="与gt包作者rich-iannone的问答开源跨界与职业之路-virtual-day-ama-with-rich-iannone--positconf2025">与gt包作者Rich Iannone的问答：开源、跨界与职业之路 (Virtual Day AMA with Rich Iannone) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=LLJ0iSWHX9o">https://www.youtube.com/watch?v=LLJ0iSWHX9o</a></p>
+<p>这场视频是一场与 Posit 开发者 Rich 的线上问答（AMA）。主要内容包括：</p>
+<ol>
+<li>
+<p><strong><code>gt</code> 包的起源与未来</strong>：Rich 解释了他开发的著名 R 包 <code>gt</code> 的由来，源于一个“为 R 语言创建表格语法”的简单想法。他风趣地表示 <code>gt</code> 的确切含义（如 Grammar of Tables 或 Great Tables）至今仍是个谜。他还透露，<code>gt</code> 的设计哲学深受一本1949年美国人口普查局的表格制作指南启发。</p>
+</li>
+<li>
+<p><strong>给开源新手的建议</strong>：当被问及如何开始为开源做贡献时，Rich 建议从个人真正感兴趣的项目入手，哪怕只是为了解决自己的问题或复刻现有功能。关键在于通过实践来学习和保持热情。</p>
+</li>
+<li>
+<p><strong>个人经历与跨语言开发</strong>：Rich 分享了自己从化学领域转向 R 语言和软件开发的职业道路。他目前同时在 R 和 Python 两个生态系统工作，正将 <code>gt</code> 和 <code>pointblank</code> 等包移植到 Python，并计划将 Python 版本的新特性带回 R 版本中。他还透露，用于在 R 中发送邮件的 <code>blastula</code> 包也是他的作品。</p>
+</li>
+</ol>
+<h2 id="ai助教来了如何用ai给学生提供即时有效的反馈-mine-çetinkaya-rundel">AI助教来了：如何用AI给学生提供即时、有效的反馈 (Mine Çetinkaya-Rundel)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=5gS7AUGwZPs">https://www.youtube.com/watch?v=5gS7AUGwZPs</a></p>
+<p>讲者是一位数据科学入门课程的教师，她分享了如何利用AI来辅助教学，其核心理念是<strong>支持学生学习，而非帮他们走捷径</strong>。她受两个观点启发：1）过度自动化会削弱学生的认知能力；2）AI应被用来处理像“洗碗做饭”一样的重复性工作（对她而言是批改作业），从而让师生能专注于更有创造性的学习任务。</p>
+<p>为此，她开发了两个AI工具，重点介绍了第二个——<strong>“反馈机器人”（Feedback Bot）</strong>：</p>
+<ol>
+<li><strong>功能</strong>：这是一个RStudio插件。学生在完成作业（包括代码和文字叙述）后，可以将答案提交给该工具。</li>
+<li><strong>工作原理</strong>：AI会根据教师预先设定的详细评分标准（rubric），对学生的答案进行评估，并<strong>即时生成结构化的反馈</strong>，直接在IDE中显示给学生。</li>
+<li><strong>目的</strong>：它旨在作业正式提交<strong>之前</strong>，为学生提供即时、形成性的反馈，帮助他们学习和修改，而不是简单地给出分数。这既能利用教师编写评分标准时已付出的努力，也能将助教（TA）从重复性的批改工作中解放出来，让他们能与学生进行更有价值的互动。</li>
+</ol>
+<p>初步的学生反馈表明，他们很喜欢这种即时反馈，虽然觉得AI有点“挑剔”，但关键在于他们认为<strong>这不如与真人助教交流有帮助</strong>——这恰好符合讲者的设计初衷：AI是高效的辅助工具，而非人类互动的替代品。</p>
+<h2 id="数据探索的魅力在格陵兰人口数据中寻找惊喜-emil-malta-statistics-greenland">数据探索的魅力：在格陵兰人口数据中寻找“惊喜” (Emil Malta, Statistics Greenland)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=9dACRTyfhLY">https://www.youtube.com/watch?v=9dACRTyfhLY</a></p>
+<p>本次演讲由格陵兰统计局的Emil Malta主讲，主题是**“数据探索：寻找意料之外的发现”**。</p>
+<p>演讲的核心观点是：一个好的图表（数据可视化）的最大价值在于它能<strong>揭示我们未曾预料到的事实</strong>，即“惊喜”元素。仅仅用来证实已知观点的图表价值有限。</p>
+<p>为阐释这一观点，演讲者以格陵兰首都努克（Nuuk）的人口数据为例，演示了他的探索过程：</p>
+<ol>
+<li>他从简单的总体人口增长图开始，但这并无新意，因为当地人都知道人口在增长。</li>
+<li>他逐步深入，排除了多个价值不大的图表（如按区域划分的增长图、平均年龄图等）。</li>
+<li>一个关键的转折点是，他发现努克的<strong>男性人口比女性多出约一千人</strong>，这是一个值得深究的“意外”。</li>
+<li>为探究原因，他尝试了多种图表来比较男女年龄分布，并最终通过将数据按**“出生地”（格陵兰境内/境外）<strong>进行分组对比，得出了决定性的发现：努克多出来的男性几乎全部集中在</strong>40至50岁年龄段**，并且他们都<strong>出生于格陵兰之外</strong>。</li>
+</ol>
+<p>总结来说，这次演讲通过一个生动的实例，强调了在数据分析中，可视化不仅是展示工具，更是发现故事和洞察的关键环节。最有价值的图表是那些能挑战我们固有认知、带来惊喜的图表。</p>
+<h2 id="云端应用数据持久化四种方案优劣大比拼-alex-chisholm-posit">云端应用数据持久化：四种方案优劣大比拼 (Alex Chisholm, Posit)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=Pe-XTCKUzV8">https://www.youtube.com/watch?v=Pe-XTCKUzV8</a></p>
+<p>本视频探讨了如何为云端应用（如Shiny App）实现持久化数据存储，以解决一个常见痛点：应用在本地运行正常，但部署到云端后，用户交互产生的数据（如评分、上传）会在应用实例重启后丢失。</p>
+<p>演讲者以一个水族馆动物评分应用为例，对比了四种实现数据持久化的方案：</p>
+<ol>
+<li><strong>Google Sheets</strong>：设置简单、免费，但有行数和API调用频率限制，不适合高并发场景。</li>
+<li><strong>DuckDB + 云存储 (如S3)</strong>：读取性能优越，但原生不支持并发写入，可能导致数据冲突或丢失。</li>
+<li><strong>MotherDuck</strong>：作为DuckDB的云服务，通过排队机制缓解了并发写入问题，但存在一定的厂商锁定风险。</li>
+<li><strong>Postgres (托管数据库)</strong>：专为高并发读写设计，是此类场景最稳健的方案。虽然看似复杂，但现代云服务使其部署和成本（每月几美元起）都变得非常可控。</li>
+</ol>
+<p><strong>结论</strong>：方案的选择取决于具体用例。对于需要处理大量并发写入的交互式应用，使用Postgres等传统关系型数据库是最佳实践。演讲者还演示了如何通过部署平台（如Posit Connect）的环境变量来安全地连接应用与外部数据库，最终实现数据的持久化。</p>
+<h2 id="从害怕到热爱一个非程序员与testthat的恋爱故事-l-mckenna">从害怕到热爱：一个非程序员与testthat的“恋爱”故事 (L. McKenna)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=GEP61GjwTjE">https://www.youtube.com/watch?v=GEP61GjwTjE</a></p>
+<p>这段视频讲述了一位环境工程师在开发她的第一个R语言套件<code>tidywater</code>时，如何从畏惧到爱上<code>testthat</code>这个测试工具的过程。</p>
+<p>讲者将这个过程比喻为在交友软件上寻找伴侣。起初，她认为<code>testthat</code>是给「真正程序员」用的，令人望而生畏。但基于专家推荐，她还是决定尝试。</p>
+<p>她通过三个「约会」阶段来描述学习<code>testthat</code>的经历：</p>
+<ol>
+<li><strong>初次约会（咖啡）</strong>：学习<code>testthat</code>的基本功能，如<code>expect_warning</code>、<code>expect_error</code>和<code>expect_equal</code>，来检查函数的基本输入和输出是否符合预期。</li>
+<li><strong>二次约会（健行）</strong>：开始信任<code>testthat</code>，用它来测试套件中不同函数之间的关联性，确保修改某个函数时，不会意外破坏其他部分，从而增强了代码的稳健性。</li>
+<li><strong>稳定关系（见家长）</strong>：完全信赖<code>testthat</code>。在一次为了提升性能而进行的大规模代码重构中（从<code>tidyverse</code>改为<code>base R</code>），虽然新代码能运行，但<code>testthat</code>却捕捉到一个因<code>merge</code>函数默认行为而导致数据丢失的隐藏错误。</li>
+</ol>
+<p>视频的结论是，从开发初期就使用<code>testthat</code>并结合自动化测试（如GitHub Actions），能提供一个强大的安全网。这不仅能有效管理复杂性、捕捉错误，还能让开发者有信心进行重构或添加新功能，最终让她感觉自己更像一个「真正的程序员」。她鼓励所有开发者，特别是初学者，及早接纳<code>testthat</code>。</p>
+<h2 id="从杂乱到有意义用nlp提升医疗计费准确率-julianne-gent-emory-healthcare">从杂乱到有意义：用NLP提升医疗计费准确率 (Julianne Gent, Emory Healthcare)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=o0m77Abc7Jo">https://www.youtube.com/watch?v=o0m77Abc7Jo</a></p>
+<p>演讲者介绍了一种为医疗工作者设计的工具，旨在防止临床记录中因无心之失（如多打一个零）而导致的计费错误，这些错误可能引发患者经济损失、欺诈指控和医生职业风险等严重问题。</p>
+<p>在评估解决方案时，团队排除了让医生手动复查（增加负担）、使用电子病历系统自带的“智能短语”（SmartPhrase）模板（使用率低且在复制粘贴时失效）以及使用大型语言模型（LLM）（因成本高、开发周期长和HIPAA数据隐私合规问题）等方案。</p>
+<p>最终，他们选择自主开发一个工具。该工具通过SQL从数据库中提取非结构化的临床文本，然后利用R语言的<code>tidyverse</code>和<code>stringr</code>等基础包，结合一个包含计费相关短语的关键词库，来识别并提取计费时间。它能区分计费分钟数和其他数字（如生命体征数据），并标记出时间过长、过短或缺失的异常记录。</p>
+<p>该工具在超过28万份笔记中进行了验证，成功识别率高达93%，远超“智能短语”方法的60%。目前，该工具已投入使用，每月运行一次，帮助临床领导快速发现并修正计费错误，同时持续优化关键词库。未来，该工具还计划扩展到外科等其他专科。</p>
+<h2 id="从独行到众乐让编程成为一场社交冒险-allissa-dillman-biodata-sage">从独行到众乐：让编程成为一场社交冒险 (Allissa Dillman, BioData Sage)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=HP3VfGkHQ1c">https://www.youtube.com/watch?v=HP3VfGkHQ1c</a></p>
+<p>该视频的演讲者分享了如何将编程学习从一项孤立、令人畏惧的技能，转变为一种充满社交性、易于参与的社区活动。</p>
+<p>她首先挑战了社会对“程序员”的刻板印象，并结合自己作为生物学家被迫自学编程的孤独经历，指出许多人学习编程并非想成为程序员，而是为了解决自己领域的问题或探索个人兴趣。</p>
+<p>演讲者提出了创建成功编程学习社区的三个核心要素：</p>
+<ol>
+<li><strong>信任 (Trust)</strong>：营造安全的协作环境，让学习者敢于提问和表达挫败感。</li>
+<li><strong>易于参与 (Accessibility)</strong>：降低入门门槛，提供清晰的起点和辅助工具，让更多人感到受欢迎。</li>
+<li><strong>情感共鸣 (Emotional Resonance)</strong>：将学习内容与参与者的个人热情和实际问题相结合，激发内在动力。</li>
+</ol>
+<p>她通过三个实际案例阐述了这些理念的应用：</p>
+<ul>
+<li><strong>思考-配对-分享 (Think-Pair-Share)</strong>：针对高中生，围绕他们的兴趣设计挑战，鼓励他们从独立思考到结对讨论，再到集体分享，有效提升了学生的自信和参与度。</li>
+<li><strong>数据故事化 (Data Storytelling)</strong>：针对医学图书馆员，利用他们熟悉的健康数据集，通过互动工具将重点从复杂的代码转移到数据解读和可视化上，消除了他们对“犯错”的恐惧。</li>
+<li><strong>黑客松 (Hackathons)</strong>：以一场女性主导的黑客松为例，强调协作而非竞争，通过组建技能互补的团队和设置多样化的项目，成功吸引了许多新手参与，并建立了持久的社区联系。</li>
+</ul>
+<p><strong>总结而言，通过建立信任、降低门槛和引发情感共鸣，我们可以创造一个更具包容性的学习环境，让编程成为一项帮助人们实现目标的社会性冒险，而非一项孤独的技能。</strong></p>
+<h2 id="r包结构让你的数据分析项目告别混乱-kylie-ainslie-rivm--positconf2025">R包结构：让你的数据分析项目告别混乱 (Kylie Ainslie, RIVM) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=YzIiWg4rySA">https://www.youtube.com/watch?v=YzIiWg4rySA</a></p>
+<p>该视频分享了一种高效管理数据分析项目的方法：<strong>将项目构建为R包的结构</strong>，以此解决传统项目文件夹混乱无序（“项目文件夹地狱”）的问题。</p>
+<p>讲者以自己在新冠疫情期间为荷兰政府所做的模型分析为例，阐述了该工作流的三大优势：</p>
+<ol>
+<li><strong>清晰的组织结构</strong>：R包强制使用标准化的文件目录（如<code>R/</code>存放函数，<code>inst/</code>存放数据和脚本），使所有项目结构统一，提高了工作效率。</li>
+<li><strong>完善的文档体系</strong>：通过<code>roxygen2</code>注释和<code>vignettes</code>长文档，代码与文档紧密结合，实现了分析过程的透明化和可追溯，使其工作成功通过了国际专家的审计，并建立了公众信任。</li>
+<li><strong>便捷的分享与协作</strong>：打包后的项目可以被轻松安装、分享和复用，极大地促进了团队协作和研究的可复现性。讲者的代码最终因此被整合到一个国际项目中。</li>
+</ol>
+<p>最后，讲者鼓励听众在下一个项目中尝试这种方法，并推荐了<code>usethis</code>包和《R Packages》一书作为入门资源，认为这能从根本上提升代码质量、透明度和影响力。</p>
+<h2 id="知识无价社区共创一本r教材的葡语翻译之旅-beatriz-milz-ufabc">知识无价，社区共创：一本R教材的葡语翻译之旅 (Beatriz Milz, UFABC)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=yBC8rNvh3Ns">https://www.youtube.com/watch?v=yBC8rNvh3Ns</a></p>
+<p>演讲者Beatriz分享了她如何领导一个社区项目，将广受欢迎的《R数据科学》（R for Data Science）第二版免费翻译成葡萄牙语的经历。</p>
+<p>该项目的主要动机是，此书第一版的葡语纸质版价格昂贵，约占巴西最低月薪的10%，导致许多学生和初学者难以负担。</p>
+<p>受西班牙语社区翻译经验的启发，Beatriz主动联系原书作者并成功获得了翻译授权。她通过R-Ladies等社区和社交媒体，集结了超过20名志愿者共同协作。项目的一大挑战是许多贡献者不熟悉GitHub，为此团队创建了一本详尽的《翻译指南》，提供技术指导和统一翻译标准，成功降低了协作门槛。</p>
+<p>整个过程历时数年，充分体现了社区协作的力量、耐心以及主动争取机会的重要性。如今，这本免费的在线葡语版书籍已成功上线，并被巴西的大学课程和社区读书会等广泛采用，极大地促进了R语言和数据科学知识在当地的普及。</p>
+<h2 id="重新审视失败一个关于偏见的分类法-laura-gast-uso--positconf2025">重新审视失败：一个关于偏见的分类法 (Laura Gast, USO) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=aQw38-ZxkXQ">https://www.youtube.com/watch?v=aQw38-ZxkXQ</a></p>
+<p>演讲者探讨了“失败”本身，超越了“失败是成功之母”的传统观念。她提出了一个核心观点：<strong>失败是一种偏见</strong>，即不同背景、角色和经历的人们会以截然不同的方式看待同一个失败事件。</p>
+<p>为更好地理解失败，她提出了一个包含三种类型的“失败分类法” (Taxonomy of Failure)：</p>
+<ol>
+<li>
+<p><strong>结构性失败 (Structural Failure)</strong>：指系统因潜在的脆弱性，在巨大压力下发生的灾难性崩溃。</p>
+<ul>
+<li><strong>案例</strong>：2022年西南航空的假日大崩溃。其根本原因是过时、脆弱的员工调度系统，在丹佛机场关闭这一外部压力下彻底失灵，导致大规模航班取消。</li>
+</ul>
+</li>
+<li>
+<p><strong>象征性失败 (Symbolic Failure)</strong>：指公开的、对声誉造成巨大损害的失败，即使技术系统本身没有崩溃。</p>
+<ul>
+<li><strong>案例</strong>：Meta的元宇宙项目。尽管投入巨资，但因其简陋的化身和无聊的体验而沦为公众笑柄，严重损害了公司信誉，并为未来类似创新蒙上了阴影。</li>
+</ul>
+</li>
+<li>
+<p><strong>弥散性失败 (Ambient Failure)</strong>：指不易察觉、随时间缓慢侵蚀、最终导致系统腐化的失败。</p>
+<ul>
+<li><strong>案例</strong>：谷歌流感趋势 (Google Flu Trends)。该工具初期非常成功，但由于其赖以分析的搜索行为和算法悄然改变，其预测结果逐渐失准，导致决策者在不知情的情况下依赖错误数据。</li>
+</ul>
+</li>
+</ol>
+<p><strong>结论</strong>：这三种失败类型相互关联，过度防范一种可能会暴露于另一种风险之下。演讲者警告，在人工智能时代，我们的偏见会被系统性地放大和自动化，可能导致我们尚未预见的新型失败。因此，我们不应惧怕失败，而应主动审视和理解自身在看待失败时的偏见，从而更有效地从中学习。</p>
+<h2 id="从数据到报告ai如何自动化你的databricks工作流-rafi-kurlansik--zac-davies">从数据到报告：AI如何自动化你的Databricks工作流 (Rafi Kurlansik &amp; Zac Davies)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=qrOM9YLvjoM">https://www.youtube.com/watch?v=qrOM9YLvjoM</a></p>
+<p>该视频介绍了如何利用AI助手（Positron Assistant）与Databricks等工具结合，实现从数据分析到报告生成的自动化工作流。</p>
+<p>视频首先展示了一个实例：AI助手根据一个简单的指令，自动完成了连接Databricks进行数据分析、生成图表，并最终在Confluence中撰写报告的全过程。</p>
+<p>接着，视频解释了其背后的技术核心是<strong>MCP（Model-Controller-Plugin）服务器</strong>。它本质上是一种标准化的接口，允许AI助手调用外部工具（如查询Databricks数据库）。用户只需编写少量代码，就可以将自己的工具封装成一个MCP服务器，并在Positron助手中配置使用。</p>
+<p>针对数据安全、权限管控、资源成本和认证复杂性等现实问题，视频也给出了基于Databricks平台的解决方案：</p>
+<ul>
+<li><strong>Unity Catalog</strong>：进行统一的数据治理和权限控制。</li>
+<li><strong>Serverless Compute</strong>：提供弹性计算资源，避免浪费。</li>
+<li><strong>AI Gateway</strong>：管理对大语言模型（LLM）的访问、控制成本和保障安全。</li>
+<li><strong>OAuth</strong>：实现安全、临时性的用户身份验证，确保AI助手的操作不会超出用户权限。</li>
+</ul>
+<p>总结来说，这套架构是模块化且灵活的，用户可以根据需要替换不同的工具。其最终目标是让数据科学家从繁琐的细节编码中解放出来，将更多精力投入到战略性思考和解决问题上。</p>
+<h2 id="告别孤岛在开源的海洋中学会游泳-katerina-gapanenko">告别孤岛：在开源的海洋中学会游泳 (Katerina Gapanenko)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=5Qli8vgVaDI">https://www.youtube.com/watch?v=5Qli8vgVaDI</a></p>
+<p><strong>演讲摘要：</strong></p>
+<p>演讲者分享了她所在的加拿大健康信息研究所（CIHI）如何成功完成一项大规模技术转型，即从使用了二十年的专有软件全面转向开源的R和Python。她将这次转型生动地比喻为一群习惯在平静泳池中游泳的运动员，突然需要跳入未知的大海。</p>
+<p>推动这次转型的三大原因是：实现技术栈的可持续性、吸引和留住人才、以及跟上现代数据科学的创新步伐。</p>
+<p><strong>成功的关键在于三个层面的支持：</strong></p>
+<ol>
+<li><strong>组织层面 - 高层支持（灯塔）：</strong> 管理层提供了坚定支持，设定了明确的“全员、全代码”一次性迁移截止日期，并为员工学习创造了时间和空间。</li>
+<li><strong>项目层面 - 多元化团队（救援队）：</strong> 一个小而精的核心团队，成员具备技术、业务、项目管理和沟通等不同技能，紧密合作，建立了广泛的信任。</li>
+<li><strong>个人层面 - 培训与辅导（游泳者）：</strong> 公司大规模投资于现有350名分析师的培训，提供了多样化的学习资源，并设立了结构化的导师制度。导师不仅提供技术支持，更重要的是建立心理安全感，帮助员工克服学习中的焦虑。</li>
+</ol>
+<p>最终，团队成功迁移了150万行代码和500多个产品，实现了100%在R和Python环境中工作。更重要的是，组织文化从封闭保守转向了协作与乐于尝试。演讲者鼓励其他组织勇敢地拥抱变革，因为“水性很好”。</p>
+<h2 id="数据911危机时刻数据科学家如何力挽狂澜-marcus-beck">数据911：危机时刻，数据科学家如何力挽狂澜 (Marcus Beck)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=Cnk3770AzuA">https://www.youtube.com/watch?v=Cnk3770AzuA</a></p>
+<p>这则视频讲述了一位数据科学家 Marcus 如何在巨大压力下，应对一场突发的环境危机。</p>
+<p>2021年，美国坦帕湾（Tampa Bay）一个废弃化肥厂紧急排放了大量废水，导致了大规模的鱼类死亡和严重的环境污染。作为坦帕湾河口项目的唯一数据科学家，演讲者需要在极短时间内整合来自多个机构、格式混乱的大量数据，以快速向公众和决策者提供信息。</p>
+<p>他采取了**“足够好就行”（Good Enough）的危机管理策略**，其核心是在速度和完美之间做取舍：</p>
+<ol>
+<li><strong>快速迭代，而非追求完美代码</strong>：他承认为了快速整合数据，编写的代码“粗糙但有效”，没有时间去重构和优化。</li>
+<li><strong>设立严格的“护栏”</strong>：虽然处理代码追求速度，但他利用自动化测试（如<code>TestThat</code>工具）设立了严格的数据质量“护栏”。这些测试能自动检查数据格式、数值范围等，确保推送到前端仪表盘的数据准确无误，避免了因数据错误导致的决策误判。</li>
+<li><strong>依靠“冠军盟友”</strong>：他依靠上司作为“冠军盟友”（Champion Allies），充当他与用户之间的缓冲层，帮助过滤和筛选海量的外界需求与反馈，使他能专注于核心的技术工作。</li>
+</ol>
+<p>最终，他成功开发并维护了一个实时数据仪表盘，有效地向公众、媒体和政策制定者展示了水质状况，这项工作也为推动该污染设施的最终关闭做出了贡献。这个案例展示了在紧急情况下，数据科学家应如何 triage（分诊）任务，在牺牲代码优雅性的同时，通过自动化测试确保数据准确性，并借助团队协作来高效应对危机。</p>
+<h2 id="心理安全打造高绩效数据团队的秘密武器-chris-engelhardt-gen-re">心理安全：打造高绩效数据团队的秘密武器 (Chris Engelhardt, Gen Re)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=jJ3IkgrVhWI">https://www.youtube.com/watch?v=jJ3IkgrVhWI</a></p>
+<p>该视频的演讲者是一位数据与AI经理，他结合自己的社会心理学背景，探讨了如何通过“心理安全”（Psychological Safety）来领导和打造高绩效的数据科学团队。</p>
+<p>视频首先以诺基亚的衰落为例，指出其内部因害怕汇报坏消息而形成的恐惧文化，导致了信息不对称、创新停滞和最终的失败。</p>
+<p>为解决这一问题，演讲者引入了“心理安全”的核心概念。这指的是一种团队氛围，成员们相信可以安全地承担人际风险，如自由发言、提出独特想法、承认错误和请求帮助。他引用谷歌的研究，证明心理安全是打造高绩效技术团队最重要的因素。</p>
+<p>接着，他分享了在自己团队中的具体实践：</p>
+<ol>
+<li><strong>以身作则</strong>：主动向团队请求帮助，并鼓励成员在独立尝试、学习和失败后寻求支持。</li>
+<li><strong>创新活动</strong>：举办“团队焦虑派对”，让成员分享恐惧，增进信任与联系。</li>
+<li><strong>持续改进</strong>：通过一对一沟通收集改进建议，并根据团队反馈优化工作流程（如拆分会议），让成员的工作更有意义和效率。</li>
+</ol>
+<p>最终，这种文化带来了显著成果，团队成功交付了可复用的AI框架、内部工具包，并为客户每年节省数百小时的工作时间。</p>
+<p><strong>结论</strong>：心理安全并非奢侈品，而是构建高绩效团队的基石。它是领导者提升团队表现、赋能成员的有效工具。</p>
+<h2 id="部署有道让你的应用发布稳如泰山-ryszard-szymański">部署有道：让你的应用发布稳如泰山 (Ryszard Szymański)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=QEEGLWj0nas">https://www.youtube.com/watch?v=QEEGLWj0nas</a></p>
+<p>该视频介绍了三种能让应用发布更安全、可控的部署策略，尤其适用于在 Posit Connect 上部署 Shiny 应用。</p>
+<ol>
+<li>
+<p><strong>蓝绿部署 (Blue-Green Deployment)</strong>：准备“蓝”和“绿”两个完全相同的生产环境。用户初始访问稳定的蓝色环境。新版本部署到绿色环境，待验证无误后，将用户流量切换至绿色环境。若新版出现问题，可立即切回蓝色环境，用户几乎不受影响。在 Posit Connect 中，这可以通过创建两个独立的应用（内容项）并使用自定义 URL (vanity URL) 来切换流量实现。</p>
+</li>
+<li>
+<p><strong>功能开关 (Feature Flags)</strong>：这是一种在代码中通过条件判断来开启或关闭特定功能的技术，无需重新部署代码。开发者可以先将新功能仅对内部团队或特定用户组开放，在生产环境中进行小范围测试。确认稳定后，再通过更改配置（如环境变量）将功能推送给所有用户。</p>
+</li>
+<li>
+<p><strong>失败后的应对策略</strong>：即使采取了以上策略，发布仍可能失败。对此有两种选择：</p>
+<ul>
+<li><strong>向前修复 (Fix Forward)</strong>：针对小问题（如UI文案错误），快速发布一个修复版本。</li>
+<li><strong>回滚 (Rollback)</strong>：当出现严重问题时，快速恢复到上一个稳定版本。Posit Connect 的“源码版本”(Source Versions) 功能支持一键回滚到历史版本。</li>
+</ul>
+</li>
+</ol>
+<p>通过结合这些策略，开发者可以有效降低生产环境部署的风险，实现更安全、平稳的应用发布。</p>
+<h2 id="chalktalk用ai颠覆教学视频制作-kene-david-nwosu">ChalkTalk：用AI颠覆教学视频制作 (Kene David Nwosu)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=_4fjuW4RTqw">https://www.youtube.com/watch?v=_4fjuW4RTqw</a></p>
+<p>演讲者 Kenneth 是一位课程总监，他分享了制作教学视频的痛点：设备繁重、耗时且充满挫败感。为了解决这个问题，他尝试利用大语言模型（LLM）和文本转语音（TTS）技术，通过一种他称为“氛围编程（Vibe Coding）”——即用自然语言指导 AI 编程——的方法，在四周内开发了一款名为 ChalkTalk 的自动化视频制作工具。</p>
+<p>他现场演示了 ChalkTalk 的原型：只需输入一个简单的指令，应用就能自动生成带 AI 配音的幻灯片。虽然应用尚不完美，存在错误和局限，但已展示出巨大潜力。</p>
+<p>更重要的是，他总结了“氛围编程”的经验：</p>
+<ol>
+<li><strong>优点</strong>：AI 模型进步飞快，迭代成本低，且在应用开发中，其错误比在统计代码中更容易被发现。</li>
+<li><strong>告诫</strong>：该方法更适用于小型项目，存在严重的安全风险，并且并非“无脑操作”，仍需要开发者具备专业知识来指导 AI、解决“最后一公里”的问题。</li>
+</ol>
+<p><strong>结论</strong>：即使 AI 编程工具日益强大，编程教育依然至关重要。就像我们有了计算器但仍需学习数学一样，人们需要掌握编程语言，才能有效地指导 AI、审查其输出并解决复杂问题。</p>
+<h2 id="现代科学工作流如何赋能奶农-mark-neal-dairynz">现代科学工作流如何赋能奶农 (Mark Neal, DairyNZ)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=s2B-dwzXoFw">https://www.youtube.com/watch?v=s2B-dwzXoFw</a></p>
+<p>该视频的演讲者来自新西兰乳业组织DairyNZ，分享了他们如何改进内部数据科学工作流程以更好地服务奶农的经验。</p>
+<p>面对现代传感器（如“奶牛版Apple Watch”）产生的海量数据，旧的工作方式和工具已力不从心。为此，他们采取了三项关键措施：</p>
+<ol>
+<li><strong>构建现代化基础设施</strong>：采用Snowflake、GitHub、Posit Workbench和Posit Connect等工具，打造了一个可扩展、可复现的数据科学平台。</li>
+<li><strong>提升团队技能</strong>：通过内外部培训（如R for Data Science课程），系统地提升了员工的数据分析能力。</li>
+<li><strong>建立持续改进文化</strong>：鼓励分享成功、持续学习，并强调长期坚持的重要性。</li>
+</ol>
+<p>这些改进带来了显著成果，例如：实现了田间数据的实时数字化采集、为科学家提供了实时监控仪表板、并为农户开发了预测奶牛热应激的工具和交互式经济分析报告。一个重要的战略性应用是，他们识别出兼具高盈利和低排放的农场，证明了可持续发展对所有农户都是可行的。</p>
+<p>演讲总结道，采取行动比等待完美更重要，而要实现规模化变革，需要愿景、盟友、高层支持和不懈的坚持。</p>
+<h2 id="虚拟圆桌与数据科学专家的快问快答-virtual-day-q--a-hangout-with-virtual-speakers--positconf2025">虚拟圆桌：与数据科学专家的快问快答 (Virtual Day Q &amp; A Hangout with Virtual Speakers) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=99waPBJzkKQ">https://www.youtube.com/watch?v=99waPBJzkKQ</a></p>
+<p>这段视频是Posit虚拟会议一场轻松的演讲者问答环节。主持人与五位专家就他们的演讲主题进行了深入交流。</p>
+<p>主要讨论内容包括：</p>
+<ul>
+<li><strong>Ryszard</strong> 探讨了<strong>应用部署策略</strong>，如使用负载均衡器实现蓝绿部署，并建议使用功能标记（feature flags）进行A/B测试。</li>
+<li><strong>Kennedy和John</strong> 介绍了<strong>Web框架Ambiorix</strong>，解释了它与Shiny在思维模式上的不同（更直接，无复杂的响应式编程），并讨论了其部署方式（如Posit Connect）和前端框架（如Tailwind CSS）的选择。</li>
+<li><strong>Dylan</strong> 分享了**大型语言模型（LLM）**的应用经验，指出LLM对自己输出的置信度可能过于自信，建议从<code>ellmer</code>包入门，并强调在分类等任务中谨慎使用，可通过多模型交叉验证等方法测试其可靠性。</li>
+<li><strong>Gina</strong> 讨论了<strong>ggplot2扩展包</strong>的开发，提到<code>ggiraph</code>可以实现交互性，并分享了<code>ggbump</code>等优秀扩展包的案例，鼓励开发者从解决自身需求出发构建扩展。</li>
+</ul>
+<p>整个环节涵盖了从应用部署、Web开发到AI应用和数据可视化的多个前沿话题，为数据科学从业者提供了宝贵的实践见解。</p>
+<h2 id="ropensci冠军计划培养开源社区的下一代领袖-noam-ross-ropensci">rOpenSci冠军计划：培养开源社区的下一代领袖 (Noam Ross, rOpenSci)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=-atDblWsOBU">https://www.youtube.com/watch?v=-atDblWsOBU</a></p>
+<p>这段演讲介绍了 rOpenSci 的「冠军计划」（Champions Program），这是一个旨在培养开源科学领域领导者的项目。</p>
+<p>演讲者首先指出，许多科学开源软件项目虽小但至关重要，却面临着维护者倦怠、领导力培养困难、项目难以持续等挑战。</p>
+<p>为应对此，「冠军计划」应运而生。它是一个为期一年的指导计划，核心目标是建立一个互相支持的「实践社群」（community of practice）。其特点包括：</p>
+<ol>
+<li><strong>培养协作技能</strong>：不仅教授技术（如R包开发），更强调代码审查、团队协作、公开演讲等领导力和社群管理技能。</li>
+<li><strong>项目驱动</strong>：学员带着自己的实际项目参与，目标是培养能共同成长的「同侪」（peers），而非学徒。</li>
+<li><strong>高度包容性</strong>：积极招募来自多元背景的成员，提供津贴以降低参与门槛，并设有全西班牙语的 cohort。</li>
+<li><strong>扩大影响力</strong>：鼓励学员将所学回馈本地社群，通过举办工作坊、演讲等方式，从而放大计划的影响力。</li>
+</ol>
+<p>总之，rOpenSci 冠军计划通过系统性的培训和指导，赋能个体成为其社群的领导者，旨在建立一个更强大、更可持续的科学开源生态系统。</p>
+<h2 id="askrads用ai智能体最大化数据科学协作的投资回报率-regis-james">AskRads：用AI智能体最大化数据科学协作的投资回报率 (Regis James)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=v3CCoq7j9Tk">https://www.youtube.com/watch?v=v3CCoq7j9Tk</a></p>
+<p><strong>视频中文摘要</strong></p>
+<p>Regeneron制药公司的数据科学副总监介绍了其构建的AI智能体平台“AskRads”。该平台旨在解决数据科学协作中的核心痛点：专家们常重复发明轮子，而业务同事又不知如何有效提问或找到合适的专家，导致效率低下。</p>
+<p>演讲者分享了一套构建AI应用的思维方法：</p>
+<ol>
+<li><strong>从痛点出发</strong>：先识别具体问题，而不是先寻找技术的应用场景。</li>
+<li><strong>进行“愿景叙事” (Vision Telling)</strong>：构想一个消除了这些痛点的未来理想状态。</li>
+<li><strong>构建解决方案</strong>：基于这个愿景，利用现有数据、技术和流程来搭建“桥梁”，实现该愿景。</li>
+</ol>
+<p>AskRads平台正是这一理念的产物。它是一个AI智能体，而非简单的大语言模型。它利用公司内部数据科学社区（RADS）过去会议的文字记录、摘要等作为知识库，通过检索增强生成（RAG）等技术，帮助用户：</p>
+<ul>
+<li>找到过往相关的解决方案和专家。</li>
+<li>清晰、有效地阐述自己的问题和需求。</li>
+</ul>
+<p>演讲者强调，成功的关键在于“训练智能体，而非模型”，通过约束和引导AI的行为来确保结果的可靠性。最终，该平台有效减少了重复工作，提升了协作效率，最大化了数据科学项目的投资回报率。</p>
+
+</div>
+</main>
+
+<section class="appendix">
+
+
+<div>
+  <div class="side side-left"><h3>作者简介</h3></div>
+  <div>
+
+
+
+
+
+<div>Chun-Hui Gao is a Research Associate at <a href="http://www.hzau.edu.cn">Huazhong Agricultural University</a>.</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div>
+  <div class="side side-left"><h3>重复使用</h3></div>
+  Text and figures are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution CC BY 4.0</a>. The source code is licensed under MIT. The full source is available at <a href="https://github.com/yihui/hugo-prose">https://github.com/yihui/hugo-prose</a>.
+</div>
+
+
+
+<div>
+  <div class="side side-left"><h3>欢迎修订</h3></div>
+  
+  
+  
+    
+    
+  
+  如果您发现本文里含有任何错误（包括错别字和标点符号），欢迎<a href="https://github.com/gaospecial/bio-spring/edit/master/content/post/2025-11-29-posit-conf-2025/index.zh.md" id="edit-link">在本站的 GitHub 项目里提交修订意见。</a>
+</div>
+
+
+
+
+<div>
+  <div class="side side-left"><h3>引用本文</h3></div>
+  <p>如果您使用了本文的内容，请按照以下方式引用：</p>
+  <pre><code>gaoch (2025). Posit::conf(2025) - 录播视频概览. BIO-SPRING. www.bio-spring.top/post/2025/11/29/posit-conf-2025/</code></pre>
+  <p>BibTeX citation</p>
+  <pre><code>@misc{
+  title = "Posit::conf(2025) - 录播视频概览",
+  author = "gaoch",
+  year = "2025",
+  journal = "BIO-SPRING",
+  note = "www.bio-spring.top/post/2025/11/29/posit-conf-2025/"
+}</code></pre>
+</div>
+
+</section>
+
+
+
+<nav class="post-nav">
+  <span class="nav-next">&larr; <a href="www.bio-spring.top/post/2025/11/28/posit-conf-2025-dev/" title=下一篇&#32;(旧)>Posit::conf(2025) 精选辑 - 软件开发</a></span>
+  &hercon;
+  <span class="nav-prev"></span>
+</nav>
+
+
+
+
+<section class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var disqus_js = '//bio-spring.disqus.com/embed.js';
+    var d = document, s = d.createElement('script');
+    s.src = disqus_js; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    var t = d.getElementById('disqus_thread');
+    var b = false, l = function(scroll) {
+      if (b) return;
+      (d.head || d.body).appendChild(s); b = true;
+      if (scroll) t.scrollIntoView();
+    }
+    s.onerror = function(e) {
+      if (sessionStorage.getItem('failure-note')) return;
+      t.innerText = 'Sorry, but you cannot make comments because Disqus failed to load for some reason. It is known to be blocked in China. If you are sure it is not blocked in your region, please refresh the page. 中国大陆地区读者需要翻墙才能发表评论。';
+      t.style.border = '1px dashed';
+      t.style.padding = '.5em';
+      t.style.background = 'lightyellow';
+      sessionStorage.setItem('failure-note', true);
+    };
+    
+    if (location.hash.match(/^#comment-[0-9]+$/)) return l(true);
+    var c = function() {
+      if (b) return;
+      var rect = t.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) l();
+    };
+    window.addEventListener('load', c);
+    d.addEventListener('scroll', c);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+</div>
+
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+<script src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils/js/number-sections.min.js,npm/@xiee/utils/js/toc.min.js,npm/@xiee/utils/js/toc-highlight.min.js,npm/@xiee/utils/js/sidenotes.min.js,npm/@xiee/utils/js/right-quote.min.js,npm/@xiee/utils/js/center-img.min.js,npm/@xiee/utils/js/fix-pandoc.min.js,npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+
+
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

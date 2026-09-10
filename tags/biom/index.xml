@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Biom on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/biom/</link>
+		<description>Recent content in Biom on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 29 May 2016 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/biom/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>STAMP: unknown error – Unicode encode error</title>
+				<link>www.bio-spring.top/post/2016/05/29/2016-05-29-how-to-mending-stamp-unicode-encode-error/</link>
+				<pubDate>Sun, 29 May 2016 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2016/05/29/2016-05-29-how-to-mending-stamp-unicode-encode-error/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;http://kiwi.cs.dal.ca/Software/STAMP&#34;&gt;STAMP&lt;/a&gt;是一个支持Windows、Linux系统的微生物群落分析软件。与&lt;a href=&#34;http://bio-spring.top/mothur-and-qiime/&#34;&gt;Mothur或QIIME&lt;/a&gt;相比，感觉它更小巧、轻便。它没有从测序结果（MiSeq/454）出发直到分析结果的一整套流程，但是它具有从OTU&#xA;Table出发进行统计分析、作图的能力。借助于&lt;a href=&#34;http://www.scipy.org/&#34;&gt;scipy&lt;/a&gt;，&lt;a href=&#34;http://www.numpy.org/&#34;&gt;numpy&lt;/a&gt;，&lt;a href=&#34;http://matplotlib.org/&#34;&gt;matplotlib&lt;/a&gt;等Python库的支持，它的分析、绘图能力达到了一个非常令人满意的程度。相应结果基本可以直接在文章中使用。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;STAMP is a software package for analyzing taxonomic or metabolic&#xA;profiles that promotes ‘best practices’ in choosing appropriate&#xA;&lt;strong&gt;statistical&lt;/strong&gt; techniques and &lt;strong&gt;reporting results&lt;/strong&gt;. Statistical&#xA;hypothesis tests for pairs of samples or groups of samples is support&#xA;along with a wide range of exploratory plots. STAMP encourages the use&#xA;of effect sizes and confidence intervals in assessing biological&#xA;importance. &lt;strong&gt;A user friendly, graphical interface&lt;/strong&gt; permits easy&#xA;exploration of statistical results and generation of &lt;strong&gt;publication&#xA;quality plots&lt;/strong&gt; for inferring the biological relevance of features in&#xA;a metagenomic profile. STAMP is open source, extensible via a plugin&#xA;framework, and available for all major platforms.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>biom 格式</title>
+				<link>www.bio-spring.top/post/2016/05/26/2016-05-26-biom-format/</link>
+				<pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2016/05/26/2016-05-26-biom-format/</guid>
+				<description>&lt;p&gt;官方网址：&lt;a href=&#34;http://biom-format.org/index.html&#34;&gt;http://biom-format.org/index.html&lt;/a&gt;&lt;br&gt;&#xA;格式说明：&lt;a href=&#34;http://biom-format.org/documentation/biom_format.html&#34;&gt;http://biom-format.org/documentation/biom_format.html&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;biom 是&lt;strong&gt;The Biological Observation Matrix (BIOM)&lt;/strong&gt; 的缩写。&lt;/p&gt;&#xA;&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;&#xA;&lt;p&gt;这个格式是微生物生态研究中衍生出的文件格式，扩展名建议是*.biom，由&#xA;&lt;a href=&#34;https://www.biom-format.org&#34;&gt;www.biom-format.org&lt;/a&gt; 开发。&lt;/p&gt;&#xA;&lt;p&gt;开发此文件格式的目的由以下三点：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;存储和操作大规模的生物多样性数据&lt;/li&gt;&#xA;&lt;li&gt;存储核心的元数据（metadata，如样品，分组等重要的相关信息，这些信息在分析时是必需的。）&lt;/li&gt;&#xA;&lt;li&gt;统一专有文件格式，促进文件在不同分析工具间的流通。（QIIME，MG-RAST和VAMPS等分析工具都可以支持该文件格式）&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;版本&#34;&gt;版本&lt;/h2&gt;&#xA;&lt;p&gt;目前，biom格式已经有了3个版本。&lt;/p&gt;&#xA;&lt;p&gt;版本1.0基于&lt;strong&gt;JSON&lt;/strong&gt;格式开发。&lt;br&gt;&#xA;版本2.0和2.1基于&lt;a href=&#34;http://www.nsmc.cma.gov.cn/NSMC_EN/CMACast/docs/HDF5.0_chinese.pdf&#34;&gt;&lt;strong&gt;HDF格式&lt;/strong&gt;&lt;/a&gt;开发。&lt;/p&gt;&#xA;&lt;p&gt;HDF格式是专门为存储大规模、多对象的科学研究数据开发的。“Solutions to&#xA;Data Challenges”。&lt;/p&gt;&#xA;&lt;h2 id=&#34;开发工具&#34;&gt;开发工具&lt;/h2&gt;&#xA;&lt;p&gt;biom格式是纯文本文件，可以用文本编辑器打开（我指的不是Windows的记事本，而是专业一点的开发工具。如Notepad++）。&lt;/p&gt;&#xA;&lt;p&gt;Python版工具&lt;br&gt;&#xA;&lt;code&gt; pip install numpy pip install biom-format pip install h5py&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;R版工具&lt;br&gt;&#xA;&lt;code&gt; install.packages(&amp;quot;biom&amp;quot;)&lt;/code&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

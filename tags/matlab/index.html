@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> MATLAB | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="MATLAB">
+	<meta name="twitter:description" content="Chun-Hui Gao&#39;s personal website built through Hugo and blogdown with the hugo-prose theme.">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container list">
+<main>
+
+<h1>MATLAB</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2012/06/05/2012-06-05-matlab-chinamap-coloring/">MatLab中国地图进阶：以不同的颜色表示各省数据的差异</a></h1>
+    <div>
+      <span>2012-06-05</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      使用MatLab绘制中国地图十分方便，我在前文中已经有相应阐述。实际应用中，我们常常需要将不同的区域以不同的颜色展示出来，这就是本文要阐述的内容。
+本文使用MatLab将各省人口数据展示出来，人口越多颜色越黄，人口越少颜色越绿。最终结果如下图所示（点击看大图）。
+绘制过程如下：
+[&hellip;] %-- 分省中国地图在MATLAB中的画法 --% % Author: &hellip;
+      <a href="www.bio-spring.top/post/2012/06/05/2012-06-05-matlab-chinamap-coloring/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2011/06/28/2011-06-28-print_china_map/">使用Matlab画中国地图</a></h1>
+    <div>
+      <span>2011-06-28</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      使用Matlab绘制中国地图十分方便，使用Mapping工具箱中的几条命令。
+介绍如下：
+设置坐标轴：setm命令。
+因为地球是圆的，所以地图的绘制涉及到投影的问题，跟普通的2-D或者3-D作图差别明显。setm命令专门用来设置map axis。例如：
+[cc lang=”matlab”]
+ax=worldmap(‘china’); %worldmap命令生成一个map axis，其各项属性可以用 &hellip;
+      <a href="www.bio-spring.top/post/2011/06/28/2011-06-28-print_china_map/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2011/06/25/2011-06-25-matlab-colourful-barplot/">在MATLAB中创建色彩绚丽的柱状图</a></h1>
+    <div>
+      <span>2011-06-25</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      首先，看一下效果图。
+默认条件下的柱状图
+漂亮的柱状图
+渐变着色的柱状图
+代码如下：
+[cc lang=”matlab”]
+% 彩色柱状图
+%% 用到的数据
+n = 13;
+Z = rand(n,1);
+%% 默认图片
+bar(Z);
+%% 简单的作图
+% 这个图根据数据列中值的大小着色。每列中的
+% 值越大，颜色越突出
+figure
+h=bar(Z);
+colormap(summer(n)); &hellip;
+      <a href="www.bio-spring.top/post/2011/06/25/2011-06-25-matlab-colourful-barplot/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2011/02/19/2011-02-19-matlab-cleanup/">matlab 怎样去掉矩阵中的零元素</a></h1>
+    <div>
+      <span>2011-02-19</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      
+      <a href="www.bio-spring.top/post/2011/02/19/2011-02-19-matlab-cleanup/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2011/02/19/2011-02-19-matlab-del-col/">matlab中如何删除矩阵的某一列元素</a></h1>
+    <div>
+      <span>2011-02-19</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      &Aopf;为M行N列矩阵，删除第i列(1&lt;=i&lt;=N)，则：
+B=[A(:,1:i-1),A(:,i+1:N)];
+或直接在A上修改，
+A(:,i)=[];
+http://topic.csdn.net/u/20080725/17/b30c6b03-12c6-4022-9df9-de7fd5e0cb4c.html
+
+      <a href="www.bio-spring.top/post/2011/02/19/2011-02-19-matlab-del-col/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2011/02/18/2011-02-18-bar-with-errorbar/">在MATLAB中创建带有误差线（误差标记）的柱状图</a></h1>
+    <div>
+      <span>2011-02-18</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      在MATLAB中，使用一个函数errorbar来定义图形中的误差线。可以用于折线图，柱状图等各种图形。实例如下：
+[cc lang=”matlab”]
+% 生成示例数据
+x=1:10;
+y=cumsum(randn(1,10));
+lower = y – (rand(1,10));
+upper = y + (rand(1,10));
+% 由于errorbar函数使用相对差值在图形上绘图，所以
+% &hellip;
+      <a href="www.bio-spring.top/post/2011/02/18/2011-02-18-bar-with-errorbar/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+</main>
+</div>
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  <div class="footer hidden">
+  
+
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

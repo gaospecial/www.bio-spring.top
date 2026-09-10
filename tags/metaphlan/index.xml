@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>MetaPhlAn on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/metaphlan/</link>
+		<description>Recent content in MetaPhlAn on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 20 Mar 2016 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/metaphlan/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>MetaPhlAn：利用宏基因组分析种群结构</title>
+				<link>www.bio-spring.top/post/2016/03/20/2016-03-20-metaphlan-metagenomic-phylogenetic-analysis/</link>
+				<pubDate>Sun, 20 Mar 2016 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2016/03/20/2016-03-20-metaphlan-metagenomic-phylogenetic-analysis/</guid>
+				<description>&lt;p&gt;宏基因组中包含了环境中各种微生物的基因组信息，理论上可以得出种群结构。该如何利用宏基因组高通量测序数据分析种群结构呢？是不是要从中提取16S&#xA;rRNA的数据，&#xA;组装之后使用&lt;a href=&#34;http://bio-spring.top/mothur-and-qiime/&#34;&gt;Mothur或QIIME&lt;/a&gt;分析呢？&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://huttenhower.sph.harvard.edu/metaphlan&#34;&gt;MetaPhlAn&lt;/a&gt;有一个不一样的想法。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;MetaPhlAn is a computational tool for profiling the composition of&#xA;microbial communities from metagenomic shotgun sequencing data.&#xA;MetaPhlAn relies on &lt;strong&gt;unique clade-specific marker genes&lt;/strong&gt; identified&#xA;from 3,000 reference genomes, allowing:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;up to 25,000 reads-per-second (on one CPU) analysis speed (orders&#xA;of magnitude faster compared to existing methods);&lt;/li&gt;&#xA;&lt;li&gt;unambiguous taxonomic assignments as the MetaPhlAn markers are&#xA;clade-specific;&lt;/li&gt;&#xA;&lt;li&gt;accurate estimation of organismal relative abundance (in terms of&#xA;number of cells rather than fraction of reads);&lt;/li&gt;&#xA;&lt;li&gt;species-level resolution for bacterial and archaeal organisms;&lt;/li&gt;&#xA;&lt;li&gt;extensive validation of the profiling accuracy on several&#xA;synthetic datasets and on thousands of real metagenomes.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

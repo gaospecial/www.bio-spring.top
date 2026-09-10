@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>算法 on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/%E7%AE%97%E6%B3%95/</link>
+		<description>Recent content in 算法 on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 17 Feb 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>猴子吃桃问题</title>
+				<link>www.bio-spring.top/post/2024/02/17/monkey-peach/</link>
+				<pubDate>Sat, 17 Feb 2024 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2024/02/17/monkey-peach/</guid>
+				<description>&lt;p&gt;寒假作业上有一道题：一只猴子有很多桃子，每天都吃一半加 1 个，最后在第 4 天的时候只剩下 1 个桃子。问它原来有几个桃子？&lt;/p&gt;&#xA;&lt;p&gt;这是一个迭代的问题，往前数第 &lt;code&gt;\(n\)&lt;/code&gt; 天的桃子数量是 &lt;code&gt;\(f(n)\)&lt;/code&gt;，且  &lt;code&gt;\(f(n) = (f(n-1)+1) * 2\)&lt;/code&gt;。若 &lt;code&gt;\(n = 0\)&lt;/code&gt;，则 &lt;code&gt;\(f(0) =1\)&lt;/code&gt;。可以写成下面的形式。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;taozi = function(n){&#xA;  if (n == 0) return(1)&#xA;  (taozi(n-1) + 1) * 2&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;如果花了 100 天才剩下 1 个桃子，那么原有的桃子数量将会很多（3.8029518\times 10^{30} 个）。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x = 1:100&#xA;y = sapply(1:100, taozi)&#xA;&#xA;library(dplyr, quietly = TRUE)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code&gt;## &#xA;## Attaching package: &#39;dplyr&#39;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code&gt;## The following objects are masked from &#39;package:stats&#39;:&#xA;## &#xA;##     filter, lag&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code&gt;## The following objects are masked from &#39;package:base&#39;:&#xA;## &#xA;##     intersect, setdiff, setequal, union&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(ggplot2)&#xA;df = tibble(day = x, number = y)&#xA;&#xA;# 桃子数量&#xA;ggplot(df, aes(day, number)) + geom_point()&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;img src=&#34;www.bio-spring.top/post/2024/02/17/monkey-peach/index.zh_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# 对桃子数量进行 log 变换，得到线性关系&#xA;ggplot(df, aes(day, number)) + geom_point() + scale_y_log10()&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;img src=&#34;www.bio-spring.top/post/2024/02/17/monkey-peach/index.zh_files/figure-html/unnamed-chunk-2-2.png&#34; width=&#34;672&#34; /&gt;&#xA;&lt;p&gt;为了更加形象的展示这种变化，不妨祭出 &lt;code&gt;emojifont&lt;/code&gt; 软件包，再施加一些魔法，可以得到 1 - 9 天情况下桃子的数量。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

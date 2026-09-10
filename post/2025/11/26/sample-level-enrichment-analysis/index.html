@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> 样本水平富集分析 | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="样本水平富集分析">
+	<meta name="twitter:description" content="简介 样本水平富集分析 (Sample-Level Enrichment Analysis, SLEA) 是一种用于分析转录组数据集中每个样本内基因模块（或称基因集，如通路）转录状态的方法。 主要特点和工作原理 逐样本分析： 与传统的基因集富集分析 (GSEA) 不同，传统的 GSEA 通常是比较两组样本（例如，疾病组与正常组）之间基因集的富集情况，而 SLEA 是对数据集中的每个独立样本计算其特定基因集（例如，某个癌症通路）的富集得分。
+富集得分 (Enrichment Score)： SLEA 通过比较基因模块中基因的表达均值（或中位数）与同一样本中随机抽取的同等大小的基因集表达均值的分布，计算出一个 z-score 富集得分。这个得分反映了该基因模块在该样本中的活跃状态（上调或下调）。
+无需预先分组： 进行 SLEA 时，不需要预先知道样本的表型信息或临床分组，它可以直接从基因表达数据和基因集列表开始分析。
+可视化： 结果通常以交互式热图的形式呈现，其中行代表不同的基因模块，列代表各个样本，每个单元格显示该模块在该样本中的富集得分。这种可视化方式有助于直观地解释和识别富集模式。 应用场景 SLEA 在生物医学研究中具有广泛的应用，包括：
+识别肿瘤亚型： 根据不同基因模块的富集模式对肿瘤样本进行聚类，从而发现新的分子亚型。
+关联分子特征与临床特征： 将富集得分与患者的临床数据（例如，生存时间、治疗反应、临床分期）相关联，以发现与特定通路活跃度相关的预后标志物。
+研究模块之间的关系： 探索不同信号通路或基因集在样本水平上的协同作用或拮抗关系。 简而言之，SLEA 是一种强大的工具，能够深入挖掘单个样本的生物学特性，有助于理解疾病的异质性并发现潜在的治疗靶点。
+在微生物研究领域，样本水平富集分析 (SLEA) 的应用与在人类转录组研究中的应用有相似之处，但主要集中在通过分析微生物基因表达或微生物群落的功能潜力来理解复杂的生物学过程。
+在微生物研究中的应用 分析特定微生物的功能状态
+理解细菌适应性： 微生物基因表达的调控对于细菌在不断变化的环境条件（如肠道内的营养物质变化、宿主免疫反应）中生存和适应至关重要。SLEA 可以用于分析特定微生物在不同条件下哪些功能通路（例如，铁螯合、鞭毛合成、抗生素抗性）被激活或抑制。
+宿主-病原体相互作用： 在研究宿主细胞与病原体（如幽门螺杆菌 H. pylori 或结核分枝杆菌 M. tuberculosis）的相互作用时，SLEA 可用于鉴定细菌在细胞内感染期间快速适应的基因表达特征，例如与宿主粘附或营养获取相关的基因集。
+整合宏基因组/宏转录组数据：
+在分析复杂的微生物群落（如肠道微生物组）时，研究人员通常会生成宏基因组（DNA序列）或宏转录组（RNA序列）数据。这些数据包含了群落中所有成员的基因信息。
+通过将这些宏组学数据映射到已知的微生物基因集文库（例如，KEGG 通路、功能基因簇），SLEA 可以评估每个样本中特定代谢或功能通路的整体活跃水平，而不仅仅是关注单个物种的丰度。
+识别与疾病或环境因素相关的微生物功能模式：
+研究人员可以利用 SLEA 识别与特定临床特征（如炎症性肠病 IBD、肥胖、抗生素治疗反应）相关的微生物功能特征。例如，通过微生物集富集分析 (Microbe-set Enrichment Analysis, MSEA) 可以根据文献记录的微生物与哺乳动物基因的关联，将微生物分组，并找出与宿主表型相关的富集模式。">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container single">
+<main>
+
+<div class="article-meta">
+<h1><span class="title">样本水平富集分析</span></h1>
+
+<h3 class="author">
+gaoch
+</h3>
+
+<h3 class="date">2025-11-26</h3>
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF">信息技术</a> 
+  
+  
+  
+  Tags: <a href="/tags/r">R</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6">统计学</a> 
+  
+  
+</p>
+</div>
+
+<div class="article">
+<h2 id="简介">简介</h2>
+<p><strong>样本水平富集分析 (Sample-Level Enrichment Analysis, SLEA)</strong> 是一种用于分析转录组数据集中<strong>每个样本内基因模块（或称基因集，如通路）转录状态</strong>的方法。 </p>
+<h3 id="主要特点和工作原理">主要特点和工作原理</h3>
+<ul>
+<li>
+<p><strong>逐样本分析：</strong> 与传统的基因集富集分析 (GSEA) 不同，传统的 GSEA 通常是比较两组样本（例如，疾病组与正常组）之间基因集的富集情况，而 SLEA 是对数据集中的<strong>每个独立样本</strong>计算其特定基因集（例如，某个癌症通路）的富集得分。</p>
+</li>
+<li>
+<p><strong>富集得分 (Enrichment Score)：</strong> SLEA 通过比较基因模块中基因的表达均值（或中位数）与同一样本中随机抽取的同等大小的基因集表达均值的分布，计算出一个 z-score 富集得分。这个得分反映了该基因模块在该样本中的活跃状态（上调或下调）。</p>
+</li>
+<li>
+<p><strong>无需预先分组：</strong> 进行 SLEA 时，不需要预先知道样本的表型信息或临床分组，它可以直接从基因表达数据和基因集列表开始分析。</p>
+</li>
+<li>
+<p><strong>可视化：</strong> 结果通常以<strong>交互式热图</strong>的形式呈现，其中行代表不同的基因模块，列代表各个样本，每个单元格显示该模块在该样本中的富集得分。这种可视化方式有助于直观地解释和识别富集模式。 </p>
+</li>
+</ul>
+<h3 id="应用场景">应用场景</h3>
+<p>SLEA 在生物医学研究中具有广泛的应用，包括：</p>
+<ul>
+<li>
+<p><strong>识别肿瘤亚型：</strong> 根据不同基因模块的富集模式对肿瘤样本进行聚类，从而发现新的分子亚型。</p>
+</li>
+<li>
+<p><strong>关联分子特征与临床特征：</strong> 将富集得分与患者的临床数据（例如，生存时间、治疗反应、临床分期）相关联，以发现与特定通路活跃度相关的预后标志物。</p>
+</li>
+<li>
+<p><strong>研究模块之间的关系：</strong> 探索不同信号通路或基因集在样本水平上的协同作用或拮抗关系。 </p>
+</li>
+</ul>
+<p>简而言之，SLEA 是一种强大的工具，能够深入挖掘单个样本的生物学特性，有助于理解疾病的异质性并发现潜在的治疗靶点。</p>
+<p>在微生物研究领域，样本水平富集分析 (SLEA) 的应用与在人类转录组研究中的应用有相似之处，但主要集中在通过分析<strong>微生物基因表达</strong>或<strong>微生物群落的功能潜力</strong>来理解复杂的生物学过程。</p>
+<h2 id="在微生物研究中的应用">在微生物研究中的应用</h2>
+<ol>
+<li>
+<p><strong>分析特定微生物的功能状态</strong></p>
+<ul>
+<li>
+<p><strong>理解细菌适应性：</strong> 微生物基因表达的调控对于细菌在不断变化的环境条件（如肠道内的营养物质变化、宿主免疫反应）中生存和适应至关重要。SLEA 可以用于分析特定微生物在不同条件下哪些功能通路（例如，铁螯合、鞭毛合成、抗生素抗性）被激活或抑制。</p>
+</li>
+<li>
+<p><strong>宿主-病原体相互作用：</strong> 在研究宿主细胞与病原体（如幽门螺杆菌 <em>H. pylori</em> 或结核分枝杆菌 <em>M. tuberculosis</em>）的相互作用时，SLEA 可用于鉴定细菌在细胞内感染期间快速适应的基因表达特征，例如与宿主粘附或营养获取相关的基因集。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>整合宏基因组/宏转录组数据：</strong></p>
+<ul>
+<li>
+<p>在分析复杂的微生物群落（如肠道微生物组）时，研究人员通常会生成宏基因组（DNA序列）或宏转录组（RNA序列）数据。这些数据包含了群落中所有成员的基因信息。</p>
+</li>
+<li>
+<p>通过将这些宏组学数据映射到已知的微生物基因集文库（例如，KEGG 通路、功能基因簇），SLEA 可以评估<strong>每个样本</strong>中特定代谢或功能通路的整体活跃水平，而不仅仅是关注单个物种的丰度。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>识别与疾病或环境因素相关的微生物功能模式：</strong></p>
+<ul>
+<li>
+<p>研究人员可以利用 SLEA 识别与特定临床特征（如炎症性肠病 IBD、肥胖、抗生素治疗反应）相关的微生物功能特征。例如，通过微生物集富集分析 (Microbe-set Enrichment Analysis, MSEA) 可以根据文献记录的微生物与哺乳动物基因的关联，将微生物分组，并找出与宿主表型相关的富集模式。</p>
+</li>
+<li>
+<p>在环境微生物学研究中，SLEA 可用于评估不同环境条件下（如盐度变化、污染物存在）微生物群落的功能潜力，例如氮循环、硫代谢等通路的活跃度。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>结合单细胞技术：</strong></p>
+<ul>
+<li>新兴的微生物单细胞测序技术可以提供更高分辨率的个体细胞功能信息。将这些技术与 SLEA 相结合，有助于确定在复杂的群落中哪些特定的细菌细胞正在利用宿主衍生的化合物或表现出特定的基因表达变化。</li>
+</ul>
+</li>
+</ol>
+<p>SLEA 在微生物研究中的应用核心在于将高通量测序数据转化为可解释的、样本特异性的<strong>功能洞见</strong>，帮助研究人员从“有哪些微生物”深入到“这些微生物在做什么”以及“它们的功能活性如何影响宿主或环境”。</p>
+<h2 id="r-语言示例">R 语言示例</h2>
+<p>下面是一个用 <strong>R 语言</strong> 实现 SLEA（样本水平富集分析）的示例。</p>
+<p>我们将使用一个流行的方法，即 <strong>ssGSEA</strong>（单样本 GSEA），这是 SLEA 的一个具体实现，通过 <strong>GSVA</strong> (Gene Set Variation Analysis) R 包来实现。</p>
+<p><strong>先决条件：安装必要的 R 包</strong></p>
+<p>你需要安装 <code>GSVA</code> 包以及一个用于处理示例数据的包（如 <code>limma</code> 或 <code>GSEABase</code>）。</p>
+<pre><code class="language-r">if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE))
+    install.packages(&quot;BiocManager&quot;)
+
+BiocManager::install(&quot;GSVA&quot;)
+BiocManager::install(&quot;GSEABase&quot;)
+</code></pre>
+<p><strong>R 语言实现示例</strong></p>
+<p>这个示例分为三个步骤：</p>
+<ol>
+<li>
+<p><strong>准备数据：</strong> 获取一个基因表达矩阵和一些基因集（通路）。</p>
+</li>
+<li>
+<p><strong>运行 GSVA：</strong> 使用 <code>gsva()</code> 函数计算每个样本的富集得分。</p>
+</li>
+<li>
+<p><strong>可视化结果：</strong> 使用热图展示富集得分。</p>
+</li>
+</ol>
+<pre><code class="language-r"># 1. 加载必要的库
+library(GSVA)
+library(GSEABase)
+</code></pre>
+<pre><code>## Loading required package: BiocGenerics
+</code></pre>
+<pre><code>## Loading required package: generics
+</code></pre>
+<pre><code>## 
+## Attaching package: 'generics'
+</code></pre>
+<pre><code>## The following objects are masked from 'package:base':
+## 
+##     as.difftime, as.factor, as.ordered, intersect, is.element, setdiff,
+##     setequal, union
+</code></pre>
+<pre><code>## 
+## Attaching package: 'BiocGenerics'
+</code></pre>
+<pre><code>## The following objects are masked from 'package:stats':
+## 
+##     IQR, mad, sd, var, xtabs
+</code></pre>
+<pre><code>## The following objects are masked from 'package:base':
+## 
+##     anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+##     colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+##     get, grep, grepl, is.unsorted, lapply, Map, mapply, match, mget,
+##     order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+##     rbind, Reduce, rownames, sapply, saveRDS, table, tapply, unique,
+##     unsplit, which.max, which.min
+</code></pre>
+<pre><code>## Loading required package: Biobase
+</code></pre>
+<pre><code>## Welcome to Bioconductor
+## 
+##     Vignettes contain introductory material; view with
+##     'browseVignettes()'. To cite Bioconductor, see
+##     'citation(&quot;Biobase&quot;)', and for packages 'citation(&quot;pkgname&quot;)'.
+</code></pre>
+<pre><code>## Loading required package: annotate
+</code></pre>
+<pre><code>## Loading required package: AnnotationDbi
+</code></pre>
+<pre><code>## Loading required package: stats4
+</code></pre>
+<pre><code>## Loading required package: IRanges
+</code></pre>
+<pre><code>## Loading required package: S4Vectors
+</code></pre>
+<pre><code>## 
+## Attaching package: 'S4Vectors'
+</code></pre>
+<pre><code>## The following object is masked from 'package:utils':
+## 
+##     findMatches
+</code></pre>
+<pre><code>## The following objects are masked from 'package:base':
+## 
+##     expand.grid, I, unname
+</code></pre>
+<pre><code>## Loading required package: XML
+</code></pre>
+<pre><code>## Loading required package: graph
+</code></pre>
+<pre><code>## 
+## Attaching package: 'graph'
+</code></pre>
+<pre><code>## The following object is masked from 'package:XML':
+## 
+##     addNode
+</code></pre>
+<pre><code class="language-r">library(pheatmap) # 用于绘制热图
+
+# --- 2. 准备数据 ---
+
+# A. 准备一个示例的基因表达矩阵 (Exprs Matrix)
+# 实际工作中，这是你自己的 RNA-seq 或芯片数据
+# 行是基因，列是样本
+# 为了演示，我们创建一个包含1000个基因和10个样本的随机数据
+set.seed(123)
+nr_genes &lt;- 1000
+nr_samples &lt;- 10
+expr_data &lt;- matrix(rnorm(nr_genes * nr_samples), nrow = nr_genes)
+rownames(expr_data) &lt;- paste0(&quot;gene_&quot;, 1:nr_genes)
+colnames(expr_data) &lt;- paste0(&quot;sample_&quot;, 1:nr_samples)
+
+# 对数据进行标准化（ssGSEA通常推荐使用非标准化数据，但我们这里简单起见使用Z-score模拟）
+# 实际应用中，确保你的数据是适当的 count 或 logCPM/VST 格式
+# expr_data &lt;- apply(expr_data, 2, function(x) (x - mean(x)) / sd(x)) # 可以选择z-score标准化
+
+# B. 准备一个基因集列表 (Gene Sets)
+# 这通常是你从 MSigDB 或 KEGG 数据库下载的 GMT 文件
+# 我们手动创建几个小的基因集用于演示
+gene_sets &lt;- list(
+  &quot;Pathway_A&quot; = paste0(&quot;gene_&quot;, sample(1:nr_genes, 30)), # 包含30个基因
+  &quot;Pathway_B&quot; = paste0(&quot;gene_&quot;, sample(1:nr_genes, 25)), # 包含25个基因
+  &quot;Pathway_C&quot; = paste0(&quot;gene_&quot;, sample(1:nr_genes, 50))  # 包含50个基因
+)
+
+# 将列表转换为 GSEABase 要求的 GeneSetCollection 格式
+gene_sets_collection &lt;- GeneSetCollection(lapply(names(gene_sets), function(name) {
+  GeneSet(gene_sets[[name]], setName = name)
+}))
+
+
+# --- 3. 运行 SLEA (使用 GSVA 的 ssGSEA 方法) ---
+
+# 使用 gsva() 函数进行计算
+# method=&quot;ssGSEA&quot; 指定使用单样本富集分析方法 (即 SLEA 的一种实现)
+ssparam = ssgseaParam(
+  exprData = expr_data,
+  geneSets = gene_sets_collection
+)
+slea_scores &lt;- gsva(ssparam)
+</code></pre>
+<pre><code>## ℹ GSVA version 2.4.1
+</code></pre>
+<pre><code>## ℹ Searching for genes/features with constant values
+</code></pre>
+<pre><code>## ℹ Calculating  ssGSEA scores for 3 gene sets
+</code></pre>
+<pre><code>## ℹ Calculating ranks
+</code></pre>
+<pre><code>## ℹ Calculating rank weights
+</code></pre>
+<pre><code>## ℹ Normalizing ssGSEA scores
+</code></pre>
+<pre><code>## ✔ Calculations finished
+</code></pre>
+<pre><code class="language-r"># slea_scores 是一个新的矩阵，行是基因集，列是样本，值为富集得分
+
+print(&quot;SLEA 富集得分矩阵的前几行和列:&quot;)
+</code></pre>
+<pre><code>## [1] &quot;SLEA 富集得分矩阵的前几行和列:&quot;
+</code></pre>
+<pre><code class="language-r">print(round(slea_scores[, 1:4], 3))
+</code></pre>
+<pre><code>##           sample_1 sample_2 sample_3 sample_4
+## Pathway_A    0.487    0.529    0.063    0.032
+## Pathway_B    0.356    0.563    0.496    1.028
+## Pathway_C    0.274    0.294    0.652    0.605
+</code></pre>
+<pre><code class="language-r"># --- 4. 可视化结果 (交互式热图) ---
+
+# 将富集得分矩阵可视化为热图，这是 SLEA 结果最常见的展示方式
+pheatmap(
+  slea_scores,
+  cluster_rows = TRUE,    # 对通路进行聚类
+  cluster_cols = TRUE,    # 对样本进行聚类（有助于发现亚型）
+  show_colnames = TRUE,
+  show_rownames = TRUE,
+  main = &quot;SLEA/ssGSEA Enrichment Scrore Heatmap&quot;
+)
+</code></pre>
+<img src="www.bio-spring.top/post/2025/11/26/sample-level-enrichment-analysis/index.zh_files/figure-html/unnamed-chunk-1-1.png" width="672" />
+<p><strong>结果解释</strong></p>
+<p>运行上述代码后，你会得到一个名为 <code>slea_scores</code> 的矩阵，其中包含了每个基因集在每个样本中的富集得分（通常在 -1 到 1 之间）。</p>
+<ul>
+<li>
+<p><strong>正值：</strong> 表示该基因集中的基因在该样本中整体倾向于高表达（通路活跃）。</p>
+</li>
+<li>
+<p><strong>负值：</strong> 表示该基因集中的基因在该样本中整体倾向于低表达（通路抑制）。</p>
+</li>
+</ul>
+<p>同时，R 会弹出一个热图窗口，直观地展示哪些通路在哪些样本中活跃，并且通过聚类，你可以清晰地看到样本是否自然形成了不同的亚群（正如你描述的应用场景：识别肿瘤亚型）。</p>
+<h2 id="关于-gsva-软件包">关于 GSVA 软件包</h2>
+<p><code>GSVA</code> <strong>是一个功能强大的 R 语言软件包，实现了基因集变异分析 (Gene Set Variation Analysis) 方法</strong>。它是进行样本水平富集分析 (SLEA) 的核心工具，广泛应用于转录组学数据的分析中。</p>
+<h3 id="核心功能与特点">核心功能与特点</h3>
+<p><code>GSVA</code> 软件包的主要目标是将传统的“基因中心”分析转化为“通路（基因集）中心”分析。</p>
+<ul>
+<li>
+<p><strong>单样本分析：</strong> 与需要比较两组样本的传统 GSEA 不同，<code>GSVA</code> 能够估计<strong>每个单独样本</strong>中预定义基因集（如信号通路、功能模块、免疫特征）的富集得分或活跃度。</p>
+</li>
+<li>
+<p><strong>数据转换：</strong> 它将输入的“基因 × 样本”表达矩阵转换为“基因集 × 样本”的富集得分矩阵。</p>
+</li>
+<li>
+<p><strong>无监督与非参数：</strong> <code>GSVA</code> 是一种非参数、无监督的方法，意味着它不需要预先知道样本的分组信息（如疾病 vs. 正常），使得分析更加灵活，尤其适用于高度异质性的数据集。</p>
+</li>
+<li>
+<p><strong>支持多种方法：</strong> <code>GSVA</code> 软件包不仅实现了其同名方法 GSVA，还集成了其他三种流行的单样本富集分析方法：<strong>ssGSEA</strong>、<strong>z-score</strong> 和 <strong>PLAGE</strong>。</p>
+</li>
+<li>
+<p><strong>适用性广：</strong> 它可以处理来自微阵列 (microarray) 和 RNA-seq 的基因表达数据，也可应用于其他分子谱数据，如miRNA表达、拷贝数变异 (CNV) 等。</p>
+</li>
+</ul>
+<h3 id="主要应用场景">主要应用场景</h3>
+<p>通过 <code>GSVA</code> 生成的富集得分矩阵，用户可以进行一系列下游分析，包括：</p>
+<ul>
+<li>
+<p><strong>样本聚类：</strong> 根据通路活跃度对样本进行聚类，有助于发现新的疾病亚型（如肿瘤亚型）。</p>
+</li>
+<li>
+<p><strong>差异通路分析：</strong> 比较不同临床组别（如治疗前后）之间的通路活跃度差异。</p>
+</li>
+<li>
+<p><strong>生存分析：</strong> 将通路富集得分与患者生存期关联，识别预后相关的通路。</p>
+</li>
+<li>
+<p><strong>相关性分析：</strong> 研究不同通路之间的协同作用或拮抗关系。</p>
+</li>
+</ul>
+<h3 id="四种算法">四种算法</h3>
+<p>这四种算法（GSVA、ssGSEA、PLAGE、Z-score）都旨在实现样本水平富集分析（SLEA），即为每个样本计算通路活跃度得分，但它们在数学原理、标准化方法和具体实现细节上存在显著差异。</p>
+<p>以下是它们的主要区别：</p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left"><strong>特性</strong></th>
+					<th style="text-align: left"><strong>GSVA (Hänzelmann et al., 2013)</strong></th>
+					<th style="text-align: left"><strong>ssGSEA (Barbie et al., 2009)</strong></th>
+					<th style="text-align: left"><strong>PLAGE (Tomfohr et al., 2005)</strong></th>
+					<th style="text-align: left"><strong>Z-score (Lee et al., 2008)</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>方法类型</strong></td>
+					<td style="text-align: left">基于核密度估计 (KDE)</td>
+					<td style="text-align: left">基于等级排序 (Rank-based)</td>
+					<td style="text-align: left">基于奇异值分解 (SVD)</td>
+					<td style="text-align: left">基于标准分数 (Z-score)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>内部标准化</strong></td>
+					<td style="text-align: left">无</td>
+					<td style="text-align: left">有</td>
+					<td style="text-align: left">有（行/基因维度）</td>
+					<td style="text-align: left">有（行/基因维度）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>跨样本可比性</strong></td>
+					<td style="text-align: left">得分相对分布可比</td>
+					<td style="text-align: left">标准化后可比</td>
+					<td style="text-align: left">得分独立，可比</td>
+					<td style="text-align: left">得分独立，可比</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>速度</strong></td>
+					<td style="text-align: left">较快</td>
+					<td style="text-align: left">较慢</td>
+					<td style="text-align: left">较快</td>
+					<td style="text-align: left">较快</td>
+			</tr>
+	</tbody>
+</table>
+<p><strong>详细区别解释</strong></p>
+<p><strong>1. GSVA (Gene Set Variation Analysis)</strong></p>
+<ul>
+<li>
+<p><strong>原理：</strong> GSVA 使用<strong>非参数核密度估计 (KDE)</strong> 方法。它将基因表达值转换为一个排序统计量，然后根据基因集内部和外部的累积概率分布之间的差异来计算富集得分。</p>
+</li>
+<li>
+<p><strong>特点：</strong> 它不需要对数据进行跨样本的标准化。GSVA 算法特别适用于处理微阵列和 RNA-seq 数据，其得分的分布通常可以提供较好的跨样本比较。它是 <code>GSVA</code> 软件包的默认方法。</p>
+</li>
+</ul>
+<p><strong>2. ssGSEA (single sample GSEA)</strong></p>
+<ul>
+<li>
+<p><strong>原理：</strong> ssGSEA 源自传统的 GSEA 方法，但将其应用于单个样本。它计算样本内所有基因的表达值排名，然后评估目标基因集中的基因是倾向于排在前面还是后面，通过累积和统计量来计算得分。</p>
+</li>
+<li>
+<p><strong>特点：</strong> ssGSEA 的计算相对较慢，因为它需要对每个样本单独排序。它通常会进行额外的标准化步骤（例如将得分范围缩放到 -1 到 1 之间），以确保跨样本的可比性。</p>
+</li>
+</ul>
+<p><strong>3. PLAGE (Pathway Level Analysis of Gene Expression)</strong></p>
+<ul>
+<li>
+<p><strong>原理：</strong> PLAGE 基于<strong>奇异值分解 (SVD)</strong>。它将基因集看作一个“特征向量”，计算每个样本在这个特征向量上的投影分数。可以理解为寻找基因集的主要表达模式。</p>
+</li>
+<li>
+<p><strong>特点：</strong> PLAGE 要求输入数据在**行维度（基因维度）**进行标准化（例如 z-score 标准化）。它的计算速度非常快，结果稳定，对样本数量不太敏感。</p>
+</li>
+</ul>
+<p><strong>4. Z-score (Combined Z-score)</strong></p>
+<ul>
+<li>
+<p><strong>原理：</strong> 这是最简单直观的方法。它要求输入数据在**行维度（基因维度）**进行 z-score 标准化。然后，对于一个特定的基因集，它计算该样本中所有属于该基因集的基因的 z-score 均值。</p>
+</li>
+<li>
+<p><strong>特点：</strong> 计算速度快。由于基于平均值，它对离群值（Outliers）比较敏感。与 PLAGE 类似，它依赖于预先对所有基因表达值进行跨样本标准化。</p>
+</li>
+</ul>
+<p><strong>总结与选择建议</strong></p>
+<ul>
+<li>
+<p>如果你希望使用一个<strong>默认、稳健且不需要复杂数据预处理</strong>的方法，<strong>GSVA</strong> 或 <strong>ssGSEA</strong> 是很好的选择。</p>
+</li>
+<li>
+<p>如果你追求<strong>极快的速度</strong>并且可以接受对<strong>基因进行预标准化</strong>，<strong>PLAGE</strong> 和 <strong>Z-score</strong> 是更快的替代方案。</p>
+</li>
+</ul>
+<p>在微生物研究或人类转录组研究中，这些算法的选择通常取决于研究人员的偏好和对数据特征的理解，它们通常都能提供一致的生物学见解。</p>
+<h3 id="算法的区别">算法的区别</h3>
+<p>要比较四种 SLEA 算法（GSVA、ssGSEA、PLAGE、Z-score）的结果差异，最好的方法是在同一份表达谱数据和同一组基因集上运行它们，然后比较它们生成的富集得分矩阵的相关性，并通过可视化手段直观展示。</p>
+<pre><code class="language-r">library(corrplot)
+</code></pre>
+<pre><code>## corrplot 0.95 loaded
+</code></pre>
+<pre><code class="language-r"># --- 3. 运行四种 GSVA 算法 ---
+
+# A. GSVA 方法
+# 使用 gsvaParam 构造函数定义参数对象
+gsva_param &lt;- gsvaParam(expr_data, gene_sets_collection)
+scores_gsva &lt;- gsva(gsva_param, verbose = FALSE)
+
+# B. ssGSEA 方法
+# 使用 ssgseaParam 构造函数定义参数对象
+ssgsea_param &lt;- ssgseaParam(expr_data, gene_sets_collection) 
+# 默认 ssgsea.norm = TRUE，将分数标准化到 -1 到 1 之间
+scores_ssgsea &lt;- gsva(ssgsea_param, verbose = FALSE)
+
+# C. PLAGE 方法
+# 使用 plageParam 构造函数定义参数对象
+plage_param &lt;- plageParam(expr_data, gene_sets_collection)
+scores_plage &lt;- gsva(plage_param, verbose = FALSE)
+
+# D. Z-score 方法
+# 使用 zscoreParam 构造函数定义参数对象
+zscore_param &lt;- zscoreParam(expr_data, gene_sets_collection)
+scores_zscore &lt;- gsva(zscore_param, verbose = FALSE)
+
+
+# --- 4. 结果比较与可视化 ---
+
+# 将所有结果合并到一个数据框（或矩阵）中，以便于比较相关性
+# 注意：不同方法的得分尺度不同，直接比较数值意义不大，主要看相对排序或相关性。
+# 我们重点关注每种方法在所有样本中对特定通路的得分模式。
+
+# 提取 Pathway_A 的得分，并合并到一个矩阵中
+comparison_matrix &lt;- rbind(
+  &quot;GSVA&quot; = scores_gsva[&quot;Pathway_A&quot;, ],
+  &quot;ssGSEA&quot; = scores_ssgsea[&quot;Pathway_A&quot;, ],
+  &quot;PLAGE&quot; = scores_plage[&quot;Pathway_A&quot;, ],
+  &quot;Z-score&quot; = scores_zscore[&quot;Pathway_A&quot;, ]
+)
+colnames(comparison_matrix) &lt;- colnames(expr_data)
+
+print(&quot;Pathway_A 在四种方法下的得分矩阵:&quot;)
+</code></pre>
+<pre><code>## [1] &quot;Pathway_A 在四种方法下的得分矩阵:&quot;
+</code></pre>
+<pre><code class="language-r">print(round(comparison_matrix, 3))
+</code></pre>
+<pre><code>##         sample_1 sample_2 sample_3 sample_4 sample_5 sample_6 sample_7 sample_8
+## GSVA       0.043    0.205   -0.163   -0.246   -0.234   -0.072    0.025   -0.029
+## ssGSEA     0.487    0.529    0.063    0.032    0.028    0.217    0.404    0.271
+## PLAGE     -0.499   -0.213    0.309    0.092   -0.293   -0.248    0.463    0.259
+## Z-score    0.337    1.185   -0.799   -1.213   -1.200   -0.062    0.047   -0.042
+##         sample_9 sample_10
+## GSVA       0.242     0.236
+## ssGSEA     0.448     0.416
+## PLAGE      0.352    -0.222
+## Z-score    1.105     0.642
+</code></pre>
+<pre><code class="language-r"># 可视化比较：使用热图展示不同方法在不同样本间的得分差异
+pheatmap(
+  comparison_matrix,
+  cluster_rows = FALSE, # 不对方法聚类
+  cluster_cols = TRUE,  # 对样本聚类
+  main = &quot;Differences of four GSVA when applied to Pathway_A&quot;,
+  scale = &quot;row&quot; # 按行（方法）进行标准化，使颜色具有可比性
+)
+</code></pre>
+<img src="www.bio-spring.top/post/2025/11/26/sample-level-enrichment-analysis/index.zh_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+<pre><code class="language-r"># 可视化相关性：计算不同方法之间的 Spearman 相关系数
+# Spearman 相关性更适合非正态分布的富集得分
+correlation_matrix &lt;- cor(t(comparison_matrix), method = &quot;spearman&quot;)
+
+print(&quot;四种方法之间的 Spearman 相关性矩阵:&quot;)
+</code></pre>
+<pre><code>## [1] &quot;四种方法之间的 Spearman 相关性矩阵:&quot;
+</code></pre>
+<pre><code class="language-r">print(round(correlation_matrix, 3))
+</code></pre>
+<pre><code>##          GSVA ssGSEA PLAGE Z-score
+## GSVA    1.000  0.891 0.139   0.964
+## ssGSEA  0.891  1.000 0.018   0.952
+## PLAGE   0.139  0.018 1.000   0.103
+## Z-score 0.964  0.952 0.103   1.000
+</code></pre>
+<pre><code class="language-r"># 使用 corrplot 进行可视化
+corrplot(correlation_matrix, method = &quot;circle&quot;, type = &quot;upper&quot;, order = &quot;hclust&quot;,
+         title = &quot;GSVA Results Correlations&quot;, mar=c(0,0,1,0))
+</code></pre>
+<img src="www.bio-spring.top/post/2025/11/26/sample-level-enrichment-analysis/index.zh_files/figure-html/unnamed-chunk-2-2.png" width="672" />
+
+</div>
+</main>
+
+<section class="appendix">
+
+
+<div>
+  <div class="side side-left"><h3>作者简介</h3></div>
+  <div>
+
+
+
+
+
+<div>Chun-Hui Gao is a Research Associate at <a href="http://www.hzau.edu.cn">Huazhong Agricultural University</a>.</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div>
+  <div class="side side-left"><h3>重复使用</h3></div>
+  Text and figures are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution CC BY 4.0</a>. The source code is licensed under MIT. The full source is available at <a href="https://github.com/yihui/hugo-prose">https://github.com/yihui/hugo-prose</a>.
+</div>
+
+
+
+<div>
+  <div class="side side-left"><h3>欢迎修订</h3></div>
+  
+  
+  
+    
+  
+  如果您发现本文里含有任何错误（包括错别字和标点符号），欢迎<a href="https://github.com/gaospecial/bio-spring/edit/master/content/post/2025-11-26-sample-level-enrichment-analysis/index.zh.Rmd" id="edit-link">在本站的 GitHub 项目里提交修订意见。</a>
+</div>
+
+
+
+
+<div>
+  <div class="side side-left"><h3>引用本文</h3></div>
+  <p>如果您使用了本文的内容，请按照以下方式引用：</p>
+  <pre><code>gaoch (2025). 样本水平富集分析. BIO-SPRING. www.bio-spring.top/post/2025/11/26/sample-level-enrichment-analysis/</code></pre>
+  <p>BibTeX citation</p>
+  <pre><code>@misc{
+  title = "样本水平富集分析",
+  author = "gaoch",
+  year = "2025",
+  journal = "BIO-SPRING",
+  note = "www.bio-spring.top/post/2025/11/26/sample-level-enrichment-analysis/"
+}</code></pre>
+</div>
+
+</section>
+
+
+
+<nav class="post-nav">
+  <span class="nav-next">&larr; <a href="www.bio-spring.top/post/2025/11/25/posit-conf-2025-positron/" title=下一篇&#32;(旧)>posit::conf(2025) 精选辑 - Positron</a></span>
+  &hercon;
+  <span class="nav-prev"><a href="www.bio-spring.top/post/2025/11/26/posit-conf-2025-ai/" title=上一篇&#32;(新)>Posit::conf(2025) 精选辑 - 人工智能</a> &rarr;</span>
+</nav>
+
+
+
+
+<section class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var disqus_js = '//bio-spring.disqus.com/embed.js';
+    var d = document, s = d.createElement('script');
+    s.src = disqus_js; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    var t = d.getElementById('disqus_thread');
+    var b = false, l = function(scroll) {
+      if (b) return;
+      (d.head || d.body).appendChild(s); b = true;
+      if (scroll) t.scrollIntoView();
+    }
+    s.onerror = function(e) {
+      if (sessionStorage.getItem('failure-note')) return;
+      t.innerText = 'Sorry, but you cannot make comments because Disqus failed to load for some reason. It is known to be blocked in China. If you are sure it is not blocked in your region, please refresh the page. 中国大陆地区读者需要翻墙才能发表评论。';
+      t.style.border = '1px dashed';
+      t.style.padding = '.5em';
+      t.style.background = 'lightyellow';
+      sessionStorage.setItem('failure-note', true);
+    };
+    
+    if (location.hash.match(/^#comment-[0-9]+$/)) return l(true);
+    var c = function() {
+      if (b) return;
+      var rect = t.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) l();
+    };
+    window.addEventListener('load', c);
+    d.addEventListener('scroll', c);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+</div>
+
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+<script src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils/js/number-sections.min.js,npm/@xiee/utils/js/toc.min.js,npm/@xiee/utils/js/toc-highlight.min.js,npm/@xiee/utils/js/sidenotes.min.js,npm/@xiee/utils/js/right-quote.min.js,npm/@xiee/utils/js/center-img.min.js,npm/@xiee/utils/js/fix-pandoc.min.js,npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/prism-xcode.min.css">
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

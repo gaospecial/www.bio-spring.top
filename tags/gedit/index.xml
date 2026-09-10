@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Gedit on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/gedit/</link>
+		<description>Recent content in Gedit on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 20 Aug 2012 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/gedit/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>在Ubuntu环境中设置Bowtie</title>
+				<link>www.bio-spring.top/post/2012/08/20/2012-08-20-ubuntu-bowtie/</link>
+				<pubDate>Mon, 20 Aug 2012 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2012/08/20/2012-08-20-ubuntu-bowtie/</guid>
+				<description>&lt;div&gt;&#xA;&lt;div&gt;&#xA;&lt;p&gt;&lt;strong&gt;什么是Bowtie？What is Bowtie？&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://bowtie-bio.sf.net/&#34;&gt;Bowtie&lt;/a&gt; is an ultrafast, memory-efficient&#xA;short read aligner geared toward quickly aligning large sets of short&#xA;DNA sequences (reads) to large genomes. It aligns 35-base-pair reads to&#xA;the human genome at a rate of 25 million reads per hour on a typical&#xA;workstation. Bowtie indexes the genome with a&#xA;&lt;a href=&#34;http://en.wikipedia.org/wiki/Burrows-Wheeler_transform&#34;&gt;Burrows-Wheeler&lt;/a&gt;&#xA;index to keep its memory footprint small: for the human genome, the&#xA;index is typically about 2.2 GB (for unpaired alignment) or 2.9 GB (for&#xA;paired-end or colorspace alignment). Multiple processors can be used&#xA;simultaneously to achieve greater alignment speed. Bowtie can also&#xA;output alignments in the standard&#xA;&lt;a href=&#34;http://samtools.sourceforge.net/SAM1.pdf&#34;&gt;SAM&lt;/a&gt; format, allowing Bowtie&#xA;to interoperate with other tools supporting SAM, including the&#xA;&lt;a href=&#34;http://samtools.sourceforge.net/&#34;&gt;SAMtools&lt;/a&gt; consensus, SNP, and indel&#xA;callers. Bowtie runs on the command line under Windows, Mac OS X, Linux,&#xA;and Solaris.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

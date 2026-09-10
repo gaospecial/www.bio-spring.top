@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> Statistics | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Statistics">
+	<meta name="twitter:description" content="Chun-Hui Gao&#39;s personal website built through Hugo and blogdown with the hugo-prose theme.">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container list">
+<main>
+
+<h1>Statistics</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2020/04/12/normal-distribution-transformation/">正态分布的转换</a></h1>
+    <div>
+      <span>2020-04-12</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      数据满足正态分布是进行很多统计分析的前提，如果不符合正态分布，则需要对数据进行转换。常用的转化方式有：
+[&hellip;] 今天我们看一看什么条件下应该选用合适的转换方式。
+# 生成正态分布数据 normal &lt;- rnorm(100,mean = 5, sd = 2.5) plot(normal) # 从直方图可以看出数据符合正态分布 hist(normal) # 从QQ plot也可以 &hellip;
+      <a href="www.bio-spring.top/post/2020/04/12/normal-distribution-transformation/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2019/09/24/anova-turkeyhsd-plotting/">ANOVA &#43; TurkeyHSD 分析及作图</a></h1>
+    <div>
+      <span>2019-09-24</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      先载入一个示例数据。该数据是研究摄入 VC 对小鼠牙齿生长作用的实验结果。VC 给药分成两种方式：VC-给予VC药片；OJ-给予相当量的橙汁。给药的量都包括0.5,1,2等三个梯度。
+从散点图上看，不同给药量之间应该有显著差异。
+data(&quot;ToothGrowth&quot;) head(ToothGrowth) ## len supp dose ## 1 4.2 VC 0.5 ## 2 &hellip;
+      <a href="www.bio-spring.top/post/2019/09/24/anova-turkeyhsd-plotting/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2019/09/23/basic-stats-in-r/">常用假设检验方法的R语言实现</a></h1>
+    <div>
+      <span>2019-09-23</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      常用的统计方法见下表所示。
+[&hellip;] Mann-Whitney-Wilcoxon检验也被称为Wilcoxon检验。 In statistics, the Mann–Whitney U test (also called the Mann–Whitney–Wilcoxon (MWW), Wilcoxon rank-sum test, or Wilcoxon–Mann–Whitney &hellip;
+      <a href="www.bio-spring.top/post/2019/09/23/basic-stats-in-r/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2018/11/20/comparing-dissimilarity-index/">比较不同差异系数的结果</a></h1>
+    <div>
+      <span>2018-11-20</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      &vopf;egdist 提供了多个计算差异度的算法。这些算法自然是各有各的适用范围。对于同一个数据集，其结果有什么直观上的差异呢？
+library(vegan) library(pheatmap) library(cowplot) data(&quot;varespec&quot;) dist.methods &lt;- c(&quot;manhattan&quot;, &hellip;
+      <a href="www.bio-spring.top/post/2018/11/20/comparing-dissimilarity-index/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2018/11/02/comparison-of-two-pca-methods/">比较 stats::procmp() 和 vegan::rda() 两种方法</a></h1>
+    <div>
+      <span>2018-11-02</span>
+      <span>Gao</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      上次提及 PCA 分析的方法有很多种。那不同方法之间的得到的结果会有差异吗？
+最近采用 PCA 分析 RNA-seq 样本之间的差异，得到了下面的结果。
+[&hellip;] 生成一个含有 1000 个基因, 27 个样品的数据集. 这 27 个样品来自于 3 个基因型(WT, Mutant1, Mutant2), 3 种处理(CK, Trt1, Trt2), 共分为 \(3 * 3 = 9\) &hellip;
+      <a href="www.bio-spring.top/post/2018/11/02/comparison-of-two-pca-methods/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2018/10/17/bray-curtis-dissimilarity/">Bray Curtis Dissimilarity</a></h1>
+    <div>
+      <span>2018-10-17</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      本文介绍 Bray Curtis Dissimilarity 的概念和计算方法。
+Bray Curtis Dissimilarity（Bray-Curtis 相异度）是生态学中用来衡量不同样地物种组成差异的参数。
+其定义和计算公式为：
+$$BC_{ij}=1-2C_{ij}/(S_{i}+S_{j})$$
+其中：
+[&hellip;] 有两个水族箱：
+[&hellip;] 为了计算 &hellip;
+      <a href="www.bio-spring.top/post/2018/10/17/bray-curtis-dissimilarity/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+</main>
+</div>
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  <div class="footer hidden">
+  
+
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> 在 RStudio 中使用 Julia | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="在 RStudio 中使用 Julia">
+	<meta name="twitter:description" content="因为要运行 cNODE 程序，所以接触了一下 Julia 语言。
+Julia 一群拥有各种语言丰富编程经验的Matlab高级用户，对现有的科学计算编程工具感到不满——这些软件对自己专长的领域表现得非常棒，但在其它领域却非常糟糕。他们想要的是一个开源的软件，它要像C语言一般快速而有拥有如同Ruby的动态性；要具有Lisp般真正的同像性而又有Matlab般熟悉的数学记号；要像Python般通用、像R般在统计分析上得心应手、像Perl般自然地处理字符串、像Matlab般具有强大的线性代数运算能力、像shell般胶水语言的能力，易于学习而又不让真正的黑客感到无聊；还有，它应该是交互式的，同时又是编译型的……
+快！ 由上图可以看出，Julia 的运行速度是除 C 语言以外几乎最快的。
+Julia 一开始就是为高性能而设计的。 Julia 程序通过 LLVM 编译成高效的 多平台 机器码。
+动态 Julia 是动态类型的，使用起来像脚本语言，同时有很好的交互体验。
+可选类型 Julia 有丰富的数据类型描述语言，标注类型声明可以使程序更清晰可靠。
+通用 Julia 使用多分派范式，很容易表达面向对象和函数式编程模式。 同时提供了异步 I/O、调试、日志、性能分析、包管理等工具。
+易用 Julia 拥有高阶的语法，这让具有不同编程语言背景和经验的程序员都能使用它。查看 Julia 的微基准来感受这门语言吧。
+示例 Julia与MATLAB语言较为类似。 function mandelbrot(a) z = 0 for i=1:50 z = z^2 &#43; a end return z end for y=1.0:-0.05:-1.0 for x=-2.0:0.0315:0.5 abs(mandelbrot(complex(x, y))) &lt; 2 ? print(&#34;*&#34;) : print(&#34; &#34;) end println() end # Taken from: https://rosettacode.org/wiki/Mandelbrot_set#Julia 包管理 为什么 Julia 装包这么困难">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container single">
+<main>
+
+<div class="article-meta">
+<h1><span class="title">在 RStudio 中使用 Julia</span></h1>
+
+<h3 class="author">
+gaoch
+</h3>
+
+<h3 class="date">2023-08-23</h3>
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/%E5%85%B6%E5%AE%83">其它</a> <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF">信息技术</a> 
+  
+  
+  
+  Tags: <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0">学习笔记</a> <a href="/tags/julia">Julia</a> <a href="/tags/r-markdown">R Markdown</a> <a href="/tags/rstudio">RStudio</a> <a href="/tags/%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97">科学计算</a> 
+  
+  
+</p>
+</div>
+
+<div class="article">
+<p>因为要运行 <a href="https://github.com/michel-mata/cNODE.jl">cNODE</a> 程序，所以接触了一下 Julia 语言。</p>
+<h2 id="julia">Julia</h2>
+<blockquote>
+<p>一群拥有各种语言丰富编程经验的Matlab高级用户，对现有的科学计算编程工具感到不满&mdash;&mdash;这些软件对自己专长的领域表现得非常棒，但在其它领域却非常糟糕。他们想要的是一个开源的软件，它要像C语言一般快速而有拥有如同Ruby的动态性；要具有Lisp般真正的同像性而又有Matlab般熟悉的数学记号；要像Python般通用、像R般在统计分析上得心应手、像Perl般自然地处理字符串、像Matlab般具有强大的线性代数运算能力、像shell般胶水语言的能力，易于学习而又不让真正的黑客感到无聊；还有，它应该是交互式的，同时又是编译型的&hellip;&hellip;</p>
+</blockquote>
+<ul>
+<li>快！</li>
+</ul>
+<p><img src="https://julialang.org/assets/images/benchmarks.svg" alt=""></p>
+<p>由上图可以看出，Julia 的运行速度是除 C 语言以外几乎最快的。</p>
+<p>Julia 一开始就是为<a href="https://cn.julialang.org/benchmarks/">高性能</a>而设计的。 Julia 程序通过 LLVM 编译成高效的 <a href="https://cn.julialang.org/downloads/#support_tiers">多平台</a> 机器码。</p>
+<ul>
+<li>动态</li>
+</ul>
+<p>Julia 是<a href="https://docs.juliacn.com/latest/manual/types/">动态类型的</a>，使用起来像脚本语言，同时有很好的<a href="https://docs.juliacn.com/latest/stdlib/REPL/">交互</a>体验。</p>
+<ul>
+<li>可选类型</li>
+</ul>
+<p>Julia 有丰富的<a href="https://docs.juliacn.com/latest/manual/types/">数据类型描述语言</a>，标注类型声明可以使程序更清晰可靠。</p>
+<ul>
+<li>通用</li>
+</ul>
+<p>Julia 使用<a href="https://docs.juliacn.com/latest/manual/methods/">多分派</a>范式，很容易表达面向对象和<a href="https://docs.juliacn.com/latest/manual/metaprogramming/">函数式</a>编程模式。 同时提供了<a href="https://docs.juliacn.com/latest/manual/networking-and-streams/">异步 I/O</a>、<a href="https://github.com/JuliaDebug/Debugger.jl">调试</a>、<a href="https://docs.juliacn.com/latest/stdlib/Logging/">日志</a>、<a href="https://docs.juliacn.com/latest/manual/profile/">性能分析</a>、<a href="https://docs.juliacn.com/latest/stdlib/Pkg/index.html">包管理</a>等工具。</p>
+<ul>
+<li>易用</li>
+</ul>
+<p>Julia 拥有高阶的语法，这让具有不同编程语言背景和经验的程序员都能使用它。<a href="https://github.com/JuliaLang/Microbenchmarks/blob/master/perf.jl">查看 Julia 的微基准</a>来感受这门语言吧。</p>
+<h2 id="示例">示例</h2>
+<ul>
+<li>Julia与MATLAB语言较为类似。</li>
+</ul>
+<pre><code class="language-julia">function mandelbrot(a)
+    z = 0
+    for i=1:50
+        z = z^2 + a
+    end
+    return z
+end
+
+for y=1.0:-0.05:-1.0
+    for x=-2.0:0.0315:0.5
+        abs(mandelbrot(complex(x, y))) &lt; 2 ? print(&quot;*&quot;) : print(&quot; &quot;)
+    end
+    println()
+end
+
+# Taken from: https://rosettacode.org/wiki/Mandelbrot_set#Julia
+</code></pre>
+<h2 id="包管理">包管理</h2>
+<p><a href="https://discourse.juliacn.com/t/topic/3154">为什么 Julia 装包这么困难</a></p>
+<ul>
+<li>使用Pkg管理包。打开命令提示符，按 ] 即可进入包管理器。</li>
+</ul>
+<pre><code class="language-julia">julia&gt; ]
+(v1.1) pkg&gt; status
+(v1.1) pkg&gt; add NewPackage
+&lt;press Backspace&gt;
+julia&gt;
+</code></pre>
+<ul>
+<li>更改软件源</li>
+</ul>
+<pre><code class="language-julia">using PkgServerClient # 在 using 时会自动切换到最近的服务器
+PkgServerClient.registry_response_time() # 查看所有服务器的延迟
+PkgServerClient.set_mirror(&quot;NJU&quot;) # 使用南京大学的服务器
+
+using Pkg
+Pkg.Registry.rm(&quot;General&quot;)  # 重置 General 注册表，相当于在提示符下输入 pkg&gt; registry rm General
+Pkg.Registry.add(&quot;General&quot;)  # 重置 General 注册表，这样才会直接从镜像站拉取数据
+Pkg.update()
+</code></pre>
+<h2 id="语法参考">语法参考</h2>
+<ul>
+<li><a href="https://github.com/JuliaAcademy/Introduction-to-Julia">Introduction-to-Julia</a></li>
+<li><a href="https://juliaacademy.com/courses/375479/">同步视频课程</a></li>
+<li><a href="https://docs.juliacn.com/latest/manual/">Julia 手册中文版</a></li>
+</ul>
+<h3 id="suppress-warnings">suppress warnings</h3>
+<ul>
+<li>
+<p>启动 Julia 时，加入 <code>--depwarn=no</code> 参数；</p>
+</li>
+<li>
+<p>使用 <code>Suppressor</code></p>
+<pre><code class="language-julia">using Suppressor
+
+@suppress_err begin
+include(&quot;script.jl&quot;)
+end
+</code></pre>
+</li>
+</ul>
+
+</div>
+</main>
+
+<section class="appendix">
+
+
+<div>
+  <div class="side side-left"><h3>作者简介</h3></div>
+  <div>
+
+
+
+
+
+<div>Chun-Hui Gao is a Research Associate at <a href="http://www.hzau.edu.cn">Huazhong Agricultural University</a>.</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div>
+  <div class="side side-left"><h3>重复使用</h3></div>
+  Text and figures are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution CC BY 4.0</a>. The source code is licensed under MIT. The full source is available at <a href="https://github.com/yihui/hugo-prose">https://github.com/yihui/hugo-prose</a>.
+</div>
+
+
+
+<div>
+  <div class="side side-left"><h3>欢迎修订</h3></div>
+  
+  
+  
+    
+    
+  
+  如果您发现本文里含有任何错误（包括错别字和标点符号），欢迎<a href="https://github.com/gaospecial/bio-spring/edit/master/content/post/2023-08-23-using-julia-in-rstudio/index.zh.md" id="edit-link">在本站的 GitHub 项目里提交修订意见。</a>
+</div>
+
+
+
+
+<div>
+  <div class="side side-left"><h3>引用本文</h3></div>
+  <p>如果您使用了本文的内容，请按照以下方式引用：</p>
+  <pre><code>gaoch (2023). 在 RStudio 中使用 Julia. BIO-SPRING. www.bio-spring.top/post/2023/08/23/using-julia-in-rstudio/</code></pre>
+  <p>BibTeX citation</p>
+  <pre><code>@misc{
+  title = "在 RStudio 中使用 Julia",
+  author = "gaoch",
+  year = "2023",
+  journal = "BIO-SPRING",
+  note = "www.bio-spring.top/post/2023/08/23/using-julia-in-rstudio/"
+}</code></pre>
+</div>
+
+</section>
+
+
+
+<nav class="post-nav">
+  <span class="nav-next">&larr; <a href="www.bio-spring.top/post/2023/08/20/edit-link-is-wrong-in-hugo-prose/" title=下一篇&#32;(旧)>Edit link is wrong in Hugo Prose</a></span>
+  &hercon;
+  <span class="nav-prev"><a href="www.bio-spring.top/post/2023/09/13/git-add-multiple-remotes/" title=上一篇&#32;(新)>Git 添加多个 remote</a> &rarr;</span>
+</nav>
+
+
+
+
+<section class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var disqus_js = '//bio-spring.disqus.com/embed.js';
+    var d = document, s = d.createElement('script');
+    s.src = disqus_js; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    var t = d.getElementById('disqus_thread');
+    var b = false, l = function(scroll) {
+      if (b) return;
+      (d.head || d.body).appendChild(s); b = true;
+      if (scroll) t.scrollIntoView();
+    }
+    s.onerror = function(e) {
+      if (sessionStorage.getItem('failure-note')) return;
+      t.innerText = 'Sorry, but you cannot make comments because Disqus failed to load for some reason. It is known to be blocked in China. If you are sure it is not blocked in your region, please refresh the page. 中国大陆地区读者需要翻墙才能发表评论。';
+      t.style.border = '1px dashed';
+      t.style.padding = '.5em';
+      t.style.background = 'lightyellow';
+      sessionStorage.setItem('failure-note', true);
+    };
+    
+    if (location.hash.match(/^#comment-[0-9]+$/)) return l(true);
+    var c = function() {
+      if (b) return;
+      var rect = t.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) l();
+    };
+    window.addEventListener('load', c);
+    d.addEventListener('scroll', c);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+</div>
+
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+<script src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils/js/number-sections.min.js,npm/@xiee/utils/js/toc.min.js,npm/@xiee/utils/js/toc-highlight.min.js,npm/@xiee/utils/js/sidenotes.min.js,npm/@xiee/utils/js/right-quote.min.js,npm/@xiee/utils/js/center-img.min.js,npm/@xiee/utils/js/fix-pandoc.min.js,npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/prism-xcode.min.css">
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

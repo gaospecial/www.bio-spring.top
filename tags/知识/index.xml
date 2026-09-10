@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>知识 on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/%E7%9F%A5%E8%AF%86/</link>
+		<description>Recent content in 知识 on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 17 Jul 2011 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/%E7%9F%A5%E8%AF%86/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>紫外线灯管（紫外线杀菌灯）的构成和原理</title>
+				<link>www.bio-spring.top/post/2011/07/17/2011-07-17-uv-lamp/</link>
+				<pubDate>Sun, 17 Jul 2011 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2011/07/17/2011-07-17-uv-lamp/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;紫外线灯管的构成和原理&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;紫外线杀菌灯（UV灯）实际上是属于一种低压汞灯，和普通日光灯一样，利用低压汞蒸汽（&amp;lt;10-2Pa）被激发后发射紫外线。&lt;/p&gt;&#xA;&lt;p&gt;不同的是日光灯的灯管采用的是普通玻璃，254nm紫外线不能透出来，只能被灯管内壁的荧光粉吸收后激发出可见光。如果改变荧光粉的成分和比例，它就可以发出我们通常所见的不同颜色的光。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2011/07/79252531.jpg&#34; alt=&#34;紫外线杀菌灯&#34; title=&#34;紫外线杀菌灯&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;**1、发光原理。**紫外线光在水银放电管中产生。水银放电管是包含两个电极和绝缘器的一根石英玻璃管，管体内悬浮着水银蒸汽（汞蒸气）这种惰性气体。&lt;/p&gt;&#xA;&lt;p&gt;当紫外线灯管通电且被激发后，水银在254nm，310nm和365nm处达到最高点，产生在200&#xA;和400nm之间的紫外线光辐射，其中峰值365nm类型的紫外线灯管，被广泛应用于工业上表面加工作业的干燥固化；254nm及特制185nm的灯管常用于杀菌消毒、污水处理、油烟净化，甚至是光清洗。&lt;/p&gt;&#xA;&lt;p&gt;紫外线灯可以被生产成几毫米到超过2米的长度，功率可做到杀菌灯中不足1W，固化灯至25KW。&#xA;这些固化灯的寿命从1000到2500小时内变化，杀菌灯的寿命从6000到20000小时内变化。&lt;/p&gt;&#xA;&lt;p&gt;**2、灯管。**一般杀菌灯的灯管都采用石英玻璃制作，因为石英玻璃对紫外线各波段都有很高的透过率，达80%-90%，并且同时能忍受800°C的高温，是做杀菌灯的最佳材料。&lt;/p&gt;&#xA;&lt;p&gt;因成本关系与用途不同，也有用紫外线穿透率＜50%的高硼砂玻璃管代替石英玻璃的。高硼玻璃的成本很低，但它在性能上远比不上石英杀菌灯，其杀菌效果有相当大的差异。&lt;/p&gt;&#xA;&lt;p&gt;**3、电极：**电极由钨制成。&lt;/p&gt;&#xA;&lt;p&gt;**4、连线。**用钼板来连接电极和电线，可以和石英一起膨胀。并且当加热时仍然能忍受高电压。&lt;/p&gt;&#xA;&lt;p&gt;**5、灯头。**石英玻璃与普通玻璃在性能上有很大的差别，主要是热膨胀系数不同，一般不能封接铝盖灯头，所以杀菌灯的灯头材质多采用胶木、塑料或陶瓷。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

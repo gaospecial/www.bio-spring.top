@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Lens on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/lens/</link>
+		<description>Recent content in Lens on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 27 Mar 2018 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/lens/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>静音Office Lens快门声音</title>
+				<link>www.bio-spring.top/post/2018/03/27/2018-03-27-mute-shutter-voice/</link>
+				<pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2018/03/27/2018-03-27-mute-shutter-voice/</guid>
+				<description>&lt;p&gt;Office&#xA;Lens的快门声在一些手机上（比如我的Le2）无法关闭，这严重影响了该软件的使用。在Google上面查找，始终找不到解决方案，而只是一些吐槽。&lt;/p&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2018/03/office-lens-500x350.jpg&#34; class=&#34;alignnone size-medium wp-image-929&#34; sizes=&#34;(max-width: 500px) 100vw, 500px&#34; srcset=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2018/03/office-lens-500x350.jpg 500w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2018/03/office-lens.jpg 690w&#34; width=&#34;500&#34; height=&#34;350&#34; /&gt;&#xA;&lt;p&gt;大家对微软已经无力吐槽了。&lt;/p&gt;&#xA;&lt;p&gt;机智如我，自然要想个办法。经过广泛调研，深入研究，最终得到解决方案。&lt;/p&gt;&#xA;&lt;p&gt;具体思路是：&lt;strong&gt;将快门声音对应的音频文件设为无法访问。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;安装Root&#xA;Explorer，定位到/system/media/audio/ui，找到camera_click.ogg文件，将其权限设为000。如下图所示。&lt;/p&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2018/03/camer-click-file-authority-396x500.jpg&#34; class=&#34;alignnone size-medium wp-image-930&#34; sizes=&#34;(max-width: 396px) 100vw, 396px&#34; srcset=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2018/03/camer-click-file-authority-396x500.jpg 396w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2018/03/camer-click-file-authority.jpg 767w&#34; width=&#34;396&#34; height=&#34;500&#34; /&gt;&#xA;&lt;p&gt;设置完成后，再打开Office Lens，世界清静了。&lt;/p&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2018/03/camera-click-480x500.jpg&#34; class=&#34;alignnone size-medium wp-image-928&#34; sizes=&#34;(max-width: 480px) 100vw, 480px&#34; srcset=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2018/03/camera-click-480x500.jpg 480w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2018/03/camera-click-768x799.jpg 768w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2018/03/camera-click-984x1024.jpg 984w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2018/03/camera-click.jpg 1080w&#34; width=&#34;480&#34; height=&#34;500&#34; /&gt;</description>
+			</item>
+	</channel>
+</rss>

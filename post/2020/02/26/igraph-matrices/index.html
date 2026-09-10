@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> igraph matrices | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="igraph matrices">
+	<meta name="twitter:description" content="关联矩阵（incidence matrix） 我们生成的这个矩阵的原型是一个引证关系矩阵。 矩阵中的三行代表3篇文献，四列代表4篇引文。 1/2/3/4是在A/B/C前面发表的文献,A/B/C是后来发表的文献。 其中文献A引用了3/4，文献B引用了1/2/4，文献C引用了1/2/4。
+library(igraph) library(Matrix) set.seed(3) m &lt;- matrix(data = sample(0:1, 12, replace = TRUE),nrow = 3) rownames(m) &lt;- LETTERS[1:3] colnames(m) &lt;- 1:4 m ## 1 2 3 4 ## A 0 0 1 1 ## B 1 1 0 1 ## C 1 1 0 1 这样的一个引证关系，可以用下面的图表示。
+在bibliometrix::cocMatrix() 中将这种矩阵称为共现矩阵，Co-occurrence Matrix。
+par(mar=c(1,1,1,1)) g1 &lt;- graph_from_incidence_matrix(m,directed = TRUE,mode = &#34;out&#34;) ## Warning: `graph_from_incidence_matrix()` was deprecated in igraph 1.6.0. ## ℹ Please use `graph_from_biadjacency_matrix()` instead. ## This warning is displayed once every 8 hours. ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was ## generated. plot(g1) 上面的矩阵通过矩阵叉乘可以得到不同的邻接矩阵，用于生成新的网络。">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container single">
+<main>
+
+<div class="article-meta">
+<h1><span class="title">igraph matrices</span></h1>
+
+<h3 class="author">
+gaoch
+</h3>
+
+<h3 class="date">2020-02-26</h3>
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF">信息技术</a> 
+  
+  
+  
+  Tags: <a href="/tags/r">R</a> <a href="/tags/igraph">igraph</a> 
+  
+  
+</p>
+</div>
+
+<div class="article">
+<h2 id="关联矩阵incidence-matrix">关联矩阵（incidence matrix）</h2>
+<p>我们生成的这个矩阵的原型是一个引证关系矩阵。
+矩阵中的三行代表3篇文献，四列代表4篇引文。
+1/2/3/4是在A/B/C前面发表的文献,A/B/C是后来发表的文献。
+其中文献A引用了3/4，文献B引用了1/2/4，文献C引用了1/2/4。</p>
+<pre><code class="language-r">library(igraph)
+library(Matrix)
+
+set.seed(3)
+m &lt;- matrix(data = sample(0:1, 12, replace = TRUE),nrow = 3)
+rownames(m) &lt;- LETTERS[1:3]
+colnames(m) &lt;- 1:4
+m
+</code></pre>
+<pre><code>##   1 2 3 4
+## A 0 0 1 1
+## B 1 1 0 1
+## C 1 1 0 1
+</code></pre>
+<p>这样的一个引证关系，可以用下面的图表示。</p>
+<p>在<code>bibliometrix::cocMatrix()</code> 中将这种矩阵称为共现矩阵，Co-occurrence Matrix。</p>
+<pre><code class="language-r">par(mar=c(1,1,1,1))
+
+g1 &lt;- graph_from_incidence_matrix(m,directed = TRUE,mode = &quot;out&quot;) 
+</code></pre>
+<pre><code>## Warning: `graph_from_incidence_matrix()` was deprecated in igraph 1.6.0.
+## ℹ Please use `graph_from_biadjacency_matrix()` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.
+</code></pre>
+<pre><code class="language-r">plot(g1)
+</code></pre>
+<img src="www.bio-spring.top/post/2020/02/26/igraph-matrices/index.zh_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+<p>上面的矩阵通过矩阵叉乘可以得到不同的邻接矩阵，用于生成新的网络。</p>
+<h2 id="矩阵和向量的计算">矩阵和向量的计算</h2>
+<p>矩阵的点乘就是矩阵各个对应元素相乘, 这个时候要求两个矩阵必须同样大小。</p>
+<p><a href="https://blog.csdn.net/u013066730/article/details/57462299">https://blog.csdn.net/u013066730/article/details/57462299</a></p>
+<p>矩阵的叉乘（乘法）就是矩阵A的第一行乘以矩阵B的第一列，各个元素对应相乘然后求和作为第一元素的值。
+矩阵只有当左边矩阵的列数等于右边矩阵的行数时才可以相乘,
+乘积矩阵的行数等于左边矩阵的行数,乘积矩阵的列数等于右边矩阵的列数。</p>
+<p>向量的点乘和叉乘是矩阵算法的基础。</p>
+<p><a href="https://blog.csdn.net/dcrmg/article/details/52416832">https://blog.csdn.net/dcrmg/article/details/52416832</a></p>
+<p>向量的点乘,也叫向量的内积、数量积，对两个向量执行点乘运算，
+就是对这两个向量对应位一一相乘之后求和的操作，点乘的结果是一个标量。</p>
+<p>点乘的几何意义是可以用来表征或计算两个向量之间的夹角，以及在b向量在a向量方向上的投影。</p>
+<p>两个向量的叉乘，又叫向量积、外积、叉积，叉乘的运算结果是一个向量而不是一个标量。并且两个向量的叉积与这两个向量组成的坐标平面垂直。</p>
+<p>在 R 语言中，使用 <code>%*%</code> 计算矩阵的叉乘，而 <code>crossprod()</code> 和 <code>tcrossprod()</code> 函数对算法进行了优化。</p>
+<p>此外，<code>crossprod()</code> 对计算过程也进行了变动，同一个矩阵的叉乘时不需要预先转置。</p>
+<p>下面的三个个计算结果一样。</p>
+<pre><code class="language-r">m %*% t(m)
+</code></pre>
+<pre><code>##   A B C
+## A 2 1 1
+## B 1 3 3
+## C 1 3 3
+</code></pre>
+<pre><code class="language-r">crossprod(t(m),t(m))
+</code></pre>
+<pre><code>##   A B C
+## A 2 1 1
+## B 1 3 3
+## C 1 3 3
+</code></pre>
+<pre><code class="language-r">tcrossprod(m,m)
+</code></pre>
+<pre><code>##   A B C
+## A 2 1 1
+## B 1 3 3
+## C 1 3 3
+</code></pre>
+<p>下面的两个结果也一样。</p>
+<pre><code class="language-r">t(m) %*% m
+</code></pre>
+<pre><code>##   1 2 3 4
+## 1 2 2 0 2
+## 2 2 2 0 2
+## 3 0 0 1 1
+## 4 2 2 1 3
+</code></pre>
+<pre><code class="language-r">crossprod(m,m)
+</code></pre>
+<pre><code>##   1 2 3 4
+## 1 2 2 0 2
+## 2 2 2 0 2
+## 3 0 0 1 1
+## 4 2 2 1 3
+</code></pre>
+<h2 id="邻接矩阵adjacency-matrix">邻接矩阵（adjacency matrix）</h2>
+<pre><code class="language-r">m2 &lt;- crossprod(m,m)
+m2
+</code></pre>
+<pre><code>##   1 2 3 4
+## 1 2 2 0 2
+## 2 2 2 0 2
+## 3 0 0 1 1
+## 4 2 2 1 3
+</code></pre>
+<p>共被引（co-citation）是指当两篇（或多篇）文献同时被后来一篇（或多篇）论文所引用的关系，
+同时引用这两篇论文的文献数目则称为共被引强度。
+文献的共被引关系会随着时间的变化而变化。
+通过对文献共被引网络的研究可以探究科学的发展和演进动态。</p>
+<p>根据共被引的定义，文献1和2同时被B和C引用，二者具有共被引关系，共被引强度是2。
+同理，文献3和4之间的共被引强度是1，
+文献1和3的共被引强度是0，文献2和3的共被引强度是0；
+文献2和4的共被引强度是2，文献1和4的共被引强度是2。</p>
+<pre><code class="language-r">g2 &lt;- graph_from_adjacency_matrix(m2, mode = &quot;undirected&quot;)
+par(mar=c(1,1,1,1))
+plot(g2,layout=layout_with_kk)
+</code></pre>
+<img src="www.bio-spring.top/post/2020/02/26/igraph-matrices/index.zh_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+<p>若文献A和文献B引用了相同的参考文献，则它们之间构成耦合关系（coupling）。
+它们所包含相同参考文献的个数成为耦合强度。
+如果两篇文献同时引用了1篇文献，则耦合度为1；若同时引用了3篇文献，则耦合度为3。
+两篇文献拥有的共同参考文献越多，则其研究内容越相似。</p>
+<p>耦合关系的邻接矩阵可以用转置后关联矩阵的叉乘来表示。</p>
+<pre><code class="language-r">m3 &lt;- crossprod(t(m),t(m))
+m3
+</code></pre>
+<pre><code>##   A B C
+## A 2 1 1
+## B 1 3 3
+## C 1 3 3
+</code></pre>
+<p>文献B和C共同引用了1/2/4号文献，因此它们之间的耦合关系最强，数值为3。</p>
+<pre><code class="language-r">g3 &lt;- graph_from_adjacency_matrix(m3, mode = &quot;undirected&quot;)
+par(mar=c(1,1,1,1))
+plot(g3)
+</code></pre>
+<img src="www.bio-spring.top/post/2020/02/26/igraph-matrices/index.zh_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+<p>从文献耦合的概念上看，一个文献引用的参考文献越多，
+那么它将有越多的机会与其它文献建立耦合关系。
+为了消除这种影响，通常需要对原始数据使用 Jaccard 或 Salton 方法进行标准化处理，
+来计算相对的耦合强度。</p>
+<p><code>bibliometrix::normalizeSimilarity()</code> 提供了3种方法来标准化耦合矩阵。</p>
+<pre><code class="language-r">method &lt;- c(&quot;association&quot;, &quot;jaccard&quot;, &quot;inclusion&quot;,&quot;salton&quot;, &quot;equivalence&quot;)
+m3_list &lt;- lapply(method, function(x){
+  bibliometrix::normalizeSimilarity(m3,type = x)
+})
+names(m3_list) &lt;- method
+m3_list
+</code></pre>
+<pre><code>## $association
+## 3 x 3 sparse Matrix of class &quot;dsCMatrix&quot;
+##           A         B         C
+## A 0.5000000 0.1666667 0.1666667
+## B 0.1666667 0.3333333 0.3333333
+## C 0.1666667 0.3333333 0.3333333
+## 
+## $jaccard
+## 3 x 3 sparse Matrix of class &quot;dsCMatrix&quot;
+##      A    B    C
+## A 1.00 0.25 0.25
+## B 0.25 1.00 1.00
+## C 0.25 1.00 1.00
+## 
+## $inclusion
+## 3 x 3 sparse Matrix of class &quot;dsCMatrix&quot;
+##     A   B   C
+## A 1.0 0.5 0.5
+## B 0.5 1.0 1.0
+## C 0.5 1.0 1.0
+## 
+## $salton
+## 3 x 3 sparse Matrix of class &quot;dsCMatrix&quot;
+##           A         B         C
+## A 1.0000000 0.4082483 0.4082483
+## B 0.4082483 1.0000000 1.0000000
+## C 0.4082483 1.0000000 1.0000000
+## 
+## $equivalence
+## 3 x 3 sparse Matrix of class &quot;dsCMatrix&quot;
+##           A         B         C
+## A 1.0000000 0.1666667 0.1666667
+## B 0.1666667 1.0000000 1.0000000
+## C 0.1666667 1.0000000 1.0000000
+</code></pre>
+<p>标准化的邻接矩阵最大值都不超过1，因此在创建网络的时候要使用“<code>weighted = TRUE</code>”模式。
+这样，矩阵的强度将会转变为边的属性。</p>
+<pre><code class="language-r">par(mfrow=c(2,3))
+success &lt;- lapply(seq_along(m3_list), function(x){
+  par(mar=c(1,1,1,1))
+  graph_from_adjacency_matrix(m3_list[[x]], mode = &quot;undirected&quot;, weighted = TRUE) %&gt;% 
+    plot(main=method[[x]])
+})
+</code></pre>
+<img src="www.bio-spring.top/post/2020/02/26/igraph-matrices/index.zh_files/figure-html/unnamed-chunk-10-1.png" width="672" />
+<p>乍看上去，生成的网络是一样的，但事实上边的属性不一样。
+如果我们把边的宽度映射到“weight”属性，则仍然可以发现文献B和C之间的耦合关系是最强的。</p>
+<pre><code class="language-r">par(mfrow=c(2,3))
+success &lt;- lapply(seq_along(m3_list), function(x){
+  par(mar=c(1,1,1,1))
+  g3_weighted &lt;- graph_from_adjacency_matrix(m3_list[[x]], mode = &quot;undirected&quot;, weighted = TRUE)
+  E(g3_weighted)$width  &lt;- edge.attributes(g3_weighted)$weight*5
+  plot(g3_weighted, main=method[[x]])
+})
+</code></pre>
+<img src="www.bio-spring.top/post/2020/02/26/igraph-matrices/index.zh_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<p>对于耦合网络来说，图中的 loop 是没有意义的。可以使用 <code>igraph::simplify()</code> 来去掉。</p>
+<pre><code class="language-r">g4 &lt;- simplify(g3, remove.multiple = FALSE, remove.loops = TRUE)
+plot(g4)
+</code></pre>
+<img src="www.bio-spring.top/post/2020/02/26/igraph-matrices/index.zh_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+
+</div>
+</main>
+
+<section class="appendix">
+
+
+<div>
+  <div class="side side-left"><h3>作者简介</h3></div>
+  <div>
+
+
+
+
+
+<div>Chun-Hui Gao is a Research Associate at <a href="http://www.hzau.edu.cn">Huazhong Agricultural University</a>.</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div>
+  <div class="side side-left"><h3>重复使用</h3></div>
+  Text and figures are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution CC BY 4.0</a>. The source code is licensed under MIT. The full source is available at <a href="https://github.com/yihui/hugo-prose">https://github.com/yihui/hugo-prose</a>.
+</div>
+
+
+
+<div>
+  <div class="side side-left"><h3>欢迎修订</h3></div>
+  
+  
+  
+    
+  
+  如果您发现本文里含有任何错误（包括错别字和标点符号），欢迎<a href="https://github.com/gaospecial/bio-spring/edit/master/content/post/2020-02-26-igraph-matrices/index.zh.Rmd" id="edit-link">在本站的 GitHub 项目里提交修订意见。</a>
+</div>
+
+
+
+
+<div>
+  <div class="side side-left"><h3>引用本文</h3></div>
+  <p>如果您使用了本文的内容，请按照以下方式引用：</p>
+  <pre><code>gaoch (2020). igraph matrices. BIO-SPRING. www.bio-spring.top/post/2020/02/26/igraph-matrices/</code></pre>
+  <p>BibTeX citation</p>
+  <pre><code>@misc{
+  title = "igraph matrices",
+  author = "gaoch",
+  year = "2020",
+  journal = "BIO-SPRING",
+  note = "www.bio-spring.top/post/2020/02/26/igraph-matrices/"
+}</code></pre>
+</div>
+
+</section>
+
+
+
+<nav class="post-nav">
+  <span class="nav-next">&larr; <a href="www.bio-spring.top/post/2020/02/26/igraph-make-graph/" title=下一篇&#32;(旧)>igraph: 生成网络</a></span>
+  &hercon;
+  <span class="nav-prev"><a href="www.bio-spring.top/post/2020/04/12/normal-distribution-transformation/" title=上一篇&#32;(新)>正态分布的转换</a> &rarr;</span>
+</nav>
+
+
+
+
+<section class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var disqus_js = '//bio-spring.disqus.com/embed.js';
+    var d = document, s = d.createElement('script');
+    s.src = disqus_js; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    var t = d.getElementById('disqus_thread');
+    var b = false, l = function(scroll) {
+      if (b) return;
+      (d.head || d.body).appendChild(s); b = true;
+      if (scroll) t.scrollIntoView();
+    }
+    s.onerror = function(e) {
+      if (sessionStorage.getItem('failure-note')) return;
+      t.innerText = 'Sorry, but you cannot make comments because Disqus failed to load for some reason. It is known to be blocked in China. If you are sure it is not blocked in your region, please refresh the page. 中国大陆地区读者需要翻墙才能发表评论。';
+      t.style.border = '1px dashed';
+      t.style.padding = '.5em';
+      t.style.background = 'lightyellow';
+      sessionStorage.setItem('failure-note', true);
+    };
+    
+    if (location.hash.match(/^#comment-[0-9]+$/)) return l(true);
+    var c = function() {
+      if (b) return;
+      var rect = t.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) l();
+    };
+    window.addEventListener('load', c);
+    d.addEventListener('scroll', c);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+</div>
+
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+<script src="//yihui.org/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+<script src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils/js/number-sections.min.js,npm/@xiee/utils/js/toc.min.js,npm/@xiee/utils/js/toc-highlight.min.js,npm/@xiee/utils/js/sidenotes.min.js,npm/@xiee/utils/js/right-quote.min.js,npm/@xiee/utils/js/center-img.min.js,npm/@xiee/utils/js/fix-pandoc.min.js,npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/prism-xcode.min.css">
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

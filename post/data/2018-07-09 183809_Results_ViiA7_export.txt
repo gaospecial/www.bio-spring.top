@@ -1,0 +1,332 @@
+* Block Type = 384-Well Block
+* Calibration Background is expired  = Yes
+* Calibration Background performed on = 12-21-2016
+* Calibration Normalization FAM-ROX is expired = Yes
+* Calibration Normalization FAM-ROX performed on = 12-21-2016
+* Calibration Normalization VIC-ROX is expired = Yes
+* Calibration Normalization VIC-ROX performed on = 12-21-2016
+* Calibration Pure Dye FAM is expired = Yes
+* Calibration Pure Dye FAM performed on = 12-21-2016
+* Calibration Pure Dye NED is expired = Yes
+* Calibration Pure Dye NED performed on = 12-21-2016
+* Calibration Pure Dye ROX is expired = Yes
+* Calibration Pure Dye ROX performed on = 12-21-2016
+* Calibration Pure Dye SYBR is expired = Yes
+* Calibration Pure Dye SYBR performed on = 12-21-2016
+* Calibration Pure Dye TAMRA is expired = Yes
+* Calibration Pure Dye TAMRA performed on = 12-21-2016
+* Calibration Pure Dye VIC is expired = Yes
+* Calibration Pure Dye VIC performed on = 12-21-2016
+* Calibration ROI is expired  = Yes
+* Calibration ROI performed on = 12-21-2016
+* Calibration Uniformity is expired  = Yes
+* Calibration Uniformity performed on = 12-21-2016
+* Chemistry = SYBR_GREEN
+* Date Created = 2018-07-09 18:38:45 PM CST
+* Date Modified = 2018-07-09 20:35:06 PM CST
+* Experiment Barcode = NA
+* Experiment Comment = NA
+* Experiment File Name = H:\Spring_Work\35. Data\2018-5-30 pathogen qPCR\2018-07-09 183809.eds
+* Experiment Name = 2018-07-09 183809
+* Experiment Run Start Time = 2018-07-10 02:54:59 AM CST
+* Experiment Run Stop Time = 2018-07-10 04:48:33 AM CST
+* Experiment Type = Relative Standard Curve
+* Instrument Name = 278861596
+* Instrument Serial Number = 278861596
+* Instrument Type = QuantStudio(TM) 6 Flex System
+* Passive Reference = ROX
+* Quantification Cycle Method = Ct
+* Signal Smoothing On = true
+* Stage/ Cycle where Analysis is performed = Stage 2, Step 3
+* User Name = NA
+
+[Results]
+Well	Well Position	Omit	Sample Name	Target Name	Task	Reporter	Quencher	RQ	RQ Min	RQ Max	CT	Ct Mean	Ct SD	Quantity	Normalized Quantity	Normalized Quantity Standard Error	Quantity Mean	Quantity SD	Efficiency	Y-Intercept	R(superscript 2)	Slope	Automatic Ct Threshold	Ct Threshold	Automatic Baseline	Baseline Start	Baseline End	Comments	Tm1	Tm2	Tm3	MTP	EXPFAIL	HIGHSD	NOAMP	PRFDROP
+1	A1	false	Sample 1	O157	UNKNOWN	SYBR	None				31.589	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+2	A2	false	Sample 1	O157	UNKNOWN	SYBR	None				31.919	32.023	5.301										true	0.089	true	1	40		75.461	81.201		Y	N	Y	N	N
+3	A3	false	Sample 1	O157	UNKNOWN	SYBR	None				32.190	32.023	5.301										true	0.089	true	1	40		75.461			N	N	Y	N	N
+4	A4	false	Sample 1	O157	UNKNOWN	SYBR	None				34.881	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+5	A5	false	Sample 1	O157	UNKNOWN	SYBR	None				32.127	32.023	5.301										true	0.089	true	1	40		75.461			N	N	Y	N	N
+6	A6	false	Sample 1	O157	UNKNOWN	SYBR	None				31.672	32.023	5.301										true	0.089	true	1	40		75.580			N	N	Y	N	N
+7	A7	false	Sample 1	O157	UNKNOWN	SYBR	None				32.807	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+8	A8	false	Sample 1	O157	UNKNOWN	SYBR	None				32.315	32.023	5.301										true	0.089	true	1	40		75.699			N	N	Y	N	N
+9	A9	false	Sample 1	O157	UNKNOWN	SYBR	None				33.004	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+10	A10	false	Sample 1	O157	UNKNOWN	SYBR	None				31.896	32.023	5.301										true	0.089	true	1	40		75.857			N	N	Y	N	N
+11	A11	false	Sample 1	O157	UNKNOWN	SYBR	None				31.440	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+12	A12	false	Sample 1	O157	UNKNOWN	SYBR	None				32.207	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+13	A13	false	Sample 1	O157	UNKNOWN	SYBR	None				34.619	32.023	5.301										true	0.089	true	1	40		75.461			N	N	Y	N	N
+14	A14	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.461			N	Y	N	Y	N
+15	A15	false	Sample 1	O157	UNKNOWN	SYBR	None				34.987	32.023	5.301										true	0.089	true	1	40		76.293			N	N	Y	N	N
+16	A16	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.342			N	Y	N	Y	N
+17	A17	false	Sample 1	O157	UNKNOWN	SYBR	None				35.640	32.023	5.301										true	0.089	true	1	40		76.095			N	N	Y	N	N
+18	A18	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.342			N	Y	N	Y	N
+19	A19	false	Sample 1	O157	UNKNOWN	SYBR	None				39.692	32.023	5.301										true	0.089	true	1	40		76.095			N	N	Y	N	N
+20	A20	false	Sample 1	O157	UNKNOWN	SYBR	None				37.242	32.023	5.301										true	0.089	true	1	40		76.490			N	N	Y	N	N
+21	A21	false	Sample 1	O157	UNKNOWN	SYBR	None				32.682	32.023	5.301										true	0.089	true	1	40		76.768			N	N	Y	N	N
+22	A22	false	Sample 1	O157	UNKNOWN	SYBR	None				36.275	32.023	5.301										true	0.089	true	1	40		76.490			N	N	Y	N	N
+23	A23	false	Sample 1	O157	UNKNOWN	SYBR	None				35.841	32.023	5.301										true	0.089	true	1	40		75.897			N	N	Y	N	N
+24	A24	false	Sample 1	O157	UNKNOWN	SYBR	None				34.008	32.023	5.301										true	0.089	true	1	40		75.620			N	N	Y	N	N
+25	B1	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.501			N	Y	N	Y	N
+26	B2	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.778			N	Y	N	Y	N
+27	B3	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		76.174			N	Y	N	Y	N
+28	B4	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		76.095			N	Y	N	Y	N
+29	B5	false	Sample 1	O157	UNKNOWN	SYBR	None				35.491	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+30	B6	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.342			N	Y	N	Y	N
+31	B7	false	Sample 1	O157	UNKNOWN	SYBR	None				36.176	32.023	5.301										true	0.089	true	1	40		75.580			N	N	Y	N	N
+32	B8	false	Sample 1	O157	UNKNOWN	SYBR	None				35.027	32.023	5.301										true	0.089	true	1	40		76.807			N	N	Y	N	N
+33	B9	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.501			N	Y	N	Y	N
+34	B10	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.382			N	Y	N	Y	N
+35	B11	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		76.253			N	Y	N	Y	N
+36	B12	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.184			N	Y	N	Y	N
+49	C1	false	Sample 1	O157	UNKNOWN	SYBR	None				32.463	32.023	5.301										true	0.089	true	1	40		75.580	86.862	84.289	Y	N	Y	N	N
+50	C2	false	Sample 1	O157	UNKNOWN	SYBR	None				32.374	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+51	C3	false	Sample 1	O157	UNKNOWN	SYBR	None				33.204	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+52	C4	false	Sample 1	O157	UNKNOWN	SYBR	None				31.723	32.023	5.301										true	0.089	true	1	40		75.699			N	N	Y	N	N
+53	C5	false	Sample 1	O157	UNKNOWN	SYBR	None				32.518	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+54	C6	false	Sample 1	O157	UNKNOWN	SYBR	None				32.356	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+55	C7	false	Sample 1	O157	UNKNOWN	SYBR	None				32.317	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+56	C8	false	Sample 1	O157	UNKNOWN	SYBR	None				32.399	32.023	5.301										true	0.089	true	1	40		75.580			N	N	Y	N	N
+57	C9	false	Sample 1	O157	UNKNOWN	SYBR	None				32.728	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+58	C10	false	Sample 1	O157	UNKNOWN	SYBR	None				32.194	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+59	C11	false	Sample 1	O157	UNKNOWN	SYBR	None				31.312	32.023	5.301										true	0.089	true	1	40		75.699	82.745		Y	N	Y	N	N
+60	C12	false	Sample 1	O157	UNKNOWN	SYBR	None				33.407	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+61	C13	false	Sample 1	O157	UNKNOWN	SYBR	None				38.918	32.023	5.301										true	0.089	true	1	40		76.174			N	N	Y	N	N
+62	C14	false	Sample 1	O157	UNKNOWN	SYBR	None				37.818	32.023	5.301										true	0.089	true	1	40		76.688			N	N	Y	N	N
+63	C15	false	Sample 1	O157	UNKNOWN	SYBR	None				36.199	32.023	5.301										true	0.089	true	1	40		75.580			N	N	Y	N	N
+64	C16	false	Sample 1	O157	UNKNOWN	SYBR	None				34.992	32.023	5.301										true	0.089	true	1	40		75.620			N	N	Y	N	N
+65	C17	false	Sample 1	O157	UNKNOWN	SYBR	None				35.651	32.023	5.301										true	0.089	true	1	40		76.055			N	N	Y	N	N
+66	C18	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.936			N	Y	N	Y	N
+67	C19	false	Sample 1	O157	UNKNOWN	SYBR	None				33.974	32.023	5.301										true	0.089	true	1	40		75.699			N	N	Y	N	N
+68	C20	false	Sample 1	O157	UNKNOWN	SYBR	None				34.910	32.023	5.301										true	0.089	true	1	40		75.817			N	N	Y	N	N
+69	C21	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.897			N	Y	N	Y	N
+70	C22	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.461			N	Y	N	Y	N
+71	C23	false	Sample 1	O157	UNKNOWN	SYBR	None				33.236	32.023	5.301										true	0.089	true	1	40		75.976			N	N	Y	N	N
+72	C24	false	Sample 1	O157	UNKNOWN	SYBR	None				34.149	32.023	5.301										true	0.089	true	1	40		75.738			N	N	Y	N	N
+73	D1	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.817			N	Y	N	Y	N
+74	D2	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.659			N	Y	N	Y	N
+75	D3	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.422			N	Y	N	Y	N
+76	D4	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.936			N	Y	N	Y	N
+77	D5	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		76.015			N	Y	N	Y	N
+78	D6	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.263			N	Y	N	Y	N
+79	D7	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.699			N	Y	N	N	N
+80	D8	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.620			N	Y	N	N	N
+81	D9	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		76.095			N	N	N	N	N
+82	D10	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		76.965			N	N	N	N	N
+83	D11	false	Sample 1	O157	UNKNOWN	SYBR	None				38.039	32.023	5.301										true	0.089	true	1	40		76.926			N	N	Y	N	N
+84	D12	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.461			N	Y	N	Y	N
+97	E1	false	Sample 1	O157	UNKNOWN	SYBR	None				32.152	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+98	E2	false	Sample 1	O157	UNKNOWN	SYBR	None				31.604	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+99	E3	false	Sample 1	O157	UNKNOWN	SYBR	None				33.370	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+100	E4	false	Sample 1	O157	UNKNOWN	SYBR	None				32.092	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+101	E5	false	Sample 1	O157	UNKNOWN	SYBR	None				32.368	32.023	5.301										true	0.089	true	1	40		75.936	82.032	83.932	Y	N	Y	N	N
+102	E6	false	Sample 1	O157	UNKNOWN	SYBR	None				33.366	32.023	5.301										true	0.089	true	1	40		76.134	81.438	84.922	Y	N	Y	N	N
+103	E7	false	Sample 1	O157	UNKNOWN	SYBR	None				32.656	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+104	E8	false	Sample 1	O157	UNKNOWN	SYBR	None				33.142	32.023	5.301										true	0.089	true	1	40		75.620			N	N	Y	N	N
+105	E9	false	Sample 1	O157	UNKNOWN	SYBR	None				31.782	32.023	5.301										true	0.089	true	1	40		75.580	86.030		Y	N	Y	N	N
+106	E10	false	Sample 1	O157	UNKNOWN	SYBR	None				32.106	32.023	5.301										true	0.089	true	1	40		75.580			N	N	Y	N	N
+107	E11	false	Sample 1	O157	UNKNOWN	SYBR	None				31.580	32.023	5.301										true	0.089	true	1	40		75.580	83.893		Y	N	Y	N	N
+108	E12	false	Sample 1	O157	UNKNOWN	SYBR	None				31.527	32.023	5.301										true	0.089	true	1	40		75.620	84.961		Y	N	Y	N	N
+109	E13	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		76.609			N	N	N	Y	N
+110	E14	false	Sample 1	O157	UNKNOWN	SYBR	None				34.297	32.023	5.301										true	0.089	true	1	40		75.699			N	N	Y	N	N
+111	E15	false	Sample 1	O157	UNKNOWN	SYBR	None				36.570	32.023	5.301										true	0.089	true	1	40		76.015			N	N	Y	N	N
+112	E16	false	Sample 1	O157	UNKNOWN	SYBR	None				36.276	32.023	5.301										true	0.089	true	1	40		75.976			N	N	Y	N	N
+113	E17	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.857			N	Y	N	Y	N
+114	E18	false	Sample 1	O157	UNKNOWN	SYBR	None				34.771	32.023	5.301										true	0.089	true	1	40		75.857			N	N	Y	N	N
+115	E19	false	Sample 1	O157	UNKNOWN	SYBR	None				33.934	32.023	5.301										true	0.089	true	1	40		75.857			N	N	Y	N	N
+116	E20	false	Sample 1	O157	UNKNOWN	SYBR	None				34.337	32.023	5.301										true	0.089	true	1	40		75.817			N	N	Y	N	N
+117	E21	false	Sample 1	O157	UNKNOWN	SYBR	None				34.701	32.023	5.301										true	0.089	true	1	40		77.124			N	N	Y	N	N
+118	E22	false	Sample 1	O157	UNKNOWN	SYBR	None				35.011	32.023	5.301										true	0.089	true	1	40		75.897			N	N	Y	N	N
+119	E23	false	Sample 1	O157	UNKNOWN	SYBR	None				35.378	32.023	5.301										true	0.089	true	1	40		75.936			N	N	Y	N	N
+120	E24	false	Sample 1	O157	UNKNOWN	SYBR	None				33.287	32.023	5.301										true	0.089	true	1	40		75.857			N	N	Y	N	N
+121	F1	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		76.253			N	Y	N	Y	N
+122	F2	false	Sample 1	O157	UNKNOWN	SYBR	None				35.095	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+123	F3	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.461			N	Y	N	Y	N
+124	F4	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.620			N	Y	N	N	N
+125	F5	false	Sample 1	O157	UNKNOWN	SYBR	None				35.170	32.023	5.301										true	0.089	true	1	40		76.847			N	N	Y	N	N
+126	F6	false	Sample 1	O157	UNKNOWN	SYBR	None				36.499	32.023	5.301										true	0.089	true	1	40		76.807			N	N	Y	N	N
+127	F7	false	Sample 1	O157	UNKNOWN	SYBR	None				35.684	32.023	5.301										true	0.089	true	1	40		75.620			N	N	Y	N	N
+128	F8	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		76.372			N	Y	N	N	N
+129	F9	false	Sample 1	O157	UNKNOWN	SYBR	None				35.315	32.023	5.301										true	0.089	true	1	40		76.768			N	N	Y	N	N
+130	F10	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.659			N	N	N	N	N
+131	F11	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.184			N	Y	N	N	N
+132	F12	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.699			N	N	N	Y	N
+145	G1	false	Sample 1	O157	UNKNOWN	SYBR	None				31.742	32.023	5.301										true	0.089	true	1	40		75.699			N	N	Y	N	N
+146	G2	false	Sample 1	O157	UNKNOWN	SYBR	None				32.160	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+147	G3	false	Sample 1	O157	UNKNOWN	SYBR	None				32.769	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+148	G4	false	Sample 1	O157	UNKNOWN	SYBR	None				32.779	32.023	5.301										true	0.089	true	1	40		75.580			N	N	Y	N	N
+149	G5	false	Sample 1	O157	UNKNOWN	SYBR	None				31.330	32.023	5.301										true	0.089	true	1	40		75.699			N	N	Y	N	N
+150	G6	false	Sample 1	O157	UNKNOWN	SYBR	None				33.215	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+151	G7	false	Sample 1	O157	UNKNOWN	SYBR	None				32.017	32.023	5.301										true	0.089	true	1	40		75.580	81.834		Y	N	Y	N	N
+152	G8	false	Sample 1	O157	UNKNOWN	SYBR	None				31.726	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+153	G9	false	Sample 1	O157	UNKNOWN	SYBR	None				32.627	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+154	G10	false	Sample 1	O157	UNKNOWN	SYBR	None				32.432	32.023	5.301										true	0.089	true	1	40		75.580			N	N	Y	N	N
+155	G11	false	Sample 1	O157	UNKNOWN	SYBR	None				31.956	32.023	5.301										true	0.089	true	1	40		75.817	81.518		Y	N	Y	N	N
+156	G12	false	Sample 1	O157	UNKNOWN	SYBR	None				32.785	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+157	G13	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		77.124			N	Y	N	Y	N
+158	G14	false	Sample 1	O157	UNKNOWN	SYBR	None				35.173	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+159	G15	false	Sample 1	O157	UNKNOWN	SYBR	None				33.618	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+160	G16	false	Sample 1	O157	UNKNOWN	SYBR	None				34.880	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+161	G17	false	Sample 1	O157	UNKNOWN	SYBR	None				34.813	32.023	5.301										true	0.089	true	1	40		76.411			N	N	Y	N	N
+162	G18	false	Sample 1	O157	UNKNOWN	SYBR	None				38.572	32.023	5.301										true	0.089	true	1	40		76.095			N	N	Y	N	N
+163	G19	false	Sample 1	O157	UNKNOWN	SYBR	None				35.096	32.023	5.301										true	0.089	true	1	40		75.699			N	N	Y	N	N
+164	G20	false	Sample 1	O157	UNKNOWN	SYBR	None				36.471	32.023	5.301										true	0.089	true	1	40		76.530			N	N	Y	N	N
+165	G21	false	Sample 1	O157	UNKNOWN	SYBR	None				34.160	32.023	5.301										true	0.089	true	1	40		75.659			N	N	Y	N	N
+166	G22	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		76.609			N	Y	N	Y	N
+167	G23	false	Sample 1	O157	UNKNOWN	SYBR	None				32.641	32.023	5.301										true	0.089	true	1	40		76.965			N	N	Y	N	N
+168	G24	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		76.213			N	N	N	N	N
+169	H1	false	Sample 1	O157	UNKNOWN	SYBR	None				33.672	32.023	5.301										true	0.089	true	1	40		81.478			N	N	Y	N	N
+170	H2	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.224			N	N	N	N	N
+171	H3	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		76.213			N	Y	N	Y	N
+172	H4	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.382			N	Y	N	Y	N
+173	H5	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.303			N	Y	N	Y	N
+174	H6	false	Sample 1	O157	UNKNOWN	SYBR	None				30.099	32.023	5.301										true	0.089	true	1	40		76.609			N	N	Y	N	N
+175	H7	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.461			N	N	N	N	N
+176	H8	false	Sample 1	O157	UNKNOWN	SYBR	None				33.943	32.023	5.301										true	0.089	true	1	40		76.688			N	N	Y	N	N
+177	H9	false	Sample 1	O157	UNKNOWN	SYBR	None				35.406	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+178	H10	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.540			N	Y	N	N	N
+179	H11	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.342			N	Y	N	Y	N
+180	H12	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.620			N	Y	N	Y	N
+193	I1	false	Sample 1	O157	UNKNOWN	SYBR	None				31.882	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+194	I2	false	Sample 1	O157	UNKNOWN	SYBR	None				31.712	32.023	5.301										true	0.089	true	1	40		77.440	75.540	84.922	Y	N	Y	N	N
+195	I3	false	Sample 1	O157	UNKNOWN	SYBR	None				31.750	32.023	5.301										true	0.089	true	1	40		75.699	88.445	84.407	Y	N	Y	N	N
+196	I4	false	Sample 1	O157	UNKNOWN	SYBR	None				32.764	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+197	I5	false	Sample 1	O157	UNKNOWN	SYBR	None				32.639	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+198	I6	false	Sample 1	O157	UNKNOWN	SYBR	None				32.212	32.023	5.301										true	0.089	true	1	40		75.580	89.395		Y	N	Y	N	N
+199	I7	false	Sample 1	O157	UNKNOWN	SYBR	None				31.963	32.023	5.301										true	0.089	true	1	40		75.620			N	N	Y	N	N
+200	I8	false	Sample 1	O157	UNKNOWN	SYBR	None				31.581	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+201	I9	false	Sample 1	O157	UNKNOWN	SYBR	None				32.263	32.023	5.301										true	0.089	true	1	40		75.540	87.059		Y	N	Y	N	N
+202	I10	false	Sample 1	O157	UNKNOWN	SYBR	None				33.514	32.023	5.301										true	0.089	true	1	40		75.580			N	N	Y	N	N
+203	I11	false	Sample 1	O157	UNKNOWN	SYBR	None				32.227	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+204	I12	false	Sample 1	O157	UNKNOWN	SYBR	None				30.934	32.023	5.301										true	0.089	true	1	40		84.091			N	N	Y	N	N
+205	I13	false	Sample 1	O157	UNKNOWN	SYBR	None				36.694	32.023	5.301										true	0.089	true	1	40		76.095			N	N	Y	N	N
+206	I14	false	Sample 1	O157	UNKNOWN	SYBR	None				34.777	32.023	5.301										true	0.089	true	1	40		86.862			N	N	Y	N	N
+207	I15	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.580			N	Y	N	N	N
+208	I16	false	Sample 1	O157	UNKNOWN	SYBR	None				35.489	32.023	5.301										true	0.089	true	1	40		76.490			N	N	Y	N	N
+209	I17	false	Sample 1	O157	UNKNOWN	SYBR	None				34.809	32.023	5.301										true	0.089	true	1	40		75.699			N	N	Y	N	N
+210	I18	false	Sample 1	O157	UNKNOWN	SYBR	None				34.827	32.023	5.301										true	0.089	true	1	40		75.461			N	N	Y	N	N
+211	I19	false	Sample 1	O157	UNKNOWN	SYBR	None				37.132	32.023	5.301										true	0.089	true	1	40		76.609			N	N	Y	N	N
+212	I20	false	Sample 1	O157	UNKNOWN	SYBR	None				35.879	32.023	5.301										true	0.089	true	1	40		75.936			N	N	Y	N	N
+213	I21	false	Sample 1	O157	UNKNOWN	SYBR	None				34.169	32.023	5.301										true	0.089	true	1	40		75.699	85.753		Y	N	Y	N	N
+214	I22	false	Sample 1	O157	UNKNOWN	SYBR	None				35.341	32.023	5.301										true	0.089	true	1	40		75.936	88.643		Y	N	Y	N	N
+215	I23	false	Sample 1	O157	UNKNOWN	SYBR	None				33.448	32.023	5.301										true	0.089	true	1	40		75.857			N	N	Y	N	N
+216	I24	false	Sample 1	O157	UNKNOWN	SYBR	None				35.095	32.023	5.301										true	0.089	true	1	40		86.664	88.722		Y	N	Y	N	N
+217	J1	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.659			N	Y	N	Y	N
+218	J2	false	Sample 1	O157	UNKNOWN	SYBR	None				36.998	32.023	5.301										true	0.089	true	1	40		83.893			N	N	Y	N	N
+219	J3	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.699			N	Y	N	Y	N
+220	J4	false	Sample 1	O157	UNKNOWN	SYBR	None				35.419	32.023	5.301										true	0.089	true	1	40		76.768			N	N	Y	N	N
+221	J5	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		76.015			N	Y	N	N	N
+222	J6	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		76.649			N	N	N	N	N
+223	J7	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.976			N	Y	N	N	N
+224	J8	false	Sample 1	O157	UNKNOWN	SYBR	None				35.281	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+225	J9	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.540			N	Y	N	N	N
+226	J10	false	Sample 1	O157	UNKNOWN	SYBR	None				36.514	32.023	5.301										true	0.089	true	1	40		76.886			N	N	Y	N	N
+227	J11	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.659			N	Y	N	N	N
+228	J12	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		76.055			N	N	N	N	N
+241	K1	false	Sample 1	O157	UNKNOWN	SYBR	None				25.743	32.023	5.301										true	0.089	true	1	40		76.530			N	N	Y	N	N
+242	K2	false	Sample 1	O157	UNKNOWN	SYBR	None				31.471	32.023	5.301										true	0.089	true	1	40		75.778	88.049	84.249	Y	N	Y	N	N
+243	K3	false	Sample 1	O157	UNKNOWN	SYBR	None				33.362	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+244	K4	false	Sample 1	O157	UNKNOWN	SYBR	None				31.929	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+245	K5	false	Sample 1	O157	UNKNOWN	SYBR	None				31.969	32.023	5.301										true	0.089	true	1	40		75.501	87.416		Y	N	Y	N	N
+246	K6	false	Sample 1	O157	UNKNOWN	SYBR	None				31.706	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+247	K7	false	Sample 1	O157	UNKNOWN	SYBR	None				31.672	32.023	5.301										true	0.089	true	1	40		75.461	88.366		Y	N	Y	N	N
+248	K8	false	Sample 1	O157	UNKNOWN	SYBR	None				32.975	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+249	K9	false	Sample 1	O157	UNKNOWN	SYBR	None				31.722	32.023	5.301										true	0.089	true	1	40		76.095			N	N	Y	N	N
+250	K10	false	Sample 1	O157	UNKNOWN	SYBR	None				31.999	32.023	5.301										true	0.089	true	1	40		75.501	85.159		Y	N	Y	N	N
+251	K11	false	Sample 1	O157	UNKNOWN	SYBR	None				32.451	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+252	K12	false	Sample 1	O157	UNKNOWN	SYBR	None				31.659	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+253	K13	false	Sample 1	O157	UNKNOWN	SYBR	None				33.765	32.023	5.301										true	0.089	true	1	40		75.857			N	N	Y	N	N
+254	K14	false	Sample 1	O157	UNKNOWN	SYBR	None				35.588	32.023	5.301										true	0.089	true	1	40		75.620			N	N	Y	N	N
+255	K15	false	Sample 1	O157	UNKNOWN	SYBR	None				34.403	32.023	5.301										true	0.089	true	1	40		85.357			N	N	Y	N	N
+256	K16	false	Sample 1	O157	UNKNOWN	SYBR	None				39.432	32.023	5.301										true	0.089	true	1	40		76.095			N	N	Y	N	N
+257	K17	false	Sample 1	O157	UNKNOWN	SYBR	None				34.681	32.023	5.301										true	0.089	true	1	40		75.897			N	N	Y	N	N
+258	K18	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		77.401			N	Y	N	Y	N
+259	K19	false	Sample 1	O157	UNKNOWN	SYBR	None				33.700	32.023	5.301										true	0.089	true	1	40		77.124			N	N	Y	N	N
+260	K20	false	Sample 1	O157	UNKNOWN	SYBR	None				37.214	32.023	5.301										true	0.089	true	1	40		76.490			N	N	Y	N	N
+261	K21	false	Sample 1	O157	UNKNOWN	SYBR	None				35.469	32.023	5.301										true	0.089	true	1	40		75.620			N	N	Y	N	N
+262	K22	false	Sample 1	O157	UNKNOWN	SYBR	None				36.541	32.023	5.301										true	0.089	true	1	40		76.411			N	N	Y	N	N
+263	K23	false	Sample 1	O157	UNKNOWN	SYBR	None				36.351	32.023	5.301										true	0.089	true	1	40		75.857			N	N	Y	N	N
+264	K24	false	Sample 1	O157	UNKNOWN	SYBR	None				34.977	32.023	5.301										true	0.089	true	1	40		75.817			N	N	Y	N	N
+265	L1	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		76.490			N	Y	N	Y	N
+266	L2	false	Sample 1	O157	UNKNOWN	SYBR	None				35.258	32.023	5.301										true	0.089	true	1	40		76.688			N	N	Y	N	N
+267	L3	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.540			N	Y	N	N	N
+268	L4	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.738			N	Y	N	Y	N
+269	L5	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.778			N	Y	N	Y	N
+270	L6	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.303			N	Y	N	Y	N
+271	L7	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.422			N	Y	N	Y	N
+272	L8	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.303			N	Y	N	N	N
+273	L9	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.461			N	Y	N	N	N
+274	L10	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.580			N	Y	N	N	N
+275	L11	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.778			N	N	N	N	N
+276	L12	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.699			N	Y	N	Y	N
+289	M1	false	Sample 1	O157	UNKNOWN	SYBR	None				31.794	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+290	M2	false	Sample 1	O157	UNKNOWN	SYBR	None				31.752	32.023	5.301										true	0.089	true	1	40		75.461	88.880	87.614	Y	N	Y	N	N
+291	M3	false	Sample 1	O157	UNKNOWN	SYBR	None				31.359	32.023	5.301										true	0.089	true	1	40		75.817			N	N	Y	N	N
+292	M4	false	Sample 1	O157	UNKNOWN	SYBR	None				31.199	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+293	M5	false	Sample 1	O157	UNKNOWN	SYBR	None				31.596	32.023	5.301										true	0.089	true	1	40		82.270	83.339	85.911	Y	N	Y	N	N
+294	M6	false	Sample 1	O157	UNKNOWN	SYBR	None				32.458	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+295	M7	false	Sample 1	O157	UNKNOWN	SYBR	None				32.939	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+296	M8	false	Sample 1	O157	UNKNOWN	SYBR	None				32.227	32.023	5.301										true	0.089	true	1	40		75.580			N	N	Y	N	N
+297	M9	false	Sample 1	O157	UNKNOWN	SYBR	None				31.995	32.023	5.301										true	0.089	true	1	40		75.620			N	N	Y	N	N
+298	M10	false	Sample 1	O157	UNKNOWN	SYBR	None				32.174	32.023	5.301										true	0.089	true	1	40		75.620			N	N	Y	N	N
+299	M11	false	Sample 1	O157	UNKNOWN	SYBR	None				32.113	32.023	5.301										true	0.089	true	1	40		75.540	89.474		Y	N	Y	N	N
+300	M12	false	Sample 1	O157	UNKNOWN	SYBR	None				31.680	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+301	M13	false	Sample 1	O157	UNKNOWN	SYBR	None				34.203	32.023	5.301										true	0.089	true	1	40		75.936			N	N	Y	N	Y
+302	M14	false	Sample 1	O157	UNKNOWN	SYBR	None				33.949	32.023	5.301										true	0.089	true	1	40		86.386			N	N	Y	N	N
+303	M15	false	Sample 1	O157	UNKNOWN	SYBR	None				34.777	32.023	5.301										true	0.089	true	1	40		75.897			N	N	Y	N	N
+304	M16	false	Sample 1	O157	UNKNOWN	SYBR	None				36.829	32.023	5.301										true	0.089	true	1	40		76.055			N	N	Y	N	N
+305	M17	false	Sample 1	O157	UNKNOWN	SYBR	None				34.337	32.023	5.301										true	0.089	true	1	40		75.738	87.851		Y	N	Y	N	N
+306	M18	false	Sample 1	O157	UNKNOWN	SYBR	None				34.010	32.023	5.301										true	0.089	true	1	40		75.659			N	N	Y	N	N
+307	M19	false	Sample 1	O157	UNKNOWN	SYBR	None				39.844	32.023	5.301										true	0.089	true	1	40		76.055			N	N	Y	N	N
+308	M20	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.501			N	N	N	N	N
+309	M21	false	Sample 1	O157	UNKNOWN	SYBR	None				33.840	32.023	5.301										true	0.089	true	1	40		75.778			N	N	Y	N	N
+310	M22	false	Sample 1	O157	UNKNOWN	SYBR	None				33.965	32.023	5.301										true	0.089	true	1	40		76.134			N	N	Y	N	N
+311	M23	false	Sample 1	O157	UNKNOWN	SYBR	None				32.980	32.023	5.301										true	0.089	true	1	40		75.659			N	N	Y	N	N
+312	M24	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		78.193			N	Y	N	Y	N
+313	N1	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.778			N	Y	N	Y	N
+314	N2	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		85.634			N	N	N	N	N
+315	N3	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		76.095			N	Y	N	Y	N
+316	N4	false	Sample 1	O157	UNKNOWN	SYBR	None				35.574	32.023	5.301										true	0.089	true	1	40		77.559			N	N	Y	N	N
+317	N5	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		76.134			N	Y	N	Y	N
+318	N6	false	Sample 1	O157	UNKNOWN	SYBR	None				34.923	32.023	5.301										true	0.089	true	1	40		75.501	88.603	84.011	Y	N	Y	N	N
+319	N7	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		76.530			N	Y	N	Y	N
+320	N8	false	Sample 1	O157	UNKNOWN	SYBR	None				39.846	32.023	5.301										true	0.089	true	1	40		75.540			N	N	Y	N	N
+321	N9	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.699			N	N	N	N	N
+322	N10	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		76.490			N	Y	N	Y	N
+323	N11	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.659			N	Y	N	Y	N
+324	N12	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.263			N	Y	N	Y	N
+337	O1	false	Sample 1	O157	UNKNOWN	SYBR	None				14.705	32.023	5.301										true	0.089	true	1	40		83.932			N	N	Y	N	N
+338	O2	false	Sample 1	O157	UNKNOWN	SYBR	None				16.813	32.023	5.301										true	0.089	true	1	40		83.972			N	N	Y	N	N
+339	O3	false	Sample 1	O157	UNKNOWN	SYBR	None				23.554	32.023	5.301										true	0.089	true	1	40		84.130			N	N	Y	N	N
+340	O4	false	Sample 1	O157	UNKNOWN	SYBR	None				25.896	32.023	5.301										true	0.089	true	1	40		84.209			N	N	Y	N	N
+341	O5	false	Sample 1	O157	UNKNOWN	SYBR	None				27.007	32.023	5.301										true	0.089	true	1	40		84.289			N	N	Y	N	N
+342	O6	false	Sample 1	O157	UNKNOWN	SYBR	None				28.212	32.023	5.301										true	0.089	true	1	40		84.328			N	N	Y	N	N
+343	O7	false	Sample 1	O157	UNKNOWN	SYBR	None				30.007	32.023	5.301										true	0.089	true	1	40		84.447			N	N	Y	N	N
+344	O8	false	Sample 1	O157	UNKNOWN	SYBR	None				30.361	32.023	5.301										true	0.089	true	1	40		84.566			N	N	Y	N	N
+345	O9	false	Sample 1	O157	UNKNOWN	SYBR	None				31.551	32.023	5.301										true	0.089	true	1	40		75.540	85.199		Y	N	Y	N	N
+346	O10	false	Sample 1	O157	UNKNOWN	SYBR	None				31.408	32.023	5.301										true	0.089	true	1	40		75.580			N	N	Y	N	N
+347	O11	false	Sample 1	O157	UNKNOWN	SYBR	None				31.902	32.023	5.301										true	0.089	true	1	40		75.501			N	N	Y	N	N
+348	O12	false	Sample 1	O157	UNKNOWN	SYBR	None				30.868	32.023	5.301										true	0.089	true	1	40		75.501	85.001		Y	N	Y	N	N
+349	O13	false	Sample 1	O157	UNKNOWN	SYBR	None				10.605	32.023	5.301										true	0.089	true	1	40		84.328			N	N	Y	N	N
+350	O14	false	Sample 1	O157	UNKNOWN	SYBR	None				12.377	32.023	5.301										true	0.089	true	1	40		84.328			N	N	Y	N	N
+351	O15	false	Sample 1	O157	UNKNOWN	SYBR	None				14.927	32.023	5.301										true	0.089	true	1	40		84.368			N	N	Y	N	N
+352	O16	false	Sample 1	O157	UNKNOWN	SYBR	None				16.886	32.023	5.301										true	0.089	true	1	40		84.407			N	N	Y	N	N
+353	O17	false	Sample 1	O157	UNKNOWN	SYBR	None				19.359	32.023	5.301										true	0.089	true	1	40		84.447			N	N	Y	N	N
+354	O18	false	Sample 1	O157	UNKNOWN	SYBR	None				21.515	32.023	5.301										true	0.089	true	1	40		84.447			N	N	Y	N	N
+355	O19	false	Sample 1	O157	UNKNOWN	SYBR	None				24.243	32.023	5.301										true	0.089	true	1	40		84.447			N	N	Y	N	N
+356	O20	false	Sample 1	O157	UNKNOWN	SYBR	None				25.628	32.023	5.301										true	0.089	true	1	40		84.447			N	N	Y	N	N
+357	O21	false	Sample 1	O157	UNKNOWN	SYBR	None				27.613	32.023	5.301										true	0.089	true	1	40		84.447			N	N	Y	N	N
+358	O22	false	Sample 1	O157	UNKNOWN	SYBR	None				29.899	32.023	5.301										true	0.089	true	1	40		84.526			N	N	Y	N	N
+359	O23	false	Sample 1	O157	UNKNOWN	SYBR	None				31.615	32.023	5.301										true	0.089	true	1	40		84.486			N	N	Y	N	N
+360	O24	false	Sample 1	O157	UNKNOWN	SYBR	None				38.304	32.023	5.301										true	0.089	true	1	40		75.738			N	N	Y	N	N
+361	P1	false	Sample 1	O157	UNKNOWN	SYBR	None				10.199	32.023	5.301										true	0.089	true	1	40		80.409			N	N	Y	N	N
+362	P2	false	Sample 1	O157	UNKNOWN	SYBR	None				11.534	32.023	5.301										true	0.089	true	1	40		80.370			N	N	Y	N	N
+363	P3	false	Sample 1	O157	UNKNOWN	SYBR	None				13.717	32.023	5.301										true	0.089	true	1	40		80.409			N	N	Y	N	N
+364	P4	false	Sample 1	O157	UNKNOWN	SYBR	None				15.684	32.023	5.301										true	0.089	true	1	40		80.488			N	N	Y	N	N
+365	P5	false	Sample 1	O157	UNKNOWN	SYBR	None				18.145	32.023	5.301										true	0.089	true	1	40		80.528			N	N	Y	N	N
+366	P6	false	Sample 1	O157	UNKNOWN	SYBR	None				19.813	32.023	5.301										true	0.089	true	1	40		80.607			N	N	Y	N	N
+367	P7	false	Sample 1	O157	UNKNOWN	SYBR	None				22.005	32.023	5.301										true	0.089	true	1	40		80.726			N	N	Y	N	N
+368	P8	false	Sample 1	O157	UNKNOWN	SYBR	None				24.111	32.023	5.301										true	0.089	true	1	40		80.805			N	N	Y	N	N
+369	P9	false	Sample 1	O157	UNKNOWN	SYBR	None				26.134	32.023	5.301										true	0.089	true	1	40		80.884			N	N	Y	N	N
+370	P10	false	Sample 1	O157	UNKNOWN	SYBR	None				28.374	32.023	5.301										true	0.089	true	1	40		80.963			N	N	Y	N	N
+371	P11	false	Sample 1	O157	UNKNOWN	SYBR	None				29.402	32.023	5.301										true	0.089	true	1	40		81.082			N	N	Y	N	N
+372	P12	false	Sample 1	O157	UNKNOWN	SYBR	None				Undetermined	32.023	5.301										true	0.089	true	1	40		75.303			N	Y	N	Y	N

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Cell封面图片 on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/cell%E5%B0%81%E9%9D%A2%E5%9B%BE%E7%89%87/</link>
+		<description>Recent content in Cell封面图片 on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 08 Dec 2010 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/cell%E5%B0%81%E9%9D%A2%E5%9B%BE%E7%89%87/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Perl LWP：从“国家地理每日图片”到“Cell最近一期的封面”</title>
+				<link>www.bio-spring.top/post/2010/12/08/2010-12-08-perl-lwp-image-fetch/</link>
+				<pubDate>Wed, 08 Dec 2010 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2010/12/08/2010-12-08-perl-lwp-image-fetch/</guid>
+				<description>&lt;p&gt;在网上看到了一个从国家地理杂志网站下载每日图片的Perl程序。因为网站改版，脚本已经不能正常运行，经过修改后，经测试可以将每日图片下载到当前目录，代码如下：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-lang:perl&#34;&gt;#!/usr/bin/perl&#xA;# author:&#xA;# Seraphxby&#xA;# Purpose:&#xA;# 查看国家地理每日图片的Perl脚本&#xA;# history:&#xA;# v0.1 first draft&#xA;# 2010-12-8 modified by gaospecial&#xA;use warnings;&#xA;use strict;&#xA;use LWP::Simple;&#xA;my $url=&#39;http://photography.nationalgeographic.com/photography/photo-of-the-day&#39;;&#xA;my $content = get( &amp;quot;$url&amp;quot; ) || die &amp;quot;get the page failed!\n&amp;quot;;&#xA;my $img;&#xA;if ($content =~ m/(.*?&amp;lt;\/a&amp;gt;)/s) {&#xA;$content = $1;&#xA;if($content =~ m/&amp;lt;img.*?src=&amp;quot;([^\t]*?)&amp;quot;/){ # 非贪婪的数量词 *?,匹配中不含有跳格\t&#xA;$img = $1;&#xA;if($img =~ m/^(.*?)([^\/]+$)/){&#xA;$url = $1;&#xA;$img = $2;&#xA;getstore($url.$img,$img) || die &amp;quot;get img failed!\n&amp;quot;;&#xA;&#xA;}&#xA;}&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt; &lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

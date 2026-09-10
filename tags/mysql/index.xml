@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Mysql on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/mysql/</link>
+		<description>Recent content in Mysql on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 21 Aug 2015 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Ubuntu 快速安装 LAMP</title>
+				<link>www.bio-spring.top/post/2015/08/21/2015-08-21-ubuntu-install-lamp/</link>
+				<pubDate>Fri, 21 Aug 2015 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2015/08/21/2015-08-21-ubuntu-install-lamp/</guid>
+				<description>&lt;p&gt;[cc lang=”bash”]&lt;br&gt;&#xA;sudo apt-get install tasksel&lt;br&gt;&#xA;# 任务标记分组&lt;br&gt;&#xA;sudo tasksel install lamp-server&lt;br&gt;&#xA;#安装途中MySQL要求设定账户有密码，这是与操作系统没关系的账户与密码。&lt;br&gt;&#xA;[/cc]&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>在Ubuntu 12.04系统中安装LAMP（网络服务器套件）并设置rewrite</title>
+				<link>www.bio-spring.top/post/2012/08/23/2012-08-23-lamp-in-ubuntu-with-rewrite/</link>
+				<pubDate>Thu, 23 Aug 2012 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2012/08/23/2012-08-23-lamp-in-ubuntu-with-rewrite/</guid>
+				<description>&lt;p&gt;打开终端，输入以下命令，一键完成安装：&lt;/p&gt;&#xA;&lt;p&gt;[bash]sudo apt-get install apache2 php5&lt;br&gt;&#xA;libapache2-mod-php5 mysql-server&lt;br&gt;&#xA;libapache2-mod-auth-mysql php5-mysql&lt;br&gt;&#xA;phpmyadmin[/bash]&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;请安装提示根据需要设置密码。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;一键打开 Rewrite：&lt;/p&gt;&#xA;&lt;p&gt;[bash]sudo a2enmod rewrite&lt;br&gt;&#xA;sudo service apache2 restart[/bash]&lt;/p&gt;&#xA;&lt;p&gt;最后一步：&lt;/p&gt;&#xA;&lt;p&gt;[bash]sudo gedit /etc/apache2/site-available/default[/bash]&lt;/p&gt;&#xA;&lt;p&gt;将其中的“Allow override NONE”改为“ALLOW OVERRIDE ALL”。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

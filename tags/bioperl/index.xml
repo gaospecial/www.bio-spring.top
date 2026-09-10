@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>BioPerl on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/bioperl/</link>
+		<description>Recent content in BioPerl on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 01 Jun 2017 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/bioperl/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>RSEM: rsem-prepare-reference with NCBI GenBank/GFF3 File</title>
+				<link>www.bio-spring.top/post/2017/06/01/2017-06-01-rsem-rsem-prepare-reference-with-ncbi-genbankgff3-file/</link>
+				<pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2017/06/01/2017-06-01-rsem-rsem-prepare-reference-with-ncbi-genbankgff3-file/</guid>
+				<description>&lt;p&gt;解决方案如下：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Download Genbank from NCBI;&lt;/li&gt;&#xA;&lt;li&gt;Convert Genbank to GFF3 with&#xA;&lt;a href=&#34;http://bio-spring.top/reinstall-bioperl/&#34;&gt;BioPerl&lt;/a&gt;;&lt;/li&gt;&#xA;&lt;li&gt;Modify the GFF3 file;&lt;/li&gt;&#xA;&lt;li&gt;Download Fasta from NCBI or use Genbank conversion;&lt;/li&gt;&#xA;&lt;li&gt;Use the modified GFF3 file in rsem-prepare-reference;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;主要代码如下：&lt;br&gt;&#xA;&lt;code&gt; bp_genbank2gff3  --GFF_VERSION 3 file.gb awk &#39;$3!~/pseudo/&#39; file.gb.gff &amp;gt; file.rsem.gff # or more restrictly with only protein coding genes awk &#39;$3~/^(gene|mRNA|exon|polypeptide)$/&#39; file.gb.gff &amp;gt; file.cds.gff # remove the version number in fasta accession if no transcript is extract rsem-prepare-reference file.fasta --gff3 file.rsem.gff reference_name&lt;/code&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Massive RT-PCR Primer Designer is online</title>
+				<link>www.bio-spring.top/post/2016/01/16/2016-01-16-massive-rt-pcr-primer-designer-is-online/</link>
+				<pubDate>Sat, 16 Jan 2016 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2016/01/16/2016-01-16-massive-rt-pcr-primer-designer-is-online/</guid>
+				<description>&lt;p&gt;The Massive RT-PCR Primer Designer is based on Primer3 and BioPerl&#xA;toolbox, and was derived from the standalone codes which have been&#xA;discussed by two previous blog posts (&lt;a href=&#34;http://bio-spring.top/rt-primer-bioperl/&#34;&gt;Post&#xA;1&lt;/a&gt; and &lt;a href=&#34;http://bio-spring.top/primer_error-missing-sequence-tag/&#34;&gt;Post&#xA;2&lt;/a&gt;).&lt;/p&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2016/01/rt-primer-designer-1.png&#34; class=&#34;alignnone size-full wp-image-776&#34; width=&#34;493&#34; height=&#34;183&#34; alt=&#34;rt-primer-designer&#34; /&gt;&#xA;&lt;p&gt;You may access the service at &lt;a href=&#34;http://tools.bio-spring.top/rtprimers.cgi&#34;&gt;The Massive RT-PCR Primer&#xA;Designer&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;What this tool needs is your fasta file, which contains one or more&#xA;nucleotide sequences that will be use as PCR template. Upload this file&#xA;and the tool will generate the most ideal primer pairs suitable for&#xA;quantitive Real-Time PCR (qRT-PCR). The primers will be supplied as a&#xA;downloadable Excel file.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>A Genbank –&gt; GTF converter derived from BioPerl</title>
+				<link>www.bio-spring.top/post/2015/10/14/2015-10-14-a-genbank-gtf-converter-derived-from-bioperl/</link>
+				<pubDate>Wed, 14 Oct 2015 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2015/10/14/2015-10-14-a-genbank-gtf-converter-derived-from-bioperl/</guid>
+				<description>&lt;p&gt;BioPerl has a Genbank –&amp;gt; GFF converter (the script is&#xA;bp_genbank2gff3.pl), however, this converter generated GFF/GTF file&#xA;could not work in Bioconductor when using the function&#xA;&lt;strong&gt;maketxdbfromGFF&lt;/strong&gt; to construct a transcript database.&lt;/p&gt;&#xA;&lt;p&gt;Currently, I have developed such a converter that may extract&#xA;information from a NCBI Genbank file and write them to GFF version 2, or&#xA;GTF format. This script is derived from BioPerl, so you need firstly&#xA;&lt;a href=&#34;http://bio-spring.top/reinstall-bioperl/&#34;&gt;get the module installed&lt;/a&gt; in&#xA;your system. To check whether BioPerl is ready, just refer to this post:&#xA;&lt;a href=&#34;http://bio-spring.top/check-bioperl/&#34;&gt;http://bio-spring.top/check-bioperl/&lt;/a&gt; .&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>A Genbank to BED converter</title>
+				<link>www.bio-spring.top/post/2015/10/14/2015-10-14-a-genbank-to-bed-converter/</link>
+				<pubDate>Wed, 14 Oct 2015 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2015/10/14/2015-10-14-a-genbank-to-bed-converter/</guid>
+				<description>&lt;p&gt;Like &lt;a href=&#34;http://bio-spring.top/a-genbenk-gtf-converter-derived-from-bioperl/&#34;&gt;the previous Genbank -&amp;gt; GTF&#xA;converter&lt;/a&gt;,&#xA;this script is also depended on BioPerl, so you need firstly get the&#xA;module installed in your system (&lt;a href=&#34;http://bio-spring.top/reinstall-bioperl/&#34;&gt;Install&#xA;BioPerl&lt;/a&gt;). To check whether&#xA;BioPerl is ready, just refer to this post:&#xA;&lt;a href=&#34;http://bio-spring.top/check-bioperl/&#34;&gt;bio-spring.top/check-bioperl/&lt;/a&gt; .&lt;/p&gt;&#xA;&lt;h2 id=&#34;synopsis&#34;&gt;SYNOPSIS&lt;/h2&gt;&#xA;&lt;p&gt;&lt;code&gt;     gb2bed.pl [options] filename&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;Options:&lt;br&gt;&#xA;&amp;ndash;help -h display this message&lt;br&gt;&#xA;&amp;ndash;input -i NCBI GenBank file&lt;br&gt;&#xA;&amp;ndash;out -o filename of bed output. [STDOUT]&lt;br&gt;&#xA;&amp;ndash;filter -f GenBank primary tag that will be filtered, may be set to&#xA;&amp;lsquo;gene&amp;rsquo;, &amp;lsquo;CDS&amp;rsquo;, &amp;lsquo;rRNA&amp;rsquo;, etc.&lt;br&gt;&#xA;&amp;ndash;keep -k GenBank primary tag will be keep. Default is CDS. [CDS]&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>修复Bio::Tree::Draw::Cladogram 输出EPS BoundingBox错误的问题</title>
+				<link>www.bio-spring.top/post/2013/12/25/2013-12-25-fix-eps-boundingbox-error/</link>
+				<pubDate>Wed, 25 Dec 2013 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2013/12/25/2013-12-25-fix-eps-boundingbox-error/</guid>
+				<description>&lt;p&gt;使用Bio::Tree::Draw::Cladogram 输出的 EPS 文档在很多 EPS&#xA;查看软件（如Windows下面的ACDsee，gsView等）中不能打开，经查是由于&#xA;BoundingBox 出现浮点数所致，具体设计的代码为 Cladogram.pm 的 new 方法和&#xA;print 方法，简便起见，可以在原先的 443&#xA;行代码前面添加两行代码，以解决该问题。&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;如下所示 ：&lt;/p&gt;&#xA;&lt;p&gt;[perl]&lt;/p&gt;&#xA;&lt;p&gt;print $INFO “%!PS-Adobe-\n”;&lt;br&gt;&#xA;$width = int($width + 1); # BoundingBox should be int&lt;br&gt;&#xA;$height = int($height +1);&lt;br&gt;&#xA;print $INFO “%%BoundingBox: 0 0 “, $width, ” “, $height, “\n”;&lt;br&gt;&#xA;print $INFO “1 setlinewidth\n”;&lt;br&gt;&#xA;print $INFO “/$font findfont\n”;&lt;br&gt;&#xA;print $INFO “$size scalefont\n”;&lt;br&gt;&#xA;print $INFO “setfont\n”;&lt;/p&gt;&#xA;&lt;p&gt;[/perl]&lt;/p&gt;&#xA;&lt;p&gt;经测试，修改此处后，生成的　ＥＰＳ　文档不会再由于该错误无法打开和查看。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>处理设计引物时候的PRIMER_ERROR=Missing SEQUENCE tag错误</title>
+				<link>www.bio-spring.top/post/2011/09/21/2011-09-21-primer_error-missing-sequence-tag/</link>
+				<pubDate>Wed, 21 Sep 2011 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2011/09/21/2011-09-21-primer_error-missing-sequence-tag/</guid>
+				<description>&lt;h6 id=&#34;updateyou-may-directly-use-our-massive-rt-pcr-primer-designer-from-jan-16-2016&#34;&gt;Update：You May &lt;strong&gt;directly&lt;/strong&gt; use our &lt;a href=&#34;http://tools.bio-spring.top/rtprimers.cgi&#34;&gt;Massive RT-PCR Primer Designer&lt;/a&gt; from Jan 16, 2016.&lt;/h6&gt;&#xA;&lt;p&gt;————————————————————————————————————-&lt;br&gt;&#xA;我先前曾经写过一个设计RT-PCR引物的脚本，当初运行良好，所以把它给分享了出来（&lt;strong&gt;&lt;a href=&#34;http://bio-spring.top/?p=44&#34;&gt;在这里&lt;/a&gt;&lt;/strong&gt;）。最近又用发现会有错误，“Missing&#xA;SEQUENCE tag”，经过分析，最终解决了这个问题。&lt;/p&gt;&#xA;&lt;p&gt;方法如下：&lt;/p&gt;&#xA;&lt;p&gt;[cc lang=’bash’]sudo gedit&#xA;/usr/local/share/perl/5.10.1/Bio/PrimerDesigner/primer3.pm[/cc]&lt;br&gt;&#xA;将其中的SEQUENCE换成SEQUENCE_TEMPLATE即可。总共要换三四个位置。&lt;/p&gt;&#xA;&lt;p&gt;造成这一错误的原因在于Primer3和Bio::PrimerDesigner的API不兼容。&#xA;前者使用“SEQUENCE_TEMPLATE”作为引物的模板，而后者确传递给primer3引物设计程序一个“SEQUENCE”参数，从而造成引物设计上的失败。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>如何检查BioPerl是否正确安装</title>
+				<link>www.bio-spring.top/post/2010/12/31/2010-12-31-check-bioperl/</link>
+				<pubDate>Fri, 31 Dec 2010 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2010/12/31/2010-12-31-check-bioperl/</guid>
+				<description>&lt;p&gt;为了检查BioPerl是否安装正确，我们可以使用perldoc命令来看一下。&lt;/p&gt;&#xA;&lt;p&gt;如果你是Linux系统，随意打开一个终端；如果用的是Windows系统，那么打开命令提示符。输入以下命令：&lt;/p&gt;&#xA;&lt;p&gt;[bash]&lt;/p&gt;&#xA;&lt;p&gt;perldoc Bio::SeqIO&lt;/p&gt;&#xA;&lt;p&gt;[/bash]&lt;/p&gt;&#xA;&lt;p&gt;以上命令的作用是查看Bio::SeqIO模块的文档是否存在，如果存在，则会有相应的文档输出，则你安装Bio::SeqIO模块；如果没有，说明Perl找不到该模块，你还没有安装Bio::SeqIO模块。&lt;/p&gt;&#xA;&lt;p&gt;引物Bio::SeqIO是BioPerl的基础模块，所以，你懂的，其它的一些模块也可以的，比如Bio::Seq &#xA;Bio::SearchIO等等。&lt;/p&gt;&#xA;&lt;p&gt;此外，对于Perl的其它模块是否正确安装，也可以用perldoc命令检查一下。比如Bio::Graphics模块，并不保护在BioPerl的“安装包”内，所以对于要使用Gbrowser的同学来讲，需要手动安装该模块。&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;新年到了，祝看到这篇文章的同学新年快乐。&lt;/p&gt;&#xA;&lt;p&gt;&lt;span style=&#34;color: #ff0000; font-size: large;&#34;&gt;Happy new year！&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>使用BioPerl和primer3批量设计RT-PCR引物</title>
+				<link>www.bio-spring.top/post/2010/11/12/2010-11-12-rt-primer-bioperl/</link>
+				<pubDate>Fri, 12 Nov 2010 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2010/11/12/2010-11-12-rt-primer-bioperl/</guid>
+				<description>&lt;p&gt;Update：&lt;/p&gt;&#xA;&lt;p&gt;我已经设置了一个&lt;a href=&#34;http://tools.bio-spring.top/rtprimers.cgi&#34;&gt;Massive RT-PCR Primer&#xA;Designer服务&lt;/a&gt;，有需要的朋友可以直接去上传自己基因序列的Fasta文件，然后服务器会将引物返回。&lt;/p&gt;&#xA;&lt;p&gt;关于&lt;a href=&#34;http://bio-spring.top/primer_error-missing-sequence-tag/&#34;&gt;Missing SEQUENCE&#xA;tag错误的处理&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;以下为原文。&lt;br&gt;&#xA;———————————————————————————————–&lt;br&gt;&#xA;本文介绍批量设计RT-PCR引物的方法，基于Ubuntu 10.10系统和BioPerl&#xA;1.6.1。但是应当适用于大部分Linux系统。&lt;/p&gt;&#xA;&lt;p&gt;本文假定你已经安装好BioPerl。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;安装primer3和Bio::PrimerDesigner&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;[bash]&lt;br&gt;&#xA;&amp;gt;sudo apt-get install primer3 libbio-primerdesigner-perl&lt;br&gt;&#xA;[/bash]&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;修正程序Bug&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Primer3安装之后的可执行文件存在于/usr/bin/primer3_core，而Bio::PrimerDesigner软件包找不到该文件，所以需要建立一个符号链接。&lt;br&gt;&#xA;[bash]&lt;br&gt;&#xA;&amp;gt;sudo ln -s /usr/bin/primer3_core /usr/local/bin/primer3&lt;br&gt;&#xA;[/bash]&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;准备序列文件&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;将要设计的文件以Fasta格式保存（也可以用其它BioPerl识别的任意格式保存）在当前目录中，此处以seqs.fa命名。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;代码&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;然后在当前目录中新建文件designPrimer.pl。&lt;br&gt;&#xA;录入代码如下：&lt;br&gt;&#xA;[perl]&lt;br&gt;&#xA;#! perl -w&lt;br&gt;&#xA;use Bio::SeqIO;&lt;br&gt;&#xA;use Bio::PrimerDesigner;&lt;/p&gt;&#xA;&lt;p&gt;my $seqs = Bio::SeqIO-&amp;gt;new(-file =&amp;gt; ‘seqs.fa’);&lt;br&gt;&#xA;open OUT, ‘&amp;gt;&amp;gt; raw_output.txt’;&lt;br&gt;&#xA;my $pd = Bio::PrimerDesigner-&amp;gt;new;&lt;br&gt;&#xA;while( my $seq = $seqs-&amp;gt;next_seq() ) {&lt;br&gt;&#xA;my $seqid = $seq-&amp;gt;id;&lt;br&gt;&#xA;my $dna = $seq-&amp;gt;seq;&lt;br&gt;&#xA;my %params = (&lt;br&gt;&#xA;PRIMER_NUM_RETURN =&amp;gt; 1,&lt;br&gt;&#xA;PRIMER_SEQUENCE_ID =&amp;gt; $seqid,&lt;br&gt;&#xA;SEQUENCE =&amp;gt; $dna,&lt;br&gt;&#xA;PRIMER_PRODUCT_SIZE_RANGE =&amp;gt; ‘150-250’,&#xA;#注意此处参数在perl文档中是错误的，应更正为此&lt;br&gt;&#xA;);&lt;br&gt;&#xA;my $primers = $pd-&amp;gt;design( %params ) or die $pd-&amp;gt;error;&lt;br&gt;&#xA;my ($left_primer,$right_primer);&lt;br&gt;&#xA;if ( !$primers-&amp;gt;left ) {&lt;br&gt;&#xA;warn “No primers found for $seqid\n”;&lt;br&gt;&#xA;}&lt;br&gt;&#xA;else{&lt;br&gt;&#xA;$left_primer = $primers-&amp;gt;left;&lt;br&gt;&#xA;$right_primer = $primers-&amp;gt;right;&lt;br&gt;&#xA;}&lt;br&gt;&#xA;print join(‘,’, $seqid, $left_primer, $right_primer);&lt;br&gt;&#xA;print “\n”;&lt;br&gt;&#xA;print OUT $primers-&amp;gt;raw_output;&#xA;#此处的perl文档也是错误的，应更正为此&lt;br&gt;&#xA;}&lt;br&gt;&#xA;[/perl]&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>重新安装bioperl</title>
+				<link>www.bio-spring.top/post/2010/10/28/2010-10-28-reinstall-bioperl/</link>
+				<pubDate>Thu, 28 Oct 2010 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2010/10/28/2010-10-28-reinstall-bioperl/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;此文适合一下情况：&lt;/strong&gt;&lt;br&gt;&#xA;更新BioPerl时，想彻底删除旧版程序，安装一个完整的全新BioPerl；&lt;br&gt;&#xA;安装BioPerl后出错，需要从头安装。&lt;/p&gt;&#xA;&lt;p&gt;重新安装时不会自动覆盖老板本，因此需要手动删除以下文件：&lt;br&gt;&#xA;&lt;em&gt;bioperl位于以下目录：&lt;/em&gt;&lt;br&gt;&#xA;/usr/local/man/man3/Bio::*&lt;br&gt;&#xA;/usr/local/bin/bp_*&lt;br&gt;&#xA;/usr/local/man/man1/bp_*&lt;br&gt;&#xA;/usr/local/share/perl/5.8.8/Bio/&lt;/p&gt;&#xA;&lt;p&gt;然后再进行安装即可。&lt;/p&gt;&#xA;&lt;p&gt;&amp;gt;perl Build.PL&lt;br&gt;&#xA;&amp;gt;./Build test&lt;/p&gt;&#xA;&lt;p&gt;&amp;gt;./Build install&lt;/p&gt;&#xA;&lt;p&gt;If your system is Ubuntu, just type the following command in terminal:&lt;br&gt;&#xA;&lt;code&gt;sudo apt-get install bioperl&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;Posted from &lt;a href=&#34;http://sourceforge.net/projects/gscribble/&#34;&gt;GScribble&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

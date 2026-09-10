@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>移动硬盘故障 on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E6%95%85%E9%9A%9C/</link>
+		<description>Recent content in 移动硬盘故障 on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 05 Apr 2011 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E6%95%85%E9%9A%9C/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Windows7下移动硬盘只读，不能写，处于写保护状态的故障解决办法</title>
+				<link>www.bio-spring.top/post/2011/04/05/2011-04-05-win7-usb-disk-readonly-error/</link>
+				<pubDate>Tue, 05 Apr 2011 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2011/04/05/2011-04-05-win7-usb-disk-readonly-error/</guid>
+				<description>&lt;p&gt;移动硬盘在win7系统中，处于只读状态。打开文件夹，不能新建文件，也不能粘贴文件，相关的菜单没有显示。发送文件到硬盘中时，提示“硬盘处于写保护状态”。在系统磁盘管理器中，右键单击磁盘，选择属性，会有硬盘只读的提示。&lt;/p&gt;&#xA;&lt;p&gt;硬盘一直能够正常运行，而且在别的电脑中均使用正常，不管是win7,windowsXP或者是linux系统。仅仅一台电脑不能正常使用而已。所以说不是硬件的问题，只能是系统配置或设置的问题。&lt;/p&gt;&#xA;&lt;p&gt;在google中查找解决方案，也没有可行的措施，虽然有人说重装系统可以解决这个问题，但是成本太高了。&lt;/p&gt;&#xA;&lt;p&gt;最后，自己尝试在windows设备管理器中操作，从而解决了这个问题。具体方法如下：&lt;br&gt;&#xA;在设备管理器的目录中找到自己不能正常使用的硬盘，单击右键，选择卸载，从而将这个设备卸载。然后，选择刷新设备，让windows再重新查找这个硬盘。系统会找到USB移动硬盘，并且安装驱动程序。至此，硬盘可以正常工作了。&lt;/p&gt;&#xA;&lt;p&gt;至于故障产生的原因，可能跟USB移动硬盘没有被安全移除有关系。windows系统中有时候莫名其妙的不能安全删除硬件，所以就直接拔掉走人了。于是便有了这种莫名其妙的故障。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

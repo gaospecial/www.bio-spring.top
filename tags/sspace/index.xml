@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>SSPACE on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/sspace/</link>
+		<description>Recent content in SSPACE on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 16 Aug 2015 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/sspace/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Fix “getopts.pl can not be located in @INC” error in SSPACE_Standard_v3.0.pl</title>
+				<link>www.bio-spring.top/post/2015/08/16/2015-08-16-sspace-getopts-error/</link>
+				<pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2015/08/16/2015-08-16-sspace-getopts-error/</guid>
+				<description>&lt;p&gt;SSPACE是一个常用的Scaffolding软件.当你有新的测序数据时,你可以使用SSPACE将原有的contigs延长,scaffolding等.&lt;/p&gt;&#xA;&lt;p&gt;在Ubuntu&#xA;14.04系统中运行该软件v3.0会出现错误.谷歌也没有发现好的解决方法,最终通过研究源代码,发现这是一个简单的问题,修订源代码之后,终于能够成功运行.&lt;/p&gt;&#xA;&lt;p&gt;两处修订如下:&lt;/p&gt;&#xA;&lt;p&gt;[cc lang=”perl”]&lt;br&gt;&#xA;#~ require “getopts.pl”;&lt;br&gt;&#xA;use Getopt::Std;&lt;br&gt;&#xA;[/cc]&lt;/p&gt;&#xA;&lt;p&gt;[cc lang=”perl”]&lt;br&gt;&#xA;#~ &amp;amp;Getopts(‘m:o:v:p:k:a:z:s:b:n:l:x:T:g:r:S:’);&lt;br&gt;&#xA;getopt(‘m:o:v:p:k:a:z:s:b:n:l:x:T:g:r:S:’);&lt;br&gt;&#xA;[/cc]&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

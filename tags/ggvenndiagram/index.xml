@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>GgVennDiagram on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/ggvenndiagram/</link>
+		<description>Recent content in GgVennDiagram on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 08 May 2021 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/ggvenndiagram/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>ggVennDiagram 的新生</title>
+				<link>www.bio-spring.top/post/2021/05/08/ggvenndiagram-reborn/</link>
+				<pubDate>Sat, 08 May 2021 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2021/05/08/ggvenndiagram-reborn/</guid>
+				<description>&lt;p&gt;&lt;code&gt;ggVennDiagram&lt;/code&gt; 是一个用于绘制 Venn 图的 R 语言软件包。最初，我只是在需要画 Venn&#xA;图的时候，发现没有一件趁手的工具，而最终不得不写了一个给自己用的工具。随后，&#xA;抱着试一试的态度发布到了 GitHub 和 CRAN 上面。结果引起了用户持续的关注和好评，&#xA;截止今日已经获得了超过 100 个小星星。&lt;/p&gt;&#xA;&lt;img src=&#34;www.bio-spring.top/post/2021/05/08/ggvenndiagram-reborn/index.zh_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&#xA;&lt;p&gt;在 CRAN 上面也已经被累计下载了 2 万多次了。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://cran.r-project.org/package=ggVennDiagram&#34;&gt;&lt;img src=&#34;http://cranlogs.r-pkg.org/badges/grand-total/ggVennDiagram&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&#xA;&lt;a href=&#34;https://cran.r-project.org/package=ggVennDiagram&#34;&gt;&lt;img src=&#34;https://www.r-pkg.org/badges/version/ggVennDiagram?color=green&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;考虑到原来的设计和代码是十分粗糙的，所以我在 1.0 版本的时候，完全重构了 &lt;code&gt;ggVennDiagram&lt;/code&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;&#xA;&lt;p&gt;为此，系统调研了 R 环境中可用的 Venn 图绘制工具，博取众家之长，并增强了自己原有的特色和优势。&#xA;重生后的 &lt;code&gt;ggVennDiagram&lt;/code&gt; 用起来更加方便，功能也更加强大，同时以后的扩展性也会非常好。&lt;/p&gt;&#xA;&lt;p&gt;下面是一些使用的示例：&lt;/p&gt;&#xA;&lt;p&gt;先生成一个示例数据：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;pak::pak(&amp;quot;gaospecial/ggVennDiagram@V1.1&amp;quot;)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code&gt;## ℹ Loading metadata database&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code&gt;## ✔ Loading metadata database ... done&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code&gt;## &#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code&gt;## &#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code&gt;## ℹ No downloads are needed&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code&gt;## ✔ 1 pkg + 90 deps: kept 62 [4s]&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;genes &amp;lt;- paste0(&amp;quot;gene&amp;quot;,1:1000)&#xA;set.seed(20210502)&#xA;gene_list &amp;lt;- list(A = sample(genes,100),&#xA;                  B = sample(genes,200),&#xA;                  C = sample(genes,300),&#xA;                  D = sample(genes,200))&#xA;&#xA;library(ggVennDiagram)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h2 id=&#34;设置集合标签的内容颜色和大小&#34;&gt;设置集合标签的内容，颜色和大小&lt;/h2&gt;&#xA;&lt;p&gt;标签图层在最上面，不会被填充遮盖。但是如果是非常长的标签，可能会显示不完整。&#xA;此时只需要应用一个 &lt;code&gt;ggplot2&lt;/code&gt; 函数即可。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>发布 `ggVennDiagram` 0.5.0</title>
+				<link>www.bio-spring.top/post/2021/03/01/release-ggvenndiagram-0-5-0/</link>
+				<pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2021/03/01/release-ggvenndiagram-0-5-0/</guid>
+				<description>&lt;p&gt;昨天正式发布了 &lt;code&gt;ggVennDiagram&lt;/code&gt; 0.5.0. 上一个在 CRAN 的版本是 0.3，之所以中间跳了&#xA;一下，是因为当初自己还不清楚如何更新已经发布在 CRAN 上的 R 包。&lt;/p&gt;&#xA;&lt;p&gt;这次是通过 &lt;code&gt;devtools::release()&lt;/code&gt; 来自动化发布的。不得不说这个工具的出现，真的大大&#xA;方便了 R 包的开发。对包作者的崇敬之情油然而生。&lt;/p&gt;&#xA;&lt;p&gt;简单来说还是分成以下几个步骤：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;更新软件包的功能；&lt;/li&gt;&#xA;&lt;li&gt;按照 &lt;code&gt;release()&lt;/code&gt; 函数的指引一步步完成发布前的准备工作，并将其提交到 CRAN；&lt;/li&gt;&#xA;&lt;li&gt;到作者邮箱中检查 CRAN 发来的确认邮件，确认提交；&lt;/li&gt;&#xA;&lt;li&gt;如果 CRAN 有邮件回复，解决其提出来的问题；&lt;/li&gt;&#xA;&lt;li&gt;最后，CRAN 会在 R 包上线后发出一封邮件通知；&lt;/li&gt;&#xA;&lt;li&gt;这时，回到自己的 GitHub，为新版本创建一个 tag。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://vnote-1251564393.cos.ap-chengdu.myqcloud.com/typora-img/ggVennDiagram_0.5.0.png&#34; alt=&#34;新鲜出炉的新版本&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;新版本刚刚上线，可以看到只有源代码更新了，Windows 等系统下的二进制还没有编译更新。&lt;/p&gt;&#xA;&lt;p&gt;到如今，才算是真正走通了 R 包开发的流程。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>GScribble on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/gscribble/</link>
+		<description>Recent content in GScribble on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 28 Oct 2010 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/gscribble/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Ubuntu 10.10环境下安装GScribble</title>
+				<link>www.bio-spring.top/post/2010/10/28/2010-10-28-ubuntu-gscribble/</link>
+				<pubDate>Thu, 28 Oct 2010 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2010/10/28/2010-10-28-ubuntu-gscribble/</guid>
+				<description>&lt;p&gt;GScibble是Linux下面的优秀的博客程序客户端，比Blogtk界面友好。可以读取Wordpress的分类信息，还可以编辑已发布的条目。&lt;br&gt;&#xA;为了在我的Ubuntu&#xA;10.10环境下安装该程序，我还是处理了几个小问题，在这里Mark一下。&lt;br&gt;&#xA;&lt;a href=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2010/10/2010-10-28-203549_714x532_scrot.png&#34;&gt;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2010/10/2010-10-28-203549_714x532_scrot-300x223.png&#34; title=&#34;GScribble界面&#34; class=&#34;alignnone size-medium wp-image-28&#34; sizes=&#34;(max-width: 300px) 100vw, 300px&#34; srcset=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2010/10/2010-10-28-203549_714x532_scrot-300x223.png 300w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2010/10/2010-10-28-203549_714x532_scrot.png 714w&#34; width=&#34;300&#34; height=&#34;223&#34; /&gt;&lt;/a&gt;&lt;br&gt;&#xA;首先，安装过程中的问题。&lt;br&gt;&#xA;安装文件可以从SF下载：http://sourceforge.net/projects/gscribble/&lt;br&gt;&#xA;按照安装文件INSTALL的说明操作即可。&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;$ chmod +x setup.py&lt;/li&gt;&#xA;&lt;li&gt;$ sudo ./setup.py install&lt;br&gt;&#xA;我的系统缺少python-gtkhtml2的库，打开新立得软件包管理器，搜索之后安装，即可完成安装。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;其次，Python的版本问题。&lt;br&gt;&#xA;我原先的Python版本为2.5。安装之后启动程序不成功。于是我安装了Python2.6,并将默认的Python链接到Python2.6上。&lt;/p&gt;&#xA;&lt;p&gt;现在，可以使用GScribble方便的发布更新了。&lt;/p&gt;&#xA;&lt;p&gt;小提示：如果程序无法正常启动，可以在终端输入gscribble的方式试试，终端中的错误提示会对你有帮助的。&lt;/p&gt;&#xA;&lt;p&gt;Posted from &lt;a href=&#34;http://sourceforge.net/projects/gscribble/&#34;&gt;GScribble&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

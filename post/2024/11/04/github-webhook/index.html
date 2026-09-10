@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> GitHub Webhook | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="GitHub Webhook">
+	<meta name="twitter:description" content="使用 GitHub Webhook 自动更新个人网站。bio-spring.top 是我的个人网站，其源代码托管在 GitHub 上。通过使用 GitHub Actions 可以自动构建网站并部署到 GitHub Pages，实现自动更新网站在 gaospecial.github.io/bio-spring/ 上的展示。通过使用 netlify 可以实现自动更新网站在 netlify 服务器上的展示。现在想要自动化部署到我的阿里云服务器上，该如何实现呢？
+这里要用到几个部分的技术：
+GitHub Webhook 配置 Hook server 设置 Hook server 要执行的任务 配置 GitHub Webhook GitHub Webhook 是一种自动化工具，它允许在 GitHub 仓库发生特定事件时向外部服务器发送通知。当配置的事件（如 push、pull request 等）发生时，GitHub 会向指定的 URL 发送 HTTP POST 请求，包含相关事件的详细信息。
+访问 Webhook 设置 进入 GitHub 仓库 点击 “Settings” 选项卡 在左侧菜单中选择 “Webhooks” 点击 “Add webhook” 按钮 配置 Webhook 在添加 Webhook 时需要设置以下内容：
+Payload URL: 接收 webhook 请求的服务器地址
+例如：http://webhook.bio-spring.top/ 确保该 URL 可以从公网访问 Content type: 选择数据传输格式">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container single">
+<main>
+
+<div class="article-meta">
+<h1><span class="title">GitHub Webhook</span></h1>
+
+<h3 class="author">
+gaoch
+</h3>
+
+<h3 class="date">2024-11-04</h3>
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF">信息技术</a> 
+  
+  
+  
+  Tags: <a href="/tags/github">GitHub</a> <a href="/tags/webhook">Webhook</a> <a href="/tags/ubuntu">Ubuntu</a> <a href="/tags/apache">Apache</a> <a href="/tags/php">PHP</a> 
+  
+  
+</p>
+</div>
+
+<div class="article">
+<p>使用 GitHub Webhook 自动更新个人网站。<a href="https://bio-spring.top">bio-spring.top</a> 是我的个人网站，其源代码托管在 <a href="https://github.com/gaospecial/bio-spring">GitHub</a> 上。通过使用 GitHub Actions 可以自动构建网站并部署到 GitHub Pages，实现自动更新网站在 <a href="https://gaospecial.github.io/bio-spring/">gaospecial.github.io/bio-spring/</a> 上的展示。通过使用 netlify 可以实现自动更新网站在 netlify 服务器上的展示。现在想要自动化部署到我的阿里云服务器上，该如何实现呢？</p>
+<p>这里要用到几个部分的技术：</p>
+<ul>
+<li>GitHub Webhook</li>
+<li>配置 Hook server</li>
+<li>设置 Hook server 要执行的任务</li>
+</ul>
+<h2 id="配置-github-webhook">配置 GitHub Webhook</h2>
+<p>GitHub Webhook 是一种自动化工具，它允许在 GitHub 仓库发生特定事件时向外部服务器发送通知。当配置的事件（如 push、pull request 等）发生时，GitHub 会向指定的 URL 发送 HTTP POST 请求，包含相关事件的详细信息。</p>
+<h3 id="访问-webhook-设置">访问 Webhook 设置</h3>
+<ol>
+<li>进入 GitHub 仓库</li>
+<li>点击 &ldquo;Settings&rdquo; 选项卡</li>
+<li>在左侧菜单中选择 &ldquo;Webhooks&rdquo;</li>
+<li>点击 &ldquo;Add webhook&rdquo; 按钮</li>
+</ol>
+<h3 id="配置-webhook">配置 Webhook</h3>
+<p>在添加 Webhook 时需要设置以下内容：</p>
+<ol>
+<li>
+<p><strong>Payload URL</strong>: 接收 webhook 请求的服务器地址</p>
+<ul>
+<li>例如：<code>http://webhook.bio-spring.top/</code></li>
+<li>确保该 URL 可以从公网访问</li>
+</ul>
+</li>
+<li>
+<p><strong>Content type</strong>: 选择数据传输格式</p>
+<ul>
+<li>通常选择 <code>application/json</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Secret</strong>: 设置密钥（可选但推荐）</p>
+<ul>
+<li>用于验证请求来源的合法性</li>
+<li>确保安全传输</li>
+<li>生成一个随机的秘钥字符串：<code>openssl rand -hex 20</code></li>
+</ul>
+</li>
+<li>
+<p><strong>事件触发选项</strong>:</p>
+<ul>
+<li>&ldquo;Just the push event&rdquo;: 仅推送事件</li>
+<li>&ldquo;Send me everything&rdquo;: 所有事件</li>
+<li>&ldquo;Let me select individual events&rdquo;: 自定义选择事件</li>
+</ul>
+</li>
+</ol>
+<p>配置完成后，GitHub 会向指定的 URL 发送一个 ping 事件来测试连接。</p>
+<h2 id="配置-hook-server">配置 Hook server</h2>
+<p>上面配置完，会得到一个提示“Last delivery was not successful”，这是因为还没有配置 Hook server。接下来做这部分工作。</p>
+<h3 id="配置-hook-server-的-url">配置 Hook server 的 URL</h3>
+<p>要配置 webhook.bio-spring.top，需要在 Apache2 中添加一个虚拟主机配置。具体步骤如下：</p>
+<ol>
+<li>
+<p>创建虚拟主机配置文件：</p>
+<pre><code class="language-apache">&lt;VirtualHost *:443&gt;
+    # 设置服务器名称
+    ServerName webhook.bio-spring.top
+    ServerAlias webhook.bio-spring.top
+
+    # 启用 SSL
+    SSLEngine on
+    SSLCertificateFile /etc/letsencrypt/live/webhook.bio-spring.top/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/webhook.bio-spring.top/privkey.pem
+
+    # 设置日志路径
+    ErrorLog ${APACHE_LOG_DIR}/webhook-error.log
+    CustomLog ${APACHE_LOG_DIR}/webhook-access.log combined
+
+    # 设置文档根目录
+    DocumentRoot /var/www/html/webhook
+&lt;/VirtualHost&gt;
+</code></pre>
+</li>
+<li>
+<p>重启 Apache 服务：</p>
+<pre><code class="language-bash">sudo a2ensite webhook.conf
+sudo service apache2 restart
+</code></pre>
+</li>
+<li>
+<p>添加 DNS 解析</p>
+<p>在 DNS 解析中添加 webhook.bio-spring.top 的解析，指向阿里云服务器的公网 IP 地址。</p>
+</li>
+<li>
+<p>配置 https 证书</p>
+<p>在阿里云服务器上安装 certbot 并配置 https 证书。</p>
+<pre><code class="language-bash">sudo apt install certbot
+sudo certbot --apache -d webhook.bio-spring.top
+</code></pre>
+</li>
+</ol>
+<h3 id="配置-hook-server-的脚本">配置 Hook Server 的脚本</h3>
+<p>在 Hook Server 的文档根目录下创建一个 <code>index.php</code> 文件，内容如下：</p>
+<pre><code class="language-php">&lt;?php
+// 配置
+$secret = &quot;your-secret-key&quot;;
+$log_file = &quot;/var/log/webhook/deploy-php.log&quot;;
+$deploy_script = &quot;/path/to/deploy-hook.sh&quot;;
+
+// 记录日志
+function write_log($message) {
+    global $log_file;
+    $date = date('Y-m-d H:i:s');
+    file_put_contents($log_file, &quot;[$date] $message\n&quot;, FILE_APPEND);
+}
+
+// 验证签名
+function verify_signature($payload, $signature) {
+    global $secret;
+    $expected = &quot;sha256=&quot; . hash_hmac('sha256', $payload, $secret);
+    return hash_equals($expected, $signature);
+}
+
+// 确保是POST请求
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    die('Method Not Allowed');
+}
+
+// 获取GitHub签名
+$headers = getallheaders();
+$signature = isset($headers['X-Hub-Signature-256']) ? $headers['X-Hub-Signature-256'] : '';
+
+if (empty($signature)) {
+    write_log(&quot;Error: No signature provided&quot;);
+    http_response_code(403);
+    die('No signature');
+}
+
+// 获取请求体
+$payload = file_get_contents('php://input');
+
+// 验证签名
+if (!verify_signature($payload, $signature)) {
+    write_log(&quot;Error: Invalid signature&quot;);
+    http_response_code(403);
+    die('Invalid signature');
+}
+
+// 解析payload
+$data = json_decode($payload, true);
+
+// 检查是否是push事件
+if (isset($data['ref']) &amp;&amp; $data['ref'] === 'refs/heads/master') {
+    write_log(&quot;Received push to master branch&quot;);
+    
+    // 执行部署脚本
+    $output = [];
+    $return_var = 0;
+    exec(&quot;bash $deploy_script 2&gt;&amp;1&quot;, $output, $return_var);
+    
+    // 记录执行结果
+    $output_str = implode(&quot;\n&quot;, $output);
+    write_log(&quot;Deploy script output:\n$output_str&quot;);
+    
+    if ($return_var === 0) {
+        write_log(&quot;Deploy completed successfully&quot;);
+        echo &quot;Deploy successful&quot;;
+    } else {
+        write_log(&quot;Deploy failed with code $return_var&quot;);
+        http_response_code(500);
+        echo &quot;Deploy failed&quot;;
+    }
+} else {
+    write_log(&quot;Ignored non-master push event&quot;);
+    echo &quot;Ignored&quot;;
+}
+?&gt;
+</code></pre>
+<p>重启 Apache 服务器之后，访问 webhook.bio-spring.top 应该会返回 &ldquo;Method Not Allowed&rdquo;。</p>
+<h3 id="配置-deploy-hooksh-脚本">配置 deploy-hook.sh 脚本</h3>
+<pre><code class="language-bash">#!/bin/bash
+
+# 设置工作目录
+SITE_DIR=&quot;/var/www/html/bio-spring.top&quot;
+LOG_FILE=&quot;/var/log/webhook/deploy-sh.log&quot;
+REPO_DIR=&quot;/home/git/bio-spring&quot;
+
+# 如果日志文件不存在则创建
+if [ ! -f &quot;$LOG_FILE&quot; ]; then
+    mkdir -p &quot;$(dirname &quot;$LOG_FILE&quot;)&quot;
+    touch &quot;$LOG_FILE&quot;
+    chown www-data:www-data &quot;$LOG_FILE&quot;
+    chmod 644 &quot;$LOG_FILE&quot;
+fi
+
+
+# 记录部署时间
+echo &quot;Deployment started at $(date)&quot; &gt;&gt; $LOG_FILE
+
+# 更新代码仓库
+cd $REPO_DIR || exit
+GIT_SSH_COMMAND='ssh -i /home/git/.ssh/id_rsa' git pull origin master &gt;&gt; $LOG_FILE 2&gt;&amp;1
+GIT_SSH_COMMAND='ssh -i /home/git/.ssh/id_rsa' git submodule update --recursive &gt;&gt; $LOG_FILE 2&gt;&amp;1
+
+# 安装 hugo
+# wget https://github.com/gohugoio/hugo/releases/download/v0.136.5/hugo_0.136.5_linux-amd64.deb
+# dpkg -i hugo_0.136.5_linux-amd64.deb
+
+# 构建网站
+Rscript -e 'blogdown::build_site(baseURL = &quot;/&quot;)' &gt;&gt; $LOG_FILE 2&gt;&amp;1
+
+# 同步到网站目录
+rsync -av --delete public/ $SITE_DIR/ &gt;&gt; $LOG_FILE 2&gt;&amp;1
+
+echo &quot;Deployment completed at $(date)&quot; &gt;&gt; $LOG_FILE
+</code></pre>
+<h2 id="测试">测试</h2>
+<p>在 GitHub 仓库中推送代码，应该会看到阿里云服务器上的网站自动更新。同时，GitHub Webhook 的日志中也会记录 delivery 信息。</p>
+<p><strong>注意</strong>：由于 GitHub Webhook 的超时时间为 10 s，如果超过 10 s 没有响应（脚本没有执行完毕），GitHub 的状态会显示为“time out”。这种情况可以通过异步执行脚本解决。或者也可以忽略。</p>
+<h3 id="异步执行脚本">异步执行脚本</h3>
+<p>在 PHP 中实现异步处理，可以使用 <code>exec()</code> 或 <code>shell_exec()</code> 命令来启动后台进程。通过在命令末尾添加 <code>&amp;</code> 符号，可以让该进程在后台运行，而不阻塞主进程。</p>
+<pre><code class="language-php">// 异步启动任务
+exec(&quot;bash /path/to/deploy-hook.sh &amp;&quot;);
+</code></pre>
+<p>以上代码会在后台执行 <code>deploy-hook.sh</code>，避免输出内容影响主进程。</p>
+
+</div>
+</main>
+
+<section class="appendix">
+
+
+<div>
+  <div class="side side-left"><h3>作者简介</h3></div>
+  <div>
+
+
+
+
+
+<div>Chun-Hui Gao is a Research Associate at <a href="http://www.hzau.edu.cn">Huazhong Agricultural University</a>.</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div>
+  <div class="side side-left"><h3>重复使用</h3></div>
+  Text and figures are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution CC BY 4.0</a>. The source code is licensed under MIT. The full source is available at <a href="https://github.com/yihui/hugo-prose">https://github.com/yihui/hugo-prose</a>.
+</div>
+
+
+
+<div>
+  <div class="side side-left"><h3>欢迎修订</h3></div>
+  
+  
+  
+    
+    
+  
+  如果您发现本文里含有任何错误（包括错别字和标点符号），欢迎<a href="https://github.com/gaospecial/bio-spring/edit/master/content/post/2024-11-04-github-webhook/index.md" id="edit-link">在本站的 GitHub 项目里提交修订意见。</a>
+</div>
+
+
+
+
+<div>
+  <div class="side side-left"><h3>引用本文</h3></div>
+  <p>如果您使用了本文的内容，请按照以下方式引用：</p>
+  <pre><code>gaoch (2024). GitHub Webhook. BIO-SPRING. www.bio-spring.top/post/2024/11/04/github-webhook/</code></pre>
+  <p>BibTeX citation</p>
+  <pre><code>@misc{
+  title = "GitHub Webhook",
+  author = "gaoch",
+  year = "2024",
+  journal = "BIO-SPRING",
+  note = "www.bio-spring.top/post/2024/11/04/github-webhook/"
+}</code></pre>
+</div>
+
+</section>
+
+
+
+<nav class="post-nav">
+  <span class="nav-next">&larr; <a href="www.bio-spring.top/post/2024/11/01/posit-conf-2024/" title=下一篇&#32;(旧)>Posit Conf 2024</a></span>
+  &hercon;
+  <span class="nav-prev"><a href="www.bio-spring.top/post/2024/11/11/private-git-lfs-server/" title=上一篇&#32;(新)>配置私有 Git LFS 服务器</a> &rarr;</span>
+</nav>
+
+
+
+
+<section class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var disqus_js = '//bio-spring.disqus.com/embed.js';
+    var d = document, s = d.createElement('script');
+    s.src = disqus_js; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    var t = d.getElementById('disqus_thread');
+    var b = false, l = function(scroll) {
+      if (b) return;
+      (d.head || d.body).appendChild(s); b = true;
+      if (scroll) t.scrollIntoView();
+    }
+    s.onerror = function(e) {
+      if (sessionStorage.getItem('failure-note')) return;
+      t.innerText = 'Sorry, but you cannot make comments because Disqus failed to load for some reason. It is known to be blocked in China. If you are sure it is not blocked in your region, please refresh the page. 中国大陆地区读者需要翻墙才能发表评论。';
+      t.style.border = '1px dashed';
+      t.style.padding = '.5em';
+      t.style.background = 'lightyellow';
+      sessionStorage.setItem('failure-note', true);
+    };
+    
+    if (location.hash.match(/^#comment-[0-9]+$/)) return l(true);
+    var c = function() {
+      if (b) return;
+      var rect = t.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) l();
+    };
+    window.addEventListener('load', c);
+    d.addEventListener('scroll', c);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+</div>
+
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+<script src="//yihui.org/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+<script src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils/js/number-sections.min.js,npm/@xiee/utils/js/toc.min.js,npm/@xiee/utils/js/toc-highlight.min.js,npm/@xiee/utils/js/sidenotes.min.js,npm/@xiee/utils/js/right-quote.min.js,npm/@xiee/utils/js/center-img.min.js,npm/@xiee/utils/js/fix-pandoc.min.js,npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/prism-xcode.min.css">
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

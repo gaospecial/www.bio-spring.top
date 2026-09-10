@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Categories on BIO-SPRING</title>
+		<link>www.bio-spring.top/categories/</link>
+		<description>Recent content in Categories on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 29 Nov 2025 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/categories/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>信息技术</title>
+				<link>www.bio-spring.top/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/</link>
+				<pubDate>Sat, 29 Nov 2025 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>统计学</title>
+				<link>www.bio-spring.top/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6/</link>
+				<pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>生物学</title>
+				<link>www.bio-spring.top/categories/%E7%94%9F%E7%89%A9%E5%AD%A6/</link>
+				<pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/categories/%E7%94%9F%E7%89%A9%E5%AD%A6/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>其它</title>
+				<link>www.bio-spring.top/categories/%E5%85%B6%E5%AE%83/</link>
+				<pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/categories/%E5%85%B6%E5%AE%83/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Hugo</title>
+				<link>www.bio-spring.top/categories/hugo/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/categories/hugo/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Theme</title>
+				<link>www.bio-spring.top/categories/theme/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/categories/theme/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

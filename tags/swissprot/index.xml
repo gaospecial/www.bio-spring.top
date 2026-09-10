@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>SwissProt on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/swissprot/</link>
+		<description>Recent content in SwissProt on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 18 Apr 2011 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/swissprot/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Biological DataBases: NCBI与SwissProt</title>
+				<link>www.bio-spring.top/post/2011/04/18/2011-04-18-biological-databases-ncbi-swissprot/</link>
+				<pubDate>Mon, 18 Apr 2011 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2011/04/18/2011-04-18-biological-databases-ncbi-swissprot/</guid>
+				<description>&lt;p&gt;人们使用数据库管理数据，对于生物数据来说，一个优秀的数据库有以下优点：&lt;br&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2011/04/4Bioinformaticsdatabases3.png&#34; alt=&#34;&#34;&gt;&lt;br&gt;&#xA;然而，生物数据的迅速增大，带来很多问题：&lt;br&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2011/04/4Bioinformaticsdatabases4.png&#34; alt=&#34;&#34;&gt;&lt;br&gt;&#xA;相对来说，NCBI收录生物数据时力求完整不遗漏，所以数据库内容是冗余的，有很多重复性条目，无意义条目。&lt;br&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2011/04/NCBI.png&#34; alt=&#34;&#34;&gt;&lt;br&gt;&#xA;与之相对的，SwissProt数据库则力求注释完整，在收录数据会进行合并和归档，以保证量不重复。&lt;br&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2011/04/4Bioinformaticsdatabases.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

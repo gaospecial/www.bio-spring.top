@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Perldoc on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/perldoc/</link>
+		<description>Recent content in Perldoc on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 31 Dec 2010 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/perldoc/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>如何检查BioPerl是否正确安装</title>
+				<link>www.bio-spring.top/post/2010/12/31/2010-12-31-check-bioperl/</link>
+				<pubDate>Fri, 31 Dec 2010 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2010/12/31/2010-12-31-check-bioperl/</guid>
+				<description>&lt;p&gt;为了检查BioPerl是否安装正确，我们可以使用perldoc命令来看一下。&lt;/p&gt;&#xA;&lt;p&gt;如果你是Linux系统，随意打开一个终端；如果用的是Windows系统，那么打开命令提示符。输入以下命令：&lt;/p&gt;&#xA;&lt;p&gt;[bash]&lt;/p&gt;&#xA;&lt;p&gt;perldoc Bio::SeqIO&lt;/p&gt;&#xA;&lt;p&gt;[/bash]&lt;/p&gt;&#xA;&lt;p&gt;以上命令的作用是查看Bio::SeqIO模块的文档是否存在，如果存在，则会有相应的文档输出，则你安装Bio::SeqIO模块；如果没有，说明Perl找不到该模块，你还没有安装Bio::SeqIO模块。&lt;/p&gt;&#xA;&lt;p&gt;引物Bio::SeqIO是BioPerl的基础模块，所以，你懂的，其它的一些模块也可以的，比如Bio::Seq &#xA;Bio::SearchIO等等。&lt;/p&gt;&#xA;&lt;p&gt;此外，对于Perl的其它模块是否正确安装，也可以用perldoc命令检查一下。比如Bio::Graphics模块，并不保护在BioPerl的“安装包”内，所以对于要使用Gbrowser的同学来讲，需要手动安装该模块。&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;新年到了，祝看到这篇文章的同学新年快乐。&lt;/p&gt;&#xA;&lt;p&gt;&lt;span style=&#34;color: #ff0000; font-size: large;&#34;&gt;Happy new year！&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

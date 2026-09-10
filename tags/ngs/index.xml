@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>NGS on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/ngs/</link>
+		<description>Recent content in NGS on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 09 Feb 2016 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/ngs/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>mothur and QIIME</title>
+				<link>www.bio-spring.top/post/2016/02/09/2016-02-09-mothur-and-qiime/</link>
+				<pubDate>Tue, 09 Feb 2016 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2016/02/09/2016-02-09-mothur-and-qiime/</guid>
+				<description>&lt;p&gt;说明：mothur的官博上比较了mothur和QIIME这两个微生物生态学研究的常用软件之间存在的差异。博主略作整理，以飨读者。&lt;br&gt;&#xA;原文链接在这里：http://blog.mothur.org/2016/01/12/mothur-and-qiime&lt;/p&gt;&#xA;&lt;p&gt;以下为原文和大意的翻译。&lt;/p&gt;&#xA;&lt;div&gt;&#xA;&lt;p&gt;译者：这是mothur博客上一篇关于QIIME的文章，作者系统比较了两个工具的不同。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div&gt;&#xA;&lt;p&gt;Despite their differences in philosophy,&lt;span&#xA;class=&#34;Apple-converted-space&#34;&gt; &lt;/span&gt;&lt;em&gt;most&lt;/em&gt;&lt;span&#xA;class=&#34;Apple-converted-space&#34;&gt; &lt;/span&gt;of the differences in mothur and&#xA;QIIME are cosmetic. Both packages have been successful. Having both of&#xA;them around is good for microbial ecology. Within both packages there&#xA;are warts – inconveniences to the users and antiquated/bad ideas. Within&#xA;both packages there are strengths. If you are going to criticize someone&#xA;for their choice of software, do it for some specific point. If you are&#xA;going to campaign for mothur or QIIME, do your best to accurately&#xA;represent the strengths of your pet package.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>InbR, a TetR family regulator, binds with isoniazid and influences multidrug resistance in Mycobacterium bovis BCG</title>
+				<link>www.bio-spring.top/post/2015/09/11/2015-09-11-inbr-paper/</link>
+				<pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2015/09/11/2015-09-11-inbr-paper/</guid>
+				<description>&lt;p&gt;在Scientific&#xA;Reports上面的一篇论文昨天（2015-9-10）上线了。我是第二作者，负责了ChIP-seq实验等少部分实验，全部的生物信息学分析，论文撰写、修订和投稿等事宜。该研究最初投稿的是核酸研究杂志，被拒稿后由我接手，转投Scientific&#xA;Reports，前后耗费了2个多月终于接受。除了正文中，附件也有不少数据，特别是一个大Table。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.nature.com/articles/srep13969&#34;&gt;http://www.nature.com/articles/srep13969&lt;/a&gt;&lt;br&gt;&#xA;论文摘要如下：&lt;/p&gt;&#xA;&lt;p&gt;Isoniazid (INH), an anti-tuberculosis (TB) drug, has been widely used&#xA;for nearly 60 years. However, the pathway through which Mycobacterium&#xA;tuberculosis responds INH remain largely unclear. In this study, we&#xA;characterized a novel transcriptional factor, InbR, which is encoded by&#xA;Rv0275c and belongs to the TetR family, that is directly responsive to&#xA;INH. Disrupting inbR made mycobacteria more sensitive to INH, whereas&#xA;overexpressing inbR decreased bacterial susceptibility to the drug. InbR&#xA;could bind specifically to the upstream region of its own operon at two&#xA;inverted repeats and act as an auto-repressor. Furthermore, InbR&#xA;directly bind with INH, and the binding reduced InbR’s DNA-binding&#xA;ability. Interestingly, susceptibilities were also changed by InbR for&#xA;other anti-TB drugs, such as rifampin, implying that InbR may play a&#xA;role in multi-drug resistance. Additionally, microarray analyses&#xA;revealed a portion genes of the inbR regulon have similar expression&#xA;patterns in inbR-overexpressing strain and INH-treated wild type strain,&#xA;suggesting that these genes, for example iniBAC, may be responsible to&#xA;the drug resistance of inbR-overexpressing strain. The regulation of&#xA;these genes by InbR were further assessed by ChIP-seq assay. InbR may&#xA;regulate multiple drug resistance of mycobacteria through the regulation&#xA;of these genes.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Fix “getopts.pl can not be located in @INC” error in SSPACE_Standard_v3.0.pl</title>
+				<link>www.bio-spring.top/post/2015/08/16/2015-08-16-sspace-getopts-error/</link>
+				<pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2015/08/16/2015-08-16-sspace-getopts-error/</guid>
+				<description>&lt;p&gt;SSPACE是一个常用的Scaffolding软件.当你有新的测序数据时,你可以使用SSPACE将原有的contigs延长,scaffolding等.&lt;/p&gt;&#xA;&lt;p&gt;在Ubuntu&#xA;14.04系统中运行该软件v3.0会出现错误.谷歌也没有发现好的解决方法,最终通过研究源代码,发现这是一个简单的问题,修订源代码之后,终于能够成功运行.&lt;/p&gt;&#xA;&lt;p&gt;两处修订如下:&lt;/p&gt;&#xA;&lt;p&gt;[cc lang=”perl”]&lt;br&gt;&#xA;#~ require “getopts.pl”;&lt;br&gt;&#xA;use Getopt::Std;&lt;br&gt;&#xA;[/cc]&lt;/p&gt;&#xA;&lt;p&gt;[cc lang=”perl”]&lt;br&gt;&#xA;#~ &amp;amp;Getopts(‘m:o:v:p:k:a:z:s:b:n:l:x:T:g:r:S:’);&lt;br&gt;&#xA;getopt(‘m:o:v:p:k:a:z:s:b:n:l:x:T:g:r:S:’);&lt;br&gt;&#xA;[/cc]&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

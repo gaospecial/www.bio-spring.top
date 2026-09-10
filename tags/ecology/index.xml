@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Ecology on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/ecology/</link>
+		<description>Recent content in Ecology on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 17 Oct 2018 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/ecology/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Ordination analysis to assess shifts of niche structure</title>
+				<link>www.bio-spring.top/post/2018/10/17/ordination-analysis-to-assess-shifts-of-niche-structure/</link>
+				<pubDate>Wed, 17 Oct 2018 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2018/10/17/ordination-analysis-to-assess-shifts-of-niche-structure/</guid>
+				<description>&lt;p&gt;本分析方法来在2018年在 ISME J 发表的一篇论文&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，原来的分析是用 Mathematica 做的，我尝试在 R 里面实现它。&lt;/p&gt;&#xA;&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;&#xA;&lt;hr&gt;&#xA;&lt;ol&gt;&#xA;&lt;li id=&#34;fn:1&#34;&gt;&#xA;&lt;p&gt;Mallon CA et al. (2018). The impact of failure: unsuccessful bacterial invasions steer the soil microbial community away from the invader’s niche. The ISME Journal 1.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/div&gt;</description>
+			</item>
+			<item>
+				<title>mothur and QIIME</title>
+				<link>www.bio-spring.top/post/2016/02/09/2016-02-09-mothur-and-qiime/</link>
+				<pubDate>Tue, 09 Feb 2016 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2016/02/09/2016-02-09-mothur-and-qiime/</guid>
+				<description>&lt;p&gt;说明：mothur的官博上比较了mothur和QIIME这两个微生物生态学研究的常用软件之间存在的差异。博主略作整理，以飨读者。&lt;br&gt;&#xA;原文链接在这里：http://blog.mothur.org/2016/01/12/mothur-and-qiime&lt;/p&gt;&#xA;&lt;p&gt;以下为原文和大意的翻译。&lt;/p&gt;&#xA;&lt;div&gt;&#xA;&lt;p&gt;译者：这是mothur博客上一篇关于QIIME的文章，作者系统比较了两个工具的不同。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div&gt;&#xA;&lt;p&gt;Despite their differences in philosophy,&lt;span&#xA;class=&#34;Apple-converted-space&#34;&gt; &lt;/span&gt;&lt;em&gt;most&lt;/em&gt;&lt;span&#xA;class=&#34;Apple-converted-space&#34;&gt; &lt;/span&gt;of the differences in mothur and&#xA;QIIME are cosmetic. Both packages have been successful. Having both of&#xA;them around is good for microbial ecology. Within both packages there&#xA;are warts – inconveniences to the users and antiquated/bad ideas. Within&#xA;both packages there are strengths. If you are going to criticize someone&#xA;for their choice of software, do it for some specific point. If you are&#xA;going to campaign for mothur or QIIME, do your best to accurately&#xA;represent the strengths of your pet package.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

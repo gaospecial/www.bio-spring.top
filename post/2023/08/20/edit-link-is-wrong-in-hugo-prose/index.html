@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> Edit link is wrong in Hugo Prose | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Edit link is wrong in Hugo Prose">
+	<meta name="twitter:description" content="Hugo-Prose 主题中使用 correction.html 生成在 GitHub 进行修改的链接。
+在 correction.html 中主要针对 R Markdown 文件存在的情况，找出对应的 *.Rmd 和 *.Rmarkdown 的路径。
+{{ if (and .File .Site.Params.editLink) }} &lt;div&gt; &lt;div class=&#34;side side-left&#34;&gt;&lt;h3&gt;{{ i18n &#34;suggestChanges&#34; }}&lt;/h3&gt;&lt;/div&gt; {{ $filePath := .File.Path }} {{ $RmdFile := (print .File.Dir .File.BaseFileName &#34;.Rmd&#34;) }} {{ if (fileExists (print &#34;content/&#34; $RmdFile)) }} {{ $filePath = $RmdFile }} {{ else }} {{ $RmdFile = (print .File.Dir .File.BaseFileName &#34;.Rmarkdown&#34;) }} {{ if (fileExists (print &#34;content/&#34; $RmdFile)) }} {{ $filePath = $RmdFile }} {{ end }} {{ end }} {{ i18n &#34;suggestChangesText1&#34; }}&lt;a href=&#34;{{ .Site.Params.editLink }}{{ $filePath }}&#34; id=&#34;edit-link&#34;&gt;{{ i18n &#34;suggestChangesText2&#34; }}&lt;/a&gt; &lt;/div&gt; {{ end }} 在这个文件中，使用 Hugo 变量 .File.Path 访问当前文件的路径。">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container single">
+<main>
+
+<div class="article-meta">
+<h1><span class="title">Edit link is wrong in Hugo Prose</span></h1>
+
+<h3 class="author">
+gaoch
+</h3>
+
+<h3 class="date">2023-08-20</h3>
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF">信息技术</a> 
+  
+  
+  
+  Tags: <a href="/tags/blogdown">blogdown</a> <a href="/tags/hugo">Hugo</a> 
+  
+  
+</p>
+</div>
+
+<div class="article">
+<p>Hugo-Prose 主题中使用 <code>correction.html</code> 生成在 GitHub 进行修改的链接。</p>
+<p>在 <code>correction.html</code> 中主要针对 R Markdown 文件存在的情况，找出对应的 <code>*.Rmd</code> 和 <code>*.Rmarkdown</code> 的路径。</p>
+<pre><code class="language-html">{{ if (and .File .Site.Params.editLink) }}
+&lt;div&gt;
+  &lt;div class=&quot;side side-left&quot;&gt;&lt;h3&gt;{{ i18n &quot;suggestChanges&quot; }}&lt;/h3&gt;&lt;/div&gt;
+  {{ $filePath := .File.Path }}
+  {{ $RmdFile := (print .File.Dir .File.BaseFileName &quot;.Rmd&quot;) }}
+  {{ if (fileExists (print &quot;content/&quot; $RmdFile)) }}
+    {{ $filePath = $RmdFile }}
+  {{ else }}
+    {{ $RmdFile = (print .File.Dir .File.BaseFileName &quot;.Rmarkdown&quot;) }}
+    {{ if (fileExists (print &quot;content/&quot; $RmdFile)) }}
+      {{ $filePath = $RmdFile }}
+    {{ end }}
+  {{ end }}
+  {{ i18n &quot;suggestChangesText1&quot; }}&lt;a href=&quot;{{ .Site.Params.editLink }}{{ $filePath }}&quot; id=&quot;edit-link&quot;&gt;{{ i18n &quot;suggestChangesText2&quot; }}&lt;/a&gt;
+&lt;/div&gt;
+{{ end }}
+</code></pre>
+<p>在这个文件中，使用 Hugo 变量 <code>.File.Path</code> 访问当前文件的路径。</p>
+<p>通过查阅参考资料，发现 <code>.File.Path</code> 变量储存的文件路径中，其分隔符是跟随系统的。</p>
+<blockquote>
+<p>The path separators (slash or backslash) in .File.Path, .File.Dir, and .File.Filename depend on the operating system.</p>
+<p><strong>See also</strong>: <a href="https://gohugo.io/variables/files/">https://gohugo.io/variables/files/</a></p>
+</blockquote>
+<p>如果在 Linux 系统中使用 <code>blogdown::build_site()</code> 生成的网站，则修改链接是正确的。</p>
+<p>然而，当网站在 Windows 系统上生成时，因为 <code>.File.Path</code> 的路径是以 <code>\</code> 为分割的，所以这个链接中的分隔符是错误的，从而导致无法在 GitHub 访问到正确的路径，出现 404 错误<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
+<p>为此，需要对 <code>correction.html</code> 模板进行修改。这里使用 <code>path.Clean</code> 函数<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>将路径转变为 Linux 格式路径。</p>
+<pre><code class="language-html">  {{ $filePath := path.Clean .File.Path }}
+</code></pre>
+<blockquote>
+<p>On a Windows system, if <code>.File.Path</code> is <code>foo\bar.md</code>, then:</p>
+<p><code>{{ path.Clean .File.Path }} → &quot;foo/bar.md&quot;</code></p>
+<p><strong>See also</strong>: <a href="https://gohugo.io/functions/path.clean/">https://gohugo.io/functions/path.clean/</a></p>
+</blockquote>
+<p>这样的话，通过 GitHub 修改的功能就更加鲁棒了。</p>
+<p>这个修改已经 <a href="https://github.com/yihui/hugo-prose/pull/46">合并到Hugo-prose</a> 源了。</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>虽然路径是在 Windows 系统中生成的，但是 GitHub 服务器却是 Linux 系统，文件路径总是以 &ldquo;/&rdquo; 为分隔符的。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><code>path.Clean</code> replaces path separators with slashes (<code>/</code>) and removes extraneous separators, including trailing separators.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</div>
+</main>
+
+<section class="appendix">
+
+
+<div>
+  <div class="side side-left"><h3>作者简介</h3></div>
+  <div>
+
+
+
+
+
+<div>Chun-Hui Gao is a Research Associate at <a href="http://www.hzau.edu.cn">Huazhong Agricultural University</a>.</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div>
+  <div class="side side-left"><h3>重复使用</h3></div>
+  Text and figures are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution CC BY 4.0</a>. The source code is licensed under MIT. The full source is available at <a href="https://github.com/yihui/hugo-prose">https://github.com/yihui/hugo-prose</a>.
+</div>
+
+
+
+<div>
+  <div class="side side-left"><h3>欢迎修订</h3></div>
+  
+  
+  
+    
+    
+  
+  如果您发现本文里含有任何错误（包括错别字和标点符号），欢迎<a href="https://github.com/gaospecial/bio-spring/edit/master/content/post/2023-08-20-edit-link-is-wrong/index.zh.md" id="edit-link">在本站的 GitHub 项目里提交修订意见。</a>
+</div>
+
+
+
+
+<div>
+  <div class="side side-left"><h3>引用本文</h3></div>
+  <p>如果您使用了本文的内容，请按照以下方式引用：</p>
+  <pre><code>gaoch (2023). Edit link is wrong in Hugo Prose. BIO-SPRING. www.bio-spring.top/post/2023/08/20/edit-link-is-wrong-in-hugo-prose/</code></pre>
+  <p>BibTeX citation</p>
+  <pre><code>@misc{
+  title = "Edit link is wrong in Hugo Prose",
+  author = "gaoch",
+  year = "2023",
+  journal = "BIO-SPRING",
+  note = "www.bio-spring.top/post/2023/08/20/edit-link-is-wrong-in-hugo-prose/"
+}</code></pre>
+</div>
+
+</section>
+
+
+
+<nav class="post-nav">
+  <span class="nav-next">&larr; <a href="www.bio-spring.top/post/2023/08/20/modifying-blogdown-hugo-theme/" title=下一篇&#32;(旧)>更改 blogdown 主题</a></span>
+  &hercon;
+  <span class="nav-prev"><a href="www.bio-spring.top/post/2023/08/23/using-julia-in-rstudio/" title=上一篇&#32;(新)>在 RStudio 中使用 Julia</a> &rarr;</span>
+</nav>
+
+
+
+
+<section class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var disqus_js = '//bio-spring.disqus.com/embed.js';
+    var d = document, s = d.createElement('script');
+    s.src = disqus_js; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    var t = d.getElementById('disqus_thread');
+    var b = false, l = function(scroll) {
+      if (b) return;
+      (d.head || d.body).appendChild(s); b = true;
+      if (scroll) t.scrollIntoView();
+    }
+    s.onerror = function(e) {
+      if (sessionStorage.getItem('failure-note')) return;
+      t.innerText = 'Sorry, but you cannot make comments because Disqus failed to load for some reason. It is known to be blocked in China. If you are sure it is not blocked in your region, please refresh the page. 中国大陆地区读者需要翻墙才能发表评论。';
+      t.style.border = '1px dashed';
+      t.style.padding = '.5em';
+      t.style.background = 'lightyellow';
+      sessionStorage.setItem('failure-note', true);
+    };
+    
+    if (location.hash.match(/^#comment-[0-9]+$/)) return l(true);
+    var c = function() {
+      if (b) return;
+      var rect = t.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) l();
+    };
+    window.addEventListener('load', c);
+    d.addEventListener('scroll', c);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+</div>
+
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+<script src="//yihui.org/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+<script src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils/js/number-sections.min.js,npm/@xiee/utils/js/toc.min.js,npm/@xiee/utils/js/toc-highlight.min.js,npm/@xiee/utils/js/sidenotes.min.js,npm/@xiee/utils/js/right-quote.min.js,npm/@xiee/utils/js/center-img.min.js,npm/@xiee/utils/js/fix-pandoc.min.js,npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/prism-xcode.min.css">
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

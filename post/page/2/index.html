@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> Posts | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Posts">
+	<meta name="twitter:description" content="Chun-Hui Gao&#39;s personal website built through Hugo and blogdown with the hugo-prose theme.">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/" class="active">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container list">
+<main>
+
+<h1>Posts</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2024/11/26/pca-loading/">PCA loading</a></h1>
+    <div>
+      <span>2024-11-26</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      &Popf;CA 分析确定主成分后，每一个主成分都是变量的映射，变量有自己的 loading。
+[&hellip;] 以下是使用 R 进行 PCA 分析并绘制 PCA loading 图的完整代码示例：
+[&hellip;] # 加载必要的包 library(ggplot2) library(ggrepel) ## Warning: package 'ggrepel' was built under R &hellip;
+      <a href="www.bio-spring.top/post/2024/11/26/pca-loading/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2024/11/26/random-forest-gini-index/">绘制随机森林模型的Gini重要性</a></h1>
+    <div>
+      <span>2024-11-26</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      在随机森林模型中，mean decrease in gini index（也称为Gini重要性或基尼指数下降均值）用于衡量各特征对模型分类性能的贡献。
+[&hellip;] 可以通过以下步骤绘制它：
+[&hellip;] 假设使用的是 scikit-learn 的随机森林实现：
+import matplotlib.pyplot as plt import numpy as np from &hellip;
+      <a href="www.bio-spring.top/post/2024/11/26/random-forest-gini-index/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2024/11/26/ai-rename-blogdown-tags/">使用 AI 优化 blogdown 的分类和标签</a></h1>
+    <div>
+      <span>2024-11-26</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      要遍历 blogdown 站点下的每个文章，并对 categories 和 tags 进行合并和优化，可以按照以下步骤操作：
+[&hellip;] 读取文章文件：遍历站点目录，找到所有的文章（通常是 .Rmd 或 .md 文件），读取文件中的元数据（如 categories 和 tags）。
+[&hellip;] 合并和优化元数据：对每篇文章的 categories 和 tags 进行合并，移除重 &hellip;
+      <a href="www.bio-spring.top/post/2024/11/26/ai-rename-blogdown-tags/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2024/11/11/private-git-lfs-server/">配置私有 Git LFS 服务器</a></h1>
+    <div>
+      <span>2024-11-11</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      在 Git 项目中使用大文件已经成为非常普遍的事情了，例如在 Hugging face 下面的仓库中这样的情况比比皆是。
+为了能够“专业地”存储大文件，或许可以有以下几种方式：
+[&hellip;] 要将 NAS 作为 Git LFS 服务器，关键是让 NAS 提供 HTTP 或 SSH 文件存储服务，并将其作为 LFS 对象的存储端点。具体步骤如下：
+[&hellip;] 确保 NAS 服务器支 &hellip;
+      <a href="www.bio-spring.top/post/2024/11/11/private-git-lfs-server/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2024/11/04/github-webhook/">GitHub Webhook</a></h1>
+    <div>
+      <span>2024-11-04</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      使用 GitHub Webhook 自动更新个人网站。bio-spring.top 是我的个人网站，其源代码托管在 GitHub 上。通过使用 GitHub Actions 可以自动构建网站并部署到 GitHub Pages，实现自动更新网站在 gaospecial.github.io/bio-spring/ 上的展示。通过使用 netlify 可以实现自动更新网站在 netlify 服务器上的展 &hellip;
+      <a href="www.bio-spring.top/post/2024/11/04/github-webhook/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2024/11/01/posit-conf-2024/">Posit Conf 2024</a></h1>
+    <div>
+      <span>2024-11-01</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      &Popf;osit 2024 会议视频的合集今天发布了。这是非常好的数据科学学习材料。视频有 100 多个。为了能够挑选感兴趣的视频，通过下载字幕的方法利用大模型对视频内容进行了总结。
+总结内容列在这里备查。
+[&hellip;] 这段视频内容主要介绍了杜邦公司在食品保鲜、水资源利用和废物价值提升等方面的创新努力，强调了其实现碳中和目标的决心。杜邦设定了到2050年实现全面碳中和的目标，并展示了如何通过各 &hellip;
+      <a href="www.bio-spring.top/post/2024/11/01/posit-conf-2024/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2024/08/11/random-surface/">Random Surface</a></h1>
+    <div>
+      <span>2024-08-11</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      在 R 中生成 2 个向量，将其相乘后获得的矩阵，用 3D 绘图出来。生成向量时，加入正弦信号和随机扰动。绘图使用可交互的方式。添加噪声的时候，使用多个不同振幅、频率的正弦信号叠加的方式。
+[&hellip;] 首先，确保你已经安装并加载了 plotly 包：
+# install.packages(&quot;plotly&quot;) library(plotly) ## Loading &hellip;
+      <a href="www.bio-spring.top/post/2024/08/11/random-surface/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2024/02/17/monkey-peach/">猴子吃桃问题</a></h1>
+    <div>
+      <span>2024-02-17</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      寒假作业上有一道题：一只猴子有很多桃子，每天都吃一半加 1 个，最后在第 4 天的时候只剩下 1 个桃子。问它原来有几个桃子？
+这是一个迭代的问题，往前数第 \(n\) 天的桃子数量是 \(f(n)\)，且 \(f(n) = (f(n-1)+1) * 2\)。若 \(n = 0\)，则 \(f(0) =1\)。可以写成下面的形式。
+taozi = function(n){ if (n == 0) &hellip;
+      <a href="www.bio-spring.top/post/2024/02/17/monkey-peach/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2024/01/11/dplyr-filter-expression/">dplyr::filter() 中的表达式</a></h1>
+    <div>
+      <span>2024-01-11</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      &dopf;plyr 中的骚操作。
+今天遇到的这个问题，让我困惑了好半天。
+给出一个 tibble，对它执行 filter() 操作。
+library(dplyr) ## ## Attaching package: 'dplyr' ## The following objects are masked from 'package:stats': ## ## filter, lag ## The &hellip;
+      <a href="www.bio-spring.top/post/2024/01/11/dplyr-filter-expression/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2023/12/31/a-math-quiz/">一道数学题</a></h1>
+    <div>
+      <span>2023-12-31</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      用编程方法硬解小学奥赛题。
+朋友圈看到一道有趣的题目，小学二年级的。
+[&hellip;] 题目： 老师让菲菲从 1 ~ 9 这9个数字中选取 4 个不同的数字，组成一个四位数，使得这个四位数能被所有她没有选中的数整除，但不能被选中的任一个数字整除。那么，菲菲组成的四位数是_____。
+
+      <a href="www.bio-spring.top/post/2023/12/31/a-math-quiz/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+
+
+
+		<ul class="pagination pagination-default">
+			<li class="page-item">
+				<a href="www.bio-spring.top/post/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+			</li>
+		<li class="page-item">
+			<a href="www.bio-spring.top/post/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+		</li>
+			<li class="page-item">
+				<a href="www.bio-spring.top/post/" aria-label="Page 1" class="page-link" role="button">1</a>
+			</li>
+			<li class="page-item active">
+				<a aria-current="page" aria-label="Page 2" class="page-link" role="button">2</a>
+			</li>
+			<li class="page-item">
+				<a href="www.bio-spring.top/post/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
+			</li>
+			<li class="page-item">
+				<a href="www.bio-spring.top/post/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
+			</li>
+			<li class="page-item">
+				<a href="www.bio-spring.top/post/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
+			</li>
+		<li class="page-item">
+			<a href="www.bio-spring.top/post/page/3/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+		</li>
+			<li class="page-item">
+				<a href="www.bio-spring.top/post/page/29/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+			</li>
+		</ul>
+
+
+
+
+
+</main>
+</div>
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  <div class="footer hidden">
+  
+
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

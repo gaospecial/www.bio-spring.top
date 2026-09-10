@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Microbial Ecology on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/microbial-ecology/</link>
+		<description>Recent content in Microbial Ecology on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 22 Oct 2018 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/microbial-ecology/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>常见排序分析方法及R语言实现</title>
+				<link>www.bio-spring.top/post/2018/10/22/ordination-analysis-in-r/</link>
+				<pubDate>Mon, 22 Oct 2018 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2018/10/22/ordination-analysis-in-r/</guid>
+				<description>&lt;h1 id=&#34;常用排序分析方法&#34;&gt;常用排序分析方法&lt;/h1&gt;&#xA;&lt;p&gt;相信大家在做微生物多样性研究时经常听到PCA分析、PCoA分析，NMDS分析，CCA分析，RDA分析。它们对物种（或基因、功能）的分析具有重要作用，因而频频出现在16S测序及宏基因组测序中。以上分析本质上都属于排序分析（Ordination analysis）。&lt;/p&gt;&#xA;&lt;p&gt;排序分析（ordination analysis），最早是生态学（ecology）中研究群落（communities）的一大类多元分析手段，将某个地区调查的不同环境（site）以及所对应的物种组成（species），按照相似度（similarity）或距离（distance）对site在排序轴上（ordination axes）进行排序，将其表示为沿一个或多个排序轴排列的点，从而分析各个site或species与环境因子之间的关系。其目的是把多维空间压缩到低维空间（如二维），并且保证因维数降低而导致的信息量损失尽量少，实体（site或species）按其相似关系重新排列，提高其可理解性（interpretability）；同时，通过统计手段检验排序轴（ordination axes）是否能真正代表环境因子的梯度（gradient）&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;&#xA;&lt;p&gt;因此，排序分析的作用可以总结为两个方面：①降维；②探索性分析；&lt;/p&gt;&#xA;&lt;p&gt;常用的排序方法如下&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;&#xA;&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;排序分析方法&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;Raw data based （线性模型）&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;Raw data based （单峰模型）&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;Distance based&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;间接排序法  （非限制性）&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;PCA&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;CA，DCA&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;PCoA，NMDS&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;直接排序法  （限制性）&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;RDA&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;CCA&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;dbRDA&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;其中间接排序法包括：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;PCA（principal components analysis，主成分分析）&lt;/li&gt;&#xA;&lt;li&gt;CA（correspondence analysis，对应分析）&lt;/li&gt;&#xA;&lt;li&gt;DCA（Detrended correspondenceanalysis, 去趋势对应分析)&lt;/li&gt;&#xA;&lt;li&gt;PCoA（principal coordinate analysis，主坐标分析）&lt;/li&gt;&#xA;&lt;li&gt;NMDS（non-metric multi-dimensional scaling，非度量多维尺度分析）；&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;直接排序法包括：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;RDA（Redundancy analysis，冗余分析）&lt;/li&gt;&#xA;&lt;li&gt;CCA（canonical correspondence analysis，典范对应分析）&lt;/li&gt;&#xA;&lt;li&gt;dbRDA（distance based redundancy analysis，基于距离的冗余分析）&lt;/li&gt;&#xA;&lt;li&gt;CAP（canonical analysis of principal coordinates，主要坐标的典型分析）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;其中PCA和RDA是基于线性模型（linear model）的，而CA、DCA、CCA、DCCA是基于单峰（unimodal）模型。&lt;/p&gt;&#xA;&lt;h1 id=&#34;选择单峰模型还是线性模型&#34;&gt;选择单峰模型还是线性模型？&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;用DCA（&lt;code&gt;vegan::decorana()&lt;/code&gt;）先对数据（site-species）进行分析；&lt;/li&gt;&#xA;&lt;li&gt;查看结果中的“Axis lengths”的第一轴DCA1的值，根据该值判断该采用线性模型还是单峰模型：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;如果大于4.0，就应该选单峰模型；&lt;/li&gt;&#xA;&lt;li&gt;如果3.0-4.0之间，选线性模型或者单峰模型均可；&lt;/li&gt;&#xA;&lt;li&gt;如果小于3.0, 线性模型的结果要好于单峰模型&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;如何选择一种合适的方法&#34;&gt;如何选择一种合适的方法？&lt;/h1&gt;&#xA;&lt;p&gt;排序方法的选择取决于1）您拥有的数据类型，2）您想要/可以使用的相似距离矩阵，以及3）您想说的内容。所有这些排序方法都基于数据构建的相似距离矩阵，使用不同的方法（例如Euclidean，Bray-Curtis，Jaccard等）来计算样本之间的距离。但是，不同方法计算相似度矩阵将不会给出相同的结果。不同的排序方法使用不同的相似度矩阵，并可能对结果产生显著影响。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Ordination analysis to assess shifts of niche structure</title>
+				<link>www.bio-spring.top/post/2018/10/17/ordination-analysis-to-assess-shifts-of-niche-structure/</link>
+				<pubDate>Wed, 17 Oct 2018 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2018/10/17/ordination-analysis-to-assess-shifts-of-niche-structure/</guid>
+				<description>&lt;p&gt;本分析方法来在2018年在 ISME J 发表的一篇论文&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，原来的分析是用 Mathematica 做的，我尝试在 R 里面实现它。&lt;/p&gt;&#xA;&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;&#xA;&lt;hr&gt;&#xA;&lt;ol&gt;&#xA;&lt;li id=&#34;fn:1&#34;&gt;&#xA;&lt;p&gt;Mallon CA et al. (2018). The impact of failure: unsuccessful bacterial invasions steer the soil microbial community away from the invader’s niche. The ISME Journal 1.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/div&gt;</description>
+			</item>
+	</channel>
+</rss>

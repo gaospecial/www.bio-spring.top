@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>RT-PCR on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/rt-pcr/</link>
+		<description>Recent content in RT-PCR on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 13 Nov 2018 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/rt-pcr/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>RT-PCR数据可视化之一</title>
+				<link>www.bio-spring.top/post/2018/11/13/rt-pcr-data-visualization-one/</link>
+				<pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2018/11/13/rt-pcr-data-visualization-one/</guid>
+				<description>&lt;p&gt;QuantStudio Real-Time PCR software 是我们经常使用的 RT-PCR 软件, 它上面的可视化只能简单看看, 不满足发论文的需求. 如果需要得到发表级的图片, 还是需要 用 ggplot 大法加持.&lt;/p&gt;&#xA;&lt;p&gt;为了能够使用这些数据, 首先需要导出文件. 为了方便操作, 文件导出时, 选择 &lt;code&gt;*.txt&lt;/code&gt; 格式, 每个面板导出成一个单独文件. 将文件放在 &lt;code&gt;data&lt;/code&gt; 文件夹中.&lt;/p&gt;&#xA;&lt;h1 id=&#34;数据预处理&#34;&gt;数据预处理&lt;/h1&gt;&#xA;&lt;p&gt;根据文件名后缀找到数据.&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# 数据文件目录&#xA;dir &amp;lt;- &amp;quot;data&amp;quot;&#xA;options(stringsAsFactors = F)&#xA;&#xA;# 根据文件名后缀找到对应文件&#xA;amplification_file &amp;lt;- list.files(path=dir,full.names = T,pattern = &amp;quot;Amplification Data_ViiA7_export.txt&amp;quot;)&#xA;result_file &amp;lt;- list.files(path=dir,full.names = T,pattern = &amp;quot;Results_ViiA7_export.txt&amp;quot;)&#xA;meltcurve_file &amp;lt;- list.files(path=dir,full.names = T,pattern = &amp;quot;MeltCurve Data_ViiA7_export.txt&amp;quot;)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;我们使用 &lt;code&gt;readr&lt;/code&gt; 来读取数据. 这个包避免了 R 语言对列名不合时宜的转换.&lt;/p&gt;&#xA;&lt;p&gt;每个文件的前面 43 列都是基本描述信息, 选择略过. 读取接下来的数据表格.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Massive RT-PCR Primer Designer is online</title>
+				<link>www.bio-spring.top/post/2016/01/16/2016-01-16-massive-rt-pcr-primer-designer-is-online/</link>
+				<pubDate>Sat, 16 Jan 2016 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2016/01/16/2016-01-16-massive-rt-pcr-primer-designer-is-online/</guid>
+				<description>&lt;p&gt;The Massive RT-PCR Primer Designer is based on Primer3 and BioPerl&#xA;toolbox, and was derived from the standalone codes which have been&#xA;discussed by two previous blog posts (&lt;a href=&#34;http://bio-spring.top/rt-primer-bioperl/&#34;&gt;Post&#xA;1&lt;/a&gt; and &lt;a href=&#34;http://bio-spring.top/primer_error-missing-sequence-tag/&#34;&gt;Post&#xA;2&lt;/a&gt;).&lt;/p&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2016/01/rt-primer-designer-1.png&#34; class=&#34;alignnone size-full wp-image-776&#34; width=&#34;493&#34; height=&#34;183&#34; alt=&#34;rt-primer-designer&#34; /&gt;&#xA;&lt;p&gt;You may access the service at &lt;a href=&#34;http://tools.bio-spring.top/rtprimers.cgi&#34;&gt;The Massive RT-PCR Primer&#xA;Designer&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;What this tool needs is your fasta file, which contains one or more&#xA;nucleotide sequences that will be use as PCR template. Upload this file&#xA;and the tool will generate the most ideal primer pairs suitable for&#xA;quantitive Real-Time PCR (qRT-PCR). The primers will be supplied as a&#xA;downloadable Excel file.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>使用BioPerl和primer3批量设计RT-PCR引物</title>
+				<link>www.bio-spring.top/post/2010/11/12/2010-11-12-rt-primer-bioperl/</link>
+				<pubDate>Fri, 12 Nov 2010 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2010/11/12/2010-11-12-rt-primer-bioperl/</guid>
+				<description>&lt;p&gt;Update：&lt;/p&gt;&#xA;&lt;p&gt;我已经设置了一个&lt;a href=&#34;http://tools.bio-spring.top/rtprimers.cgi&#34;&gt;Massive RT-PCR Primer&#xA;Designer服务&lt;/a&gt;，有需要的朋友可以直接去上传自己基因序列的Fasta文件，然后服务器会将引物返回。&lt;/p&gt;&#xA;&lt;p&gt;关于&lt;a href=&#34;http://bio-spring.top/primer_error-missing-sequence-tag/&#34;&gt;Missing SEQUENCE&#xA;tag错误的处理&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;以下为原文。&lt;br&gt;&#xA;———————————————————————————————–&lt;br&gt;&#xA;本文介绍批量设计RT-PCR引物的方法，基于Ubuntu 10.10系统和BioPerl&#xA;1.6.1。但是应当适用于大部分Linux系统。&lt;/p&gt;&#xA;&lt;p&gt;本文假定你已经安装好BioPerl。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;安装primer3和Bio::PrimerDesigner&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;[bash]&lt;br&gt;&#xA;&amp;gt;sudo apt-get install primer3 libbio-primerdesigner-perl&lt;br&gt;&#xA;[/bash]&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;修正程序Bug&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Primer3安装之后的可执行文件存在于/usr/bin/primer3_core，而Bio::PrimerDesigner软件包找不到该文件，所以需要建立一个符号链接。&lt;br&gt;&#xA;[bash]&lt;br&gt;&#xA;&amp;gt;sudo ln -s /usr/bin/primer3_core /usr/local/bin/primer3&lt;br&gt;&#xA;[/bash]&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;准备序列文件&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;将要设计的文件以Fasta格式保存（也可以用其它BioPerl识别的任意格式保存）在当前目录中，此处以seqs.fa命名。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;代码&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;然后在当前目录中新建文件designPrimer.pl。&lt;br&gt;&#xA;录入代码如下：&lt;br&gt;&#xA;[perl]&lt;br&gt;&#xA;#! perl -w&lt;br&gt;&#xA;use Bio::SeqIO;&lt;br&gt;&#xA;use Bio::PrimerDesigner;&lt;/p&gt;&#xA;&lt;p&gt;my $seqs = Bio::SeqIO-&amp;gt;new(-file =&amp;gt; ‘seqs.fa’);&lt;br&gt;&#xA;open OUT, ‘&amp;gt;&amp;gt; raw_output.txt’;&lt;br&gt;&#xA;my $pd = Bio::PrimerDesigner-&amp;gt;new;&lt;br&gt;&#xA;while( my $seq = $seqs-&amp;gt;next_seq() ) {&lt;br&gt;&#xA;my $seqid = $seq-&amp;gt;id;&lt;br&gt;&#xA;my $dna = $seq-&amp;gt;seq;&lt;br&gt;&#xA;my %params = (&lt;br&gt;&#xA;PRIMER_NUM_RETURN =&amp;gt; 1,&lt;br&gt;&#xA;PRIMER_SEQUENCE_ID =&amp;gt; $seqid,&lt;br&gt;&#xA;SEQUENCE =&amp;gt; $dna,&lt;br&gt;&#xA;PRIMER_PRODUCT_SIZE_RANGE =&amp;gt; ‘150-250’,&#xA;#注意此处参数在perl文档中是错误的，应更正为此&lt;br&gt;&#xA;);&lt;br&gt;&#xA;my $primers = $pd-&amp;gt;design( %params ) or die $pd-&amp;gt;error;&lt;br&gt;&#xA;my ($left_primer,$right_primer);&lt;br&gt;&#xA;if ( !$primers-&amp;gt;left ) {&lt;br&gt;&#xA;warn “No primers found for $seqid\n”;&lt;br&gt;&#xA;}&lt;br&gt;&#xA;else{&lt;br&gt;&#xA;$left_primer = $primers-&amp;gt;left;&lt;br&gt;&#xA;$right_primer = $primers-&amp;gt;right;&lt;br&gt;&#xA;}&lt;br&gt;&#xA;print join(‘,’, $seqid, $left_primer, $right_primer);&lt;br&gt;&#xA;print “\n”;&lt;br&gt;&#xA;print OUT $primers-&amp;gt;raw_output;&#xA;#此处的perl文档也是错误的，应更正为此&lt;br&gt;&#xA;}&lt;br&gt;&#xA;[/perl]&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

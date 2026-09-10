@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>工具 on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/%E5%B7%A5%E5%85%B7/</link>
+		<description>Recent content in 工具 on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 21 Oct 2011 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>荐：Ubuntu（linux），Windows和Android操作系统中的磁盘使用分析软件</title>
+				<link>www.bio-spring.top/post/2011/10/21/2011-10-21-disk-usage-tools-in-different-platform/</link>
+				<pubDate>Fri, 21 Oct 2011 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2011/10/21/2011-10-21-disk-usage-tools-in-different-platform/</guid>
+				<description>&lt;p&gt;使用分析软件分析磁盘应用，在整理硬盘的时候很有用，对各个文件夹所占用的空间可以做到一目了然。你所需要的，正是下面所列出的小程序。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Ubuntu：系统自带“磁盘使用分析程序“，第一次用这个软件，就会喜欢上它。&lt;br&gt;&#xA;Windows： 推荐 RidNacs&lt;br&gt;&#xA;Android：磁盘详情 DiskUsage&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Ubuntu系统自带“磁盘使用分析程序“，图示清晰明了。&lt;/strong&gt;&lt;br&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2011/10/Screenshot-%E7%A3%81%E7%9B%98%E4%BD%BF%E7%94%A8%E5%88%86%E6%9E%90%E5%99%A8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Windows 推荐 RidNacs&lt;/strong&gt;&lt;br&gt;&#xA;挺好用的一个小软件，就是图表有些看不懂。&lt;br&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2011/10/RidNacs-C.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Android：磁盘详情 DiskUsage&lt;/strong&gt;&lt;br&gt;&#xA;选择想查看的分区。&lt;br&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2011/10/146144_ldpi_screenshot_1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;速度很快，马上出来相应的图表。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2011/10/1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

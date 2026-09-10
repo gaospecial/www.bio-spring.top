@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Apache on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/apache/</link>
+		<description>Recent content in Apache on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 04 Nov 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/apache/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>GitHub Webhook</title>
+				<link>www.bio-spring.top/post/2024/11/04/github-webhook/</link>
+				<pubDate>Mon, 04 Nov 2024 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2024/11/04/github-webhook/</guid>
+				<description>&lt;p&gt;使用 GitHub Webhook 自动更新个人网站。&lt;a href=&#34;https://bio-spring.top&#34;&gt;bio-spring.top&lt;/a&gt; 是我的个人网站，其源代码托管在 &lt;a href=&#34;https://github.com/gaospecial/bio-spring&#34;&gt;GitHub&lt;/a&gt; 上。通过使用 GitHub Actions 可以自动构建网站并部署到 GitHub Pages，实现自动更新网站在 &lt;a href=&#34;https://gaospecial.github.io/bio-spring/&#34;&gt;gaospecial.github.io/bio-spring/&lt;/a&gt; 上的展示。通过使用 netlify 可以实现自动更新网站在 netlify 服务器上的展示。现在想要自动化部署到我的阿里云服务器上，该如何实现呢？&lt;/p&gt;&#xA;&lt;p&gt;这里要用到几个部分的技术：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;GitHub Webhook&lt;/li&gt;&#xA;&lt;li&gt;配置 Hook server&lt;/li&gt;&#xA;&lt;li&gt;设置 Hook server 要执行的任务&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;配置-github-webhook&#34;&gt;配置 GitHub Webhook&lt;/h2&gt;&#xA;&lt;p&gt;GitHub Webhook 是一种自动化工具，它允许在 GitHub 仓库发生特定事件时向外部服务器发送通知。当配置的事件（如 push、pull request 等）发生时，GitHub 会向指定的 URL 发送 HTTP POST 请求，包含相关事件的详细信息。&lt;/p&gt;&#xA;&lt;h3 id=&#34;访问-webhook-设置&#34;&gt;访问 Webhook 设置&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;进入 GitHub 仓库&lt;/li&gt;&#xA;&lt;li&gt;点击 &amp;ldquo;Settings&amp;rdquo; 选项卡&lt;/li&gt;&#xA;&lt;li&gt;在左侧菜单中选择 &amp;ldquo;Webhooks&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;点击 &amp;ldquo;Add webhook&amp;rdquo; 按钮&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;配置-webhook&#34;&gt;配置 Webhook&lt;/h3&gt;&#xA;&lt;p&gt;在添加 Webhook 时需要设置以下内容：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Payload URL&lt;/strong&gt;: 接收 webhook 请求的服务器地址&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;例如：&lt;code&gt;http://webhook.bio-spring.top/&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;确保该 URL 可以从公网访问&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Content type&lt;/strong&gt;: 选择数据传输格式&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Ubuntu 快速安装 LAMP</title>
+				<link>www.bio-spring.top/post/2015/08/21/2015-08-21-ubuntu-install-lamp/</link>
+				<pubDate>Fri, 21 Aug 2015 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2015/08/21/2015-08-21-ubuntu-install-lamp/</guid>
+				<description>&lt;p&gt;[cc lang=”bash”]&lt;br&gt;&#xA;sudo apt-get install tasksel&lt;br&gt;&#xA;# 任务标记分组&lt;br&gt;&#xA;sudo tasksel install lamp-server&lt;br&gt;&#xA;#安装途中MySQL要求设定账户有密码，这是与操作系统没关系的账户与密码。&lt;br&gt;&#xA;[/cc]&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>在Ubuntu 12.04系统中安装LAMP（网络服务器套件）并设置rewrite</title>
+				<link>www.bio-spring.top/post/2012/08/23/2012-08-23-lamp-in-ubuntu-with-rewrite/</link>
+				<pubDate>Thu, 23 Aug 2012 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2012/08/23/2012-08-23-lamp-in-ubuntu-with-rewrite/</guid>
+				<description>&lt;p&gt;打开终端，输入以下命令，一键完成安装：&lt;/p&gt;&#xA;&lt;p&gt;[bash]sudo apt-get install apache2 php5&lt;br&gt;&#xA;libapache2-mod-php5 mysql-server&lt;br&gt;&#xA;libapache2-mod-auth-mysql php5-mysql&lt;br&gt;&#xA;phpmyadmin[/bash]&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;请安装提示根据需要设置密码。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;一键打开 Rewrite：&lt;/p&gt;&#xA;&lt;p&gt;[bash]sudo a2enmod rewrite&lt;br&gt;&#xA;sudo service apache2 restart[/bash]&lt;/p&gt;&#xA;&lt;p&gt;最后一步：&lt;/p&gt;&#xA;&lt;p&gt;[bash]sudo gedit /etc/apache2/site-available/default[/bash]&lt;/p&gt;&#xA;&lt;p&gt;将其中的“Allow override NONE”改为“ALLOW OVERRIDE ALL”。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

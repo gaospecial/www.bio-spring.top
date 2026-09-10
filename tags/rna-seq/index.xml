@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>RNA-Seq on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/rna-seq/</link>
+		<description>Recent content in RNA-Seq on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 17 Jul 2019 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/rna-seq/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>原核转录组分析的原理和流程</title>
+				<link>www.bio-spring.top/post/2019/07/17/rna-seq/</link>
+				<pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2019/07/17/rna-seq/</guid>
+				<description>&lt;p&gt;&lt;em&gt;本文是我在华中农业大学JC Bioinformatics 2018暑期生物信息学培训班上的讲义&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;原核转录组&#34;&gt;原核转录组&lt;/h2&gt;&#xA;&lt;p&gt;原核转录组课程讲授利用RNA-seq方法研究细菌基因组中基因表达差异的原理和方法。课程中不仅介绍了RNA-seq生物信息学分析的内容，还对RNA-seq的原理、文库构建等湿实验进行解读。&lt;/p&gt;&#xA;&lt;p&gt;为了降低学习门槛，课程中的实例取自公开发表的细菌基因组，但是这不意味着相关原理和方法不能应用于其它微生物基因组。&lt;/p&gt;&#xA;&lt;p&gt;另外，本课程涉及到的文库构建原理、方法、生物信息学工具软件在其它物种相关研究（各种基于高通量测序的研究方法）中也具有普适性。需要学生自己体会和进一步学习。&lt;/p&gt;&#xA;&lt;h3 id=&#34;在开始本课程之前&#34;&gt;在开始本课程之前&lt;/h3&gt;&#xA;&lt;p&gt;你需要：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;在你的电脑上已经安装了Linux双系统或虚拟机（推荐）&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Linux发行版推荐Ubuntu&lt;/li&gt;&#xA;&lt;li&gt;虚拟机软件推荐VirtualBox&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;对Linux系统下的工作环境有一定认识&#xA;&lt;ul&gt;&#xA;&lt;li&gt;使用Bash或类似的命令行工具&lt;/li&gt;&#xA;&lt;li&gt;了解命令参数的使用&lt;/li&gt;&#xA;&lt;li&gt;会使用程序内嵌的帮助系统（help或man）&lt;/li&gt;&#xA;&lt;li&gt;能够使用系统的包管理系统安装软件（如Ubuntu下的apt-get）&lt;/li&gt;&#xA;&lt;li&gt;能够安装预编译好的生物信息学工具（包括设置PATH环境变量等）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;在你的电脑上已经安装了最新版本的R&#xA;&lt;ul&gt;&#xA;&lt;li&gt;能够安装CRAN里面的包&lt;/li&gt;&#xA;&lt;li&gt;能够安装Bioconductor里面的包&lt;/li&gt;&#xA;&lt;li&gt;会使用R的命令行&lt;/li&gt;&#xA;&lt;li&gt;会操作R的变量和数据&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;对ggplot作图有初步的认识&#xA;&lt;ul&gt;&#xA;&lt;li&gt;图形语法&lt;/li&gt;&#xA;&lt;li&gt;能够使用ggplot2绘制简单的图形&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;在你的电脑上已经安装了最新版本的RStudio&#xA;&lt;ul&gt;&#xA;&lt;li&gt;已经初步认识了RStudio的界面&lt;/li&gt;&#xA;&lt;li&gt;能够在RStudio中使用命令行&lt;/li&gt;&#xA;&lt;li&gt;能够在RStudio中查看变量和输出&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;课程主要内容&#34;&gt;课程主要内容&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;转录组的原理：通过测序mRNA等的丰度得到基因表达情况&lt;/li&gt;&#xA;&lt;li&gt;RNA-seq的实验和分析流程&#xA;&lt;ul&gt;&#xA;&lt;li&gt;文库的构建：ssRNA-seq的介绍&lt;/li&gt;&#xA;&lt;li&gt;短序列与基因组的比对&lt;/li&gt;&#xA;&lt;li&gt;基因组注释信息在分析中的应用&lt;/li&gt;&#xA;&lt;li&gt;差异表达基因的鉴定（差异基因数目上、表达量上的差异）&lt;/li&gt;&#xA;&lt;li&gt;差异表达基因的富集分析&lt;/li&gt;&#xA;&lt;li&gt;如何针对数据下一个结论&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;商业公司RNA-seq结果解析&#xA;&lt;ul&gt;&#xA;&lt;li&gt;文件夹的结构&lt;/li&gt;&#xA;&lt;li&gt;结题报告（有用、无用、错误和正确的信息）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;从头开始RNA-seq分析的流程&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Alignment -&amp;gt; Read Count&lt;/li&gt;&#xA;&lt;li&gt;靠谱的基因表达差异工具：DESeq2&lt;/li&gt;&#xA;&lt;li&gt;靠谱的基因富集分析工具：ClusterProfiler&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;案例研究：重现论文中的数据图表&#xA;&lt;ul&gt;&#xA;&lt;li&gt;研究目的：BS、PP对VP基因表达的影响&lt;/li&gt;&#xA;&lt;li&gt;实验设计：共培养和单独培养的RNA-seq&lt;/li&gt;&#xA;&lt;li&gt;RNA-seq数据分析&lt;/li&gt;&#xA;&lt;li&gt;结论&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;转录组的原理通过测序mrna的丰度得到基因表达情况&#34;&gt;转录组的原理：通过测序mRNA的丰度得到基因表达情况&lt;/h3&gt;&#xA;&lt;p&gt;前一段时间，有一个非常火的电视剧：三国机密之潜龙在渊。讲述了汉室与曹操之间纠葛的关系。&#xA;里面有曹丕与曹植争宠。让我想到了他们还有个弟弟：曹冲。历史总是很有意思的。&#xA;曹冲十三岁就死了，让人遗憾。但是，曹冲称象的故事广为流传。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=7a06fbc238fa828bc52e95b19c762a51/060828381f30e9247ea1e3f647086e061c95f7f4.jpg&#34; alt=&#34;曹冲称象图&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;古时候没有那么大量程的秤，采用了化整为零的方法。所以有&lt;strong&gt;一头大象 = 一堆石头&lt;/strong&gt;的换算。&lt;/p&gt;&#xA;&lt;p&gt;那如果来了一群大象，就可以分别用不同的一堆石头来定量，得出大象之间的重量&lt;strong&gt;差异&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;大象A = 石头堆A&lt;/li&gt;&#xA;&lt;li&gt;大象B = 石头堆B&lt;/li&gt;&#xA;&lt;li&gt;大象C = 石头堆C&lt;/li&gt;&#xA;&lt;li&gt;……&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;这其实跟RNA-seq检测基因表达差异的情况非常类似。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>RSEM: rsem-prepare-reference with NCBI GenBank/GFF3 File</title>
+				<link>www.bio-spring.top/post/2017/06/01/2017-06-01-rsem-rsem-prepare-reference-with-ncbi-genbankgff3-file/</link>
+				<pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2017/06/01/2017-06-01-rsem-rsem-prepare-reference-with-ncbi-genbankgff3-file/</guid>
+				<description>&lt;p&gt;解决方案如下：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Download Genbank from NCBI;&lt;/li&gt;&#xA;&lt;li&gt;Convert Genbank to GFF3 with&#xA;&lt;a href=&#34;http://bio-spring.top/reinstall-bioperl/&#34;&gt;BioPerl&lt;/a&gt;;&lt;/li&gt;&#xA;&lt;li&gt;Modify the GFF3 file;&lt;/li&gt;&#xA;&lt;li&gt;Download Fasta from NCBI or use Genbank conversion;&lt;/li&gt;&#xA;&lt;li&gt;Use the modified GFF3 file in rsem-prepare-reference;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;主要代码如下：&lt;br&gt;&#xA;&lt;code&gt; bp_genbank2gff3  --GFF_VERSION 3 file.gb awk &#39;$3!~/pseudo/&#39; file.gb.gff &amp;gt; file.rsem.gff # or more restrictly with only protein coding genes awk &#39;$3~/^(gene|mRNA|exon|polypeptide)$/&#39; file.gb.gff &amp;gt; file.cds.gff # remove the version number in fasta accession if no transcript is extract rsem-prepare-reference file.fasta --gff3 file.rsem.gff reference_name&lt;/code&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

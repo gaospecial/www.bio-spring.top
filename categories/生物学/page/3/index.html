@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> 生物学 | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="生物学">
+	<meta name="twitter:description" content="Chun-Hui Gao&#39;s personal website built through Hugo and blogdown with the hugo-prose theme.">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container list">
+<main>
+
+<h1>生物学</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2015/08/16/2015-08-16-sspace-getopts-error/">Fix “getopts.pl can not be located in @INC” error in SSPACE_Standard_v3.0.pl</a></h1>
+    <div>
+      <span>2015-08-16</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      &Sopf;SPACE是一个常用的Scaffolding软件.当你有新的测序数据时,你可以使用SSPACE将原有的contigs延长,scaffolding等.
+在Ubuntu 14.04系统中运行该软件v3.0会出现错误.谷歌也没有发现好的解决方法,最终通过研究源代码,发现这是一个简单的问题,修订源代码之后,终于能够成功运行.
+两处修订如下:
+[cc lang=”perl”]
+#~ require &hellip;
+      <a href="www.bio-spring.top/post/2015/08/16/2015-08-16-sspace-getopts-error/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2013/12/25/2013-12-25-fix-eps-boundingbox-error/">修复Bio::Tree::Draw::Cladogram 输出EPS BoundingBox错误的问题</a></h1>
+    <div>
+      <span>2013-12-25</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      使用Bio::Tree::Draw::Cladogram 输出的 EPS 文档在很多 EPS 查看软件（如Windows下面的ACDsee，gsView等）中不能打开，经查是由于 BoundingBox 出现浮点数所致，具体设计的代码为 Cladogram.pm 的 new 方法和 print 方法，简便起见，可以在原先的 443 行代码前面添加两行代码，以解决该问题。
+如下所示 ：
+[perl] &hellip;
+      <a href="www.bio-spring.top/post/2013/12/25/2013-12-25-fix-eps-boundingbox-error/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2012/08/21/2012-08-21-fastq-format-sra-format/">fastq format – sra format</a></h1>
+    <div>
+      <span>2012-08-21</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      &fopf;astq格式与fasta格式相同的一点在于它们都是文本格式，不同之处在于前者提供了测序质量等更多的信息，而后者仅仅能提供序列（前者也提供序列）。
+[&hellip;] FASTQ format is a text-based format for storing both a biological sequence (usually nucleotide sequence) and its &hellip;
+      <a href="www.bio-spring.top/post/2012/08/21/2012-08-21-fastq-format-sra-format/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2012/08/20/2012-08-20-ubuntu-bowtie/">在Ubuntu环境中设置Bowtie</a></h1>
+    <div>
+      <span>2012-08-20</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      什么是Bowtie？What is Bowtie？
+[&hellip;] Bowtie is an ultrafast, memory-efficient short read aligner geared toward quickly aligning large sets of short DNA sequences (reads) to large genomes. It aligns &hellip;
+      <a href="www.bio-spring.top/post/2012/08/20/2012-08-20-ubuntu-bowtie/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2012/08/16/2012-08-16-sam-format/">生物信息学中的 SAM 格式介绍</a></h1>
+    <div>
+      <span>2012-08-16</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      &Fopf;ollowing is a brief description of the SAM format as output by bowtie when the -S/–sam option is specified. For more details, see the SAM format specification.
+When -S/–sam is specified, bowtie &hellip;
+      <a href="www.bio-spring.top/post/2012/08/16/2012-08-16-sam-format/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2011/09/21/2011-09-21-primer_error-missing-sequence-tag/">处理设计引物时候的PRIMER_ERROR=Missing SEQUENCE tag错误</a></h1>
+    <div>
+      <span>2011-09-21</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      ————————————————————————————————————-
+我先前曾经写过一个设计RT-PCR引物的脚本，当初运行良好，所以把它给分享了出来（在这里）。最近又用发现会有错误，“Missing SEQUENCE tag”，经过分析，最终解决了这个问题。
+方法如下：
+[cc lang=’bash’]sudo gedit &hellip;
+      <a href="www.bio-spring.top/post/2011/09/21/2011-09-21-primer_error-missing-sequence-tag/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2011/07/20/2011-07-20-bioedit-tree/">使用BioEdit生成和绘制蛋白质进化树</a></h1>
+    <div>
+      <span>2011-07-20</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      &Bopf;ioEdit是一个功能很强大的生物学软件，整合了很多常用的生物信息工具。如：多序列比对，质粒图谱的绘制，查看DNA序列的酶切位点等等。
+使用BioEdit可以方便的生成和绘制进化树。（另请参考：进化树大杀器MEGA的使用）
+首先，打开序列。我们这里是一个含有6个蛋白质的Fasta格式的文件。如下所示：
+然后从菜单中选择“ClustalW多序列比对”，会弹出下一个对话框，设置一些程序运行的参数。 &hellip;
+      <a href="www.bio-spring.top/post/2011/07/20/2011-07-20-bioedit-tree/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2011/07/17/2011-07-17-uv-lamp/">紫外线灯管（紫外线杀菌灯）的构成和原理</a></h1>
+    <div>
+      <span>2011-07-17</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      紫外线灯管的构成和原理
+紫外线杀菌灯（UV灯）实际上是属于一种低压汞灯，和普通日光灯一样，利用低压汞蒸汽（&lt;10-2Pa）被激发后发射紫外线。
+不同的是日光灯的灯管采用的是普通玻璃，254nm紫外线不能透出来，只能被灯管内壁的荧光粉吸收后激发出可见光。如果改变荧光粉的成分和比例，它就可以发出我们通常所见的不同颜色的光。
+**1、发光原理。**紫外线光在水银放电管中产生。水银放电管是包含两个电 &hellip;
+      <a href="www.bio-spring.top/post/2011/07/17/2011-07-17-uv-lamp/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2011/04/18/2011-04-18-biological-databases-ncbi-swissprot/">Biological DataBases: NCBI与SwissProt</a></h1>
+    <div>
+      <span>2011-04-18</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      人们使用数据库管理数据，对于生物数据来说，一个优秀的数据库有以下优点：
+然而，生物数据的迅速增大，带来很多问题：
+相对来说，NCBI收录生物数据时力求完整不遗漏，所以数据库内容是冗余的，有很多重复性条目，无意义条目。
+与之相对的，SwissProt数据库则力求注释完整，在收录数据会进行合并和归档，以保证量不重复。
+
+      <a href="www.bio-spring.top/post/2011/04/18/2011-04-18-biological-databases-ncbi-swissprot/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2011/02/17/2011-02-17-anti-tb-drugs/">抗结核新药研发进程</a></h1>
+    <div>
+      <span>2011-02-17</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      在2011年1月的Nature上，总结了抗结核新药的研发进程。已经有个别药物进入III期临床试验，相信快要面世啦。
+Koul, A., Arnoult, E., Lounis, N., Guillemont, J. & Andries, K. The challenge of new drug discovery for tuberculosis. Nature 469, 483-490 &hellip;
+      <a href="www.bio-spring.top/post/2011/02/17/2011-02-17-anti-tb-drugs/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+
+
+
+		<ul class="pagination pagination-default">
+			<li class="page-item">
+				<a href="www.bio-spring.top/categories/%E7%94%9F%E7%89%A9%E5%AD%A6/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+			</li>
+		<li class="page-item">
+			<a href="www.bio-spring.top/categories/%E7%94%9F%E7%89%A9%E5%AD%A6/page/2/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+		</li>
+			<li class="page-item">
+				<a href="www.bio-spring.top/categories/%E7%94%9F%E7%89%A9%E5%AD%A6/" aria-label="Page 1" class="page-link" role="button">1</a>
+			</li>
+			<li class="page-item">
+				<a href="www.bio-spring.top/categories/%E7%94%9F%E7%89%A9%E5%AD%A6/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+			</li>
+			<li class="page-item active">
+				<a aria-current="page" aria-label="Page 3" class="page-link" role="button">3</a>
+			</li>
+			<li class="page-item">
+				<a href="www.bio-spring.top/categories/%E7%94%9F%E7%89%A9%E5%AD%A6/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
+			</li>
+		<li class="page-item">
+			<a href="www.bio-spring.top/categories/%E7%94%9F%E7%89%A9%E5%AD%A6/page/4/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+		</li>
+			<li class="page-item">
+				<a href="www.bio-spring.top/categories/%E7%94%9F%E7%89%A9%E5%AD%A6/page/4/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+			</li>
+		</ul>
+
+
+
+
+
+</main>
+</div>
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  <div class="footer hidden">
+  
+
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

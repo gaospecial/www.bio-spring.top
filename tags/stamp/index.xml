@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>STAMP on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/stamp/</link>
+		<description>Recent content in STAMP on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 29 May 2016 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/stamp/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>STAMP: unknown error – Unicode encode error</title>
+				<link>www.bio-spring.top/post/2016/05/29/2016-05-29-how-to-mending-stamp-unicode-encode-error/</link>
+				<pubDate>Sun, 29 May 2016 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2016/05/29/2016-05-29-how-to-mending-stamp-unicode-encode-error/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;http://kiwi.cs.dal.ca/Software/STAMP&#34;&gt;STAMP&lt;/a&gt;是一个支持Windows、Linux系统的微生物群落分析软件。与&lt;a href=&#34;http://bio-spring.top/mothur-and-qiime/&#34;&gt;Mothur或QIIME&lt;/a&gt;相比，感觉它更小巧、轻便。它没有从测序结果（MiSeq/454）出发直到分析结果的一整套流程，但是它具有从OTU&#xA;Table出发进行统计分析、作图的能力。借助于&lt;a href=&#34;http://www.scipy.org/&#34;&gt;scipy&lt;/a&gt;，&lt;a href=&#34;http://www.numpy.org/&#34;&gt;numpy&lt;/a&gt;，&lt;a href=&#34;http://matplotlib.org/&#34;&gt;matplotlib&lt;/a&gt;等Python库的支持，它的分析、绘图能力达到了一个非常令人满意的程度。相应结果基本可以直接在文章中使用。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;STAMP is a software package for analyzing taxonomic or metabolic&#xA;profiles that promotes ‘best practices’ in choosing appropriate&#xA;&lt;strong&gt;statistical&lt;/strong&gt; techniques and &lt;strong&gt;reporting results&lt;/strong&gt;. Statistical&#xA;hypothesis tests for pairs of samples or groups of samples is support&#xA;along with a wide range of exploratory plots. STAMP encourages the use&#xA;of effect sizes and confidence intervals in assessing biological&#xA;importance. &lt;strong&gt;A user friendly, graphical interface&lt;/strong&gt; permits easy&#xA;exploration of statistical results and generation of &lt;strong&gt;publication&#xA;quality plots&lt;/strong&gt; for inferring the biological relevance of features in&#xA;a metagenomic profile. STAMP is open source, extensible via a plugin&#xA;framework, and available for all major platforms.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>格式 on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/%E6%A0%BC%E5%BC%8F/</link>
+		<description>Recent content in 格式 on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 21 Aug 2012 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/%E6%A0%BC%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>fastq format – sra format</title>
+				<link>www.bio-spring.top/post/2012/08/21/2012-08-21-fastq-format-sra-format/</link>
+				<pubDate>Tue, 21 Aug 2012 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2012/08/21/2012-08-21-fastq-format-sra-format/</guid>
+				<description>&lt;p&gt;fastq格式与fasta格式相同的一点在于它们都是文本格式，不同之处在于前者提供了测序质量等更多的信息，而后者仅仅能提供序列（前者也提供序列）。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;FASTQ format&lt;/strong&gt; is a text-based&#xA;&lt;a href=&#34;http://en.wikipedia.org/wiki/File_format&#34; title=&#34;File format&#34;&gt;format&lt;/a&gt; for&#xA;storing both a biological sequence (usually&#xA;&lt;a href=&#34;http://en.wikipedia.org/wiki/Nucleotide_sequence&#34; class=&#34;mw-redirect&#34; title=&#34;Nucleotide sequence&#34;&gt;nucleotide sequence&lt;/a&gt;)&#xA;and its corresponding quality scores. Both the sequence letter and&#xA;quality score are encoded with a single&#xA;&lt;a href=&#34;http://en.wikipedia.org/wiki/ASCII&#34; title=&#34;ASCII&#34;&gt;ASCII&lt;/a&gt; character for&#xA;brevity. It was originally developed at the &lt;a href=&#34;http://en.wikipedia.org/wiki/Wellcome_Trust_Sanger_Institute&#34; title=&#34;Wellcome Trust Sanger Institute&#34;&gt;Wellcome Trust Sanger&#xA;Institute&lt;/a&gt;&#xA;to bundle a&#xA;&lt;a href=&#34;http://en.wikipedia.org/wiki/FASTA_format&#34; title=&#34;FASTA format&#34;&gt;FASTA&lt;/a&gt;&#xA;sequence and its quality data, but has recently become the &lt;em&gt;de facto&lt;/em&gt;&#xA;standard for storing the output of high throughput sequencing&#xA;instruments such as the &lt;a href=&#34;http://en.wikipedia.org/wiki/Illumina_%28company%29&#34; title=&#34;Illumina (company)&#34;&gt;Illumina Genome&#xA;Analyzer&lt;/a&gt;.&lt;sup&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/FASTQ_format#cite_note-Cock_et_al_2009-0&#34;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
