@@ -37,8 +37,8 @@ menu:
     - name: Blog
       url: "/post/"
       weight: 3
-    - name: Work
-      url: "/work/"
+    - name: Teaching
+      url: "/teaching/"
       weight: 6
     - name: Search
       weight: 50

@@ -33,7 +33,7 @@ The site deploys automatically via GitHub Actions ([`.github/workflows/blogdown.
 - `content/card/` - Home page cards (publications, projects, interests)
 - `content/publication/` - Publication lists (selected and full publications)
 - `content/about/` - About page content
-- `content/work/` - Work-related content
+- `content/teaching/` - Teaching and mentoring content
 
 ## Key Configuration
 
