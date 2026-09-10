@@ -17,7 +17,7 @@ jobs:
     steps:
       # 检出代码仓库
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
         with:
           submodules: true  # 只检出直接子模块（主题）
           fetch-depth: 1    # 限制 git 历史记录深度为 1
@@ -28,7 +28,7 @@ jobs:
 
       # 缓存 R 包
       - name: Cache R packages
-        uses: actions/cache@v3
+        uses: actions/cache@v6
         with:
           path: ${{ env.R_LIBS_USER }}
           key: ${{ runner.os }}-r-${{ hashFiles('**/DESCRIPTION') }}
@@ -48,13 +48,13 @@ jobs:
 
       # 安装 Hugo
       - name: Install Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
 
       # 缓存 Hugo 模块
       - name: Cache Hugo modules
-        uses: actions/cache@v3
+        uses: actions/cache@v6
         with:
           path: /tmp/hugo_cache
           key: ${{ runner.os }}-hugo-${{ hashFiles('**/go.sum') }}
@@ -73,7 +73,7 @@ jobs:
 
       # 部署到 gh-pages 分支
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
