@@ -62,13 +62,14 @@ jobs:
             ${{ runner.os }}-hugo-
 
       # 构建网站
-      # 注意：baseURL 需要与 gh-pages 分支的 URL 一致
+      # 注意：baseURL 需与 gh-pages 的实际访问路径一致，
+      # 由仓库名派生（如 /www.bio-spring.top/），避免仓库改名后链接错位
       - name: Build site
         run: |
-          Rscript -e 'blogdown::build_site(baseURL = "/bio-spring/")'
+          Rscript -e 'blogdown::build_site(baseURL = "/${{ github.event.repository.name }}/")'
         env:
           HUGO_CACHE_DIR: /tmp/hugo_cache
-          HUGO_BASEURL: "/bio-spring/"
+          HUGO_BASEURL: "/${{ github.event.repository.name }}/"
 
       # 部署到 gh-pages 分支
       - name: Deploy to GitHub Pages
