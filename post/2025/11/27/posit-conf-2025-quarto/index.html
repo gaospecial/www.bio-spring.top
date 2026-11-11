@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> Posit::conf(2025) 精选辑 - Quarto/文档生成 | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Posit::conf(2025) 精选辑 - Quarto/文档生成">
+	<meta name="twitter:description" content="Using Quarto to Improve Formatting/Automate the Generation of Hundreds of Reports (Keaton Wilson) 来源：https://www.youtube.com/watch?v=vHrI17AeYGs
+这份视频摘要介绍了市场研究公司KS&amp;R的解决方案开发者Keaton，分享了他们团队如何利用Quarto和R来自动化生成PDF报告的经验。
+演讲者首先用一张难以辨认且不易扩展的祖传食谱作比喻，生动地说明了他们旧的数据报告流程所面临的挑战：文档过时、缺乏版本控制、技术陈旧，且核心知识掌握在已离职的员工手中。
+面对为数百名问卷受访者每周生成个性化PDF报告的任务，团队使用R、Quarto和Tidyverse工具集从零开始重建了自动化流程。该流程通过一个主脚本，结合参数化的Quarto模板和辅助函数，批量生成报告。
+在项目实践中，他们解决了两个关键问题：
+平衡自动化与灵活性：他们选择了一个折中方案，允许团队成员通过简单修改脚本（如日期范围）来满足临时的、特定的报告需求。 改进报告设计：他们对PDF格式做了微小但有效的改进（如增加小标题、优化间距），这不仅提升了客户的信任度和体验，也加快了内部的质检速度。格式修改目前依赖LaTeX，但因维护困难，计划未来转向Typst。 最终，这个新流程使项目团队的效率提升了50%，获得了客户的好评，并成功将知识从个人头脑中转移到一个文档齐全、可复现的共享基础设施上，促进了团队协作和技能提升。
+surveydown (John Paul Helveston, GWU) | posit::conf(2025) 来源：https://www.youtube.com/watch?v=VwoeFKNvN5k
+该视频介绍了由乔治华盛顿大学教授 J.P. Helveston 及其团队开发的 R 语言包 surveydown。
+surveydown 旨在解决传统网页问卷工具（如 Google Forms）存在的难以复现、版本控制混乱、功能有限且不开源等问题。它的核心理念是将 Quarto 的强大功能应用于问卷制作，让用户可以通过编写简单的 Quarto（.qmd）纯文本文档来创建功能丰富的网页问卷。
+其技术架构是一个整合了多种开源技术的生态系统：
+Quarto：用于定义问卷的界面、内容和结构。 Shiny：作为后端的网页应用框架，处理交互逻辑。 PostgreSQL：作为数据库后端存储问卷数据（推荐使用免费的 Supabase 服务）。 主要功能亮点包括：
+丰富的题型：支持文本、单选、多选、滑块等多种标准题型。 强大的逻辑控制：可通过代码轻松实现问题的条件显示（sd_show_if）和页面跳转（sd_skip_if）。 高度可扩展：由于基于 Shiny，可以集成各种高级功能，如交互式地图（leaflet）和实时投票图表。 AI 辅助：可以利用大语言模型（LLM）快速生成问卷的 Quarto 代码。 图形化界面：为不熟悉代码的用户提供了配套包 sdstudio，提供一个仪表盘来通过点击创建问卷，并能自动生成可复现的代码。 最后，演讲者强调 surveydown 是一个完全免费和开源的解决方案，并鼓励社区参与贡献。
+Empowering Learners with WebR, Pyodide, and Quarto (Ted Laderas, Fred Hutch) | posit::conf(2025) 来源：https://www.youtube.com/watch?v=EQ9_MP2PYL8">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container single">
+<main>
+
+<div class="article-meta">
+<h1><span class="title">Posit::conf(2025) 精选辑 - Quarto/文档生成</span></h1>
+
+<h3 class="author">
+gaoch
+</h3>
+
+<h3 class="date">2025-11-27</h3>
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF">信息技术</a> 
+  
+  
+  
+  Tags: <a href="/tags/r">R</a> <a href="/tags/posit">Posit</a> <a href="/tags/quarto">Quarto</a> 
+  
+  
+</p>
+</div>
+
+<div class="article">
+<h2 id="using-quarto-to-improve-formattingautomate-the-generation-of-hundreds-of-reports-keaton-wilson">Using Quarto to Improve Formatting/Automate the Generation of Hundreds of Reports (Keaton Wilson)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=vHrI17AeYGs">https://www.youtube.com/watch?v=vHrI17AeYGs</a></p>
+<p>这份视频摘要介绍了市场研究公司KS&amp;R的解决方案开发者Keaton，分享了他们团队如何利用Quarto和R来自动化生成PDF报告的经验。</p>
+<p>演讲者首先用一张难以辨认且不易扩展的祖传食谱作比喻，生动地说明了他们旧的数据报告流程所面临的挑战：文档过时、缺乏版本控制、技术陈旧，且核心知识掌握在已离职的员工手中。</p>
+<p>面对为数百名问卷受访者每周生成个性化PDF报告的任务，团队使用R、Quarto和Tidyverse工具集从零开始重建了自动化流程。该流程通过一个主脚本，结合参数化的Quarto模板和辅助函数，批量生成报告。</p>
+<p>在项目实践中，他们解决了两个关键问题：</p>
+<ol>
+<li><strong>平衡自动化与灵活性</strong>：他们选择了一个折中方案，允许团队成员通过简单修改脚本（如日期范围）来满足临时的、特定的报告需求。</li>
+<li><strong>改进报告设计</strong>：他们对PDF格式做了微小但有效的改进（如增加小标题、优化间距），这不仅提升了客户的信任度和体验，也加快了内部的质检速度。格式修改目前依赖LaTeX，但因维护困难，计划未来转向Typst。</li>
+</ol>
+<p>最终，这个新流程使项目团队的效率提升了50%，获得了客户的好评，并成功将知识从个人头脑中转移到一个文档齐全、可复现的共享基础设施上，促进了团队协作和技能提升。</p>
+<h2 id="surveydown-john-paul-helveston-gwu--positconf2025">surveydown (John Paul Helveston, GWU) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=VwoeFKNvN5k">https://www.youtube.com/watch?v=VwoeFKNvN5k</a></p>
+<p>该视频介绍了由乔治华盛顿大学教授 J.P. Helveston 及其团队开发的 R 语言包 <code>surveydown</code>。</p>
+<p><code>surveydown</code> 旨在解决传统网页问卷工具（如 Google Forms）存在的<strong>难以复现、版本控制混乱、功能有限且不开源</strong>等问题。它的核心理念是将 Quarto 的强大功能应用于问卷制作，让用户可以通过编写简单的 Quarto（<code>.qmd</code>）纯文本文档来创建功能丰富的网页问卷。</p>
+<p>其技术架构是一个整合了多种开源技术的生态系统：</p>
+<ul>
+<li><strong>Quarto</strong>：用于定义问卷的界面、内容和结构。</li>
+<li><strong>Shiny</strong>：作为后端的网页应用框架，处理交互逻辑。</li>
+<li><strong>PostgreSQL</strong>：作为数据库后端存储问卷数据（推荐使用免费的 Supabase 服务）。</li>
+</ul>
+<p>主要功能亮点包括：</p>
+<ol>
+<li><strong>丰富的题型</strong>：支持文本、单选、多选、滑块等多种标准题型。</li>
+<li><strong>强大的逻辑控制</strong>：可通过代码轻松实现问题的条件显示（<code>sd_show_if</code>）和页面跳转（<code>sd_skip_if</code>）。</li>
+<li><strong>高度可扩展</strong>：由于基于 Shiny，可以集成各种高级功能，如交互式地图（leaflet）和实时投票图表。</li>
+<li><strong>AI 辅助</strong>：可以利用大语言模型（LLM）快速生成问卷的 Quarto 代码。</li>
+<li><strong>图形化界面</strong>：为不熟悉代码的用户提供了配套包 <code>sdstudio</code>，提供一个仪表盘来通过点击创建问卷，并能自动生成可复现的代码。</li>
+</ol>
+<p>最后，演讲者强调 <code>surveydown</code> 是一个完全免费和开源的解决方案，并鼓励社区参与贡献。</p>
+<h2 id="empowering-learners-with-webr-pyodide-and-quarto-ted-laderas-fred-hutch--positconf2025">Empowering Learners with WebR, Pyodide, and Quarto (Ted Laderas, Fred Hutch) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=EQ9_MP2PYL8">https://www.youtube.com/watch?v=EQ9_MP2PYL8</a></p>
+<p>该视频介绍如何利用 WebR 和 Pyodide 技术改善编程教学，特别是针对容易受挫的初学者。演讲者以自身职业培训经验为例，指出 RStudio 等复杂工具会给新手带来巨大认知负荷，甚至导致他们放弃学习。</p>
+<p>WebR 和 Pyodide 能让 R 和 Python 代码直接在浏览器中运行，无需安装配置，极大地降低了入门门槛。其主要应用价值体现在三个方面：</p>
+<ol>
+<li><strong>降低认知负荷</strong>：通过在网页中嵌入简单的交互式练习并提供即时反馈，可以减少学习者对“搞坏软件”的恐惧，让他们专注于代码逻辑本身。</li>
+<li><strong>促进主动学习</strong>：可以将代码块直接嵌入幻灯片或教程中，让学习者边学边练，即时动手尝试和修改代码，巩固知识。</li>
+<li><strong>增强社交学习</strong>：方便学习者进行结对编程或实时分享、讨论代码。例如，在可视化工作坊中，学员可以修改图表代码并分享自己的设计，从而引发讨论、共同进步。</li>
+</ol>
+<p>总之，WebR 和 Pyodide 是一个强大的教学辅助工具，通过创造一个低风险的实践环境，可以有效地帮助学习者逐步建立信心，实现从引导式学习到自主学习的平稳过渡。</p>
+<h2 id="elevating-public-health-decision-making-with-r-packages-kylie-ainslie-rivm--positconf2025">Elevating Public Health Decision-Making with R Packages (Kylie Ainslie, RIVM) | posit::conf(2025)</h2>
+<p>来源：<a href="https://www.youtube.com/watch?v=YzIiWg4rySA">https://www.youtube.com/watch?v=YzIiWg4rySA</a></p>
+<p>该视频分享了一种高效管理数据分析项目的方法：<strong>将项目构建为R包的结构</strong>，以此解决传统项目文件夹混乱无序（“项目文件夹地狱”）的问题。</p>
+<p>讲者以自己在新冠疫情期间为荷兰政府所做的模型分析为例，阐述了该工作流的三大优势：</p>
+<ol>
+<li><strong>清晰的组织结构</strong>：R包强制使用标准化的文件目录（如<code>R/</code>存放函数，<code>inst/</code>存放数据和脚本），使所有项目结构统一，提高了工作效率。</li>
+<li><strong>完善的文档体系</strong>：通过<code>roxygen2</code>注释和<code>vignettes</code>长文档，代码与文档紧密结合，实现了分析过程的透明化和可追溯，使其工作成功通过了国际专家的审计，并建立了公众信任。</li>
+<li><strong>便捷的分享与协作</strong>：打包后的项目可以被轻松安装、分享和复用，极大地促进了团队协作和研究的可复现性。讲者的代码最终因此被整合到一个国际项目中。</li>
+</ol>
+<p>最后，讲者鼓励听众在下一个项目中尝试这种方法，并推荐了<code>usethis</code>包和《R Packages》一书作为入门资源，认为这能从根本上提升代码质量、透明度和影响力。</p>
+
+</div>
+</main>
+
+<section class="appendix">
+
+
+<div>
+  <div class="side side-left"><h3>作者简介</h3></div>
+  <div>
+
+
+
+
+
+<div>Chun-Hui Gao is a Research Associate at <a href="http://www.hzau.edu.cn">Huazhong Agricultural University</a>.</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div>
+  <div class="side side-left"><h3>重复使用</h3></div>
+  Text and figures are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution CC BY 4.0</a>. The source code is licensed under MIT. The full source is available at <a href="https://github.com/yihui/hugo-prose">https://github.com/yihui/hugo-prose</a>.
+</div>
+
+
+
+<div>
+  <div class="side side-left"><h3>欢迎修订</h3></div>
+  
+  
+  
+    
+    
+  
+  如果您发现本文里含有任何错误（包括错别字和标点符号），欢迎<a href="https://github.com/gaospecial/bio-spring/edit/master/content/post/2025-11-28-posit-conf-2025-quarto/index.zh.md" id="edit-link">在本站的 GitHub 项目里提交修订意见。</a>
+</div>
+
+
+
+
+<div>
+  <div class="side side-left"><h3>引用本文</h3></div>
+  <p>如果您使用了本文的内容，请按照以下方式引用：</p>
+  <pre><code>gaoch (2025). Posit::conf(2025) 精选辑 - Quarto/文档生成. BIO-SPRING. www.bio-spring.top/post/2025/11/27/posit-conf-2025-quarto/</code></pre>
+  <p>BibTeX citation</p>
+  <pre><code>@misc{
+  title = "Posit::conf(2025) 精选辑 - Quarto/文档生成",
+  author = "gaoch",
+  year = "2025",
+  journal = "BIO-SPRING",
+  note = "www.bio-spring.top/post/2025/11/27/posit-conf-2025-quarto/"
+}</code></pre>
+</div>
+
+</section>
+
+
+
+<nav class="post-nav">
+  <span class="nav-next">&larr; <a href="www.bio-spring.top/post/2025/11/26/posit-conf-2025-ai/" title=下一篇&#32;(旧)>Posit::conf(2025) 精选辑 - 人工智能</a></span>
+  &hercon;
+  <span class="nav-prev"><a href="www.bio-spring.top/post/2025/11/28/posit-conf-2025-dev/" title=上一篇&#32;(新)>Posit::conf(2025) 精选辑 - 软件开发</a> &rarr;</span>
+</nav>
+
+
+
+
+<section class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var disqus_js = '//bio-spring.disqus.com/embed.js';
+    var d = document, s = d.createElement('script');
+    s.src = disqus_js; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    var t = d.getElementById('disqus_thread');
+    var b = false, l = function(scroll) {
+      if (b) return;
+      (d.head || d.body).appendChild(s); b = true;
+      if (scroll) t.scrollIntoView();
+    }
+    s.onerror = function(e) {
+      if (sessionStorage.getItem('failure-note')) return;
+      t.innerText = 'Sorry, but you cannot make comments because Disqus failed to load for some reason. It is known to be blocked in China. If you are sure it is not blocked in your region, please refresh the page. 中国大陆地区读者需要翻墙才能发表评论。';
+      t.style.border = '1px dashed';
+      t.style.padding = '.5em';
+      t.style.background = 'lightyellow';
+      sessionStorage.setItem('failure-note', true);
+    };
+    
+    if (location.hash.match(/^#comment-[0-9]+$/)) return l(true);
+    var c = function() {
+      if (b) return;
+      var rect = t.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) l();
+    };
+    window.addEventListener('load', c);
+    d.addEventListener('scroll', c);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+</div>
+
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+<script src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils/js/number-sections.min.js,npm/@xiee/utils/js/toc.min.js,npm/@xiee/utils/js/toc-highlight.min.js,npm/@xiee/utils/js/sidenotes.min.js,npm/@xiee/utils/js/right-quote.min.js,npm/@xiee/utils/js/center-img.min.js,npm/@xiee/utils/js/fix-pandoc.min.js,npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+
+
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>RStudio on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/rstudio/</link>
+		<description>Recent content in RStudio on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 23 Aug 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/rstudio/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>在 RStudio 中使用 Julia</title>
+				<link>www.bio-spring.top/post/2023/08/23/using-julia-in-rstudio/</link>
+				<pubDate>Wed, 23 Aug 2023 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2023/08/23/using-julia-in-rstudio/</guid>
+				<description>&lt;p&gt;因为要运行 &lt;a href=&#34;https://github.com/michel-mata/cNODE.jl&#34;&gt;cNODE&lt;/a&gt; 程序，所以接触了一下 Julia 语言。&lt;/p&gt;&#xA;&lt;h2 id=&#34;julia&#34;&gt;Julia&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;一群拥有各种语言丰富编程经验的Matlab高级用户，对现有的科学计算编程工具感到不满&amp;mdash;&amp;mdash;这些软件对自己专长的领域表现得非常棒，但在其它领域却非常糟糕。他们想要的是一个开源的软件，它要像C语言一般快速而有拥有如同Ruby的动态性；要具有Lisp般真正的同像性而又有Matlab般熟悉的数学记号；要像Python般通用、像R般在统计分析上得心应手、像Perl般自然地处理字符串、像Matlab般具有强大的线性代数运算能力、像shell般胶水语言的能力，易于学习而又不让真正的黑客感到无聊；还有，它应该是交互式的，同时又是编译型的&amp;hellip;&amp;hellip;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;快！&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://julialang.org/assets/images/benchmarks.svg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;由上图可以看出，Julia 的运行速度是除 C 语言以外几乎最快的。&lt;/p&gt;&#xA;&lt;p&gt;Julia 一开始就是为&lt;a href=&#34;https://cn.julialang.org/benchmarks/&#34;&gt;高性能&lt;/a&gt;而设计的。 Julia 程序通过 LLVM 编译成高效的 &lt;a href=&#34;https://cn.julialang.org/downloads/#support_tiers&#34;&gt;多平台&lt;/a&gt; 机器码。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;动态&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Julia 是&lt;a href=&#34;https://docs.juliacn.com/latest/manual/types/&#34;&gt;动态类型的&lt;/a&gt;，使用起来像脚本语言，同时有很好的&lt;a href=&#34;https://docs.juliacn.com/latest/stdlib/REPL/&#34;&gt;交互&lt;/a&gt;体验。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;可选类型&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Julia 有丰富的&lt;a href=&#34;https://docs.juliacn.com/latest/manual/types/&#34;&gt;数据类型描述语言&lt;/a&gt;，标注类型声明可以使程序更清晰可靠。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;通用&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Julia 使用&lt;a href=&#34;https://docs.juliacn.com/latest/manual/methods/&#34;&gt;多分派&lt;/a&gt;范式，很容易表达面向对象和&lt;a href=&#34;https://docs.juliacn.com/latest/manual/metaprogramming/&#34;&gt;函数式&lt;/a&gt;编程模式。 同时提供了&lt;a href=&#34;https://docs.juliacn.com/latest/manual/networking-and-streams/&#34;&gt;异步 I/O&lt;/a&gt;、&lt;a href=&#34;https://github.com/JuliaDebug/Debugger.jl&#34;&gt;调试&lt;/a&gt;、&lt;a href=&#34;https://docs.juliacn.com/latest/stdlib/Logging/&#34;&gt;日志&lt;/a&gt;、&lt;a href=&#34;https://docs.juliacn.com/latest/manual/profile/&#34;&gt;性能分析&lt;/a&gt;、&lt;a href=&#34;https://docs.juliacn.com/latest/stdlib/Pkg/index.html&#34;&gt;包管理&lt;/a&gt;等工具。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;易用&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Julia 拥有高阶的语法，这让具有不同编程语言背景和经验的程序员都能使用它。&lt;a href=&#34;https://github.com/JuliaLang/Microbenchmarks/blob/master/perf.jl&#34;&gt;查看 Julia 的微基准&lt;/a&gt;来感受这门语言吧。&lt;/p&gt;&#xA;&lt;h2 id=&#34;示例&#34;&gt;示例&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Julia与MATLAB语言较为类似。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;function mandelbrot(a)&#xA;    z = 0&#xA;    for i=1:50&#xA;        z = z^2 + a&#xA;    end&#xA;    return z&#xA;end&#xA;&#xA;for y=1.0:-0.05:-1.0&#xA;    for x=-2.0:0.0315:0.5&#xA;        abs(mandelbrot(complex(x, y))) &amp;lt; 2 ? print(&amp;quot;*&amp;quot;) : print(&amp;quot; &amp;quot;)&#xA;    end&#xA;    println()&#xA;end&#xA;&#xA;# Taken from: https://rosettacode.org/wiki/Mandelbrot_set#Julia&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h2 id=&#34;包管理&#34;&gt;包管理&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://discourse.juliacn.com/t/topic/3154&#34;&gt;为什么 Julia 装包这么困难&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>RStudio 中使用 Git push 时要求输入用户名和密码</title>
+				<link>www.bio-spring.top/post/2019/09/20/rstudio-git-push/</link>
+				<pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2019/09/20/rstudio-git-push/</guid>
+				<description>&lt;p&gt;昨天遇到一个怪事，同一个 Git 目录，使用 Git Shell 时，可以直接 Push；而在 RStudio 中 push 时，则会请求输入账户名和密码。&lt;/p&gt;&#xA;&lt;p&gt;在 Google 中以 “Rstudio git push need username” 搜索，在第三条结果的第三个高票回答中找到了解决方法。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;&#xA;git remote show origin&#xA;&#xA;#  Push  URL: https://github.com/username/reponame.git&#xA;&#xA;git remote set-url origin git+ssh://git@github.com/username/reponame.git&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;想起来，似乎是因为设置 &lt;code&gt;usethis&lt;/code&gt; &amp;ldquo;options&amp;rdquo; 时候选择了 “usethis.protocol = &amp;ldquo;ssh&amp;rdquo; ” 所致。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;# usethis options&#xA;options(&#xA;  usethis.full_name = &amp;quot;Chun-Hui Gao&amp;quot;,&#xA;  usethis.description = list(&#xA;    `Authors@R` = &#39;person(&amp;quot;Chun-Hui&amp;quot;, &amp;quot;Gao&amp;quot;, email = &amp;quot;gaospecial@gmail.com&amp;quot;, role = c(&amp;quot;aut&amp;quot;, &amp;quot;cre&amp;quot;), comment = c(ORCID = &amp;quot;0000-0002-1445-7939&amp;quot;))&#39;,&#xA;    License = &amp;quot;GPL3 + file LICENSE&amp;quot;,&#xA;    Version = &amp;quot;0.0.1&amp;quot;&#xA;  ),&#xA;  usethis.protocol  = &amp;quot;ssh&amp;quot;&#xA;)&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+			</item>
+			<item>
+				<title>升级R到3.6版本后，RStudio使用中出现“option error has NULL value”错误</title>
+				<link>www.bio-spring.top/post/2019/08/26/r-3-6-rstudio-option-error-has-null-value/</link>
+				<pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2019/08/26/r-3-6-rstudio-option-error-has-null-value/</guid>
+				<description>&lt;p&gt;这个错误有点怪怪的。打开rmarkdown脚本运行时，会一直出现&lt;code&gt;Error: option error has NULL value&lt;/code&gt;的提示，电脑基本也会卡死。&lt;/p&gt;&#xA;&lt;p&gt;这个错误是在从R 3.5升级到3.6之后出现的。&lt;/p&gt;&#xA;&lt;p&gt;其解决方法也很简单，就是升级RStudio软件。不过，发行版的RStudio软件并没有解决这个问题，需要使用preview版本的。&lt;/p&gt;&#xA;&lt;p&gt;Preview版本的链接有点不大好找，在这里：(&lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/preview/&#34;&gt;https://www.rstudio.com/products/rstudio/download/preview/&lt;/a&gt;)。&lt;/p&gt;&#xA;&lt;p&gt;很多人都遇到了这个问题：(&lt;a href=&#34;https://community.rstudio.com/t/options-error-in-rmd-code-chunks/30195&#34;&gt;https://community.rstudio.com/t/options-error-in-rmd-code-chunks/30195&lt;/a&gt;)。也有人通过其它方法解决了这个问题。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>不要在RStudio中使用Git GUI</title>
+				<link>www.bio-spring.top/post/2018/10/24/donot-use-the-git-gui-of-rstudio/</link>
+				<pubDate>Wed, 24 Oct 2018 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2018/10/24/donot-use-the-git-gui-of-rstudio/</guid>
+				<description>&lt;p&gt;有一个数据分析的小项目，使用Git记录分析过程。&lt;/p&gt;&#xA;&lt;p&gt;在添加了一些文件、删除了一些文件之后，在RStudio的Git标签页下面点击复选框Stage，界面失去响应。反复重启，仍然如此。&lt;/p&gt;&#xA;&lt;p&gt;上网查了一下，确实很多人吐槽类似的问题。&lt;/p&gt;&#xA;&lt;p&gt;不过，在当前Git目录下打开Git GUI使用，一切正常。&lt;/p&gt;&#xA;&lt;p&gt;RStudio的Git GUI性能确实比较差。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

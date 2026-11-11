@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>SAM on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/sam/</link>
+		<description>Recent content in SAM on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 16 Aug 2012 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/sam/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>生物信息学中的 SAM 格式介绍</title>
+				<link>www.bio-spring.top/post/2012/08/16/2012-08-16-sam-format/</link>
+				<pubDate>Thu, 16 Aug 2012 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2012/08/16/2012-08-16-sam-format/</guid>
+				<description>&lt;p&gt;Following is a brief description of the&#xA;&lt;a href=&#34;http://samtools.sourceforge.net/SAM1.pdf&#34;&gt;SAM&lt;/a&gt; format as output by&#xA;&lt;strong&gt;bowtie&lt;/strong&gt; when the &lt;strong&gt;-S&lt;/strong&gt;/&lt;strong&gt;–sam&lt;/strong&gt; option is specified. For more&#xA;details, see the &lt;a href=&#34;http://samtools.sourceforge.net/SAM1.pdf&#34;&gt;SAM format&#xA;specification&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;When &lt;strong&gt;-S&lt;/strong&gt;/&lt;strong&gt;–sam&lt;/strong&gt; is specified, &lt;strong&gt;bowtie&lt;/strong&gt; prints a SAM header with&#xA;&lt;strong&gt;@HD&lt;/strong&gt;, &lt;strong&gt;@SQ&lt;/strong&gt; and &lt;strong&gt;@PG&lt;/strong&gt; lines. When one or more &lt;strong&gt;–sam-RG&lt;/strong&gt;&#xA;arguments are specified, &lt;strong&gt;bowtie&lt;/strong&gt; will also print an &lt;strong&gt;@RG&lt;/strong&gt; line that&#xA;includes all user-specified &lt;strong&gt;–sam-RG&lt;/strong&gt; tokens separated by tabs.&lt;/p&gt;&#xA;&lt;p&gt;Each subsequnt line corresponds to a read or an alignment. Each line is&#xA;a collection of at least 12 fields separated by tabs; from left to&#xA;right, the fields are:&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

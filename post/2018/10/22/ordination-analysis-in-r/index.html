@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> 常见排序分析方法及R语言实现 | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="常见排序分析方法及R语言实现">
+	<meta name="twitter:description" content="常用排序分析方法 相信大家在做微生物多样性研究时经常听到PCA分析、PCoA分析，NMDS分析，CCA分析，RDA分析。它们对物种（或基因、功能）的分析具有重要作用，因而频频出现在16S测序及宏基因组测序中。以上分析本质上都属于排序分析（Ordination analysis）。
+排序分析（ordination analysis），最早是生态学（ecology）中研究群落（communities）的一大类多元分析手段，将某个地区调查的不同环境（site）以及所对应的物种组成（species），按照相似度（similarity）或距离（distance）对site在排序轴上（ordination axes）进行排序，将其表示为沿一个或多个排序轴排列的点，从而分析各个site或species与环境因子之间的关系。其目的是把多维空间压缩到低维空间（如二维），并且保证因维数降低而导致的信息量损失尽量少，实体（site或species）按其相似关系重新排列，提高其可理解性（interpretability）；同时，通过统计手段检验排序轴（ordination axes）是否能真正代表环境因子的梯度（gradient）1。
+因此，排序分析的作用可以总结为两个方面：①降维；②探索性分析；
+常用的排序方法如下2：
+排序分析方法 Raw data based （线性模型） Raw data based （单峰模型） Distance based 间接排序法 （非限制性） PCA CA，DCA PCoA，NMDS 直接排序法 （限制性） RDA CCA dbRDA 其中间接排序法包括：
+PCA（principal components analysis，主成分分析） CA（correspondence analysis，对应分析） DCA（Detrended correspondenceanalysis, 去趋势对应分析) PCoA（principal coordinate analysis，主坐标分析） NMDS（non-metric multi-dimensional scaling，非度量多维尺度分析）； 直接排序法包括：
+RDA（Redundancy analysis，冗余分析） CCA（canonical correspondence analysis，典范对应分析） dbRDA（distance based redundancy analysis，基于距离的冗余分析） CAP（canonical analysis of principal coordinates，主要坐标的典型分析） 其中PCA和RDA是基于线性模型（linear model）的，而CA、DCA、CCA、DCCA是基于单峰（unimodal）模型。
+选择单峰模型还是线性模型？ 用DCA（vegan::decorana()）先对数据（site-species）进行分析； 查看结果中的“Axis lengths”的第一轴DCA1的值，根据该值判断该采用线性模型还是单峰模型： 如果大于4.0，就应该选单峰模型； 如果3.0-4.0之间，选线性模型或者单峰模型均可； 如果小于3.0, 线性模型的结果要好于单峰模型 如何选择一种合适的方法？ 排序方法的选择取决于1）您拥有的数据类型，2）您想要/可以使用的相似距离矩阵，以及3）您想说的内容。所有这些排序方法都基于数据构建的相似距离矩阵，使用不同的方法（例如Euclidean，Bray-Curtis，Jaccard等）来计算样本之间的距离。但是，不同方法计算相似度矩阵将不会给出相同的结果。不同的排序方法使用不同的相似度矩阵，并可能对结果产生显著影响。">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container single">
+<main>
+
+<div class="article-meta">
+<h1><span class="title">常见排序分析方法及R语言实现</span></h1>
+
+<h3 class="author">
+gaoch
+</h3>
+
+<h3 class="date">2018-10-22</h3>
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF">信息技术</a> <a href="/categories/%E7%94%9F%E7%89%A9%E5%AD%A6">生物学</a> 
+  
+  
+  
+  Tags: <a href="/tags/r">R</a> <a href="/tags/pca">PCA</a> <a href="/tags/pcoa">PCoA</a> <a href="/tags/nmds">NMDS</a> <a href="/tags/microbial-ecology">microbial ecology</a> 
+  
+  
+</p>
+</div>
+
+<div class="article">
+<h1 id="常用排序分析方法">常用排序分析方法</h1>
+<p>相信大家在做微生物多样性研究时经常听到PCA分析、PCoA分析，NMDS分析，CCA分析，RDA分析。它们对物种（或基因、功能）的分析具有重要作用，因而频频出现在16S测序及宏基因组测序中。以上分析本质上都属于排序分析（Ordination analysis）。</p>
+<p>排序分析（ordination analysis），最早是生态学（ecology）中研究群落（communities）的一大类多元分析手段，将某个地区调查的不同环境（site）以及所对应的物种组成（species），按照相似度（similarity）或距离（distance）对site在排序轴上（ordination axes）进行排序，将其表示为沿一个或多个排序轴排列的点，从而分析各个site或species与环境因子之间的关系。其目的是把多维空间压缩到低维空间（如二维），并且保证因维数降低而导致的信息量损失尽量少，实体（site或species）按其相似关系重新排列，提高其可理解性（interpretability）；同时，通过统计手段检验排序轴（ordination axes）是否能真正代表环境因子的梯度（gradient）<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
+<p>因此，排序分析的作用可以总结为两个方面：①降维；②探索性分析；</p>
+<p>常用的排序方法如下<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>：</p>
+<table>
+	<thead>
+			<tr>
+					<th>排序分析方法</th>
+					<th>Raw data based （线性模型）</th>
+					<th>Raw data based （单峰模型）</th>
+					<th>Distance based</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>间接排序法  （非限制性）</td>
+					<td>PCA</td>
+					<td>CA，DCA</td>
+					<td>PCoA，NMDS</td>
+			</tr>
+			<tr>
+					<td>直接排序法  （限制性）</td>
+					<td>RDA</td>
+					<td>CCA</td>
+					<td>dbRDA</td>
+			</tr>
+	</tbody>
+</table>
+<p>其中间接排序法包括：</p>
+<ul>
+<li>PCA（principal components analysis，主成分分析）</li>
+<li>CA（correspondence analysis，对应分析）</li>
+<li>DCA（Detrended correspondenceanalysis, 去趋势对应分析)</li>
+<li>PCoA（principal coordinate analysis，主坐标分析）</li>
+<li>NMDS（non-metric multi-dimensional scaling，非度量多维尺度分析）；</li>
+</ul>
+<p>直接排序法包括：</p>
+<ul>
+<li>RDA（Redundancy analysis，冗余分析）</li>
+<li>CCA（canonical correspondence analysis，典范对应分析）</li>
+<li>dbRDA（distance based redundancy analysis，基于距离的冗余分析）</li>
+<li>CAP（canonical analysis of principal coordinates，主要坐标的典型分析）</li>
+</ul>
+<p>其中PCA和RDA是基于线性模型（linear model）的，而CA、DCA、CCA、DCCA是基于单峰（unimodal）模型。</p>
+<h1 id="选择单峰模型还是线性模型">选择单峰模型还是线性模型？</h1>
+<ol>
+<li>用DCA（<code>vegan::decorana()</code>）先对数据（site-species）进行分析；</li>
+<li>查看结果中的“Axis lengths”的第一轴DCA1的值，根据该值判断该采用线性模型还是单峰模型：
+<ul>
+<li>如果大于4.0，就应该选单峰模型；</li>
+<li>如果3.0-4.0之间，选线性模型或者单峰模型均可；</li>
+<li>如果小于3.0, 线性模型的结果要好于单峰模型</li>
+</ul>
+</li>
+</ol>
+<h1 id="如何选择一种合适的方法">如何选择一种合适的方法？</h1>
+<p>排序方法的选择取决于1）您拥有的数据类型，2）您想要/可以使用的相似距离矩阵，以及3）您想说的内容。所有这些排序方法都基于数据构建的相似距离矩阵，使用不同的方法（例如Euclidean，Bray-Curtis，Jaccard等）来计算样本之间的距离。但是，不同方法计算相似度矩阵将不会给出相同的结果。不同的排序方法使用不同的相似度矩阵，并可能对结果产生显著影响。</p>
+<p>例如，PCA和PCoA将只使用欧几里得距离，而nMDS使用任何你想要的相似距离。</p>
+<p>在 ResearchGate 上有一个高赞答案<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>，回答了这个问题。</p>
+<ul>
+<li>如果您有一个包含空值的数据集（例如某些样本中存在细菌OTU，而其他样本中则没有），我建议您使用Bray-Curtis相似性矩阵和nMDS排序。选择Bray-Curtis距离是因为它不受像欧几里得距离之类的样本之间的零值数量的影响，并且选择nMDS是因为您可以选择任何相似度矩阵，而不像PCA。</li>
+<li>如果您的数据集不包含空值（例如环境变量），则可以使用欧几里得距离，并使用PCA或nMDS，在这种情况下，您会看到它会给出相同的结果。</li>
+</ul>
+<p>有时候一种方法会比其他方法更好，可以显示复杂群落或因素的特定影响。如果你对结果不满意，尝试不同的方法是很好的做法。但是记住，这些方法仅仅<strong>只是排序</strong>，你需要针对不同组之间的显著差异进行检验（例如<code>ANOSIM</code>，<code>ADONIS</code>，<code>PERMANOVA</code> ，<code>MRPP</code> &hellip;）。</p>
+<h1 id="r语言实现">R语言实现</h1>
+<h2 id="示例数据集">示例数据集</h2>
+<p>使用 <code>vegan</code> 的数据集作为示例数据，该数据集描述了苔原土壤上生长的植物多样性信息和土壤的物理化学性质。其中，<code>varespec</code> 描述了24块样地中44个物种的丰度信息，<code>varechem</code> 描述了这24块样地土壤的14个性质参数。</p>
+<pre><code class="language-r">library(&quot;vegan&quot;)
+</code></pre>
+<pre><code>## Loading required package: permute
+</code></pre>
+<pre><code>## Loading required package: lattice
+</code></pre>
+<pre><code>## This is vegan 2.6-4
+</code></pre>
+<pre><code class="language-r">data(&quot;varespec&quot;)
+data(&quot;varechem&quot;)
+
+# 查看变量
+knitr::kable(varespec[1:3,1:5])
+</code></pre>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left"></th>
+					<th style="text-align: right">Callvulg</th>
+					<th style="text-align: right">Empenigr</th>
+					<th style="text-align: right">Rhodtome</th>
+					<th style="text-align: right">Vaccmyrt</th>
+					<th style="text-align: right">Vaccviti</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">18</td>
+					<td style="text-align: right">0.55</td>
+					<td style="text-align: right">11.13</td>
+					<td style="text-align: right">0</td>
+					<td style="text-align: right">0.00</td>
+					<td style="text-align: right">17.80</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">15</td>
+					<td style="text-align: right">0.67</td>
+					<td style="text-align: right">0.17</td>
+					<td style="text-align: right">0</td>
+					<td style="text-align: right">0.35</td>
+					<td style="text-align: right">12.13</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">24</td>
+					<td style="text-align: right">0.10</td>
+					<td style="text-align: right">1.55</td>
+					<td style="text-align: right">0</td>
+					<td style="text-align: right">0.00</td>
+					<td style="text-align: right">13.47</td>
+			</tr>
+	</tbody>
+</table>
+<pre><code class="language-r">knitr::kable(varechem[1:3,1:5])
+</code></pre>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left"></th>
+					<th style="text-align: right">N</th>
+					<th style="text-align: right">P</th>
+					<th style="text-align: right">K</th>
+					<th style="text-align: right">Ca</th>
+					<th style="text-align: right">Mg</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">18</td>
+					<td style="text-align: right">19.8</td>
+					<td style="text-align: right">42.1</td>
+					<td style="text-align: right">139.9</td>
+					<td style="text-align: right">519.4</td>
+					<td style="text-align: right">90.0</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">15</td>
+					<td style="text-align: right">13.4</td>
+					<td style="text-align: right">39.1</td>
+					<td style="text-align: right">167.3</td>
+					<td style="text-align: right">356.7</td>
+					<td style="text-align: right">70.7</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">24</td>
+					<td style="text-align: right">20.2</td>
+					<td style="text-align: right">67.7</td>
+					<td style="text-align: right">207.1</td>
+					<td style="text-align: right">973.3</td>
+					<td style="text-align: right">209.1</td>
+			</tr>
+	</tbody>
+</table>
+<h2 id="选择模型">选择模型</h2>
+<p>为了确定该选择线性模型还是单峰模型，首先对数据进行DCA分析。在 <code>vegan</code> 中，对应的函数为 <code>decorana()</code>。</p>
+<pre><code class="language-r">decorana(varespec)
+</code></pre>
+<pre><code>## 
+## Call:
+## decorana(veg = varespec) 
+## 
+## Detrended correspondence analysis with 26 segments.
+## Rescaling of axes with 4 iterations.
+## Total inertia (scaled Chi-square): 2.0832 
+## 
+##                        DCA1   DCA2    DCA3    DCA4
+## Eigenvalues          0.5235 0.3253 0.20010 0.19176
+## Additive Eigenvalues 0.5235 0.3217 0.17919 0.11922
+## Decorana values      0.5249 0.1572 0.09669 0.06075
+## Axis lengths         2.8161 2.2054 1.54650 1.64864
+</code></pre>
+<p>在本例中，Axis lengths 最大值为 2.8161，小于3，因此采用线性模型会比较好。</p>
+<h2 id="pca分析">PCA分析</h2>
+<p>在R语言中，PCA分析和RDA分析是一个函数：<code>rda()</code>。如果只用了物种矩阵（<code>rda(X)</code>）就表示PCA分析，如果同时有物种矩阵和环境因子矩阵（<code>rda(X,Y)</code>）就表示RDA分析。</p>
+<pre><code class="language-r">rda(varespec)
+</code></pre>
+<pre><code>## Call: rda(X = varespec)
+## 
+##               Inertia Rank
+## Total            1826     
+## Unconstrained    1826   23
+## Inertia is variance 
+## 
+## Eigenvalues for unconstrained axes:
+##   PC1   PC2   PC3   PC4   PC5   PC6   PC7   PC8 
+## 983.0 464.3 132.3  73.9  48.4  37.0  25.7  19.7 
+## (Showing 8 of 23 unconstrained eigenvalues)
+</code></pre>
+<p>输出结果告诉我们总的特征根（Inertia）为1826，这个值是物种矩阵中各个物种的方差和（<code>sum(apply(varespec,2,var))</code> = 1825.6594047 ），可以理解为物种分布的总变化量。</p>
+<p>PCA排序结果中的 Eigenvalues for unconstrained axes 表示每个非约束排序轴所负荷的特征根的量，也可以表示每个轴所能解释的方差变化的量。例如，对于第一轴来说，其解释度为：<code>983.0/1826</code> = 53.8335159%。</p>
+<h2 id="ca分析">CA分析</h2>
+<p>CA和CCA也是用同一个函数 <code>cca()</code> 实现的。如果参数只有一个物种矩阵，就表示CA分析；如果同时有物种矩阵和环境因子矩阵，那么表示CCA分析。</p>
+<pre><code class="language-r">cca(varespec)
+</code></pre>
+<pre><code>## Call: cca(X = varespec)
+## 
+##               Inertia Rank
+## Total           2.083     
+## Unconstrained   2.083   23
+## Inertia is scaled Chi-square 
+## 
+## Eigenvalues for unconstrained axes:
+##    CA1    CA2    CA3    CA4    CA5    CA6    CA7    CA8 
+## 0.5249 0.3568 0.2344 0.1955 0.1776 0.1216 0.1155 0.0889 
+## (Showing 8 of 23 unconstrained eigenvalues)
+</code></pre>
+<h2 id="rda分析和cca分析">RDA分析和CCA分析</h2>
+<p>在分析物种分布与环境因子关系的时候，需要用到约束分析（Constrained ordination），主要类型是RDA和CCA。</p>
+<p>约束排序和非约束排序的区别在于：在约束排序里，只展示能被环境因子所解释的物种分布变化量。因此，约束排序轴比非约束排序轴的解释量明显要小。</p>
+<pre><code class="language-r"># RDA
+rda(varespec,varechem)
+</code></pre>
+<pre><code>## Call: rda(X = varespec, Y = varechem)
+## 
+##                 Inertia Proportion Rank
+## Total         1825.6594     1.0000     
+## Constrained   1459.8891     0.7997   14
+## Unconstrained  365.7704     0.2003    9
+## Inertia is variance 
+## 
+## Eigenvalues for constrained axes:
+##  RDA1  RDA2  RDA3  RDA4  RDA5  RDA6  RDA7  RDA8  RDA9 RDA10 RDA11 RDA12 RDA13 
+## 820.1 399.3 102.6  47.6  26.8  24.0  19.1  10.2   4.4   2.3   1.5   0.9   0.7 
+## RDA14 
+##   0.3 
+## 
+## Eigenvalues for unconstrained axes:
+##    PC1    PC2    PC3    PC4    PC5    PC6    PC7    PC8    PC9 
+## 186.19  88.46  38.19  18.40  12.84  10.55   5.52   4.52   1.09
+</code></pre>
+<pre><code class="language-r"># CCA
+cca(varespec,varechem)
+</code></pre>
+<pre><code>## Call: cca(X = varespec, Y = varechem)
+## 
+##               Inertia Proportion Rank
+## Total          2.0832     1.0000     
+## Constrained    1.4415     0.6920   14
+## Unconstrained  0.6417     0.3080    9
+## Inertia is scaled Chi-square 
+## 
+## Eigenvalues for constrained axes:
+##   CCA1   CCA2   CCA3   CCA4   CCA5   CCA6   CCA7   CCA8   CCA9  CCA10  CCA11 
+## 0.4389 0.2918 0.1628 0.1421 0.1180 0.0890 0.0703 0.0584 0.0311 0.0133 0.0084 
+##  CCA12  CCA13  CCA14 
+## 0.0065 0.0062 0.0047 
+## 
+## Eigenvalues for unconstrained axes:
+##     CA1     CA2     CA3     CA4     CA5     CA6     CA7     CA8     CA9 
+## 0.19776 0.14193 0.10117 0.07079 0.05330 0.03330 0.01887 0.01510 0.00949
+</code></pre>
+<h1 id="延伸阅读">延伸阅读</h1>
+<ol>
+<li>赖江山等，基于Vegan 软件包的生态学数据排序分析。http://blog.sciencenet.cn/blog-267448-463699.html</li>
+</ol>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://github.com/ricket-sjtu/bi028/wiki/%E6%8E%92%E5%BA%8F%E5%88%86%E6%9E%90%EF%BC%88Ordination-Analysis%EF%BC%89">https://github.com/ricket-sjtu/bi028/wiki/%E6%8E%92%E5%BA%8F%E5%88%86%E6%9E%90%EF%BC%88Ordination-Analysis%EF%BC%89</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="http://ordination.okstate.edu/overview.htm">http://ordination.okstate.edu/overview.htm</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://www.researchgate.net/post/How_to_choose_ordination_method_such_as_PCA_CA_PCoA_and_NMDS">https://www.researchgate.net/post/How_to_choose_ordination_method_such_as_PCA_CA_PCoA_and_NMDS</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</div>
+</main>
+
+<section class="appendix">
+
+
+<div>
+  <div class="side side-left"><h3>作者简介</h3></div>
+  <div>
+
+
+
+
+
+<div>Chun-Hui Gao is a Research Associate at <a href="http://www.hzau.edu.cn">Huazhong Agricultural University</a>.</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div>
+  <div class="side side-left"><h3>重复使用</h3></div>
+  Text and figures are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution CC BY 4.0</a>. The source code is licensed under MIT. The full source is available at <a href="https://github.com/yihui/hugo-prose">https://github.com/yihui/hugo-prose</a>.
+</div>
+
+
+
+<div>
+  <div class="side side-left"><h3>欢迎修订</h3></div>
+  
+  
+  
+    
+  
+  如果您发现本文里含有任何错误（包括错别字和标点符号），欢迎<a href="https://github.com/gaospecial/bio-spring/edit/master/content/post/2018-10-22-ordination-analysis-in-R/index.zh.Rmd" id="edit-link">在本站的 GitHub 项目里提交修订意见。</a>
+</div>
+
+
+
+
+<div>
+  <div class="side side-left"><h3>引用本文</h3></div>
+  <p>如果您使用了本文的内容，请按照以下方式引用：</p>
+  <pre><code>gaoch (2018). 常见排序分析方法及R语言实现. BIO-SPRING. www.bio-spring.top/post/2018/10/22/ordination-analysis-in-r/</code></pre>
+  <p>BibTeX citation</p>
+  <pre><code>@misc{
+  title = "常见排序分析方法及R语言实现",
+  author = "gaoch",
+  year = "2018",
+  journal = "BIO-SPRING",
+  note = "www.bio-spring.top/post/2018/10/22/ordination-analysis-in-r/"
+}</code></pre>
+</div>
+
+</section>
+
+
+
+<nav class="post-nav">
+  <span class="nav-next">&larr; <a href="www.bio-spring.top/post/2018/10/22/plot-pca-using-ggplot2/" title=下一篇&#32;(旧)>排序分析结果作图</a></span>
+  &hercon;
+  <span class="nav-prev"><a href="www.bio-spring.top/post/2018/10/23/2018-10-23-setup-ssl-in-aliyun/" title=上一篇&#32;(新)>三分钟在阿里云中用上免费SSL</a> &rarr;</span>
+</nav>
+
+
+
+
+<section class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var disqus_js = '//bio-spring.disqus.com/embed.js';
+    var d = document, s = d.createElement('script');
+    s.src = disqus_js; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    var t = d.getElementById('disqus_thread');
+    var b = false, l = function(scroll) {
+      if (b) return;
+      (d.head || d.body).appendChild(s); b = true;
+      if (scroll) t.scrollIntoView();
+    }
+    s.onerror = function(e) {
+      if (sessionStorage.getItem('failure-note')) return;
+      t.innerText = 'Sorry, but you cannot make comments because Disqus failed to load for some reason. It is known to be blocked in China. If you are sure it is not blocked in your region, please refresh the page. 中国大陆地区读者需要翻墙才能发表评论。';
+      t.style.border = '1px dashed';
+      t.style.padding = '.5em';
+      t.style.background = 'lightyellow';
+      sessionStorage.setItem('failure-note', true);
+    };
+    
+    if (location.hash.match(/^#comment-[0-9]+$/)) return l(true);
+    var c = function() {
+      if (b) return;
+      var rect = t.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) l();
+    };
+    window.addEventListener('load', c);
+    d.addEventListener('scroll', c);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+</div>
+
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+<script src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils/js/number-sections.min.js,npm/@xiee/utils/js/toc.min.js,npm/@xiee/utils/js/toc-highlight.min.js,npm/@xiee/utils/js/sidenotes.min.js,npm/@xiee/utils/js/right-quote.min.js,npm/@xiee/utils/js/center-img.min.js,npm/@xiee/utils/js/fix-pandoc.min.js,npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/prism-xcode.min.css">
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

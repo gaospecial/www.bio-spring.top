@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Kimi on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/kimi/</link>
+		<description>Recent content in Kimi on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 05 Nov 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/kimi/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Kimi 文献检索能力的实际边界：基于两份 CNS 检索记录的技术分析</title>
+				<link>www.bio-spring.top/post/2026/11/05/kimi-literature-search-boundaries/</link>
+				<pubDate>Thu, 05 Nov 2026 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2026/11/05/kimi-literature-search-boundaries/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;：本文以两份由 Kimi 生成的 PubMed 与 Google Scholar 检索记录为实证材料，分析 Kimi 学术文献检索功能在实际任务中的能力范围与结构性短板。研究发现，Kimi 的检索能力在“种子发现”层面表现合格——能够按检索式返回相关文献列表并附带元数据；但在“语料可用性”层面存在明显断层：PubMed 侧止步于题录与摘要，未跟进 PMC 或出版社全文；Scholar 侧则因抓取机制限制，摘要为截断片段而非完整内容。进一步分析表明，这一断层的根源不在于检索式设计，而在于 Kimi 当前学术检索的产品定位偏向“发现”而非“获取与结构化”，全文抓取与深度字段抽取尚未成为默认能力。本文以具体数据说明上述判断，并讨论其对科研工作流的实际影响。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;关键词&lt;/strong&gt;：Kimi；学术检索；文献语料；PubMed；Google Scholar&lt;/p&gt;&#xA;&lt;h2 id=&#34;一引言&#34;&gt;一、引言&lt;/h2&gt;&#xA;&lt;p&gt;Kimi 官方将学术文献检索列为 Agentic Search 的核心能力之一，声称支持“期刊、论文、预印本、学位论文、专利等学术信息”的查询，并覆盖“100+ 经过验证的可信来源”。在对外描述中，Kimi 的搜索能力经历了从 Explorer Search 到 Agentic Search 的演进，后者具备“自主规划与工具调用”能力，可处理“学术文献检索”等多模态任务。&lt;/p&gt;&#xA;&lt;p&gt;然而，官方描述与用户实际获得的数据产品之间存在需要厘清的距离。“支持学术文献检索”这一表述至少可以对应三个不同层次的能力：（1）发现相关文献并返回标题与链接；（2）获取每篇文献的完整元数据与摘要；（3）获取全文并进行结构化抽取。本文利用两份真实检索记录，检验 Kimi 在当前产品形态下究竟达到了哪一层。&lt;/p&gt;&#xA;&lt;p&gt;选择 PubMed 与 Google Scholar 作为分析对象，是因为二者分别代表了学术检索的两类典型场景：PubMed 是权威题录数据库，元数据规范、摘要完整，但不提供全文；Google Scholar 是宽口径学术搜索引擎，覆盖面广、附带被引数据，但摘要展示天然截断。两份记录合在一起，恰好可以检验 Kimi 在“规范源”与“宽口径源”上的处理差异。&lt;/p&gt;&#xA;&lt;h2 id=&#34;二数据与方法&#34;&gt;二、数据与方法&lt;/h2&gt;&#xA;&lt;h3 id=&#34;21-数据来源&#34;&gt;2.1 数据来源&lt;/h3&gt;&#xA;&lt;p&gt;两份文件均为 Kimi 文献检索功能的直接输出，未经人工修改。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;PubMed 记录&lt;/strong&gt;：检索式为 &lt;code&gt;(Nature[Journal] OR Science[Journal] OR Cell[Journal]) AND (plant microbiome OR rhizosphere OR root microbiota OR mycorrhizal OR nodulation) AND China[Affiliation]&lt;/code&gt;，返回 37 条记录。数据以嵌套 JSON 形式组织，&lt;code&gt;results&lt;/code&gt; 数组每条包含 &lt;code&gt;pmid&lt;/code&gt;、&lt;code&gt;doi&lt;/code&gt;、&lt;code&gt;title&lt;/code&gt;、&lt;code&gt;authors&lt;/code&gt;、&lt;code&gt;journal&lt;/code&gt;、&lt;code&gt;date&lt;/code&gt;、&lt;code&gt;abstract&lt;/code&gt;、&lt;code&gt;abstract_sections&lt;/code&gt;、&lt;code&gt;urls&lt;/code&gt;、&lt;code&gt;is_retracted&lt;/code&gt;、&lt;code&gt;warnings&lt;/code&gt; 等字段。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> 三种向NCBI提交SRA高通量测序原始数据的方法 | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="三种向NCBI提交SRA高通量测序原始数据的方法">
+	<meta name="twitter:description" content="将测序原始数据提交到SRA已经逐渐成为投稿的必备条件。对于高通量测序数据来说，动辄几百兆或者更大文件的传输是一个相对比较耗时的部分。NCBI提供了3种方式来提交这部分数据：
+网页形式（包括浏览器上传和Aspera Connect插件上传）； Aspera命令行方式提交； FTP方式提交。 第一种方式 网页提交应当是用户最熟悉的方式，跟日常上网的操作一样。但是，如果不使用Aspera Connect插件，一次只能提交一个文件。而且整个提交过程中没有进度提示，是最低效率的方式。然而，通过使用Aspera Connect插件，可以同时提交多个文件并看到进度。
+一般情况下，使用Aspera插件在网页上提交是最方便的、推荐的上传方式。
+不过，有时候由于浏览器、网络等存在问题，浏览器并不能正确调用Aspera软件。那就只能用其它方式传输了。
+后面两种，都属于先将文件上传到临时文件夹（preloaded），随后再与SRA中的meta table中的文件列表一一对应起来的方法。
+第二种方式 第二种方式是我最近一次使用的方式。当时，在浏览器上无法正确启动Aspera软件，并且使用时出现多次蓝屏。当你选择这种方式，需要打开一个命令行，输入网页上提示的命令即可。
+下图即网页上面的提示。注意你需要下载一个key file在命令中使用。同时，还有把所有文件放在一个文件夹中。相应文件夹中的所有文件都会被上传。
+命令运行时的界面如下：
+这种方式传输速度也很快。我用WIFI是的连接速度在30 Mbps左右。
+第三种方式 第三种方式，应当是最传统的文件传输方式，即FTP方式。选择FTP方式时，网页上会显示FTP服务器的地址、用户名、密码、用户目录等信息。需要注意的是，你并没有服务器根目录的访问权限，因此需要在设置FTP服务器时指定目录（FileZilla）。
+首先，打开站点管理器，新建站点，填写主机、用户名、密码等信息。
+其次，进入“高级”标签页，在上面把用户目录填写上。
+这时候就可以连接了。需要注意的是，连接之后，需要在用户目录中新建一个子文件夹（必选操作）。然后才能将文件通过FTP传输到用户目录的新建子文件夹内。
+根据我的使用情况，FTP传输的速度只有第二种方法的十分之一不到。除非你网络环境很好，否则不值得推荐。
+===================================
+综上所述，上传文件首选带有Aspera插件的浏览器模式，其次是Aspera命令行模式，再次FTP模式。">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container single">
+<main>
+
+<div class="article-meta">
+<h1><span class="title">三种向NCBI提交SRA高通量测序原始数据的方法</span></h1>
+
+<h3 class="author">
+gaoch
+</h3>
+
+<h3 class="date">2017-11-21</h3>
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/%E5%85%B6%E5%AE%83">其它</a> <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF">信息技术</a> <a href="/categories/%E7%94%9F%E7%89%A9%E5%AD%A6">生物学</a> 
+  
+  
+  
+  Tags: <a href="/tags/%E6%97%A7%E6%96%87">旧文</a> <a href="/tags/wordpress">WordPress</a> <a href="/tags/aspera">Aspera</a> <a href="/tags/ftp">FTP</a> <a href="/tags/ncbi">NCBI</a> <a href="/tags/sra">sra</a> <a href="/tags/%E6%B5%8B%E5%BA%8F">测序</a> 
+  
+  
+</p>
+</div>
+
+<div class="article">
+<p>将测序原始数据提交到SRA已经逐渐成为投稿的必备条件。对于高通量测序数据来说，动辄几百兆或者更大文件的传输是一个相对比较耗时的部分。NCBI提供了3种方式来提交这部分数据：</p>
+<ol>
+<li>网页形式（包括浏览器上传和Aspera Connect插件上传）；</li>
+<li>Aspera命令行方式提交；</li>
+<li>FTP方式提交。</li>
+</ol>
+<img src="https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload1-500x287.png" class="alignnone size-medium wp-image-913" sizes="(max-width: 500px) 100vw, 500px" srcset="https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload1-500x287.png 500w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload1.png 501w" width="500" height="287" />
+<h2 id="第一种方式">第一种方式</h2>
+<p>网页提交应当是用户最熟悉的方式，跟日常上网的操作一样。但是，如果不使用Aspera
+Connect插件，一次只能提交一个文件。而且整个提交过程中没有进度提示，是最低效率的方式。然而，通过使用Aspera
+Connect插件，可以同时提交多个文件并看到进度。</p>
+<p>一般情况下，使用Aspera插件在网页上提交是最方便的、推荐的上传方式。</p>
+<p>不过，有时候由于浏览器、网络等存在问题，浏览器并不能正确调用Aspera软件。那就只能用其它方式传输了。</p>
+<p>后面两种，都属于先将文件上传到临时文件夹（preloaded），随后再与SRA中的meta
+table中的文件列表一一对应起来的方法。</p>
+<h2 id="第二种方式">第二种方式</h2>
+<p>第二种方式是我最近一次使用的方式。当时，在浏览器上无法正确启动Aspera软件，并且使用时出现多次蓝屏。当你选择这种方式，需要打开一个命令行，输入网页上提示的命令即可。</p>
+<p>下图即网页上面的提示。注意你需要下载一个key
+file在命令中使用。同时，还有把所有文件放在一个文件夹中。<strong>相应文件夹中的所有文件都会被上传。</strong></p>
+<img src="https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload5-500x152.png" class="alignnone size-medium wp-image-912" sizes="(max-width: 500px) 100vw, 500px" srcset="https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload5-500x152.png 500w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload5.png 716w" width="500" height="152" />
+<p>命令运行时的界面如下：</p>
+<img src="https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload4-500x69.png" class="alignnone size-medium wp-image-911" sizes="(max-width: 500px) 100vw, 500px" srcset="https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload4-500x69.png 500w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload4-768x106.png 768w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload4.png 966w" width="500" height="69" />
+<p>这种方式传输速度也很快。我用WIFI是的连接速度在30 Mbps左右。</p>
+<h2 id="第三种方式">第三种方式</h2>
+<p>第三种方式，应当是最传统的文件传输方式，即FTP方式。选择FTP方式时，网页上会显示FTP服务器的地址、用户名、密码、用户目录等信息。需要注意的是，你并没有服务器根目录的访问权限，因此需要在设置FTP服务器时指定目录（FileZilla）。</p>
+<p>首先，打开站点管理器，新建站点，填写主机、用户名、密码等信息。</p>
+<img src="https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload2-500x424.png" class="alignnone size-medium wp-image-909" sizes="(max-width: 500px) 100vw, 500px" srcset="https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload2-500x424.png 500w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload2.png 529w" width="500" height="424" />
+<p>其次，进入“高级”标签页，在上面把用户目录填写上。</p>
+<img src="https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload3.png" class="alignnone size-full wp-image-910" width="320" height="295" />
+<p>这时候就可以连接了。需要注意的是，连接之后，需要在用户目录中新建一个子文件夹（必选操作）。然后才能将文件通过FTP传输到用户目录的新建子文件夹内。</p>
+<p>根据我的使用情况，FTP传输的速度只有第二种方法的十分之一不到。除非你网络环境很好，否则不值得推荐。</p>
+<p>===================================</p>
+<p>综上所述，上传文件首选<strong>带有Aspera插件</strong>的浏览器模式，其次是Aspera命令行模式，再次FTP模式。</p>
+
+</div>
+</main>
+
+<section class="appendix">
+
+
+<div>
+  <div class="side side-left"><h3>作者简介</h3></div>
+  <div>
+
+
+
+
+
+<div>Chun-Hui Gao is a Research Associate at <a href="http://www.hzau.edu.cn">Huazhong Agricultural University</a>.</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div>
+  <div class="side side-left"><h3>重复使用</h3></div>
+  Text and figures are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution CC BY 4.0</a>. The source code is licensed under MIT. The full source is available at <a href="https://github.com/yihui/hugo-prose">https://github.com/yihui/hugo-prose</a>.
+</div>
+
+
+
+<div>
+  <div class="side side-left"><h3>欢迎修订</h3></div>
+  
+  
+  
+    
+    
+  
+  如果您发现本文里含有任何错误（包括错别字和标点符号），欢迎<a href="https://github.com/gaospecial/bio-spring/edit/master/content/post/2017-11-21-3-methods-in-submitting-sra/index.zh.md" id="edit-link">在本站的 GitHub 项目里提交修订意见。</a>
+</div>
+
+
+
+
+<div>
+  <div class="side side-left"><h3>引用本文</h3></div>
+  <p>如果您使用了本文的内容，请按照以下方式引用：</p>
+  <pre><code>gaoch (2017). 三种向NCBI提交SRA高通量测序原始数据的方法. BIO-SPRING. www.bio-spring.top/post/2017/11/21/2017-11-21-3-methods-in-submitting-sra/</code></pre>
+  <p>BibTeX citation</p>
+  <pre><code>@misc{
+  title = "三种向NCBI提交SRA高通量测序原始数据的方法",
+  author = "gaoch",
+  year = "2017",
+  journal = "BIO-SPRING",
+  note = "www.bio-spring.top/post/2017/11/21/2017-11-21-3-methods-in-submitting-sra/"
+}</code></pre>
+</div>
+
+</section>
+
+
+
+<nav class="post-nav">
+  <span class="nav-next">&larr; <a href="www.bio-spring.top/post/2017/11/16/2017-11-16-ggplot2-no-scinum/" title=下一篇&#32;(旧)>ggplot2作图中不使用科学计数法</a></span>
+  &hercon;
+  <span class="nav-prev"><a href="www.bio-spring.top/post/2017/11/27/2017-11-27-win10-logon-error/" title=上一篇&#32;(新)>解决Windows10卡在登录界面或登录成功后失去响应的问题</a> &rarr;</span>
+</nav>
+
+
+
+
+<section class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var disqus_js = '//bio-spring.disqus.com/embed.js';
+    var d = document, s = d.createElement('script');
+    s.src = disqus_js; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    var t = d.getElementById('disqus_thread');
+    var b = false, l = function(scroll) {
+      if (b) return;
+      (d.head || d.body).appendChild(s); b = true;
+      if (scroll) t.scrollIntoView();
+    }
+    s.onerror = function(e) {
+      if (sessionStorage.getItem('failure-note')) return;
+      t.innerText = 'Sorry, but you cannot make comments because Disqus failed to load for some reason. It is known to be blocked in China. If you are sure it is not blocked in your region, please refresh the page. 中国大陆地区读者需要翻墙才能发表评论。';
+      t.style.border = '1px dashed';
+      t.style.padding = '.5em';
+      t.style.background = 'lightyellow';
+      sessionStorage.setItem('failure-note', true);
+    };
+    
+    if (location.hash.match(/^#comment-[0-9]+$/)) return l(true);
+    var c = function() {
+      if (b) return;
+      var rect = t.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) l();
+    };
+    window.addEventListener('load', c);
+    d.addEventListener('scroll', c);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+</div>
+
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+<script src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils/js/number-sections.min.js,npm/@xiee/utils/js/toc.min.js,npm/@xiee/utils/js/toc-highlight.min.js,npm/@xiee/utils/js/sidenotes.min.js,npm/@xiee/utils/js/right-quote.min.js,npm/@xiee/utils/js/center-img.min.js,npm/@xiee/utils/js/fix-pandoc.min.js,npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+
+
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

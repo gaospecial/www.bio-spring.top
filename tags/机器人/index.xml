@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>机器人 on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/</link>
+		<description>Recent content in 机器人 on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 11 Nov 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>把《星际穿越》的 TARS 做进现实：开源机器人项目 Project TARS</title>
+				<link>www.bio-spring.top/post/2026/11/11/project-tars-software/</link>
+				<pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2026/11/11/project-tars-software/</guid>
+				<description>&lt;p&gt;今天早上，我在抖音上看到了一段《星际穿越》TARS 机器人的实机演示。它不只是一个摆在外面的模型，而是会运动、会听人说话、会用双屏展示表情，还能按编排播放动作和台词。视频里的效果让我想起电影中那个有点冷幽默、又很可靠的机器人。&lt;/p&gt;&#xA;&lt;p&gt;顺着视频找过去，项目仓库在这里：&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/doubleZ-dev/project-tars-software&#34;&gt;doubleZ-dev/project-tars-software&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;演示视频来自抖音作者“小李家的多啦A梦”：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://v.douyin.com/01z3podpd-Y/&#34;&gt;【开源】我做出了《星际穿越》的 TARS，它会听我说话&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;一个逐步开源的实体机器人项目&#34;&gt;一个逐步开源的实体机器人项目&lt;/h2&gt;&#xA;&lt;p&gt;Project TARS 由 &lt;a href=&#34;https://github.com/doubleZ-dev&#34;&gt;doubleZ-dev&lt;/a&gt; 独立设计和整合，灵感来自《星际穿越》中的同名机器人。项目的目标并不是做一个只能播放动画的桌面摆件，而是把机械结构、电子硬件、运动控制、屏幕交互和语音系统组合成一台可以真实互动的设备。&lt;/p&gt;&#xA;&lt;p&gt;目前公开的是项目的软件部分，包括 ESP32-S3 嵌入式固件、Python PC Companion、浏览器里的导演台、调试界面和自动化测试。机械模型、PCB 工程、制作素材以及作者的个人运行数据暂未上传，作者计划后续逐步完整开源。&lt;/p&gt;&#xA;&lt;p&gt;需要说明的是，这里的“独立设计”主要指项目整体设计与各部分的系统集成。底层仍然建立在 ESP-IDF、FreeRTOS、LVGL、Opus 等成熟开源组件之上，语音识别、对话和语音合成则接入了外部模型服务。这样说反而更容易看出项目的真实工作量：把一个机器人做出来，从来不只是调用一次大模型 API，而是让机械、实时控制、音视频链路和用户体验真正协同起来。&lt;/p&gt;&#xA;&lt;h2 id=&#34;它现在已经能做什么&#34;&gt;它现在已经能做什么&lt;/h2&gt;&#xA;&lt;p&gt;从仓库 README 来看，Project TARS 已经覆盖了实体机器人的几条主要交互链路。&lt;/p&gt;&#xA;&lt;p&gt;身体运动方面，固件可以控制四路舵机，完成前进、左转、右转，以及一些命名过的情绪动作和社交动作，同时提供零点校准与步态调试。它当前并不是依靠复杂动力学做平衡控制，而是更接近一台可以完成预设动作的表达型机器人。&lt;/p&gt;&#xA;&lt;p&gt;语音方面，机器人采集麦克风音频，通过局域网交给电脑端 Companion，再接入云端语音识别、对话和语音合成服务。生成的回复会回到机器人扬声器播放。比较有意思的是，明确说出的动作指令会经过本地规则校验，而不是让语言模型直接绕过控制流程去驱动舵机；运动功能还需要显式使能。&lt;/p&gt;&#xA;&lt;p&gt;视觉交互方面，机器人使用两块 ST7735 显示屏，通过 LVGL 绘制状态、表情和对话终端。目前的表情目录包含三十多项表情，可以指定保持时间，也可以恢复自动表情。屏幕不只是装饰，而是 TARS 表达情绪和当前状态的重要出口。&lt;/p&gt;&#xA;&lt;p&gt;项目还带有一个浏览器导演台。用户可以选择表情、身体动作、指定台词和等待时间，把它们编排成一段脚本，并支持顺序播放、循环、导入导出和停止。对于拍摄演示、做科普展示或者单纯给机器人加点戏剧效果，这个设计很实用。&lt;/p&gt;&#xA;&lt;p&gt;在系统层面，项目提供了命令确认与终态回执、控制租约、软件急停、取消、断线停止和单控制会话等保护机制。它们不像机器人跳舞那样直观，却决定了一台实体设备能否在反复调试中保持可控。对机器人项目来说，这部分工程细节很有价值。&lt;/p&gt;&#xA;&lt;h2 id=&#34;为什么值得推荐&#34;&gt;为什么值得推荐&lt;/h2&gt;&#xA;&lt;p&gt;我觉得 Project TARS 最吸引人的地方，是它把“AI 助手”从聊天窗口拉回了物理世界。&lt;/p&gt;&#xA;&lt;p&gt;电脑里的对话模型可以生成文字，但 TARS 还要把文字变成动作和声音。一句话从麦克风进入系统，要经过音频采集、网络传输、语音识别、对话生成、语音合成，再回到扬声器；如果其中包含动作，还要经过规则判断、设备通信、舵机执行和回执确认。它涉及的问题跨越嵌入式开发、实时通信、前端界面、语音链路和机电控制，远不是一个单独方向的小作业。&lt;/p&gt;&#xA;&lt;p&gt;另一方面，作者没有把项目包装成已经完成的商业产品。README 清楚列出了主控芯片、屏幕、音频链路、交互方式和软件架构，也明确承认当前组合模式、长时间运行和日常使用仍需要继续验收。对于想学习实体 AI 项目的人来说，这种有代码、有架构、也有边界说明的仓库，比只放一段炫酷演示视频更有参考价值。&lt;/p&gt;&#xA;&lt;p&gt;如果你对以下方向感兴趣，这个项目尤其适合关注：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;用 ESP32-S3 做带运动和音频交互的机器人；&lt;/li&gt;&#xA;&lt;li&gt;把大模型、语音服务和嵌入式设备连接起来；&lt;/li&gt;&#xA;&lt;li&gt;开发面向机器人的动作编排工具与状态界面；&lt;/li&gt;&#xA;&lt;li&gt;研究实体设备的控制权限、急停和故障保护；&lt;/li&gt;&#xA;&lt;li&gt;把电影角色从视觉仿制推进到可交互原型。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;也应该注意它的边界&#34;&gt;也应该注意它的边界&lt;/h2&gt;&#xA;&lt;p&gt;Project TARS 目前不是一个可以完全脱离电脑运行的智能机器人。完整的语音体验需要电脑端 Companion 参与，云端服务也承担了语音识别、对话和语音合成。机器人端主要负责实时执行、运动、显示和音频采集与播放。&lt;/p&gt;&#xA;&lt;p&gt;它也不是一台自主导航机器人。项目没有宣称已经实现视觉导航、平衡闭环或播放中的可靠语音打断。现有舵机没有角度反馈传感器，因此命令执行回执不能替代对机器人实际姿态的测量。&lt;/p&gt;&#xA;&lt;p&gt;此外，目前公开的是软件源码，机械设计和 PCB 工程仍计划后续开放。仓库也明确说明，项目自有代码的统一开源许可证尚未确定；代码公开可见，并不等于已经授权所有人任意使用、修改或再分发。如果准备把项目内容用于二次开发或商业场景，需要先查看仓库中的许可证与第三方依赖说明。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Shiny on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/shiny/</link>
+		<description>Recent content in Shiny on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 01 Nov 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/shiny/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Posit Conf 2024</title>
+				<link>www.bio-spring.top/post/2024/11/01/posit-conf-2024/</link>
+				<pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2024/11/01/posit-conf-2024/</guid>
+				<description>&lt;p&gt;Posit 2024 会议视频的合集今天发布了。这是非常好的数据科学学习材料。视频有 100 多个。为了能够挑选感兴趣的视频，通过&lt;a href=&#34;https://syntheticcommunity.github.io/cailab.utils/articles/youtube-summary.html&#34;&gt;下载字幕的方法利用大模型对视频内容&lt;/a&gt;进行了总结。&lt;/p&gt;&#xA;&lt;p&gt;总结内容列在这里备查。&lt;/p&gt;&#xA;&lt;h2 id=&#34;updates-from-posit---posit-conf-2024&#34;&gt;Updates from Posit - posit conf 2024&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;URL: &lt;a href=&#34;https://www.youtube.com/watch?v=s_Vh9HIeLVg&#34;&gt;https://www.youtube.com/watch?v=s_Vh9HIeLVg&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;摘要&#34;&gt;摘要&lt;/h3&gt;&#xA;&lt;p&gt;这段视频内容主要介绍了杜邦公司在食品保鲜、水资源利用和废物价值提升等方面的创新努力，强调了其实现碳中和目标的决心。杜邦设定了到2050年实现全面碳中和的目标，并展示了如何通过各种项目和投资来减少碳足迹。公司鼓励科学家们提问、探索和分享新想法，推动技术创新，并提升数据科学共享的可及性。此外，视频还提到了一些新工具和教育项目，旨在让每位员工都能灵活掌握数据知识，实现可持续发展和社会价值。最后，视频解说了Posit公司的使命与愿景，强调开放源软件在数据科学中的重要性，并介绍了Posit如何通过新开发的工具支持教育和科学研究。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;introducing-positron-a-new-data-science-ide---posit-conf-2024&#34;&gt;Introducing Positron, a new data science IDE - posit conf 2024&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;URL: &lt;a href=&#34;https://www.youtube.com/watch?v=8uRcB34Hhsw&#34;&gt;https://www.youtube.com/watch?v=8uRcB34Hhsw&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;摘要-1&#34;&gt;摘要&lt;/h3&gt;&#xA;&lt;p&gt;视频介绍了一项名为Positron的新型数据科学集成开发环境（IDE），该项目在六周前首次公开。演讲者Julia Silge强调Positron的特点，包括其多语言支持（目前支持R和Python），以及针对数据科学工作的专门设计。Positron的开发理念是提高数据科学家的生产力，尤其是因为传统软件工程IDE对数据分析不够友好。&lt;/p&gt;&#xA;&lt;p&gt;Positron将包括多语言使用的灵活性，用户可以在同一项目中使用不同的编程语言。此外，演讲者还介绍了Positron在代码执行、代码辅助和调试等方面的功能，并通过现代的标准协议（如Jupyter协议和语言服务器协议）实现这些功能。这种架构使得Positron能够无缝支持新的数据科学语言，并提供更好的用户体验。&lt;/p&gt;&#xA;&lt;p&gt;另外，团队还明确指出RStudio将继续维护，并非被Positron取代，用户可以选择继续使用其熟悉的工具或尝试新的Positron。视频最后提供了有关如何安装和使用Positron的链接，并鼓励参与者提供反馈以帮助其进一步改进。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;closeread-bringing-scrollytelling-to-quarto---posit-conf-2024&#34;&gt;Closeread: bringing Scrollytelling to Quarto - posit conf 2024&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;URL: &lt;a href=&#34;https://www.youtube.com/watch?v=KqLxy66B3lQ&#34;&gt;https://www.youtube.com/watch?v=KqLxy66B3lQ&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;摘要-2&#34;&gt;摘要&lt;/h3&gt;&#xA;&lt;p&gt;该视频由加州大学伯克利分校的安德鲁·布雷教授主讲，内容围绕他在教授统计和数据科学时对“scrollytelling”的探索。布雷分享了自己在写期末考试时的拖延经历，并提到了一篇引发他兴趣的文章，强调了媒介在吸引注意力方面的有效性。为此，他和数据记者詹姆斯·戈尔迪合作开发了名为“Close Read”的Quarto扩展格式，以实现更具吸引力的叙事方式。&lt;/p&gt;&#xA;&lt;p&gt;通过三个示例，布雷展示了如何利用“Close Read”格式来分析文本、图像和代码，强调了“sticky”和“trigger”元素在动态展示中的重要性。他还探讨了如何通过空间交互和动态图形呈现来增强用户体验，认为这一方法在教学和数据新闻中具有广泛应用潜力。最后，他邀请观众访问其文档网站以获取更多信息。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;a-future-of-data-science---posit-conf-2024&#34;&gt;A Future of Data Science - posit conf 2024&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;URL: &lt;a href=&#34;https://www.youtube.com/watch?v=YKMZIzYBgTk&#34;&gt;https://www.youtube.com/watch?v=YKMZIzYBgTk&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;摘要-3&#34;&gt;摘要&lt;/h3&gt;&#xA;&lt;p&gt;这段视频讲述了数据科学的历史、发展和未来。演讲者以2003年自己通过数据分析研究第一个孩子出生时机的项目为引子，强调数据的重要性。他指出，数据科学是一个能够回答问题、解决争议和提升决策品质的工具和过程。接着，他讨论了数据科学如何在技术和统计学之间找到平衡，强调计算能力在数据科学崛起中的关键作用。&lt;/p&gt;&#xA;&lt;p&gt;他引用了Gartner的 hype cycle，分析了数据科学的期望峰值和失望谷。在谈到如何改善现状时，演讲者提到数据新闻在提升公众数据素养方面的重要作用，同时也指出，过度关注负面新闻可能会影响人们的幸福感。他强调，尽管面临挑战，但通过合理利用数据和科学方法，人们可以一起解决问题并实现更好的未来。&lt;/p&gt;&#xA;&lt;p&gt;最后，他对数据科学新人的建议是，利用开放的数据和资源，掌握必要的工具，关注实践，以此来推动持续的进步和创新。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;be-kind-rewind---posit-conf-2024&#34;&gt;Be Kind, Rewind - posit conf 2024&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;URL: &lt;a href=&#34;https://www.youtube.com/watch?v=5jJ6RHphpD8&#34;&gt;https://www.youtube.com/watch?v=5jJ6RHphpD8&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;摘要-4&#34;&gt;摘要&lt;/h3&gt;&#xA;&lt;p&gt;视频中，Ellis Huges分享了数据科学中的故事讲述技巧，强调数据科学家通过故事化的方式传达分析结果的重要性。他提到，视频以90年代的Blockbuster为引子，讲述了其辉煌的历史以及未能跟上时代变化而最终破产的教训。他介绍了“camcorder”包，这是一种R语言工具，能够简化数据可视化过程中记录图表的操作，方便数据科学家在探索数据时不需要手动保存每个图表，同时也提升观众对于可视化结果的理解。Ellis展示了如何利用camcorder制作动画以及比较数据的可视化，并鼓励数据科学家在分析中加入故事情节，帮助利益相关者更好地理解分析结果的背景和意义。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

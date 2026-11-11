@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Igraph on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/igraph/</link>
+		<description>Recent content in Igraph on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 26 Feb 2020 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/igraph/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>igraph matrices</title>
+				<link>www.bio-spring.top/post/2020/02/26/igraph-matrices/</link>
+				<pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2020/02/26/igraph-matrices/</guid>
+				<description>&lt;h2 id=&#34;关联矩阵incidence-matrix&#34;&gt;关联矩阵（incidence matrix）&lt;/h2&gt;&#xA;&lt;p&gt;我们生成的这个矩阵的原型是一个引证关系矩阵。&#xA;矩阵中的三行代表3篇文献，四列代表4篇引文。&#xA;1/2/3/4是在A/B/C前面发表的文献,A/B/C是后来发表的文献。&#xA;其中文献A引用了3/4，文献B引用了1/2/4，文献C引用了1/2/4。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(igraph)&#xA;library(Matrix)&#xA;&#xA;set.seed(3)&#xA;m &amp;lt;- matrix(data = sample(0:1, 12, replace = TRUE),nrow = 3)&#xA;rownames(m) &amp;lt;- LETTERS[1:3]&#xA;colnames(m) &amp;lt;- 1:4&#xA;m&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code&gt;##   1 2 3 4&#xA;## A 0 0 1 1&#xA;## B 1 1 0 1&#xA;## C 1 1 0 1&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;这样的一个引证关系，可以用下面的图表示。&lt;/p&gt;&#xA;&lt;p&gt;在&lt;code&gt;bibliometrix::cocMatrix()&lt;/code&gt; 中将这种矩阵称为共现矩阵，Co-occurrence Matrix。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;par(mar=c(1,1,1,1))&#xA;&#xA;g1 &amp;lt;- graph_from_incidence_matrix(m,directed = TRUE,mode = &amp;quot;out&amp;quot;) &#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code&gt;## Warning: `graph_from_incidence_matrix()` was deprecated in igraph 1.6.0.&#xA;## ℹ Please use `graph_from_biadjacency_matrix()` instead.&#xA;## This warning is displayed once every 8 hours.&#xA;## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was&#xA;## generated.&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot(g1)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;img src=&#34;www.bio-spring.top/post/2020/02/26/igraph-matrices/index.zh_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&#xA;&lt;p&gt;上面的矩阵通过矩阵叉乘可以得到不同的邻接矩阵，用于生成新的网络。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>igraph: 生成网络</title>
+				<link>www.bio-spring.top/post/2020/02/26/igraph-make-graph/</link>
+				<pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2020/02/26/igraph-make-graph/</guid>
+				<description>&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(igraph)&#xA;notable_graph &amp;lt;- c(&amp;quot;Bull&amp;quot;, &amp;quot;Chvatal&amp;quot;, &amp;quot;Coxeter&amp;quot;, &amp;quot;Cubical&amp;quot;, &amp;quot;Diamond&amp;quot;, &amp;quot;Dodecahedral&amp;quot;, &amp;quot;Dodecahedron&amp;quot;, &#xA;                   &amp;quot;Folkman&amp;quot;, &amp;quot;Franklin&amp;quot;, &amp;quot;Frucht&amp;quot;, &amp;quot;Grotzsch&amp;quot;, &amp;quot;Heawood&amp;quot;, &amp;quot;Herschel&amp;quot;, &amp;quot;House&amp;quot;, &#xA;                   &amp;quot;HouseX&amp;quot;, &amp;quot;Icosahedral&amp;quot;, &amp;quot;Icosahedron&amp;quot;, &amp;quot;Krackhardt kite&amp;quot;, &amp;quot;Levi&amp;quot;, &amp;quot;McGee&amp;quot;, &#xA;                   &amp;quot;Meredith&amp;quot;, &amp;quot;Noperfectmatching&amp;quot;, &amp;quot;Nonline&amp;quot;, &amp;quot;Octahedral&amp;quot;, &amp;quot;Octahedron&amp;quot;, &#xA;                   &amp;quot;Petersen&amp;quot;, &amp;quot;Robertson&amp;quot;, &amp;quot;Smallestcyclicgroup&amp;quot;, &amp;quot;Tetrahedral&amp;quot;, &amp;quot;Tetrahedron&amp;quot;, &#xA;                   &amp;quot;Thomassen&amp;quot;, &amp;quot;Tutte&amp;quot;, &amp;quot;Uniquely3colorable&amp;quot;, &amp;quot;Walther&amp;quot;, &amp;quot;Zachary&amp;quot;)&#xA;&#xA;graph &amp;lt;- lapply(notable_graph,make_graph)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;&lt;code&gt;make_graph()&lt;/code&gt; 一共支持 35 个内置图形。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;par(mfrow=c(5,7))&#xA;&#xA;success &amp;lt;- lapply(notable_graph, function(x){&#xA;  graph &amp;lt;- make_graph(x)&#xA;  par(mar=c(1,1,1,1))&#xA;  plot(graph, main = x)&#xA;})&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;img src=&#34;www.bio-spring.top/post/2020/02/26/igraph-make-graph/index.zh_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;960&#34; /&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;make_star(10) %&amp;gt;% plot&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;img src=&#34;www.bio-spring.top/post/2020/02/26/igraph-make-graph/index.zh_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;make_de_bruijn_graph(3,4) %&amp;gt;% plot&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;img src=&#34;www.bio-spring.top/post/2020/02/26/igraph-make-graph/index.zh_files/figure-html/unnamed-chunk-3-2.png&#34; width=&#34;672&#34; /&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;make_full_graph(10) %&amp;gt;% plot&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;img src=&#34;www.bio-spring.top/post/2020/02/26/igraph-make-graph/index.zh_files/figure-html/unnamed-chunk-3-3.png&#34; width=&#34;672&#34; /&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;make_kautz_graph(3,4) %&amp;gt;% plot&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;img src=&#34;www.bio-spring.top/post/2020/02/26/igraph-make-graph/index.zh_files/figure-html/unnamed-chunk-3-4.png&#34; width=&#34;672&#34; /&gt;</description>
+			</item>
+	</channel>
+</rss>

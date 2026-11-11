@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> 把《星际穿越》的 TARS 做进现实：开源机器人项目 Project TARS | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="把《星际穿越》的 TARS 做进现实：开源机器人项目 Project TARS">
+	<meta name="twitter:description" content="从机械运动、语音互动到双屏表情，介绍 doubleZ-dev 正在逐步开源的 TARS 机器人项目，以及它现阶段真正值得关注的地方。">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container single">
+<main>
+
+<div class="article-meta">
+<h1><span class="title">把《星际穿越》的 TARS 做进现实：开源机器人项目 Project TARS</span></h1>
+
+<h3 class="author">
+gaoch
+</h3>
+
+<h3 class="date">2026-11-11</h3>
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF">信息技术</a> 
+  
+  
+  
+  Tags: <a href="/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE">开源项目</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA">机器人</a> <a href="/tags/tars">TARS</a> <a href="/tags/esp32">ESP32</a> <a href="/tags/ai">AI</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB">软件分享</a> 
+  
+  
+</p>
+</div>
+
+<div class="article">
+<p>今天早上，我在抖音上看到了一段《星际穿越》TARS 机器人的实机演示。它不只是一个摆在外面的模型，而是会运动、会听人说话、会用双屏展示表情，还能按编排播放动作和台词。视频里的效果让我想起电影中那个有点冷幽默、又很可靠的机器人。</p>
+<p>顺着视频找过去，项目仓库在这里：</p>
+<p><a href="https://github.com/doubleZ-dev/project-tars-software">doubleZ-dev/project-tars-software</a></p>
+<p>演示视频来自抖音作者“小李家的多啦A梦”：</p>
+<blockquote>
+<p><a href="https://v.douyin.com/01z3podpd-Y/">【开源】我做出了《星际穿越》的 TARS，它会听我说话</a></p>
+</blockquote>
+<h2 id="一个逐步开源的实体机器人项目">一个逐步开源的实体机器人项目</h2>
+<p>Project TARS 由 <a href="https://github.com/doubleZ-dev">doubleZ-dev</a> 独立设计和整合，灵感来自《星际穿越》中的同名机器人。项目的目标并不是做一个只能播放动画的桌面摆件，而是把机械结构、电子硬件、运动控制、屏幕交互和语音系统组合成一台可以真实互动的设备。</p>
+<p>目前公开的是项目的软件部分，包括 ESP32-S3 嵌入式固件、Python PC Companion、浏览器里的导演台、调试界面和自动化测试。机械模型、PCB 工程、制作素材以及作者的个人运行数据暂未上传，作者计划后续逐步完整开源。</p>
+<p>需要说明的是，这里的“独立设计”主要指项目整体设计与各部分的系统集成。底层仍然建立在 ESP-IDF、FreeRTOS、LVGL、Opus 等成熟开源组件之上，语音识别、对话和语音合成则接入了外部模型服务。这样说反而更容易看出项目的真实工作量：把一个机器人做出来，从来不只是调用一次大模型 API，而是让机械、实时控制、音视频链路和用户体验真正协同起来。</p>
+<h2 id="它现在已经能做什么">它现在已经能做什么</h2>
+<p>从仓库 README 来看，Project TARS 已经覆盖了实体机器人的几条主要交互链路。</p>
+<p>身体运动方面，固件可以控制四路舵机，完成前进、左转、右转，以及一些命名过的情绪动作和社交动作，同时提供零点校准与步态调试。它当前并不是依靠复杂动力学做平衡控制，而是更接近一台可以完成预设动作的表达型机器人。</p>
+<p>语音方面，机器人采集麦克风音频，通过局域网交给电脑端 Companion，再接入云端语音识别、对话和语音合成服务。生成的回复会回到机器人扬声器播放。比较有意思的是，明确说出的动作指令会经过本地规则校验，而不是让语言模型直接绕过控制流程去驱动舵机；运动功能还需要显式使能。</p>
+<p>视觉交互方面，机器人使用两块 ST7735 显示屏，通过 LVGL 绘制状态、表情和对话终端。目前的表情目录包含三十多项表情，可以指定保持时间，也可以恢复自动表情。屏幕不只是装饰，而是 TARS 表达情绪和当前状态的重要出口。</p>
+<p>项目还带有一个浏览器导演台。用户可以选择表情、身体动作、指定台词和等待时间，把它们编排成一段脚本，并支持顺序播放、循环、导入导出和停止。对于拍摄演示、做科普展示或者单纯给机器人加点戏剧效果，这个设计很实用。</p>
+<p>在系统层面，项目提供了命令确认与终态回执、控制租约、软件急停、取消、断线停止和单控制会话等保护机制。它们不像机器人跳舞那样直观，却决定了一台实体设备能否在反复调试中保持可控。对机器人项目来说，这部分工程细节很有价值。</p>
+<h2 id="为什么值得推荐">为什么值得推荐</h2>
+<p>我觉得 Project TARS 最吸引人的地方，是它把“AI 助手”从聊天窗口拉回了物理世界。</p>
+<p>电脑里的对话模型可以生成文字，但 TARS 还要把文字变成动作和声音。一句话从麦克风进入系统，要经过音频采集、网络传输、语音识别、对话生成、语音合成，再回到扬声器；如果其中包含动作，还要经过规则判断、设备通信、舵机执行和回执确认。它涉及的问题跨越嵌入式开发、实时通信、前端界面、语音链路和机电控制，远不是一个单独方向的小作业。</p>
+<p>另一方面，作者没有把项目包装成已经完成的商业产品。README 清楚列出了主控芯片、屏幕、音频链路、交互方式和软件架构，也明确承认当前组合模式、长时间运行和日常使用仍需要继续验收。对于想学习实体 AI 项目的人来说，这种有代码、有架构、也有边界说明的仓库，比只放一段炫酷演示视频更有参考价值。</p>
+<p>如果你对以下方向感兴趣，这个项目尤其适合关注：</p>
+<ul>
+<li>用 ESP32-S3 做带运动和音频交互的机器人；</li>
+<li>把大模型、语音服务和嵌入式设备连接起来；</li>
+<li>开发面向机器人的动作编排工具与状态界面；</li>
+<li>研究实体设备的控制权限、急停和故障保护；</li>
+<li>把电影角色从视觉仿制推进到可交互原型。</li>
+</ul>
+<h2 id="也应该注意它的边界">也应该注意它的边界</h2>
+<p>Project TARS 目前不是一个可以完全脱离电脑运行的智能机器人。完整的语音体验需要电脑端 Companion 参与，云端服务也承担了语音识别、对话和语音合成。机器人端主要负责实时执行、运动、显示和音频采集与播放。</p>
+<p>它也不是一台自主导航机器人。项目没有宣称已经实现视觉导航、平衡闭环或播放中的可靠语音打断。现有舵机没有角度反馈传感器，因此命令执行回执不能替代对机器人实际姿态的测量。</p>
+<p>此外，目前公开的是软件源码，机械设计和 PCB 工程仍计划后续开放。仓库也明确说明，项目自有代码的统一开源许可证尚未确定；代码公开可见，并不等于已经授权所有人任意使用、修改或再分发。如果准备把项目内容用于二次开发或商业场景，需要先查看仓库中的许可证与第三方依赖说明。</p>
+<h2 id="从哪里开始看">从哪里开始看</h2>
+<p>建议先看仓库根目录的 README，了解整体架构、设备组成和当前能力；再到 <code>firmware/tars_companion</code> 查看电脑端 Companion，以及浏览器导演台的实现。即使手头没有对应的机器人硬件，README 中也提供了模拟导演台的启动方式，可以先体验表情、动作和台词的编排流程。</p>
+<p>项目仍在持续迭代。按照作者的规划，后续会继续完善安装配置流程、测试和硬件资料。</p>
+<p>不瞒你说，我自己和实验室都对物联网智能硬件有着实打实的兴趣，只是平时常被各种事务追着跑，难免留下“很想做一个，但暂时没空亲自上手”的遗憾。所以，如果你也是华中农业大学的学生，完全不需要先带着一个“惊世骇俗”的新点子来——我们可以从复现 Project TARS 这样的成熟项目开始，先把它跑通、拆开看，再一步步补上嵌入式、通信、交互和机电控制这些知识点。哪怕你只是想先从拧螺丝、装传感器、调舵机或者写第一行固件开始，也欢迎来找我聊聊。实验室愿意做那个把“我看过”变成“我做过”、再变成“我能改进”的地方。别让灵感只停在收藏夹里，也许下一条视频的主角，就是你亲手复现并升级的机器人。</p>
+<p>电影里的 TARS 让人印象深刻，不只是因为它长得特别，更因为它在关键时刻既可靠又有性格。现实中的 Project TARS 还处在原型阶段，但它已经把一个很有吸引力的方向摆在了我们面前：让大模型拥有身体，也让机器人拥有一种可以被感知的人格表达。</p>
+<p>如果你也喜欢《星际穿越》，或者正在探索嵌入式设备与大模型的结合，这个项目值得收藏和持续关注。</p>
+
+</div>
+</main>
+
+<section class="appendix">
+
+
+<div>
+  <div class="side side-left"><h3>作者简介</h3></div>
+  <div>
+
+
+
+
+
+<div>Chun-Hui Gao is a Research Associate at <a href="http://www.hzau.edu.cn">Huazhong Agricultural University</a>.</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div>
+  <div class="side side-left"><h3>重复使用</h3></div>
+  Text and figures are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution CC BY 4.0</a>. The source code is licensed under MIT. The full source is available at <a href="https://github.com/yihui/hugo-prose">https://github.com/yihui/hugo-prose</a>.
+</div>
+
+
+
+<div>
+  <div class="side side-left"><h3>欢迎修订</h3></div>
+  
+  
+  
+    
+    
+  
+  如果您发现本文里含有任何错误（包括错别字和标点符号），欢迎<a href="https://github.com/gaospecial/bio-spring/edit/master/content/post/2026-11-11-project-tars-software/index.zh.md" id="edit-link">在本站的 GitHub 项目里提交修订意见。</a>
+</div>
+
+
+
+
+<div>
+  <div class="side side-left"><h3>引用本文</h3></div>
+  <p>如果您使用了本文的内容，请按照以下方式引用：</p>
+  <pre><code>gaoch (2026). 把《星际穿越》的 TARS 做进现实：开源机器人项目 Project TARS. BIO-SPRING. www.bio-spring.top/post/2026/11/11/project-tars-software/</code></pre>
+  <p>BibTeX citation</p>
+  <pre><code>@misc{
+  title = "把《星际穿越》的 TARS 做进现实：开源机器人项目 Project TARS",
+  author = "gaoch",
+  year = "2026",
+  journal = "BIO-SPRING",
+  note = "www.bio-spring.top/post/2026/11/11/project-tars-software/"
+}</code></pre>
+</div>
+
+</section>
+
+
+
+<nav class="post-nav">
+  <span class="nav-next">&larr; <a href="www.bio-spring.top/post/2026/11/05/kimi-literature-search-boundaries/" title=下一篇&#32;(旧)>Kimi 文献检索能力的实际边界：基于两份 CNS 检索记录的技术分析</a></span>
+  &hercon;
+  <span class="nav-prev"></span>
+</nav>
+
+
+
+
+<section class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var disqus_js = '//bio-spring.disqus.com/embed.js';
+    var d = document, s = d.createElement('script');
+    s.src = disqus_js; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    var t = d.getElementById('disqus_thread');
+    var b = false, l = function(scroll) {
+      if (b) return;
+      (d.head || d.body).appendChild(s); b = true;
+      if (scroll) t.scrollIntoView();
+    }
+    s.onerror = function(e) {
+      if (sessionStorage.getItem('failure-note')) return;
+      t.innerText = 'Sorry, but you cannot make comments because Disqus failed to load for some reason. It is known to be blocked in China. If you are sure it is not blocked in your region, please refresh the page. 中国大陆地区读者需要翻墙才能发表评论。';
+      t.style.border = '1px dashed';
+      t.style.padding = '.5em';
+      t.style.background = 'lightyellow';
+      sessionStorage.setItem('failure-note', true);
+    };
+    
+    if (location.hash.match(/^#comment-[0-9]+$/)) return l(true);
+    var c = function() {
+      if (b) return;
+      var rect = t.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) l();
+    };
+    window.addEventListener('load', c);
+    d.addEventListener('scroll', c);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+</div>
+
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+<script src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils/js/number-sections.min.js,npm/@xiee/utils/js/toc.min.js,npm/@xiee/utils/js/toc-highlight.min.js,npm/@xiee/utils/js/sidenotes.min.js,npm/@xiee/utils/js/right-quote.min.js,npm/@xiee/utils/js/center-img.min.js,npm/@xiee/utils/js/fix-pandoc.min.js,npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+
+
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

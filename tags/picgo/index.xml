@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>PicGo on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/picgo/</link>
+		<description>Recent content in PicGo on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 29 Dec 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/picgo/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Mac OS 安装 PicGo 提示“文件已损坏”</title>
+				<link>www.bio-spring.top/post/2023/12/29/mac-os-picgo/</link>
+				<pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2023/12/29/mac-os-picgo/</guid>
+				<description>&lt;p&gt;安装完成后，打开终端，运行下面的命令。&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;sudo xattr -d com.apple.quarantine &amp;quot;/Applications/PicGo.app/&amp;quot;&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;这个命令的作用是删除指定文件或目录的扩展属性（extended attributes）中的“com.apple.quarantine”属性。在 macOS 中，文件或应用程序首次从互联网上下载并存储在磁盘上时，系统可能会自动添加“com.apple.quarantine”属性，用于标记文件的来源，并在首次运行时显示安全提示。&lt;/p&gt;&#xA;&lt;p&gt;具体来说，&lt;code&gt;sudo xattr -d com.apple.quarantine &amp;quot;/Applications/PicGo.app/&amp;quot;&lt;/code&gt; 这个命令尝试删除 &amp;ldquo;/Applications/PicGo.app/&amp;rdquo; 目录的 quarantine 属性。这样，当你运行 PicGo 应用程序时，就不会再收到系统的安全提示，因为你已经明确告诉系统这个应用是可信的。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

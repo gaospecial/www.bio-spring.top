@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Hugo on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/hugo/</link>
+		<description>Recent content in Hugo on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 20 Aug 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Edit link is wrong in Hugo Prose</title>
+				<link>www.bio-spring.top/post/2023/08/20/edit-link-is-wrong-in-hugo-prose/</link>
+				<pubDate>Sun, 20 Aug 2023 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2023/08/20/edit-link-is-wrong-in-hugo-prose/</guid>
+				<description>&lt;p&gt;Hugo-Prose 主题中使用 &lt;code&gt;correction.html&lt;/code&gt; 生成在 GitHub 进行修改的链接。&lt;/p&gt;&#xA;&lt;p&gt;在 &lt;code&gt;correction.html&lt;/code&gt; 中主要针对 R Markdown 文件存在的情况，找出对应的 &lt;code&gt;*.Rmd&lt;/code&gt; 和 &lt;code&gt;*.Rmarkdown&lt;/code&gt; 的路径。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if (and .File .Site.Params.editLink) }}&#xA;&amp;lt;div&amp;gt;&#xA;  &amp;lt;div class=&amp;quot;side side-left&amp;quot;&amp;gt;&amp;lt;h3&amp;gt;{{ i18n &amp;quot;suggestChanges&amp;quot; }}&amp;lt;/h3&amp;gt;&amp;lt;/div&amp;gt;&#xA;  {{ $filePath := .File.Path }}&#xA;  {{ $RmdFile := (print .File.Dir .File.BaseFileName &amp;quot;.Rmd&amp;quot;) }}&#xA;  {{ if (fileExists (print &amp;quot;content/&amp;quot; $RmdFile)) }}&#xA;    {{ $filePath = $RmdFile }}&#xA;  {{ else }}&#xA;    {{ $RmdFile = (print .File.Dir .File.BaseFileName &amp;quot;.Rmarkdown&amp;quot;) }}&#xA;    {{ if (fileExists (print &amp;quot;content/&amp;quot; $RmdFile)) }}&#xA;      {{ $filePath = $RmdFile }}&#xA;    {{ end }}&#xA;  {{ end }}&#xA;  {{ i18n &amp;quot;suggestChangesText1&amp;quot; }}&amp;lt;a href=&amp;quot;{{ .Site.Params.editLink }}{{ $filePath }}&amp;quot; id=&amp;quot;edit-link&amp;quot;&amp;gt;{{ i18n &amp;quot;suggestChangesText2&amp;quot; }}&amp;lt;/a&amp;gt;&#xA;&amp;lt;/div&amp;gt;&#xA;{{ end }}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;在这个文件中，使用 Hugo 变量 &lt;code&gt;.File.Path&lt;/code&gt; 访问当前文件的路径。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>更改 blogdown 主题</title>
+				<link>www.bio-spring.top/post/2023/08/20/modifying-blogdown-hugo-theme/</link>
+				<pubDate>Sun, 20 Aug 2023 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2023/08/20/modifying-blogdown-hugo-theme/</guid>
+				<description>&lt;p&gt;Hugo Prose 主题中，网站主页的元素是通过 &lt;code&gt;/themes/hugo-prose/layouts/_default/list.html&lt;/code&gt; 生成的。&lt;/p&gt;&#xA;&lt;p&gt;有几个地方想改一下：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;显示卡片时，标题统一放在左边。原来左一下右一下看起来有点多余。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;显示 blog post 时，以一句话标题显示，不使用小卡片的形式。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;调整卡片标题的位置&#34;&gt;调整卡片标题的位置&lt;/h2&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if .IsHome }}&#xA;{{ range $i, $p := (where .Site.RegularPages &amp;quot;Section&amp;quot; &amp;quot;card&amp;quot;) }}&#xA;&amp;lt;section class=&amp;quot;article-list&amp;quot;{{ with .Params.style }}{{ printf &amp;quot; style=%q&amp;quot; . | safeHTMLAttr }}{{ end }}&amp;gt;&#xA;  &amp;lt;table&amp;gt;&#xA;&amp;lt;tbody&amp;gt;&#xA;&amp;lt;tr&amp;gt;&#xA;{{if (eq (mod $i 2) 0) }}&#xA;&amp;lt;td class=&amp;quot;side-title&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;{{ $p.Title }}&amp;lt;/h1&amp;gt;&amp;lt;/td&amp;gt;&#xA;&amp;lt;td class=&amp;quot;spacer spacer-left&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;&#xA;&amp;lt;td&amp;gt;{{ $p.Content }}&amp;lt;/td&amp;gt;&#xA;{{ else }}&#xA;&amp;lt;td&amp;gt;{{ $p.Content }}&amp;lt;/td&amp;gt;&#xA;&amp;lt;td class=&amp;quot;spacer spacer-right&amp;quot;&amp;gt;&amp;lt;/td&amp;gt;&#xA;&amp;lt;td class=&amp;quot;side-title&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;{{ $p.Title }}&amp;lt;/h1&amp;gt;&amp;lt;/td&amp;gt;&#xA;{{ end }}&#xA;&amp;lt;/tr&amp;gt;&#xA;&amp;lt;/tbody&amp;gt;&#xA;&amp;lt;/table&amp;gt;&#xA;&amp;lt;/section&amp;gt;&#xA;{{ end }}&#xA;{{ end }}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;&lt;code&gt;{{ range $i, $p := (where .Site.RegularPages &amp;quot;Section&amp;quot; &amp;quot;card&amp;quot;) }}&lt;/code&gt; 表示在全部页面中搜索，&lt;code&gt;section = card&lt;/code&gt; 的页面。这里的 &lt;code&gt;section&lt;/code&gt; 指的是 &lt;code&gt;content&lt;/code&gt; 目录下面的子文件夹，即 &lt;code&gt;content/card/&lt;/code&gt; 目录。这个命令的作用就是把这里的文件序号赋值给 &lt;code&gt;$i&lt;/code&gt;，把内容对象赋值给 &lt;code&gt;$p&lt;/code&gt;。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Windows中使用Chocolatey包管理系统安装Hugo</title>
+				<link>www.bio-spring.top/post/2019/11/10/windows-chocolatey-install-hugo/</link>
+				<pubDate>Sun, 10 Nov 2019 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2019/11/10/windows-chocolatey-install-hugo/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://chocolatey.org/install&#34;&gt;Chocolatey&lt;/a&gt; 提供一个命令行下安装程序的环境。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://chocolatey.org/install&#34;&gt;https://chocolatey.org/install&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;配置-powershell&#34;&gt;配置 PowerShell&lt;/h1&gt;&#xA;&lt;pre&gt;&lt;code&gt;# 使用管理员运行 PowerShell&#xA;Set-ExecutionPolicy Bypass -Scope Process&#xA;&#xA;# 下面应当返回 bypass&#xA;Get-ExecutionPolicy&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;安装 Chocolatey&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;&#xA;# 安装Chocolatey&#xA;Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h1 id=&#34;安装-hugo&#34;&gt;安装 Hugo&lt;/h1&gt;&#xA;&lt;p&gt;打开 PowerShell，然后运行下面的命令。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;choco install hugo -confirm&#xA;&#xA;# or&#xA;&#xA;choco install hugo-extended -confirm&#xA;&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+			</item>
+	</channel>
+</rss>

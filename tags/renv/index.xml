@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Renv on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/renv/</link>
+		<description>Recent content in Renv on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/renv/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>使用 renv</title>
+				<link>www.bio-spring.top/post/2021/04/28/using-renv/</link>
+				<pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2021/04/28/using-renv/</guid>
+				<description>&lt;p&gt;使用 &lt;code&gt;renv&lt;/code&gt; 是为了保证环境的一致。它可以单个项目创建 R 包的管理环境，而不是依赖全局的 R Library。&lt;/p&gt;&#xA;&lt;p&gt;R Library 会保存在当前目录下的 &lt;code&gt;renv&lt;/code&gt; 目录中，R Session 中的环境变量也会被修改。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# 本地安装 renv 包&#xA;install.packages(&amp;quot;renv&amp;quot;)&#xA;&#xA;# 记录 renv 的快照&#xA;renv::snapshot()&#xA;&#xA;# 根据快照安装项目依赖的 R 包&#xA;renv::restore()&#xA;&#xA;# 检查&#xA;renv::status()&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;快照以 &lt;code&gt;renv.lock&lt;/code&gt; 的名称保存在根目录。这是一个 JSON 文件，记录包的来源的版本。&#xA;更换电脑后，通过读取其中的信息，安装配置一个完全一样的 R 环境。&lt;/p&gt;&#xA;&lt;p&gt;我因为在 R 的配置文件中自定义了 &lt;code&gt;.libPaths(&amp;quot;D:/R_LIB_USER&amp;quot;)&lt;/code&gt;，所以出了点状况。&#xA;将其改为如下的内容即可：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;.libPaths(c(&#39;D:/R_LIBS_USER&#39;,.libPaths()))&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+			</item>
+	</channel>
+</rss>

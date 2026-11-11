@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>数据结构 on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+		<description>Recent content in 数据结构 on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 04 Dec 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>R中的基础数据结构</title>
+				<link>www.bio-spring.top/post/2023/12/04/data-structure-in-r/</link>
+				<pubDate>Mon, 04 Dec 2023 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2023/12/04/data-structure-in-r/</guid>
+				<description>&lt;p&gt;创建几个基本的变量。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;v = 1:24&#xA;m = matrix(v, nrow = 4)&#xA;a = array(v, dim = c(2,3,4))&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;这些变量都保存了 1 - 24 这几个数字。不过，它们所属的类是不同的。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;v&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code&gt;##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;m&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code&gt;##      [,1] [,2] [,3] [,4] [,5] [,6]&#xA;## [1,]    1    5    9   13   17   21&#xA;## [2,]    2    6   10   14   18   22&#xA;## [3,]    3    7   11   15   19   23&#xA;## [4,]    4    8   12   16   20   24&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;a&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code&gt;## , , 1&#xA;## &#xA;##      [,1] [,2] [,3]&#xA;## [1,]    1    3    5&#xA;## [2,]    2    4    6&#xA;## &#xA;## , , 2&#xA;## &#xA;##      [,1] [,2] [,3]&#xA;## [1,]    7    9   11&#xA;## [2,]    8   10   12&#xA;## &#xA;## , , 3&#xA;## &#xA;##      [,1] [,2] [,3]&#xA;## [1,]   13   15   17&#xA;## [2,]   14   16   18&#xA;## &#xA;## , , 4&#xA;## &#xA;##      [,1] [,2] [,3]&#xA;## [1,]   19   21   23&#xA;## [2,]   20   22   24&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h2 id=&#34;变量的类&#34;&gt;变量的类&lt;/h2&gt;&#xA;&lt;p&gt;在R语言中，&lt;code&gt;typeof()&lt;/code&gt; 函数用于获取一个对象的&lt;strong&gt;基本数据类型&lt;/strong&gt;。它返回一个描述对象数据类型的字符串。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

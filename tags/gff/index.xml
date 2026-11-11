@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>GFF on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/gff/</link>
+		<description>Recent content in GFF on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 14 Oct 2015 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/gff/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>A Genbank –&gt; GTF converter derived from BioPerl</title>
+				<link>www.bio-spring.top/post/2015/10/14/2015-10-14-a-genbank-gtf-converter-derived-from-bioperl/</link>
+				<pubDate>Wed, 14 Oct 2015 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2015/10/14/2015-10-14-a-genbank-gtf-converter-derived-from-bioperl/</guid>
+				<description>&lt;p&gt;BioPerl has a Genbank –&amp;gt; GFF converter (the script is&#xA;bp_genbank2gff3.pl), however, this converter generated GFF/GTF file&#xA;could not work in Bioconductor when using the function&#xA;&lt;strong&gt;maketxdbfromGFF&lt;/strong&gt; to construct a transcript database.&lt;/p&gt;&#xA;&lt;p&gt;Currently, I have developed such a converter that may extract&#xA;information from a NCBI Genbank file and write them to GFF version 2, or&#xA;GTF format. This script is derived from BioPerl, so you need firstly&#xA;&lt;a href=&#34;http://bio-spring.top/reinstall-bioperl/&#34;&gt;get the module installed&lt;/a&gt; in&#xA;your system. To check whether BioPerl is ready, just refer to this post:&#xA;&lt;a href=&#34;http://bio-spring.top/check-bioperl/&#34;&gt;http://bio-spring.top/check-bioperl/&lt;/a&gt; .&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>关于GFF3格式</title>
+				<link>www.bio-spring.top/post/2010/10/28/2010-10-28-about-gff3/</link>
+				<pubDate>Thu, 28 Oct 2010 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2010/10/28/2010-10-28-about-gff3/</guid>
+				<description>&lt;p&gt;GFF3是GFF注释文件的新标准。文件中&lt;strong&gt;每一行&lt;/strong&gt;为基因组的一个属性，分为&lt;strong&gt;9&lt;/strong&gt;列，以TAB分开。&lt;/p&gt;&#xA;&lt;p&gt;依次是：&lt;/p&gt;&#xA;&lt;p&gt;1. reference sequence：参照序列&lt;br&gt;&#xA;指出注释的对象。如一个染色体，克隆或片段。可以有多个参照序列。&lt;/p&gt;&#xA;&lt;p&gt;2. source ：来源&lt;br&gt;&#xA;注释的来源。如果未知，则用点（.）代替。&lt;/p&gt;&#xA;&lt;p&gt;3. type ：类型&lt;br&gt;&#xA;属性的类型。建议使用符合SO惯例的名称（sequence&#xA;ontology，参看[[Sequence Ontology Project]])&#xA;,如gene，repeat_region，exon，CDS等。&lt;/p&gt;&#xA;&lt;p&gt;4. start position ：起点&lt;br&gt;&#xA;属性对应片段的起点。从1开始计数。&lt;/p&gt;&#xA;&lt;p&gt;5. end position ：终点&lt;br&gt;&#xA;属性对应片段的终点。一般比起点的数值要大。&lt;/p&gt;&#xA;&lt;p&gt;6. score ：得分&lt;br&gt;&#xA;对于一些可以量化的属性，可以在此设置一个数值以表示程度的不同。如果为空，用点（.）代替。&lt;/p&gt;&#xA;&lt;p&gt;7. strand ：链&lt;br&gt;&#xA;“＋”表示正链，“－”表示负链，“.”表示不需要指定正负链。&lt;/p&gt;&#xA;&lt;p&gt;8. phase ：步进&lt;br&gt;&#xA;对于编码蛋白质的CDS来说，本列指定下一个密码子开始的位置。可以是0，1或2，表示到达下一个密码子需要跳过的碱基个数。&lt;br&gt;&#xA;对于其它属性，则用点（.）代替。&lt;/p&gt;&#xA;&lt;p&gt;9. attributes ：属性&lt;br&gt;&#xA;一个包含众多属性的列表。格式为“标签＝值”（tag=value）。不同属性之间以分号相隔。可以存在空格，不过若有“,=;”则用URL转义（URL&#xA;escaping rule），同时TAB也需要转换为“%09”表示。&lt;br&gt;&#xA;下列的标签已定义：&lt;/p&gt;&#xA;&lt;p&gt;ID&lt;br&gt;&#xA;指定一个唯一的标识。对属性分类是非常好用（例如查找一个转录单位中所以的外显子）。&lt;br&gt;&#xA;Name&lt;br&gt;&#xA;指定属性的名称。展示给用户的就是该属性。&lt;br&gt;&#xA;Alias&lt;br&gt;&#xA;名称的代称或其它。当存在其它名称时使用该属性。&lt;br&gt;&#xA;Note&lt;br&gt;&#xA;描述性的一些说明。&lt;br&gt;&#xA;Alias和Note可以有多个值，不同值之间以逗号分隔。&lt;br&gt;&#xA;如：Alias=M19211,gna-12,GAMMA-GLOBULIN&lt;/p&gt;&#xA;&lt;p&gt;Other good stuff can go into the attributes field, as we shall see&#xA;later.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

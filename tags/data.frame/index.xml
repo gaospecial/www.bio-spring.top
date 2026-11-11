@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Data.frame on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/data.frame/</link>
+		<description>Recent content in Data.frame on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 17 Jul 2019 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/data.frame/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Tibble与Data.frame中的group</title>
+				<link>www.bio-spring.top/post/2019/07/17/tibble-data-frame-group/</link>
+				<pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2019/07/17/tibble-data-frame-group/</guid>
+				<description>&lt;p&gt;Tibble 和 Data.frame 一般可以通用，但是 Tibble 中含有的分组信息，如果不注意，有时可能会引起错误。&lt;/p&gt;&#xA;&lt;h2 id=&#34;ggpubr使用grouped-tibble时自动添加group的小坑&#34;&gt;ggpubr使用grouped tibble时自动添加group的小坑&lt;/h2&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;&amp;gt; error_rate_summary&#xA;# A tibble: 81 x 8&#xA;# Groups:   enzyme, nps [27]&#xA;   id    enzyme    nps   rep   type  Error_Rate     mean       std&#xA;   &amp;lt;fct&amp;gt; &amp;lt;fct&amp;gt;     &amp;lt;fct&amp;gt; &amp;lt;fct&amp;gt; &amp;lt;chr&amp;gt;      &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;&#xA; 1 NP1   rtaq      Fe2O3 rep1  B       0.00141  0.00125  0.000139 &#xA; 2 NP10  extaq     Fe2O3 rep1  B       0.00137  0.00138  0.000107 &#xA; 3 NP100 primestar Fe2O3 rep3  Y       0.000908 0.000810 0.0000899&#xA; 4 NP101 primestar ZnO   rep3  Y       0.000919 0.000816 0.0000904&#xA; 5 NP102 primestar CeO2  rep3  Y       0.000930 0.000785 0.000126 &#xA; 6 NP103 primestar Fe3O4 rep3  Y       0.000934 0.000800 0.000117 &#xA; 7 NP104 primestar Al2O3 rep3  Y       0.000866 0.000817 0.0000839&#xA; 8 NP105 primestar CuO   rep3  Y       0.000892 0.000795 0.0000920&#xA; 9 NP106 primestar TiO2  rep3  Y       0.000879 0.000796 0.0000832&#xA;10 NP107 primestar CK    rep3  Y       0.000884 0.000786 0.0000915&#xA;# ... with 71 more rows&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;有一个tibble，group by enzyme和nps。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

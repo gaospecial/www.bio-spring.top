@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>GTF on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/gtf/</link>
+		<description>Recent content in GTF on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 14 Oct 2015 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/gtf/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>A Genbank –&gt; GTF converter derived from BioPerl</title>
+				<link>www.bio-spring.top/post/2015/10/14/2015-10-14-a-genbank-gtf-converter-derived-from-bioperl/</link>
+				<pubDate>Wed, 14 Oct 2015 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2015/10/14/2015-10-14-a-genbank-gtf-converter-derived-from-bioperl/</guid>
+				<description>&lt;p&gt;BioPerl has a Genbank –&amp;gt; GFF converter (the script is&#xA;bp_genbank2gff3.pl), however, this converter generated GFF/GTF file&#xA;could not work in Bioconductor when using the function&#xA;&lt;strong&gt;maketxdbfromGFF&lt;/strong&gt; to construct a transcript database.&lt;/p&gt;&#xA;&lt;p&gt;Currently, I have developed such a converter that may extract&#xA;information from a NCBI Genbank file and write them to GFF version 2, or&#xA;GTF format. This script is derived from BioPerl, so you need firstly&#xA;&lt;a href=&#34;http://bio-spring.top/reinstall-bioperl/&#34;&gt;get the module installed&lt;/a&gt; in&#xA;your system. To check whether BioPerl is ready, just refer to this post:&#xA;&lt;a href=&#34;http://bio-spring.top/check-bioperl/&#34;&gt;http://bio-spring.top/check-bioperl/&lt;/a&gt; .&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Quarto on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/quarto/</link>
+		<description>Recent content in Quarto on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 27 Nov 2025 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/quarto/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Posit::conf(2025) 精选辑 - Quarto/文档生成</title>
+				<link>www.bio-spring.top/post/2025/11/27/posit-conf-2025-quarto/</link>
+				<pubDate>Thu, 27 Nov 2025 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2025/11/27/posit-conf-2025-quarto/</guid>
+				<description>&lt;h2 id=&#34;using-quarto-to-improve-formattingautomate-the-generation-of-hundreds-of-reports-keaton-wilson&#34;&gt;Using Quarto to Improve Formatting/Automate the Generation of Hundreds of Reports (Keaton Wilson)&lt;/h2&gt;&#xA;&lt;p&gt;来源：&lt;a href=&#34;https://www.youtube.com/watch?v=vHrI17AeYGs&#34;&gt;https://www.youtube.com/watch?v=vHrI17AeYGs&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;这份视频摘要介绍了市场研究公司KS&amp;amp;R的解决方案开发者Keaton，分享了他们团队如何利用Quarto和R来自动化生成PDF报告的经验。&lt;/p&gt;&#xA;&lt;p&gt;演讲者首先用一张难以辨认且不易扩展的祖传食谱作比喻，生动地说明了他们旧的数据报告流程所面临的挑战：文档过时、缺乏版本控制、技术陈旧，且核心知识掌握在已离职的员工手中。&lt;/p&gt;&#xA;&lt;p&gt;面对为数百名问卷受访者每周生成个性化PDF报告的任务，团队使用R、Quarto和Tidyverse工具集从零开始重建了自动化流程。该流程通过一个主脚本，结合参数化的Quarto模板和辅助函数，批量生成报告。&lt;/p&gt;&#xA;&lt;p&gt;在项目实践中，他们解决了两个关键问题：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;平衡自动化与灵活性&lt;/strong&gt;：他们选择了一个折中方案，允许团队成员通过简单修改脚本（如日期范围）来满足临时的、特定的报告需求。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;改进报告设计&lt;/strong&gt;：他们对PDF格式做了微小但有效的改进（如增加小标题、优化间距），这不仅提升了客户的信任度和体验，也加快了内部的质检速度。格式修改目前依赖LaTeX，但因维护困难，计划未来转向Typst。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;最终，这个新流程使项目团队的效率提升了50%，获得了客户的好评，并成功将知识从个人头脑中转移到一个文档齐全、可复现的共享基础设施上，促进了团队协作和技能提升。&lt;/p&gt;&#xA;&lt;h2 id=&#34;surveydown-john-paul-helveston-gwu--positconf2025&#34;&gt;surveydown (John Paul Helveston, GWU) | posit::conf(2025)&lt;/h2&gt;&#xA;&lt;p&gt;来源：&lt;a href=&#34;https://www.youtube.com/watch?v=VwoeFKNvN5k&#34;&gt;https://www.youtube.com/watch?v=VwoeFKNvN5k&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;该视频介绍了由乔治华盛顿大学教授 J.P. Helveston 及其团队开发的 R 语言包 &lt;code&gt;surveydown&lt;/code&gt;。&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;surveydown&lt;/code&gt; 旨在解决传统网页问卷工具（如 Google Forms）存在的&lt;strong&gt;难以复现、版本控制混乱、功能有限且不开源&lt;/strong&gt;等问题。它的核心理念是将 Quarto 的强大功能应用于问卷制作，让用户可以通过编写简单的 Quarto（&lt;code&gt;.qmd&lt;/code&gt;）纯文本文档来创建功能丰富的网页问卷。&lt;/p&gt;&#xA;&lt;p&gt;其技术架构是一个整合了多种开源技术的生态系统：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Quarto&lt;/strong&gt;：用于定义问卷的界面、内容和结构。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Shiny&lt;/strong&gt;：作为后端的网页应用框架，处理交互逻辑。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;PostgreSQL&lt;/strong&gt;：作为数据库后端存储问卷数据（推荐使用免费的 Supabase 服务）。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;主要功能亮点包括：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;丰富的题型&lt;/strong&gt;：支持文本、单选、多选、滑块等多种标准题型。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;强大的逻辑控制&lt;/strong&gt;：可通过代码轻松实现问题的条件显示（&lt;code&gt;sd_show_if&lt;/code&gt;）和页面跳转（&lt;code&gt;sd_skip_if&lt;/code&gt;）。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;高度可扩展&lt;/strong&gt;：由于基于 Shiny，可以集成各种高级功能，如交互式地图（leaflet）和实时投票图表。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;AI 辅助&lt;/strong&gt;：可以利用大语言模型（LLM）快速生成问卷的 Quarto 代码。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;图形化界面&lt;/strong&gt;：为不熟悉代码的用户提供了配套包 &lt;code&gt;sdstudio&lt;/code&gt;，提供一个仪表盘来通过点击创建问卷，并能自动生成可复现的代码。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;最后，演讲者强调 &lt;code&gt;surveydown&lt;/code&gt; 是一个完全免费和开源的解决方案，并鼓励社区参与贡献。&lt;/p&gt;&#xA;&lt;h2 id=&#34;empowering-learners-with-webr-pyodide-and-quarto-ted-laderas-fred-hutch--positconf2025&#34;&gt;Empowering Learners with WebR, Pyodide, and Quarto (Ted Laderas, Fred Hutch) | posit::conf(2025)&lt;/h2&gt;&#xA;&lt;p&gt;来源：&lt;a href=&#34;https://www.youtube.com/watch?v=EQ9_MP2PYL8&#34;&gt;https://www.youtube.com/watch?v=EQ9_MP2PYL8&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

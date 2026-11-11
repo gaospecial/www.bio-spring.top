@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Post on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/post/</link>
+		<description>Recent content in Post on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 05 Jun 2012 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/post/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>the_content()和the_excerpt()</title>
+				<link>www.bio-spring.top/post/2012/06/05/2012-06-05-the_content-the_excerpt/</link>
+				<pubDate>Tue, 05 Jun 2012 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2012/06/05/2012-06-05-the_content-the_excerpt/</guid>
+				<description>&lt;p&gt;这是wordpress中用以提取post内容的常用函数。它们用法基本相同，很多时候可以相互取代，分别用于显示post全部内容和post摘要。&lt;/p&gt;&#xA;&lt;p&gt;然而，事实上在应用中它们最大的区别在于，前者输出格式化的内容，而后者则输出文字（格式错乱，没有超链接，换行，样式定义等）。所以，大多数时候，我只用前一个函数。&lt;/p&gt;&#xA;&lt;p&gt;有些主题作者喜欢用the_excerpt()（特别是在分类列表中），我常常将其改为the_content()。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;the_content&lt;/strong&gt; Display the post content.&lt;br&gt;&#xA;void the_content ([string $more_link_text = null], [bool&#xA;$stripteaser = false])&lt;br&gt;&#xA;string $more_link_text: Optional. Content for when there is more&#xA;text.&lt;br&gt;&#xA;bool $stripteaser: Optional. Strip teaser content before the more&#xA;text. Default is false.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;the_excerpt&lt;/strong&gt; Display the post excerpt.&lt;br&gt;&#xA;uses: apply_filters() – Calls ‘the_excerpt’ hook on post excerpt.&lt;br&gt;&#xA;void the_excerpt ()&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt; &lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

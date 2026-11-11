@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> LAMP Project[part A]-概述:使用Linux,apache,mySQL和Perl创建cgi动态网页项目[上部] | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="LAMP Project[part A]-概述:使用Linux,apache,mySQL和Perl创建cgi动态网页项目[上部]">
+	<meta name="twitter:description" content="最近几天, 尝试创建了一个基于LAMP的cgi项目,说是项目,其实只是一个小玩具,不过麻雀虽小,五脏俱全,本人由此得到了不少的体会.
+本着相互交流,相互促进的原则(communicate可是我博客的主题呢!),我把具体过程给予一定的整理,由此发布出来,相当于固化学习成果了.
+版权声明:本文为原创,转载请遵循&#34;保持署名一致,非商业使用&#34;原则.
+**
+概述:**
+LAMP是一套开源的强大工具, 本次通过创建网页查询,从数据库中查询出相应记录并在网页上展示出来.
+涉及以下部分,近期将依次发布,敬请留意:
+LAMP的安装和设置;
+mySQL数据库的创建及数据导入；
+使用CGI创建动态网页,对查询数据进行处理,返回查询结果.
+LAMP的安装和设置 本人使用的linux发行版是Ubuntu Feisty(7.04),在这个版本中可以一键完成整个系统的安装.整个过程在ubuntu forum中有详述,在此不在赘述.
+#在Apache服务器中进行cgi的设置.
+在site-enabled的配置文件中,需要添加你的cgi脚本目录并给予相应的说明.
+[code]
+ScriptAlias /mycgi/ /var/www/cgi/
+&lt;Directory “/var/www/cgi/&#34;&gt;
+AllowOverride None
+Options ExecCGI -MultiViews &#43;SymLinksIfOwnerMatch
+Order allow,deny
+Allow from all
+&lt;/Directory&gt;
+[/code]
+首先定义一下alias,这样在服务器上输入mycgi则会在/var/www/cgi/目录执行.
+很简单.需要注意的就是相应目录的权限,要给所有人以执行的权利(755) 设置完成之后,注意重启apache服务器,
+sudo /etc/init.d/apache2 restart
+创建mySQL数据库,并导入数据 #数据的结构
+我们要导入的是一个科技论文影响因子的列表,如下显示了它的结构:
+每一行是一个记录,共有四栏column,栏间以”,“相隔,分别是缩写的标题,06,05,04年的impact factor;
+#创建数据库和导入上面的数据
+注:shell&gt;表示在命令行下输入的命令; mySQL&gt;表示输入的sql命令；
+shell&gt;mysql -uroot -p
+*****(root的密码)
+mysql&gt;create database test;
+mysql&gt;create table ifactor(
+myid int(6),
+title varchar(30) not null,
+if04 float,
+if05 float,
+if06 float
+);
+mysql&gt;alter table ifactor add primary key(‘myid’);
+mysql&gt;alter table ifactor change myid int(6) auto_increment;
+数据库的结构如下:
+mysql&gt;load data local infile ‘数据文件的绝对路径,eg,/home/test/Desktop/if.txt’
+into table ifactor(title,if06,if05,if04);
+mysql&gt;select * from ifactor limit 0,5;
+至此,数据库建立完成.">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container single">
+<main>
+
+<div class="article-meta">
+<h1><span class="title">LAMP Project[part A]-概述:使用Linux,apache,mySQL和Perl创建cgi动态网页项目[上部]</span></h1>
+
+<h3 class="author">
+gaoch
+</h3>
+
+<h3 class="date">2008-01-16</h3>
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/%E5%85%B6%E5%AE%83">其它</a> 
+  
+  
+  
+  Tags: <a href="/tags/%E6%97%A7%E6%96%87">旧文</a> 
+  
+  
+</p>
+</div>
+
+<div class="article">
+<p>最近几天,
+尝试创建了一个基于LAMP的cgi项目,说是项目,其实只是一个小玩具,不过麻雀虽小,五脏俱全,本人由此得到了不少的体会.<br>
+本着相互交流,相互促进的原则(communicate可是我博客的主题呢!),我把具体过程给予一定的整理,由此发布出来,相当于固化学习成果了.</p>
+<p>版权声明:本文为原创,转载请遵循&quot;保持署名一致,非商业使用&quot;原则.<br>
+**<br>
+概述:**<br>
+LAMP是一套开源的强大工具,
+本次通过创建网页查询,从数据库中查询出相应记录并在网页上展示出来.<br>
+涉及以下部分,近期将依次发布,敬请留意:<br>
+    LAMP的安装和设置;<br>
+    mySQL数据库的创建及数据导入；<br>
+    使用CGI创建动态网页,对查询数据进行处理,返回查询结果.</p>
+<h2 id="lamp的安装和设置">LAMP的安装和设置</h2>
+<p>本人使用的linux发行版是Ubuntu
+Feisty(7.04),在这个版本中可以一键完成整个系统的安装.整个过程在ubuntu
+forum中有详述,在此不在赘述.<br>
+#在Apache服务器中进行cgi的设置.<br>
+在site-enabled的配置文件中,需要添加你的cgi脚本目录并给予相应的说明.</p>
+<p>[code]<br>
+        ScriptAlias /mycgi/ /var/www/cgi/<br>
+    &lt;Directory &ldquo;/var/www/cgi/&quot;&gt;<br>
+        AllowOverride None<br>
+        Options ExecCGI -MultiViews +SymLinksIfOwnerMatch<br>
+        Order allow,deny<br>
+        Allow from all<br>
+    &lt;/Directory&gt;<br>
+[/code]</p>
+<p>首先定义一下alias,这样在服务器上输入mycgi则会在/var/www/cgi/目录执行.<br>
+很简单.需要注意的就是相应目录的权限,要给所有人以执行的权利(755)
+设置完成之后,注意重启apache服务器,</p>
+<p>sudo /etc/init.d/apache2 restart</p>
+<h2 id="创建mysql数据库并导入数据">创建mySQL数据库,并导入数据</h2>
+<p><strong>#数据的结构</strong><br>
+我们要导入的是一个科技论文影响因子的列表,如下显示了它的结构:<br>
+<a href="http://hiphotos.baidu.com/spring%5Fgao/pic/item/e8e74010dea102f2c2ce794a.jpg"><img src="http://hiphotos.baidu.com/spring%5Fgao/pic/item/cf97b5fb95cfa72c4e4aea31.jpg" class="blogimg" /></a><br>
+每一行是一个记录,共有四栏column,栏间以&rdquo;,&ldquo;相隔,分别是缩写的标题,06,05,04年的impact
+factor;</p>
+<p><strong>#创建数据库和导入上面的数据</strong></p>
+<p>注:shell&gt;表示在命令行下输入的命令; mySQL&gt;表示输入的sql命令；<br>
+shell&gt;mysql -uroot -p<br>
+*****(root的密码)<br>
+mysql&gt;create database test;<br>
+mysql&gt;create table ifactor(<br>
+    myid int(6),<br>
+    title varchar(30) not null,<br>
+    if04 float,<br>
+    if05 float,<br>
+    if06 float<br>
+);<br>
+mysql&gt;alter table ifactor add primary key(&lsquo;myid&rsquo;);<br>
+mysql&gt;alter table ifactor change myid int(6) auto_increment;<br>
+<em>数据库的结构如下:</em><br>
+<img src="http://hiphotos.baidu.com/spring%5Fgao/pic/item/23549c506b381f6c84352411.jpg" class="blogimg" /><br>
+mysql&gt;load data local infile
+&lsquo;数据文件的绝对路径,eg,/home/test/Desktop/if.txt&rsquo;<br>
+    into table ifactor(title,if06,if05,if04);<br>
+mysql&gt;select * from ifactor limit 0,5;<br>
+<img src="http://hiphotos.baidu.com/spring%5Fgao/pic/item/8fa231d32ce87c0e3bf3cf29.jpg" class="blogimg" />至此,数据库建立完成.</p>
+<p><strong>#mysql查询,模式匹配简介</strong></p>
+<p>在mysql中可以使用两个命令进行模式匹配.一个是LIKE,一个是RLIKE(REGEXP)；<br>
+前者使用&rdquo;_&ldquo;代替一个字符,&rdquo;%&ldquo;代替多个字符,RLIKE则使用扩展的正则表达式进行匹配.<br>
+如上第一条记录,可以写成:<br>
+mysql&gt;select * from ifactor where title like &lsquo;aap%bu%&rsquo;;
+[后面必须有%,因为还有字符]<br>
+mysql&gt;select * from ifactor where title rlike &lsquo;aap.*bu&rsquo;;<br>
+后面将要使用这个东西.</p>
+<h2 id="使用dbicgi">使用DBI,CGI</h2>
+<p>dbi和cgi是perl的模块, 因此使用dbi,cgi要对perl有所了解.<br>
+<strong>#建立cgi中使用的mysql账户(为了安全的考虑)</strong><br>
+mysql&gt;grant select on test.ifactor to test@localhost identified by
+&rsquo;testpasswd&rsquo;;</p>
+<p>下面的代码只是其中的一部分,请确保你的代码前面几行是这个东西:<br>
+[code]<br>
+#!/usr/bin/perl -w<br>
+use DBI;<br>
+use use CGI &lsquo;:standard&rsquo;;<br>
+use strict;<br>
+[/code]</p>
+<p><strong>#创建DBI,mysql数据库连接</strong></p>
+<p>my $dbh = DBI-&gt;connect(&lsquo;DBI:mysql:people&rsquo;, &lsquo;apache&rsquo;, &rsquo;lampiscool&rsquo;)<br>
+        or die &ldquo;Can&rsquo;t connect: &quot; . DBI-&gt;errstr();<br>
+<strong>#进行数据库查询</strong></p>
+<p>    my $sth = $dbh-&gt;prepare(&lsquo;SELECT title,if04,if05,if06 FROM
+ifactor<br>
+                       WHERE title RLIKE ? &lsquo;)<br>
+           or handle_error(&ldquo;Can&rsquo;t prepare SQL: &quot; . $dbh-&gt;errstr(),
+$dbh);</p>
+<p>    $sth-&gt;execute($query)<br>
+           or handle_error(&ldquo;Can&rsquo;t execute SQL: &quot; . $dbh-&gt;errstr(),<br>
+                            $dbh, $sth);</p>
+<p><strong>#对查询结果进行处理</strong></p>
+<p>    my($title,$if04,$if05,$if06);<br>
+    while (($title,$if04,$if05,$if06) = $sth-&gt;fetchrow()) {<br>
+      print
+&ldquo;&lt;tr&gt;&lt;th&gt;$title&lt;/th&gt;&lt;th&gt;$if04&lt;/th&gt;&lt;th&gt;$if05&lt;/th&gt;&lt;th&gt;$if06&lt;/th&gt;&lt;/tr&gt;\n&rdquo;;<br>
+    }</p>
+
+</div>
+</main>
+
+<section class="appendix">
+
+
+<div>
+  <div class="side side-left"><h3>作者简介</h3></div>
+  <div>
+
+
+
+
+
+<div>Chun-Hui Gao is a Research Associate at <a href="http://www.hzau.edu.cn">Huazhong Agricultural University</a>.</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div>
+  <div class="side side-left"><h3>重复使用</h3></div>
+  Text and figures are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution CC BY 4.0</a>. The source code is licensed under MIT. The full source is available at <a href="https://github.com/yihui/hugo-prose">https://github.com/yihui/hugo-prose</a>.
+</div>
+
+
+
+<div>
+  <div class="side side-left"><h3>欢迎修订</h3></div>
+  
+  
+  
+    
+    
+  
+  如果您发现本文里含有任何错误（包括错别字和标点符号），欢迎<a href="https://github.com/gaospecial/bio-spring/edit/master/content/post/2008-01-16-lamp-configuration/index.zh.md" id="edit-link">在本站的 GitHub 项目里提交修订意见。</a>
+</div>
+
+
+
+
+<div>
+  <div class="side side-left"><h3>引用本文</h3></div>
+  <p>如果您使用了本文的内容，请按照以下方式引用：</p>
+  <pre><code>gaoch (2008). LAMP Project[part A]-概述:使用Linux,apache,mySQL和Perl创建cgi动态网页项目[上部]. BIO-SPRING. www.bio-spring.top/post/2008/01/16/lamp-configuration/</code></pre>
+  <p>BibTeX citation</p>
+  <pre><code>@misc{
+  title = "LAMP Project[part A]-概述:使用Linux,apache,mySQL和Perl创建cgi动态网页项目[上部]",
+  author = "gaoch",
+  year = "2008",
+  journal = "BIO-SPRING",
+  note = "www.bio-spring.top/post/2008/01/16/lamp-configuration/"
+}</code></pre>
+</div>
+
+</section>
+
+
+
+<nav class="post-nav">
+  <span class="nav-next">&larr; <a href="www.bio-spring.top/post/2008/01/13/it-is-snowing-in-wuhan/" title=下一篇&#32;(旧)>***雪*** @ 武汉</a></span>
+  &hercon;
+  <span class="nav-prev"><a href="www.bio-spring.top/post/2008/01/18/lamp-project-impact-factor-query/" title=上一篇&#32;(新)>LAMP Project[part Final]-展示效果图</a> &rarr;</span>
+</nav>
+
+
+
+
+<section class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var disqus_js = '//bio-spring.disqus.com/embed.js';
+    var d = document, s = d.createElement('script');
+    s.src = disqus_js; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    var t = d.getElementById('disqus_thread');
+    var b = false, l = function(scroll) {
+      if (b) return;
+      (d.head || d.body).appendChild(s); b = true;
+      if (scroll) t.scrollIntoView();
+    }
+    s.onerror = function(e) {
+      if (sessionStorage.getItem('failure-note')) return;
+      t.innerText = 'Sorry, but you cannot make comments because Disqus failed to load for some reason. It is known to be blocked in China. If you are sure it is not blocked in your region, please refresh the page. 中国大陆地区读者需要翻墙才能发表评论。';
+      t.style.border = '1px dashed';
+      t.style.padding = '.5em';
+      t.style.background = 'lightyellow';
+      sessionStorage.setItem('failure-note', true);
+    };
+    
+    if (location.hash.match(/^#comment-[0-9]+$/)) return l(true);
+    var c = function() {
+      if (b) return;
+      var rect = t.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) l();
+    };
+    window.addEventListener('load', c);
+    d.addEventListener('scroll', c);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+</div>
+
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+<script src="//yihui.org/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+<script src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils/js/number-sections.min.js,npm/@xiee/utils/js/toc.min.js,npm/@xiee/utils/js/toc-highlight.min.js,npm/@xiee/utils/js/sidenotes.min.js,npm/@xiee/utils/js/right-quote.min.js,npm/@xiee/utils/js/center-img.min.js,npm/@xiee/utils/js/fix-pandoc.min.js,npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+
+
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

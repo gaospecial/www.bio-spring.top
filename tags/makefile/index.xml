@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Makefile on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/makefile/</link>
+		<description>Recent content in Makefile on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 24 Dec 2023 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/makefile/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Makefile 怎么写</title>
+				<link>www.bio-spring.top/post/2023/12/24/makefile-howto/</link>
+				<pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2023/12/24/makefile-howto/</guid>
+				<description>&lt;h2 id=&#34;示例&#34;&gt;示例&lt;/h2&gt;&#xA;&lt;p&gt;当一个目标需要执行多个命令时，可以在 Makefile 中为该目标提供多行命令。每一行命令都必须以制表符开始。以下是一个简单的示例：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-makefile&#34;&gt;all: clean build run&#xA;&#xA;clean:&#xA;    rm -f my_program&#xA;&#xA;build:&#xA;    gcc -Wall -o my_program main.c util.c&#xA;&#xA;run:&#xA;    ./my_program&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;在这个示例中：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;all&lt;/code&gt; 是默认目标，它依赖于 &lt;code&gt;clean&lt;/code&gt;、&lt;code&gt;build&lt;/code&gt; 和 &lt;code&gt;run&lt;/code&gt;。&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;clean&lt;/code&gt; 目标删除 &lt;code&gt;my_program&lt;/code&gt; 可执行文件。&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;build&lt;/code&gt; 目标编译源文件生成可执行文件。&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;run&lt;/code&gt; 目标运行可执行文件。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;你可以使用以下命令来执行默认目标 &lt;code&gt;all&lt;/code&gt;：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;make&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;或者直接指定目标：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;make build&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;当你运行 &lt;code&gt;make&lt;/code&gt; 命令时，它将按照依赖关系执行目标，确保每个目标都是最新的。在上面的示例中，&lt;code&gt;all&lt;/code&gt; 依赖于 &lt;code&gt;clean&lt;/code&gt;、&lt;code&gt;build&lt;/code&gt; 和 &lt;code&gt;run&lt;/code&gt;，因此这些目标将按照指定的顺序执行。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：在 Makefile 中，确保使用制表符而不是空格，因为 Make 工具对此有特殊的要求。&lt;/p&gt;&#xA;&lt;h2 id=&#34;添加多个命令&#34;&gt;添加多个命令&lt;/h2&gt;&#xA;&lt;p&gt;如果你想在 &lt;code&gt;clean&lt;/code&gt; 目标中添加多个 Shell 命令，可以将它们放在同一行，并使用分号 &lt;code&gt;;&lt;/code&gt; 将它们分隔。下面是一个示例：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-makefile&#34;&gt;clean:&#xA;    rm -f my_program; \&#xA;    rm -f *.o; \&#xA;    echo &amp;quot;Cleanup complete&amp;quot;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;在这个例子中，&lt;code&gt;clean&lt;/code&gt; 目标包含三个 Shell 命令。每个命令都以分号 &lt;code&gt;;&lt;/code&gt; 结尾，表示命令的结束。使用 &lt;code&gt;\&lt;/code&gt; 来表示命令在多行上续行。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

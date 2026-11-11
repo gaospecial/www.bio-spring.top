@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>OSS on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/oss/</link>
+		<description>Recent content in OSS on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 11 Nov 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/oss/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>配置私有 Git LFS 服务器</title>
+				<link>www.bio-spring.top/post/2024/11/11/private-git-lfs-server/</link>
+				<pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2024/11/11/private-git-lfs-server/</guid>
+				<description>&lt;p&gt;在 Git 项目中使用大文件已经成为非常普遍的事情了，例如在 Hugging face 下面的仓库中这样的情况比比皆是。&lt;/p&gt;&#xA;&lt;p&gt;为了能够“专业地”存储大文件，或许可以有以下几种方式：&lt;/p&gt;&#xA;&lt;h2 id=&#34;使用-nas-服务器&#34;&gt;使用 NAS 服务器&lt;/h2&gt;&#xA;&lt;p&gt;要将 NAS 作为 Git LFS 服务器，关键是让 NAS 提供 HTTP 或 SSH 文件存储服务，并将其作为 LFS 对象的存储端点。具体步骤如下：&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-在-nas-上设置文件存储服务&#34;&gt;1. 在 NAS 上设置文件存储服务&lt;/h3&gt;&#xA;&lt;p&gt;确保 NAS 服务器支持 HTTP、HTTPS 或 SSH 服务，以便用于存储 LFS 对象。以下是常见设置方式：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;HTTP/HTTPS&lt;/strong&gt;：如果 NAS 支持 Web 服务器功能，可以配置一个虚拟主机用于存储 LFS 对象。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;SSH&lt;/strong&gt;：确保 SSH 服务已启用，并为 LFS 服务器创建一个专门用户。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;2-初始化-git-仓库&#34;&gt;2. 初始化 Git 仓库&lt;/h3&gt;&#xA;&lt;p&gt;在本地创建或初始化一个 Git 仓库，并使用 &lt;code&gt;git lfs&lt;/code&gt; 初始化 LFS 配置：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git init&#xA;git lfs install&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h3 id=&#34;3-配置-lfs-远程端点&#34;&gt;3. 配置 LFS 远程端点&lt;/h3&gt;&#xA;&lt;p&gt;将 LFS 端点配置为 NAS 的 HTTP 或 SSH 地址。编辑 &lt;code&gt;.lfsconfig&lt;/code&gt; 文件，并添加以下内容：&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>cloudfs无法上传的故障排除</title>
+				<link>www.bio-spring.top/post/2015/09/27/2015-09-27-cloudfs-upload-failed/</link>
+				<pubDate>Sun, 27 Sep 2015 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2015/09/27/2015-09-27-cloudfs-upload-failed/</guid>
+				<description>&lt;p&gt;之前设置WordPress使用阿里云OSS存储图片，今天出问题了。&lt;a href=&#34;http://bio-spring.top/cloudfs-wp-uploads/&#34;&gt;设置方法在这里&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;错误提示：cannot access oss: Transport endpoint is not connected&lt;/p&gt;&#xA;&lt;p&gt;解决方案如下：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;去除挂载&lt;/li&gt;&#xA;&lt;li&gt;重启Cloudfs服务&lt;/li&gt;&#xA;&lt;li&gt;设置权限&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;[cc lang=”bash”]&lt;br&gt;&#xA;umount /mnt/oss&lt;br&gt;&#xA;service cloudfs restart&lt;br&gt;&#xA;chmod 666 /mnt/oss&lt;br&gt;&#xA;[/cc]&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>整合 OSS 开放存储到 WordPress 系统</title>
+				<link>www.bio-spring.top/post/2015/08/23/2015-08-23-cloudfs-wp-uploads/</link>
+				<pubDate>Sun, 23 Aug 2015 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2015/08/23/2015-08-23-cloudfs-wp-uploads/</guid>
+				<description>&lt;p&gt;使用 OSS 存储 WordPress 相当于将 云服务器 的存储免费扩大了。&lt;/p&gt;&#xA;&lt;h3 id=&#34;安装cloudfs&#34;&gt;安装cloudfs&lt;/h3&gt;&#xA;&lt;p&gt;-在云市场搜索cloudfs，获取下载链接。&lt;br&gt;&#xA;-将下载的安装包上传至云服务器。&lt;br&gt;&#xA;-安装依赖包。&lt;br&gt;&#xA;-以默认设置安装。&lt;/p&gt;&#xA;&lt;p&gt;[cc lang=”bash”]&lt;br&gt;&#xA;# Install dependence&lt;br&gt;&#xA;apt-get install libcurl4-openssl-dev libssl-dev pkg-config libxml2&#xA;libxml2-dev libfuse-dev libunwind8-dev&lt;br&gt;&#xA;[/cc]&lt;/p&gt;&#xA;&lt;h3 id=&#34;配置cloudfs&#34;&gt;配置cloudfs&lt;/h3&gt;&#xA;&lt;p&gt;[cc lang=”bash”]&lt;br&gt;&#xA;vi /usr/local/cloudfs/conf/cloudfs.conf&lt;br&gt;&#xA;[/cc]&lt;/p&gt;&#xA;&lt;p&gt;需要配置的项目有： HOST 、ID 、KEY 、BUCKET 等 4 项必须；若干可选项。&lt;/p&gt;&#xA;&lt;h3 id=&#34;测试&#34;&gt;测试&lt;/h3&gt;&#xA;&lt;p&gt;[cc lang=”bash”]&lt;br&gt;&#xA;# Start cloudfs&lt;br&gt;&#xA;service cloudfs start&lt;br&gt;&#xA;service cloudfs status&lt;br&gt;&#xA;# 目录和文件测试，在 OSS 控制台会看到相应变化&lt;br&gt;&#xA;mkdir /mnt/oss/test&lt;br&gt;&#xA;touch /mnt/oss/test/test.txt&lt;br&gt;&#xA;[/cc]&lt;/p&gt;&#xA;&lt;h3 id=&#34;迁移和设置媒体库&#34;&gt;迁移和设置媒体库&lt;/h3&gt;&#xA;&lt;p&gt;[cc lang=”bash”]&lt;br&gt;&#xA;# 设置 WordPress 媒体库位置&lt;br&gt;&#xA;cd /mnt/oss&lt;br&gt;&#xA;mkdir wp_uploads&lt;br&gt;&#xA;# 将原有媒体库内容迁移过来&lt;br&gt;&#xA;cp -R /var/www/html/wp-content/uploads/* wp_uploads/&lt;br&gt;&#xA;# 备份原有媒体库，同时腾出挂载点&lt;br&gt;&#xA;mv /var/www/html/wp-content/uploads/&#xA;/var/www/html/wp-content/uploads_bak&lt;br&gt;&#xA;# 挂载 OSS cloudfs 到 WordPress 媒体库&lt;br&gt;&#xA;ln -s /mnt/oss/wp_uploads/ /var/www/html/wp-content/uploads&lt;br&gt;&#xA;[/cc]&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

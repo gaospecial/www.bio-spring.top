@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Aspera on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/aspera/</link>
+		<description>Recent content in Aspera on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 21 Nov 2017 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/aspera/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>三种向NCBI提交SRA高通量测序原始数据的方法</title>
+				<link>www.bio-spring.top/post/2017/11/21/2017-11-21-3-methods-in-submitting-sra/</link>
+				<pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2017/11/21/2017-11-21-3-methods-in-submitting-sra/</guid>
+				<description>&lt;p&gt;将测序原始数据提交到SRA已经逐渐成为投稿的必备条件。对于高通量测序数据来说，动辄几百兆或者更大文件的传输是一个相对比较耗时的部分。NCBI提供了3种方式来提交这部分数据：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;网页形式（包括浏览器上传和Aspera Connect插件上传）；&lt;/li&gt;&#xA;&lt;li&gt;Aspera命令行方式提交；&lt;/li&gt;&#xA;&lt;li&gt;FTP方式提交。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload1-500x287.png&#34; class=&#34;alignnone size-medium wp-image-913&#34; sizes=&#34;(max-width: 500px) 100vw, 500px&#34; srcset=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload1-500x287.png 500w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload1.png 501w&#34; width=&#34;500&#34; height=&#34;287&#34; /&gt;&#xA;&lt;h2 id=&#34;第一种方式&#34;&gt;第一种方式&lt;/h2&gt;&#xA;&lt;p&gt;网页提交应当是用户最熟悉的方式，跟日常上网的操作一样。但是，如果不使用Aspera&#xA;Connect插件，一次只能提交一个文件。而且整个提交过程中没有进度提示，是最低效率的方式。然而，通过使用Aspera&#xA;Connect插件，可以同时提交多个文件并看到进度。&lt;/p&gt;&#xA;&lt;p&gt;一般情况下，使用Aspera插件在网页上提交是最方便的、推荐的上传方式。&lt;/p&gt;&#xA;&lt;p&gt;不过，有时候由于浏览器、网络等存在问题，浏览器并不能正确调用Aspera软件。那就只能用其它方式传输了。&lt;/p&gt;&#xA;&lt;p&gt;后面两种，都属于先将文件上传到临时文件夹（preloaded），随后再与SRA中的meta&#xA;table中的文件列表一一对应起来的方法。&lt;/p&gt;&#xA;&lt;h2 id=&#34;第二种方式&#34;&gt;第二种方式&lt;/h2&gt;&#xA;&lt;p&gt;第二种方式是我最近一次使用的方式。当时，在浏览器上无法正确启动Aspera软件，并且使用时出现多次蓝屏。当你选择这种方式，需要打开一个命令行，输入网页上提示的命令即可。&lt;/p&gt;&#xA;&lt;p&gt;下图即网页上面的提示。注意你需要下载一个key&#xA;file在命令中使用。同时，还有把所有文件放在一个文件夹中。&lt;strong&gt;相应文件夹中的所有文件都会被上传。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload5-500x152.png&#34; class=&#34;alignnone size-medium wp-image-912&#34; sizes=&#34;(max-width: 500px) 100vw, 500px&#34; srcset=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload5-500x152.png 500w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload5.png 716w&#34; width=&#34;500&#34; height=&#34;152&#34; /&gt;&#xA;&lt;p&gt;命令运行时的界面如下：&lt;/p&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload4-500x69.png&#34; class=&#34;alignnone size-medium wp-image-911&#34; sizes=&#34;(max-width: 500px) 100vw, 500px&#34; srcset=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload4-500x69.png 500w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload4-768x106.png 768w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload4.png 966w&#34; width=&#34;500&#34; height=&#34;69&#34; /&gt;&#xA;&lt;p&gt;这种方式传输速度也很快。我用WIFI是的连接速度在30 Mbps左右。&lt;/p&gt;&#xA;&lt;h2 id=&#34;第三种方式&#34;&gt;第三种方式&lt;/h2&gt;&#xA;&lt;p&gt;第三种方式，应当是最传统的文件传输方式，即FTP方式。选择FTP方式时，网页上会显示FTP服务器的地址、用户名、密码、用户目录等信息。需要注意的是，你并没有服务器根目录的访问权限，因此需要在设置FTP服务器时指定目录（FileZilla）。&lt;/p&gt;&#xA;&lt;p&gt;首先，打开站点管理器，新建站点，填写主机、用户名、密码等信息。&lt;/p&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload2-500x424.png&#34; class=&#34;alignnone size-medium wp-image-909&#34; sizes=&#34;(max-width: 500px) 100vw, 500px&#34; srcset=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload2-500x424.png 500w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload2.png 529w&#34; width=&#34;500&#34; height=&#34;424&#34; /&gt;&#xA;&lt;p&gt;其次，进入“高级”标签页，在上面把用户目录填写上。&lt;/p&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2017/11/preload3.png&#34; class=&#34;alignnone size-full wp-image-910&#34; width=&#34;320&#34; height=&#34;295&#34; /&gt;&#xA;&lt;p&gt;这时候就可以连接了。需要注意的是，连接之后，需要在用户目录中新建一个子文件夹（必选操作）。然后才能将文件通过FTP传输到用户目录的新建子文件夹内。&lt;/p&gt;&#xA;&lt;p&gt;根据我的使用情况，FTP传输的速度只有第二种方法的十分之一不到。除非你网络环境很好，否则不值得推荐。&lt;/p&gt;&#xA;&lt;p&gt;===================================&lt;/p&gt;&#xA;&lt;p&gt;综上所述，上传文件首选&lt;strong&gt;带有Aspera插件&lt;/strong&gt;的浏览器模式，其次是Aspera命令行模式，再次FTP模式。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> Igraph | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Igraph">
+	<meta name="twitter:description" content="Chun-Hui Gao&#39;s personal website built through Hugo and blogdown with the hugo-prose theme.">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container list">
+<main>
+
+<h1>Igraph</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2020/02/26/igraph-matrices/">igraph matrices</a></h1>
+    <div>
+      <span>2020-02-26</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      我们生成的这个矩阵的原型是一个引证关系矩阵。 矩阵中的三行代表3篇文献，四列代表4篇引文。 1/2/3/4是在A/B/C前面发表的文献,A/B/C是后来发表的文献。 其中文献A引用了3/4，文献B引用了1/2/4，文献C引用了1/2/4。
+library(igraph) library(Matrix) set.seed(3) m &lt;- matrix(data = sample(0:1, &hellip;
+      <a href="www.bio-spring.top/post/2020/02/26/igraph-matrices/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2020/02/26/igraph-make-graph/">igraph: 生成网络</a></h1>
+    <div>
+      <span>2020-02-26</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      &lopf;ibrary(igraph) notable_graph &lt;- c(&quot;Bull&quot;, &quot;Chvatal&quot;, &quot;Coxeter&quot;, &quot;Cubical&quot;, &quot;Diamond&quot;, &quot;Dodecahedral&quot;, &quot;Dodecahedron&quot;, &hellip;
+      <a href="www.bio-spring.top/post/2020/02/26/igraph-make-graph/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+</main>
+</div>
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  <div class="footer hidden">
+  
+
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

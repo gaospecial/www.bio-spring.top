@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Tree on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/tree/</link>
+		<description>Recent content in Tree on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 19 Jan 2016 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/tree/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>MEGA6: Constructing a Phylogenetic Tree on Multiple Sequences</title>
+				<link>www.bio-spring.top/post/2016/01/19/2016-01-19-mega6-constructing-a-phylogenetic-tree-on-multiple-sequences/</link>
+				<pubDate>Tue, 19 Jan 2016 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2016/01/19/2016-01-19-mega6-constructing-a-phylogenetic-tree-on-multiple-sequences/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;http://bio-spring.top/bioedit-tree/&#34;&gt;使用BioEdit生成和绘制蛋白质进化树&lt;/a&gt;&#xA;虽然方法简单、上手快，但是由于 BioEdit&#xA;功能有限，使用起来很不方便。如果经常进行类似分析，那还是要使用 MEGA 6&#xA;这一个系统进化分析的“大杀器”。&lt;/p&gt;&#xA;&lt;p&gt;第一步：下载和安装 MEGA 6。各平台均有发行版，在此不再赘述。&lt;/p&gt;&#xA;&lt;p&gt;第二步：多序列比对，这是构建系统进化树的必要条件。&lt;/p&gt;&#xA;&lt;p&gt;点击第一个按钮，选择 Edit/Build Alignment。&lt;br&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2016/01/mega0.png&#34; class=&#34;alignnone size-full wp-image-782&#34; width=&#34;392&#34; height=&#34;61&#34; alt=&#34;mega0&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;正如题目所说的，我们需要选择一个含有多个序列的 Fasta 文件。&lt;br&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2016/01/mega1.png&#34; class=&#34;alignnone size-full wp-image-784&#34; width=&#34;223&#34; height=&#34;146&#34; alt=&#34;mega1&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;从菜单选择 Alignment – Align By xxx&#xA;如果序列比较多，那比对需要花上一些时间。&lt;/p&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2016/01/mega2-500x307.png&#34; class=&#34;alignnone size-medium wp-image-785&#34; sizes=&#34;(max-width: 500px) 100vw, 500px&#34; srcset=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2016/01/mega2-500x307.png 500w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2016/01/mega2.png 753w&#34; width=&#34;500&#34; height=&#34;307&#34; alt=&#34;mega2&#34; /&gt;&#xA;&lt;p&gt;第三步：进化分析。&lt;br&gt;&#xA;在比对完成的窗口中直接选择 Phylogenetic Analysis。&lt;br&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2016/01/mega3-500x307.png&#34; class=&#34;alignnone size-medium wp-image-781&#34; sizes=&#34;(max-width: 500px) 100vw, 500px&#34; srcset=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2016/01/mega3-500x307.png 500w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2016/01/mega3.png 753w&#34; width=&#34;500&#34; height=&#34;307&#34; alt=&#34;mega3&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;第四步：构建进化树。&lt;br&gt;&#xA;在主窗口页面上点击 Phylogeny 这个按钮，选择一种方法构建进化树，&lt;br&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2016/01/mega6.png&#34; class=&#34;alignnone size-full wp-image-783&#34; width=&#34;336&#34; height=&#34;201&#34; alt=&#34;mega6&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;点击 Compute 开始计算。&lt;br&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2016/01/mega4-500x476.png&#34; class=&#34;alignnone size-medium wp-image-779&#34; sizes=&#34;(max-width: 500px) 100vw, 500px&#34; srcset=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2016/01/mega4-500x476.png 500w, https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2016/01/mega4.png 504w&#34; width=&#34;500&#34; height=&#34;476&#34; alt=&#34;mega4&#34; /&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>修复Bio::Tree::Draw::Cladogram 输出EPS BoundingBox错误的问题</title>
+				<link>www.bio-spring.top/post/2013/12/25/2013-12-25-fix-eps-boundingbox-error/</link>
+				<pubDate>Wed, 25 Dec 2013 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2013/12/25/2013-12-25-fix-eps-boundingbox-error/</guid>
+				<description>&lt;p&gt;使用Bio::Tree::Draw::Cladogram 输出的 EPS 文档在很多 EPS&#xA;查看软件（如Windows下面的ACDsee，gsView等）中不能打开，经查是由于&#xA;BoundingBox 出现浮点数所致，具体设计的代码为 Cladogram.pm 的 new 方法和&#xA;print 方法，简便起见，可以在原先的 443&#xA;行代码前面添加两行代码，以解决该问题。&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;如下所示 ：&lt;/p&gt;&#xA;&lt;p&gt;[perl]&lt;/p&gt;&#xA;&lt;p&gt;print $INFO “%!PS-Adobe-\n”;&lt;br&gt;&#xA;$width = int($width + 1); # BoundingBox should be int&lt;br&gt;&#xA;$height = int($height +1);&lt;br&gt;&#xA;print $INFO “%%BoundingBox: 0 0 “, $width, ” “, $height, “\n”;&lt;br&gt;&#xA;print $INFO “1 setlinewidth\n”;&lt;br&gt;&#xA;print $INFO “/$font findfont\n”;&lt;br&gt;&#xA;print $INFO “$size scalefont\n”;&lt;br&gt;&#xA;print $INFO “setfont\n”;&lt;/p&gt;&#xA;&lt;p&gt;[/perl]&lt;/p&gt;&#xA;&lt;p&gt;经测试，修改此处后，生成的　ＥＰＳ　文档不会再由于该错误无法打开和查看。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

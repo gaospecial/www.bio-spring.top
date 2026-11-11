@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> 生物学 | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="生物学">
+	<meta name="twitter:description" content="Chun-Hui Gao&#39;s personal website built through Hugo and blogdown with the hugo-prose theme.">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container list">
+<main>
+
+<h1>生物学</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2010/12/31/2010-12-31-check-bioperl/">如何检查BioPerl是否正确安装</a></h1>
+    <div>
+      <span>2010-12-31</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      为了检查BioPerl是否安装正确，我们可以使用perldoc命令来看一下。
+如果你是Linux系统，随意打开一个终端；如果用的是Windows系统，那么打开命令提示符。输入以下命令：
+[bash]
+perldoc Bio::SeqIO
+[/bash]
+以上命令的作用是查看Bio::SeqIO模块的文档是否存在，如果存在，则会有相应的文档输出，则你安装Bio::SeqIO模块；如果没有，说明 &hellip;
+      <a href="www.bio-spring.top/post/2010/12/31/2010-12-31-check-bioperl/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2010/12/08/2010-12-08-perl-lwp-image-fetch/">Perl LWP：从“国家地理每日图片”到“Cell最近一期的封面”</a></h1>
+    <div>
+      <span>2010-12-08</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      在网上看到了一个从国家地理杂志网站下载每日图片的Perl程序。因为网站改版，脚本已经不能正常运行，经过修改后，经测试可以将每日图片下载到当前目录，代码如下：
+#!/usr/bin/perl # author: # Seraphxby # Purpose: # 查看国家地理每日图片的Perl脚本 # history: # v0.1 first draft # 2010-12-8 modified &hellip;
+      <a href="www.bio-spring.top/post/2010/12/08/2010-12-08-perl-lwp-image-fetch/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2010/11/12/2010-11-12-rt-primer-bioperl/">使用BioPerl和primer3批量设计RT-PCR引物</a></h1>
+    <div>
+      <span>2010-11-12</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      &Uopf;pdate：
+我已经设置了一个Massive RT-PCR Primer Designer服务，有需要的朋友可以直接去上传自己基因序列的Fasta文件，然后服务器会将引物返回。
+关于Missing SEQUENCE tag错误的处理
+以下为原文。
+———————————————————————————————–
+本文介绍批量设计RT-PCR引物的方法，基于Ubuntu 10.10系统和 &hellip;
+      <a href="www.bio-spring.top/post/2010/11/12/2010-11-12-rt-primer-bioperl/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2010/10/28/2010-10-28-about-gff3/">关于GFF3格式</a></h1>
+    <div>
+      <span>2010-10-28</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      &Gopf;FF3是GFF注释文件的新标准。文件中每一行为基因组的一个属性，分为9列，以TAB分开。
+依次是：
+1. reference sequence：参照序列
+指出注释的对象。如一个染色体，克隆或片段。可以有多个参照序列。
+2. source ：来源
+注释的来源。如果未知，则用点（.）代替。
+3. type ：类型
+属性的类型。建议使用符合SO惯例的名称（sequence ontology，参看 &hellip;
+      <a href="www.bio-spring.top/post/2010/10/28/2010-10-28-about-gff3/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2010/10/28/2010-10-28-reinstall-bioperl/">重新安装bioperl</a></h1>
+    <div>
+      <span>2010-10-28</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      此文适合一下情况：
+更新BioPerl时，想彻底删除旧版程序，安装一个完整的全新BioPerl；
+安装BioPerl后出错，需要从头安装。
+重新安装时不会自动覆盖老板本，因此需要手动删除以下文件：
+bioperl位于以下目录：
+/usr/local/man/man3/Bio::*
+/usr/local/bin/bp_*
+/usr/local/man/man1/bp_* &hellip;
+      <a href="www.bio-spring.top/post/2010/10/28/2010-10-28-reinstall-bioperl/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2010/10/22/2010-10-22-bio-rad-iq5-vs-opticon-monitor/">Bio-Rad iQ5 vs. Opticon Monitor</a></h1>
+    <div>
+      <span>2010-10-22</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      使用 Bio-Rad 两款RT-PCR产品的评价
+最近做了两次RT-PCR实验，实验所用的仪器都是伯乐公司的产品，一个小型点的拥有48孔平板，一个大点的有标准的96孔平板。硬件方面操作不必多说，想不到软件居然也不一样。所以这里单独谈谈软件。这两款软件分别是 iQ5 和 Opticon Monitor 。
+iQ5 的反应缓慢 所用的文件格式很容易损坏 界面也不友好
+Opticon Monitor响应 &hellip;
+      <a href="www.bio-spring.top/post/2010/10/22/2010-10-22-bio-rad-iq5-vs-opticon-monitor/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2010/10/22/2010-10-22-vector-matrix/">向量和矩阵有什么区别</a></h1>
+    <div>
+      <span>2010-10-22</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      向量和矩阵有什么区别
+向量是矩阵的特殊类型，是只有一行或者一列的矩阵。这两种矩阵分别称为行矩阵（行向量）和列矩阵（列向量）。
+另外，矩阵用阶数表示，比如2阶方阵；向量通常用维数表示，比如n维向量。
+总之，向量的本质是矩阵，向量的计算全部参考矩阵计算的运算律。
+Posted from GScribble.
+
+      <a href="www.bio-spring.top/post/2010/10/22/2010-10-22-vector-matrix/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2008/09/25/100-words-about-science/">100个词阐明科学的内容</a></h1>
+    <div>
+      <span>2008-09-25</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      &hopf;ttp://www.nature.com/nature/journal/v455/n7212/full/455460a.html
+这一百个词的中译为：
+酸碱、聚合状态、分析、反物质、组织、大气、原子、细菌、宇宙大爆炸、生物多样性、生物伦理、生物圈、黑洞、碳、细胞、混乱（态）、气候、克隆、DNA、生态系统、电、电子、元素、能量、熵、环境、酶、平衡、错误、行为学、进化、实验、力、化石、星系、基因、转 &hellip;
+      <a href="www.bio-spring.top/post/2008/09/25/100-words-about-science/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2008/09/11/protein-purification/">his-tag组氨酸融合蛋白和GST-tag谷胱甘肽融合蛋白亲和层析的原理</a></h1>
+    <div>
+      <span>2008-09-11</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      按：本文中，通过图片形象的描述着两种纯化的结合作用力，以及洗脱的原理。希望通过对这些图片的说明，可以帮助了解实验的原理。
+his- tag所用层析凝胶的基质上连接了一个NTA（[=nitrilotriacetic acid]氮基三乙酸），可以与Ni离子结合，而Ni离子与融合蛋白的6Xhis氨基酸之间产生如图的吸引力，从而将带有his-tag组氨酸标签的融合 蛋白与其它蛋白区分开来。
+从图中可以看到 &hellip;
+      <a href="www.bio-spring.top/post/2008/09/11/protein-purification/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2008/09/10/camp-and-c-di-amp/">候选第二信使</a></h1>
+    <div>
+      <span>2008-09-10</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      候选第二信使
+还在不久之前，细菌细胞内的信号传送情景看来似乎是被人遗忘了。特别是传送第二信号的小分子似乎并不常见。它们限于cyclic adenosine 3’,5’-monophosphate (cAMP) ，（即环磷酸腺苷，其功能是发出葡萄糖浓度变化的信号）和guanosine-tetraphosphate (ppGpp) （即 鸟苷四磷酸盐 ，它是在对营养性应激进行反应时产生的 ）。环二核苷 &hellip;
+      <a href="www.bio-spring.top/post/2008/09/10/camp-and-c-di-amp/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+
+
+
+		<ul class="pagination pagination-default">
+			<li class="page-item">
+				<a href="www.bio-spring.top/categories/%E7%94%9F%E7%89%A9%E5%AD%A6/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+			</li>
+		<li class="page-item">
+			<a href="www.bio-spring.top/categories/%E7%94%9F%E7%89%A9%E5%AD%A6/page/3/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+		</li>
+			<li class="page-item">
+				<a href="www.bio-spring.top/categories/%E7%94%9F%E7%89%A9%E5%AD%A6/" aria-label="Page 1" class="page-link" role="button">1</a>
+			</li>
+			<li class="page-item">
+				<a href="www.bio-spring.top/categories/%E7%94%9F%E7%89%A9%E5%AD%A6/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+			</li>
+			<li class="page-item">
+				<a href="www.bio-spring.top/categories/%E7%94%9F%E7%89%A9%E5%AD%A6/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
+			</li>
+			<li class="page-item active">
+				<a aria-current="page" aria-label="Page 4" class="page-link" role="button">4</a>
+			</li>
+		<li class="page-item disabled">
+			<a aria-disabled="true" aria-label="Next" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;</span></a>
+		</li>
+			<li class="page-item disabled">
+				<a aria-disabled="true" aria-label="Last" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;&raquo;</span></a>
+			</li>
+		</ul>
+
+
+
+
+
+</main>
+</div>
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  <div class="footer hidden">
+  
+
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Ecs on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/ecs/</link>
+		<description>Recent content in Ecs on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 10 Oct 2017 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/ecs/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>在阿里云ECS上设置swap分区</title>
+				<link>www.bio-spring.top/post/2017/10/10/2017-10-10-enable-swap-in-aliyun-ecs/</link>
+				<pubDate>Tue, 10 Oct 2017 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2017/10/10/2017-10-10-enable-swap-in-aliyun-ecs/</guid>
+				<description>&lt;p&gt;对于内存比较小的ECS来说，开启swap可以避免偶尔的内存溢出。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-lang:sh&#34;&gt;#查看内存和虚拟分区情况&#xA;free -h&#xA;&#xA;#创建虚拟分区(1GB)&#xA;dd if=/dev/zero of=/mnt/swap bs=1M count=1000&#xA;mkswap /mnt/swap&#xA;&#xA;#启用swap&#xA;swapon /mnt/swap&#xA;echo 10 &amp;gt; /proc/sys/vm/swappiness&#xA;&#xA;#查看swap&#xA;free -h&#xA;&#xA;#写入配置&#xA;echo -e &amp;quot;\n/mnt/swap swap swap defaults 0 0\n&amp;quot; &amp;gt;&amp;gt; /etc/fstab&#xA;vi /etc/sysctl.conf&#xA;# 将其中的对应行的数值从0更改为10,10%剩余内存时使用swap&#xA;# vm.swapiness=10&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;以上的代码将创建1000M的swap分区（bs × count），即时启用。在剩余10%&#xA;（swapiness）物理内存时将会使用swap。&lt;/p&gt;&#xA;&lt;p&gt;同时，将配置写入系统文件。重启之后仍然会使用上述配置。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

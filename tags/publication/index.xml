@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Publication on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/publication/</link>
+		<description>Recent content in Publication on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 11 Sep 2015 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/publication/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>InbR, a TetR family regulator, binds with isoniazid and influences multidrug resistance in Mycobacterium bovis BCG</title>
+				<link>www.bio-spring.top/post/2015/09/11/2015-09-11-inbr-paper/</link>
+				<pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2015/09/11/2015-09-11-inbr-paper/</guid>
+				<description>&lt;p&gt;在Scientific&#xA;Reports上面的一篇论文昨天（2015-9-10）上线了。我是第二作者，负责了ChIP-seq实验等少部分实验，全部的生物信息学分析，论文撰写、修订和投稿等事宜。该研究最初投稿的是核酸研究杂志，被拒稿后由我接手，转投Scientific&#xA;Reports，前后耗费了2个多月终于接受。除了正文中，附件也有不少数据，特别是一个大Table。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.nature.com/articles/srep13969&#34;&gt;http://www.nature.com/articles/srep13969&lt;/a&gt;&lt;br&gt;&#xA;论文摘要如下：&lt;/p&gt;&#xA;&lt;p&gt;Isoniazid (INH), an anti-tuberculosis (TB) drug, has been widely used&#xA;for nearly 60 years. However, the pathway through which Mycobacterium&#xA;tuberculosis responds INH remain largely unclear. In this study, we&#xA;characterized a novel transcriptional factor, InbR, which is encoded by&#xA;Rv0275c and belongs to the TetR family, that is directly responsive to&#xA;INH. Disrupting inbR made mycobacteria more sensitive to INH, whereas&#xA;overexpressing inbR decreased bacterial susceptibility to the drug. InbR&#xA;could bind specifically to the upstream region of its own operon at two&#xA;inverted repeats and act as an auto-repressor. Furthermore, InbR&#xA;directly bind with INH, and the binding reduced InbR’s DNA-binding&#xA;ability. Interestingly, susceptibilities were also changed by InbR for&#xA;other anti-TB drugs, such as rifampin, implying that InbR may play a&#xA;role in multi-drug resistance. Additionally, microarray analyses&#xA;revealed a portion genes of the inbR regulon have similar expression&#xA;patterns in inbR-overexpressing strain and INH-treated wild type strain,&#xA;suggesting that these genes, for example iniBAC, may be responsible to&#xA;the drug resistance of inbR-overexpressing strain. The regulation of&#xA;these genes by InbR were further assessed by ChIP-seq assay. InbR may&#xA;regulate multiple drug resistance of mycobacteria through the regulation&#xA;of these genes.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

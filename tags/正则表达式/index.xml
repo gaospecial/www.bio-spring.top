@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>正则表达式 on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
+		<description>Recent content in 正则表达式 on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 10 Mar 2012 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>使用正则表达式匹配DOI</title>
+				<link>www.bio-spring.top/post/2012/03/10/2012-03-10-using-regex-match-doi/</link>
+				<pubDate>Sat, 10 Mar 2012 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2012/03/10/2012-03-10-using-regex-match-doi/</guid>
+				<description>&lt;p&gt;先看几个DOI的例子：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;10.1093/nar/gkh458&lt;/li&gt;&#xA;&lt;li&gt;10.1146/annurev.micro.112408.134233&lt;/li&gt;&#xA;&lt;li&gt;10.1183/09031936.02.00400202&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;可以看出，DOI的编码以“10”开始，可以含有数字]0-9]，小数点，斜杠等分隔，但是其中不会出现空格。鉴于此，在perl中使用以下正则表达式匹配：&lt;/p&gt;&#xA;&lt;p&gt;[cc lang=”perl”]&lt;br&gt;&#xA;$str1 =~ /10\.[^\s\/]+\/[^\s]+/; # borrowed from Zotero&lt;br&gt;&#xA;$str2 =~ /\b(10\.\d+\/[^\s]+)\b/; # another one&lt;br&gt;&#xA;[/cc]&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

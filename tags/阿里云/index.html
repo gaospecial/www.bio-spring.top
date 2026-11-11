@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> 阿里云 | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="阿里云">
+	<meta name="twitter:description" content="Chun-Hui Gao&#39;s personal website built through Hugo and blogdown with the hugo-prose theme.">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container list">
+<main>
+
+<h1>阿里云</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF/">信息技术</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2018/10/23/2018-10-23-setup-ssl-in-aliyun/">三分钟在阿里云中用上免费SSL</a></h1>
+    <div>
+      <span>2018-10-23</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      给自己的网站添加SSL证书其实并不复杂，但是关键一点就是首先要拥有一个SSL证书。由于SSL证书价格不菲，很多个人站长会选择放弃使用Https。但是，自从开源、免费的Let’s Encrypt证书出现后，我觉得SSL也是我们草根站长可以玩的了。 https://blog.csdn.net/ithomer/article/details/78075006
+[&hellip;] 根据 &hellip;
+      <a href="www.bio-spring.top/post/2018/10/23/2018-10-23-setup-ssl-in-aliyun/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2017/10/10/2017-10-10-enable-swap-in-aliyun-ecs/">在阿里云ECS上设置swap分区</a></h1>
+    <div>
+      <span>2017-10-10</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      对于内存比较小的ECS来说，开启swap可以避免偶尔的内存溢出。
+#查看内存和虚拟分区情况 free -h #创建虚拟分区(1GB) dd if=/dev/zero of=/mnt/swap bs=1M count=1000 mkswap /mnt/swap #启用swap swapon /mnt/swap echo 10 &gt; /proc/sys/vm/swappiness #查看swap &hellip;
+      <a href="www.bio-spring.top/post/2017/10/10/2017-10-10-enable-swap-in-aliyun-ecs/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2015/09/27/2015-09-27-cloudfs-upload-failed/">cloudfs无法上传的故障排除</a></h1>
+    <div>
+      <span>2015-09-27</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      之前设置WordPress使用阿里云OSS存储图片，今天出问题了。设置方法在这里
+错误提示：cannot access oss: Transport endpoint is not connected
+解决方案如下：
+[&hellip;] [cc lang=”bash”]
+umount /mnt/oss
+service cloudfs restart
+chmod 666 /mnt/oss &hellip;
+      <a href="www.bio-spring.top/post/2015/09/27/2015-09-27-cloudfs-upload-failed/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2015/08/23/2015-08-23-cloudfs-wp-uploads/">整合 OSS 开放存储到 WordPress 系统</a></h1>
+    <div>
+      <span>2015-08-23</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      使用 OSS 存储 WordPress 相当于将 云服务器 的存储免费扩大了。
+[&hellip;] -在云市场搜索cloudfs，获取下载链接。
+-将下载的安装包上传至云服务器。
+-安装依赖包。
+-以默认设置安装。
+[cc lang=”bash”]
+# Install dependence
+apt-get install libcurl4-openssl-dev libssl-dev &hellip;
+      <a href="www.bio-spring.top/post/2015/08/23/2015-08-23-cloudfs-wp-uploads/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2015/08/21/2015-08-21-wordpress-cloud/">将 WordPress 迁移到 阿里云</a></h1>
+    <div>
+      <span>2015-08-21</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      最近将国外的主机迁移到了阿里云（参见：Site Changelog）。没办法，GFW太厉害了。留在外面只能做僵尸网站。
+本文简要介绍了将WordPress迁移到云服务器ECS、云数据库RDS，域名绑定到云解析的方法。
+如果要购买 ECS 云服务器，使用我的邀请码（U6FOVY，有效期截止 2015-11-30）可以得到 九折 优惠。
+[&hellip;] 安装LAMP：Ubuntu快速安装 &hellip;
+      <a href="www.bio-spring.top/post/2015/08/21/2015-08-21-wordpress-cloud/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2015/08/21/2015-08-21-connect-to-rds/">如何连接阿里云数据库RDS</a></h1>
+    <div>
+      <span>2015-08-21</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      用户安装MySQL客户端后，可进入命令行方式链接数据库。
+命令格式：mysql -u user_name -h example.mysql.rds.aliyuncs.com -P3306 -pxxxx
+其中，-u 指定的是用户名， -h指定的是主机名， -P指定的是端口， -p指定的是密码。
+[&hellip;] 添加服务器IP到白名单
+修改wp-config.php
+参见WordPress迁移
+
+      <a href="www.bio-spring.top/post/2015/08/21/2015-08-21-connect-to-rds/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+</main>
+</div>
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  <div class="footer hidden">
+  
+
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

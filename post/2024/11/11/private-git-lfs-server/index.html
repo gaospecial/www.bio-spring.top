@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> 配置私有 Git LFS 服务器 | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="配置私有 Git LFS 服务器">
+	<meta name="twitter:description" content="在 Git 项目中使用大文件已经成为非常普遍的事情了，例如在 Hugging face 下面的仓库中这样的情况比比皆是。
+为了能够“专业地”存储大文件，或许可以有以下几种方式：
+使用 NAS 服务器 要将 NAS 作为 Git LFS 服务器，关键是让 NAS 提供 HTTP 或 SSH 文件存储服务，并将其作为 LFS 对象的存储端点。具体步骤如下：
+1. 在 NAS 上设置文件存储服务 确保 NAS 服务器支持 HTTP、HTTPS 或 SSH 服务，以便用于存储 LFS 对象。以下是常见设置方式：
+HTTP/HTTPS：如果 NAS 支持 Web 服务器功能，可以配置一个虚拟主机用于存储 LFS 对象。 SSH：确保 SSH 服务已启用，并为 LFS 服务器创建一个专门用户。 2. 初始化 Git 仓库 在本地创建或初始化一个 Git 仓库，并使用 git lfs 初始化 LFS 配置：
+git init git lfs install 3. 配置 LFS 远程端点 将 LFS 端点配置为 NAS 的 HTTP 或 SSH 地址。编辑 .lfsconfig 文件，并添加以下内容：">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container single">
+<main>
+
+<div class="article-meta">
+<h1><span class="title">配置私有 Git LFS 服务器</span></h1>
+
+<h3 class="author">
+gaoch
+</h3>
+
+<h3 class="date">2024-11-11</h3>
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF">信息技术</a> 
+  
+  
+  
+  Tags: <a href="/tags/git">git</a> <a href="/tags/github">GitHub</a> <a href="/tags/oss">OSS</a> <a href="/tags/cos">COS</a> <a href="/tags/nas">NAS</a> 
+  
+  
+</p>
+</div>
+
+<div class="article">
+<p>在 Git 项目中使用大文件已经成为非常普遍的事情了，例如在 Hugging face 下面的仓库中这样的情况比比皆是。</p>
+<p>为了能够“专业地”存储大文件，或许可以有以下几种方式：</p>
+<h2 id="使用-nas-服务器">使用 NAS 服务器</h2>
+<p>要将 NAS 作为 Git LFS 服务器，关键是让 NAS 提供 HTTP 或 SSH 文件存储服务，并将其作为 LFS 对象的存储端点。具体步骤如下：</p>
+<h3 id="1-在-nas-上设置文件存储服务">1. 在 NAS 上设置文件存储服务</h3>
+<p>确保 NAS 服务器支持 HTTP、HTTPS 或 SSH 服务，以便用于存储 LFS 对象。以下是常见设置方式：</p>
+<ul>
+<li><strong>HTTP/HTTPS</strong>：如果 NAS 支持 Web 服务器功能，可以配置一个虚拟主机用于存储 LFS 对象。</li>
+<li><strong>SSH</strong>：确保 SSH 服务已启用，并为 LFS 服务器创建一个专门用户。</li>
+</ul>
+<h3 id="2-初始化-git-仓库">2. 初始化 Git 仓库</h3>
+<p>在本地创建或初始化一个 Git 仓库，并使用 <code>git lfs</code> 初始化 LFS 配置：</p>
+<pre><code class="language-bash">git init
+git lfs install
+</code></pre>
+<h3 id="3-配置-lfs-远程端点">3. 配置 LFS 远程端点</h3>
+<p>将 LFS 端点配置为 NAS 的 HTTP 或 SSH 地址。编辑 <code>.lfsconfig</code> 文件，并添加以下内容：</p>
+<pre><code class="language-ini">[lfs]
+url = &quot;http://&lt;NAS_IP&gt;/path/to/lfs&quot;   # 使用 HTTP/HTTPS
+# url = &quot;ssh://user@&lt;NAS_IP&gt;/path/to/lfs&quot;  # 使用 SSH
+</code></pre>
+<p>将 <code>&lt;NAS_IP&gt;</code> 替换为 NAS 的 IP 地址，<code>path/to/lfs</code> 为存储 LFS 对象的目录路径。</p>
+<h3 id="4-上传-lfs-对象">4. 上传 LFS 对象</h3>
+<p>在配置好 NAS 地址后，添加大文件并推送到 LFS：</p>
+<pre><code class="language-bash">git lfs track &quot;*.largefile&quot;
+git add .gitattributes
+git add &lt;large_file&gt;
+git commit -m &quot;Add large file&quot;
+git push origin main
+</code></pre>
+<h3 id="5-测试-lfs-存储">5. 测试 LFS 存储</h3>
+<p>通过 NAS 的管理界面或命令行确认文件已存储到 LFS 目录。</p>
+<h2 id="使用阿里云的-oss-存储服务">使用阿里云的 OSS 存储服务</h2>
+<p>要将阿里云作为 Git LFS 文件服务器，可以使用阿里云对象存储 OSS (Object Storage Service) 来存储 LFS 对象。这里是具体的配置步骤：</p>
+<h3 id="1-开通-oss-服务">1. 开通 OSS 服务</h3>
+<p>在阿里云控制台开通 OSS 服务并创建一个存储桶 (Bucket)，用于存放 Git LFS 对象。</p>
+<h3 id="2-创建访问密钥">2. 创建访问密钥</h3>
+<p>前往阿里云控制台的 <strong>访问控制</strong>（RAM），创建一个专用用户，并生成访问密钥（Access Key ID 和 Access Key Secret），授予 OSS 的读写权限。</p>
+<h3 id="3-配置-oss-存储桶权限">3. 配置 OSS 存储桶权限</h3>
+<p>将 OSS 存储桶设置为私有，以确保数据安全。然后，您可以选择通过 <strong>OSS 签名 URL</strong> 或 <strong>自定义的 API</strong> 访问这些文件。</p>
+<h3 id="4-配置-git-lfs-指向-oss">4. 配置 Git LFS 指向 OSS</h3>
+<p>Git LFS 本身不支持直接与 OSS 交互，所以需要通过 LFS 代理来实现，例如 <a href="https://github.com/git-lfs/lfs-test-server">lfs-test-server</a>。以下是主要配置步骤：</p>
+<h4 id="a-在服务器上安装和配置-lfs-test-server">a. 在服务器上安装和配置 lfs-test-server</h4>
+<p>将 lfs-test-server 部署到您的服务器上，并将其配置为中转 Git LFS 请求到 OSS。您可以使用 Docker 部署 lfs-test-server，命令如下：</p>
+<pre><code class="language-bash">docker run -d -p 9999:8080 \
+  -e LFS_BASE_URL=https://&lt;your-domain&gt;/lfs \
+  -e LFS_AUTH=true \
+  -e AWS_ACCESS_KEY_ID=&lt;your-access-key-id&gt; \
+  -e AWS_SECRET_ACCESS_KEY=&lt;your-access-key-secret&gt; \
+  -e LFS_STORE_DIR=/data \
+  -v /path/to/data:/data \
+  -e LFS_ENDPOINT=https://&lt;oss-endpoint&gt;/&lt;bucket-name&gt; \
+  ghcr.io/git-lfs/lfs-test-server
+</code></pre>
+<p>替换以下参数：</p>
+<ul>
+<li><code>&lt;your-domain&gt;</code>：服务器域名或 IP 地址</li>
+<li><code>&lt;your-access-key-id&gt;</code> 和 <code>&lt;your-access-key-secret&gt;</code>：阿里云的访问密钥</li>
+<li><code>&lt;oss-endpoint&gt;</code>：OSS 终端，例如 <code>oss-cn-shanghai.aliyuncs.com</code></li>
+<li><code>&lt;bucket-name&gt;</code>：OSS 存储桶名称</li>
+</ul>
+<h4 id="b-配置-git-lfs-使用代理">b. 配置 Git LFS 使用代理</h4>
+<p>在 Git 仓库中创建或编辑 <code>.lfsconfig</code> 文件，指向您服务器上配置的 lfs-test-server：</p>
+<pre><code class="language-ini">[lfs]
+url = &quot;https://&lt;your-domain&gt;/lfs&quot;
+</code></pre>
+<h3 id="5-使用-git-lfs-推送和拉取文件">5. 使用 Git LFS 推送和拉取文件</h3>
+<p>完成配置后，您可以像平常一样使用 Git LFS 进行文件的添加和推送：</p>
+<pre><code class="language-bash">git lfs track &quot;*.largefile&quot;
+git add .gitattributes
+git add &lt;large_file&gt;
+git commit -m &quot;Add large file&quot;
+git push origin main
+</code></pre>
+<h3 id="6-测试-oss-存储">6. 测试 OSS 存储</h3>
+<p>通过 OSS 控制台查看存储桶，确认文件已成功上传到 OSS。</p>
+<h2 id="使用腾讯云的-cos-存储服务">使用腾讯云的 COS 存储服务</h2>
+<p>要将腾讯云配置为 Git LFS 的服务器，可以使用腾讯云对象存储 COS (Cloud Object Storage) 来存储 Git LFS 对象。以下是具体的步骤：</p>
+<h3 id="1-开通-cos-服务">1. 开通 COS 服务</h3>
+<p>在腾讯云控制台开通 COS 服务，并创建一个存储桶 (Bucket) 来存储 Git LFS 对象。可以根据实际需求设置桶的访问权限为私有或公有读。</p>
+<h3 id="2-获取访问密钥">2. 获取访问密钥</h3>
+<p>前往腾讯云控制台的 <strong>访问管理</strong>（CAM），创建一个新用户或使用已有用户，确保有 COS 读写权限，并获取该用户的 <strong>SecretId</strong> 和 <strong>SecretKey</strong>。</p>
+<h3 id="3-配置-cos-存储桶权限">3. 配置 COS 存储桶权限</h3>
+<p>建议将 COS 存储桶的权限设置为私有，以确保数据安全。通过 COS 的签名 URL 或代理服务来实现 Git LFS 的访问控制。</p>
+<h3 id="4-部署-git-lfs-服务器代理">4. 部署 Git LFS 服务器代理</h3>
+<p>由于 Git LFS 本身无法直接与 COS 交互，需要部署一个 LFS 代理服务器来实现对 COS 的中转。可以使用 <a href="https://github.com/git-lfs/lfs-test-server">lfs-test-server</a> 作为 Git LFS 的服务器代理。以下是具体步骤：</p>
+<h4 id="a-安装和配置-lfs-test-server">a. 安装和配置 lfs-test-server</h4>
+<p>在您的服务器上安装 <code>lfs-test-server</code>，可以使用 Docker 快速部署：</p>
+<pre><code class="language-bash">docker run -d -p 9999:8080 \
+  -e LFS_BASE_URL=https://&lt;your-domain&gt;/lfs \
+  -e LFS_AUTH=true \
+  -e AWS_ACCESS_KEY_ID=&lt;your-secret-id&gt; \
+  -e AWS_SECRET_ACCESS_KEY=&lt;your-secret-key&gt; \
+  -e LFS_STORE_DIR=/data \
+  -v /path/to/data:/data \
+  -e LFS_ENDPOINT=https://&lt;cos-endpoint&gt;/&lt;bucket-name&gt; \
+  ghcr.io/git-lfs/lfs-test-server
+</code></pre>
+<p>替换以下参数：</p>
+<ul>
+<li><code>&lt;your-domain&gt;</code>：服务器的域名或 IP 地址</li>
+<li><code>&lt;your-secret-id&gt;</code> 和 <code>&lt;your-secret-key&gt;</code>：腾讯云的 SecretId 和 SecretKey</li>
+<li><code>&lt;cos-endpoint&gt;</code>：COS 终端（例如 <code>cos.ap-guangzhou.myqcloud.com</code>）</li>
+<li><code>&lt;bucket-name&gt;</code>：COS 存储桶名称</li>
+</ul>
+<h4 id="b-配置-git-lfs-使用代理-1">b. 配置 Git LFS 使用代理</h4>
+<p>在 Git 仓库中创建或编辑 <code>.lfsconfig</code> 文件，将 LFS 的 URL 配置为代理服务器地址：</p>
+<pre><code class="language-ini">[lfs]
+url = &quot;https://&lt;your-domain&gt;/lfs&quot;
+</code></pre>
+<h3 id="5-添加大文件并推送到-lfs">5. 添加大文件并推送到 LFS</h3>
+<p>完成配置后，可以像常规 Git LFS 操作一样，添加大文件并推送到 LFS：</p>
+<pre><code class="language-bash">git lfs track &quot;*.largefile&quot;
+git add .gitattributes
+git add &lt;large_file&gt;
+git commit -m &quot;Add large file&quot;
+git push origin main
+</code></pre>
+<h3 id="6-验证-cos-存储">6. 验证 COS 存储</h3>
+<p>在腾讯云 COS 控制台查看存储桶，确认 Git LFS 对象已成功上传至 COS。</p>
+<h2 id="局部访问权限">局部访问权限</h2>
+<p>在 GitHub Organization 内部公开的仓库中使用私有化的 OSS 存储，并希望仅对组织内具有仓库访问权限的成员开放 LFS 文件的访问，可以采用以下方法，以确保访问控制在组织范围内实现：</p>
+<h3 id="1-使用-oss-的临时访问凭证和签名-url">1. 使用 OSS 的临时访问凭证和签名 URL</h3>
+<p>利用阿里云 RAM（资源访问管理）中的 <strong>STS（Security Token Service）</strong>，生成带有临时访问权限的签名 URL。这种方法适用于为每位有权限的组织成员提供有限时效的访问链接。</p>
+<h4 id="设置步骤">设置步骤：</h4>
+<ol>
+<li>
+<p><strong>配置 RAM 角色</strong>：</p>
+<ul>
+<li>在阿里云控制台中，创建一个 RAM 角色，并授予该角色对 OSS 存储桶的读取权限。</li>
+<li>在 GitHub Actions 或其他自动化脚本中，使用该角色来生成签名 URL。</li>
+</ul>
+</li>
+<li>
+<p><strong>使用 STS 生成临时签名 URL</strong>：</p>
+<ul>
+<li>利用阿里云 SDK 或 API 生成具有临时访问凭证的签名 URL。</li>
+<li>生成的 URL 可直接嵌入到 GitHub 的 README 或发布页面，但由于有时间限制，URL 可能需要定期刷新。</li>
+</ul>
+<p>示例 Python 代码：</p>
+<pre><code class="language-python">import oss2
+import time
+
+# 使用 STS 获取临时访问凭证
+auth = oss2.Auth('&lt;AccessKeyId&gt;', '&lt;AccessKeySecret&gt;')
+bucket = oss2.Bucket(auth, 'http://oss-cn-shanghai.aliyuncs.com', '&lt;bucket-name&gt;')
+
+# 设置有效期，单位为秒（如 3600 秒即 1 小时）
+signed_url = bucket.sign_url('GET', 'path/to/largefile', 3600)
+print(&quot;Signed URL:&quot;, signed_url)
+</code></pre>
+</li>
+<li>
+<p><strong>将签名 URL 提供给组织成员</strong>：</p>
+<ul>
+<li>可在 GitHub Actions 中自动生成签名 URL，将其写入 README 或通知组织成员。</li>
+</ul>
+</li>
+</ol>
+<h3 id="2-使用-github-actions-动态生成访问权限">2. 使用 GitHub Actions 动态生成访问权限</h3>
+<p>利用 GitHub Actions 在特定工作流中动态生成签名 URL，并通过 GitHub Secrets 管理 Access Key 信息。这样，组织内部访问者可以使用 Actions 生成的临时 URL。</p>
+<h4 id="设置步骤-1">设置步骤：</h4>
+<ol>
+<li>
+<p><strong>配置 GitHub Secrets</strong>：</p>
+<ul>
+<li>在仓库设置中，将阿里云的 Access Key 和 Secret Key 添加为 Secrets。</li>
+</ul>
+</li>
+<li>
+<p><strong>配置 GitHub Actions 工作流</strong>：</p>
+<ul>
+<li>使用 GitHub Actions 定义一个工作流，生成签名 URL，供组织内成员访问。例如：</li>
+</ul>
+<pre><code class="language-yaml">name: Generate LFS Signed URL
+
+on:
+  workflow_dispatch:  # 手动触发工作流
+
+jobs:
+  generate-url:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install oss2
+        run: pip install oss2
+
+      - name: Generate Signed URL
+        env:
+          ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+          ACCESS_KEY_SECRET: ${{ secrets.ACCESS_KEY_SECRET }}
+        run: |
+          import oss2
+          auth = oss2.Auth('${{ secrets.ACCESS_KEY_ID }}', '${{ secrets.ACCESS_KEY_SECRET }}')
+          bucket = oss2.Bucket(auth, 'http://oss-cn-shanghai.aliyuncs.com', 'bucket-name')
+          signed_url = bucket.sign_url('GET', 'path/to/largefile', 3600)
+          print(&quot;Signed URL:&quot;, signed_url)
+</code></pre>
+</li>
+<li>
+<p><strong>通知组织成员</strong>：</p>
+<ul>
+<li>执行该工作流生成的 URL 可发布到 GitHub Issues、Wiki 或 README 中的受限访问部分。组织内具有仓库访问权限的成员即可使用该 URL。</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-使用专用的-web-代理服务控制权限">3. 使用专用的 Web 代理服务控制权限</h3>
+<p>部署一个内部 Web 代理服务来充当 Git LFS 文件访问的中介，通过组织成员的 GitHub 登录信息控制访问。该代理服务从 OSS 获取文件，并将其返回给经过验证的用户。</p>
+<h4 id="设置步骤-2">设置步骤：</h4>
+<ol>
+<li>
+<p><strong>构建 Web 代理</strong>：</p>
+<ul>
+<li>使用例如 OAuth 的 GitHub 登录认证方式来验证用户是否为组织成员。</li>
+<li>验证通过后，代理服务使用 Access Key 从 OSS 下载 LFS 文件，并提供下载服务。</li>
+</ul>
+</li>
+<li>
+<p><strong>配置组织内用户访问</strong>：</p>
+<ul>
+<li>将 Web 代理的 URL 公开在 GitHub 仓库中，供组织成员访问。</li>
+<li>该代理服务可根据用户请求动态生成签名 URL，并将文件传递给用户。</li>
+</ul>
+</li>
+</ol>
+<p>这种方法适合需要精细控制访问权限的情况。通过代理服务，只有组织成员能够访问文件内容，同时避免了将 OSS 存储桶直接公开。</p>
+<h2 id="费用">费用</h2>
+<p>云存储的存储、访问、取回都要收费。以阿里云为例，其 OSS 的费用主要包括以下几部分：</p>
+<h3 id="1-存储费用">1. 存储费用</h3>
+<p>存储费用基于存储在 OSS 中的数据量，按 GB 每月收费。价格因存储类型不同而异：</p>
+<ul>
+<li><strong>标准存储</strong>：适合频繁访问的数据，价格最高。</li>
+<li><strong>低频访问存储</strong>：适合不频繁访问的数据，价格较低，但有最低存储时间要求（通常为30天）。</li>
+<li><strong>归档存储</strong>：适合长期备份的数据，价格更低，但有更长的存储时间要求，数据恢复速度较慢。</li>
+<li><strong>冷归档存储</strong>：适合极少访问的冷数据，价格最低，恢复数据可能需要数小时。</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong>：如果文件存储在低频或归档类型中，但被频繁访问，额外的读取请求费用可能较高。</p>
+</blockquote>
+<h3 id="2-请求费用">2. 请求费用</h3>
+<p>请求费用基于对 OSS 的操作次数，包括上传、下载、删除等请求，按千次请求数计费。不同存储类型的请求费用略有差异。</p>
+<ul>
+<li><strong>PUT、COPY、POST 和 LIST 请求</strong>：上传或列出文件的请求收费较低。</li>
+<li><strong>GET 和 HEAD 请求</strong>：读取文件的请求通常费用较高。</li>
+</ul>
+<h3 id="3-数据传输费用">3. 数据传输费用</h3>
+<p>数据传输费用指从 OSS 传出数据的费用。主要根据流量计费：</p>
+<ul>
+<li><strong>出网流量</strong>：从 OSS 下载数据到公网（例如下载到本地或其他网络）的流量按 GB 收费。</li>
+<li><strong>内网流量</strong>：阿里云同一地域内的云服务间的数据传输通常免费，例如 OSS 与 ECS 实例在同一区域内传输数据。</li>
+<li><strong>跨区域流量</strong>：数据在不同地域间传输会收取费用，按 GB 计费。</li>
+</ul>
+<h3 id="4-数据处理费用可选">4. 数据处理费用（可选）</h3>
+<p>如果使用 OSS 提供的附加功能（如图片处理、音视频转码），则会产生额外费用。这些费用基于处理请求的次数和数据量。</p>
+<h3 id="费用示例">费用示例</h3>
+<p>假设您使用 <strong>标准存储</strong>，存储了 100 GB 数据，产生了 1,000 次上传请求和 1,000 次下载请求，并传输了 10 GB 数据到公网。大致费用如下（具体价格需参考阿里云官网最新信息）：</p>
+<ul>
+<li><strong>存储费用</strong>：100 GB × 标准存储单价</li>
+<li><strong>请求费用</strong>：1,000 PUT 请求 × 单价 + 1,000 GET 请求 × 单价</li>
+<li><strong>传输费用</strong>：10 GB × 出网流量单价</li>
+</ul>
+<p>阿里云 OSS 价格会随时更新，访问 <a href="https://cn.aliyun.com/price/detail/oss?from_alibabacloud=">阿里云 OSS 价格页面</a> 获取最新和详细的费用信息。</p>
+
+</div>
+</main>
+
+<section class="appendix">
+
+
+<div>
+  <div class="side side-left"><h3>作者简介</h3></div>
+  <div>
+
+
+
+
+
+<div>Chun-Hui Gao is a Research Associate at <a href="http://www.hzau.edu.cn">Huazhong Agricultural University</a>.</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div>
+  <div class="side side-left"><h3>重复使用</h3></div>
+  Text and figures are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution CC BY 4.0</a>. The source code is licensed under MIT. The full source is available at <a href="https://github.com/yihui/hugo-prose">https://github.com/yihui/hugo-prose</a>.
+</div>
+
+
+
+<div>
+  <div class="side side-left"><h3>欢迎修订</h3></div>
+  
+  
+  
+    
+    
+  
+  如果您发现本文里含有任何错误（包括错别字和标点符号），欢迎<a href="https://github.com/gaospecial/bio-spring/edit/master/content/post/2024-11-11-private-git-lfs-server/index.zh.md" id="edit-link">在本站的 GitHub 项目里提交修订意见。</a>
+</div>
+
+
+
+
+<div>
+  <div class="side side-left"><h3>引用本文</h3></div>
+  <p>如果您使用了本文的内容，请按照以下方式引用：</p>
+  <pre><code>gaoch (2024). 配置私有 Git LFS 服务器. BIO-SPRING. www.bio-spring.top/post/2024/11/11/private-git-lfs-server/</code></pre>
+  <p>BibTeX citation</p>
+  <pre><code>@misc{
+  title = "配置私有 Git LFS 服务器",
+  author = "gaoch",
+  year = "2024",
+  journal = "BIO-SPRING",
+  note = "www.bio-spring.top/post/2024/11/11/private-git-lfs-server/"
+}</code></pre>
+</div>
+
+</section>
+
+
+
+<nav class="post-nav">
+  <span class="nav-next">&larr; <a href="www.bio-spring.top/post/2024/11/04/github-webhook/" title=下一篇&#32;(旧)>GitHub Webhook</a></span>
+  &hercon;
+  <span class="nav-prev"><a href="www.bio-spring.top/post/2024/11/26/ai-rename-blogdown-tags/" title=上一篇&#32;(新)>使用 AI 优化 blogdown 的分类和标签</a> &rarr;</span>
+</nav>
+
+
+
+
+<section class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var disqus_js = '//bio-spring.disqus.com/embed.js';
+    var d = document, s = d.createElement('script');
+    s.src = disqus_js; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    var t = d.getElementById('disqus_thread');
+    var b = false, l = function(scroll) {
+      if (b) return;
+      (d.head || d.body).appendChild(s); b = true;
+      if (scroll) t.scrollIntoView();
+    }
+    s.onerror = function(e) {
+      if (sessionStorage.getItem('failure-note')) return;
+      t.innerText = 'Sorry, but you cannot make comments because Disqus failed to load for some reason. It is known to be blocked in China. If you are sure it is not blocked in your region, please refresh the page. 中国大陆地区读者需要翻墙才能发表评论。';
+      t.style.border = '1px dashed';
+      t.style.padding = '.5em';
+      t.style.background = 'lightyellow';
+      sessionStorage.setItem('failure-note', true);
+    };
+    
+    if (location.hash.match(/^#comment-[0-9]+$/)) return l(true);
+    var c = function() {
+      if (b) return;
+      var rect = t.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) l();
+    };
+    window.addEventListener('load', c);
+    d.addEventListener('scroll', c);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+</div>
+
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+<script src="//yihui.org/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+<script src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils/js/number-sections.min.js,npm/@xiee/utils/js/toc.min.js,npm/@xiee/utils/js/toc-highlight.min.js,npm/@xiee/utils/js/sidenotes.min.js,npm/@xiee/utils/js/right-quote.min.js,npm/@xiee/utils/js/center-img.min.js,npm/@xiee/utils/js/fix-pandoc.min.js,npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/prism-xcode.min.css">
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

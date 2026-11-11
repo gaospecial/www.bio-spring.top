@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> Posit::conf(2025) 精选辑 - 人工智能 | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Posit::conf(2025) 精选辑 - 人工智能">
+	<meta name="twitter:description" content="Posit公司在美国波士顿举办了Posit::conf(2025)大会。大会涵盖了数据科学、统计分析、机器学习和人工智能等多个领域。以下是大会中关于人工智能部分的精选内容摘要。
+只有“人机结合&#34;的数据科学才能所向披靡 标题：Making the most of artificial and human intelligence for data science (Hadley Wickham, Joe Cheng)
+来源：https://www.youtube.com/watch?v=tSFHQWGyRzo
+Posit公司的Hadley Wickham和Joe Cheng在这场主题演讲中，探讨了如何在数据科学中负责任地使用人工智能（AI）及大语言模型（LLM）。
+Hadley Wickham 首先指出了AI的双面性：它既强大又存在风险。他强调，数据科学家应利用现有的编程技能来增强LLM，并通过紧密的人机回圈（human-in-the-loop）来引导AI。他介绍了Posit开发的R包ellmer，并解释了“工具（Tools）”这一核心概念，即通过函数让LLM与外部世界（如运行代码、获取数据）交互。
+Hadley展示了几个实际应用：
+结构化数据提取：从非结构化文本或图片中高效提取信息并整理成表格。 QueryChat：在仪表盘中用自然语言生成SQL查询，以安全、可控的方式进行数据筛选。 ggbot2：一个通过对话式交互创建ggplot2图表的AI助手，展示了在专家引导下AI如何高效辅助数据可视化。 Joe Cheng 接着介绍了两款集成在Positron IDE中的AI代理（Agent）：
+Positron Assistant：一个通用的编码助手，可以读写代码、解释错误和生成图表。 Databot：一个专注于探索性数据分析（EDA）的工具。它通过“提问-生成代码-执行-观察结果-提出建议”的循环，与用户共同探索数据。Joe以一个实例说明，Databot能快速发现人类分析师都忽略的深层数据质量问题。 最后，Joe Cheng特别强调，这些AI工具是“能力增强器，而非替代品”，并打比方说“Databot不是救生圈”。他警告说，用户不能被动依赖AI，而必须作为积极的、具备专业知识的参与者，来引导、评估并纠正AI，其最终目标是加深对数据的理解，而不是简单地获取一个答案。
+在 R 中评估模型的准确性 标题：Is that LLM feature any good? (Simon P. Couch, Posit) | posit::conf(2025)
+来源：https://www.youtube.com/watch?v=HciRoc9TzMc
+这篇演讲介绍了用于评估大型语言模型（LLM）应用的R语言工具包vitals。
+演讲者Simon Couch首先以一个用R包Ellmer和Shinychat构建的会议日程聊天机器人为例，指出虽然现在构建LLM应用变得非常简单，但要将其从演示版推向生产环境，则需要可靠的测试和评估方法，而不能仅凭“感觉测试”。
+他提出了两个核心观点：
+应该做评估：为了快速迭代和提升AI应用质量，系统性的评估（evals）至关重要，就像软件开发中的单元测试一样。 能够做评估：如果你已经能用Ellmer构建应用，那么使用vitals进行评估也同样简单，因为它是“即插即用”的。 vitals的评估流程包含三个核心部分：
+数据集 (Dataset)：包含用户输入和对应的标准答案/评分标准。 求解器 (Solver)：直接使用你已有的Ellmer应用。 评分器 (Scorer)：通常利用另一个LLM来判断应用的输出是否符合标准。 通过vitals，开发者可以获得一个直观的日志查看器，它不仅能展示整体的准确率，还能让开发者深入分析每一个失败案例的具体原因，从而有效地调试和改进应用。总之，vitals为R用户提供了一套结构化、易于上手的方法来系统性地提升LLM应用的质量。
+使用 LLM 进行数据清洗 标题：From messy to meaningful data: LLM-powered classification in R (Dylan Pieper) | posit::conf(2025)">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container single">
+<main>
+
+<div class="article-meta">
+<h1><span class="title">Posit::conf(2025) 精选辑 - 人工智能</span></h1>
+
+<h3 class="author">
+gaoch
+</h3>
+
+<h3 class="date">2025-11-26</h3>
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF">信息技术</a> 
+  
+  
+  
+  Tags: <a href="/tags/ai">AI</a> <a href="/tags/posit">Posit</a> <a href="/tags/r">R</a> <a href="/tags/python">Python</a> 
+  
+  
+</p>
+</div>
+
+<div class="article">
+<p>Posit公司在美国波士顿举办了Posit::conf(2025)大会。大会涵盖了数据科学、统计分析、机器学习和人工智能等多个领域。以下是大会中关于人工智能部分的精选内容摘要。</p>
+<h2 id="只有人机结合的数据科学才能所向披靡">只有“人机结合&quot;的数据科学才能所向披靡</h2>
+<p>标题：Making the most of artificial and human intelligence for data science (Hadley Wickham, Joe Cheng)</p>
+<p>来源：<a href="https://www.youtube.com/watch?v=tSFHQWGyRzo">https://www.youtube.com/watch?v=tSFHQWGyRzo</a></p>
+<p>Posit公司的Hadley Wickham和Joe Cheng在这场主题演讲中，探讨了如何在数据科学中负责任地使用人工智能（AI）及大语言模型（LLM）。</p>
+<p><strong>Hadley Wickham</strong> 首先指出了AI的双面性：它既强大又存在风险。他强调，数据科学家应利用现有的编程技能来增强LLM，并通过紧密的人机回圈（human-in-the-loop）来引导AI。他介绍了Posit开发的R包<code>ellmer</code>，并解释了“工具（Tools）”这一核心概念，即通过函数让LLM与外部世界（如运行代码、获取数据）交互。</p>
+<p><img src="https://vnote-1251564393.cos.ap-chengdu.myqcloud.com/picgo/20251128202620105.png" alt=""></p>
+<p><img src="https://vnote-1251564393.cos.ap-chengdu.myqcloud.com/picgo/20251128202714647.png" alt=""></p>
+<p>Hadley展示了几个实际应用：</p>
+<ol>
+<li><strong>结构化数据提取</strong>：从非结构化文本或图片中高效提取信息并整理成表格。</li>
+<li><strong>QueryChat</strong>：在仪表盘中用自然语言生成SQL查询，以安全、可控的方式进行数据筛选。</li>
+<li><strong>ggbot2</strong>：一个通过对话式交互创建<code>ggplot2</code>图表的AI助手，展示了在专家引导下AI如何高效辅助数据可视化。</li>
+</ol>
+<p><strong>Joe Cheng</strong> 接着介绍了两款集成在Positron IDE中的AI代理（Agent）：</p>
+<ol>
+<li><strong>Positron Assistant</strong>：一个通用的编码助手，可以读写代码、解释错误和生成图表。</li>
+<li><strong>Databot</strong>：一个专注于探索性数据分析（EDA）的工具。它通过“提问-生成代码-执行-观察结果-提出建议”的循环，与用户共同探索数据。Joe以一个实例说明，Databot能快速发现人类分析师都忽略的深层数据质量问题。</li>
+</ol>
+<p>最后，Joe Cheng特别强调，这些AI工具是“<strong>能力增强器，而非替代品</strong>”，并打比方说“Databot不是救生圈”。他警告说，用户不能被动依赖AI，而必须作为积极的、具备专业知识的参与者，来引导、评估并纠正AI，其最终目标是加深对数据的理解，而不是简单地获取一个答案。</p>
+<h2 id="在-r-中评估模型的准确性">在 R 中评估模型的准确性</h2>
+<p>标题：Is that LLM feature any good? (Simon P. Couch, Posit) | posit::conf(2025)</p>
+<p>来源：<a href="https://www.youtube.com/watch?v=HciRoc9TzMc">https://www.youtube.com/watch?v=HciRoc9TzMc</a></p>
+<p>这篇演讲介绍了用于评估大型语言模型（LLM）应用的R语言工具包<code>vitals</code>。</p>
+<p>演讲者Simon Couch首先以一个用R包<code>Ellmer</code>和<code>Shinychat</code>构建的会议日程聊天机器人为例，指出虽然现在构建LLM应用变得非常简单，但要将其从演示版推向生产环境，则需要可靠的测试和评估方法，而不能仅凭“感觉测试”。</p>
+<p>他提出了两个核心观点：</p>
+<ol>
+<li><strong>应该做评估</strong>：为了快速迭代和提升AI应用质量，系统性的评估（evals）至关重要，就像软件开发中的单元测试一样。</li>
+<li><strong>能够做评估</strong>：如果你已经能用<code>Ellmer</code>构建应用，那么使用<code>vitals</code>进行评估也同样简单，因为它是“即插即用”的。</li>
+</ol>
+<p><code>vitals</code>的评估流程包含三个核心部分：</p>
+<ul>
+<li><strong>数据集 (Dataset)</strong>：包含用户输入和对应的标准答案/评分标准。</li>
+<li><strong>求解器 (Solver)</strong>：直接使用你已有的<code>Ellmer</code>应用。</li>
+<li><strong>评分器 (Scorer)</strong>：通常利用另一个LLM来判断应用的输出是否符合标准。</li>
+</ul>
+<p>通过<code>vitals</code>，开发者可以获得一个直观的日志查看器，它不仅能展示整体的准确率，还能让开发者深入分析每一个失败案例的具体原因，从而有效地调试和改进应用。总之，<code>vitals</code>为R用户提供了一套结构化、易于上手的方法来系统性地提升LLM应用的质量。</p>
+<h2 id="使用-llm-进行数据清洗">使用 LLM 进行数据清洗</h2>
+<p>标题：From messy to meaningful data: LLM-powered classification in R (Dylan Pieper) | posit::conf(2025)</p>
+<p>来源：<a href="https://www.youtube.com/watch?v=Lo4vewuapI8">https://www.youtube.com/watch?v=Lo4vewuapI8</a></p>
+<p>该视频介绍了如何在 R 语言中使用大语言模型（LLM）进行数据分类。主讲人演示了使用 <code>elmer</code> 包将文本、图片等非结构化数据转换为结构化的数据框。</p>
+<p>核心观点和方法包括：</p>
+<ol>
+<li><strong>简化提示 (Prompting)</strong>：与其编写复杂的提示语，不如专注于定义清晰的输出数据结构。</li>
+<li><strong>评估与验证</strong>：要求 LLM 返回其预测的“不确定性”或“置信度”分数，这个分数通常能反映模型的实际表现。</li>
+<li><strong>结合传统方法</strong>：LLM 在某些任务（如区分细微差异）上可能不如传统的机器学习模型。最佳实践是将 LLM 与传统模型结合使用，例如用 LLM 进行初步数据标注，或在生产中作为“第二意见”来发现不一致的结果并交由人工审核。</li>
+</ol>
+<p>总之，LLM 是一个强大且易于使用的工具，但不应完全取代传统机器学习，而应作为辅助工具来提升数据处理工作流的效率和准确性。</p>
+<h2 id="基于-aws-云服务开发企业级-agent-应用">基于 AWS 云服务开发企业级 Agent 应用</h2>
+<p>标题：Building Agentic AI applications with Positron and AWS Strands Agents (Greg Headley &amp; Shun Mao, AWS)</p>
+<p>来源：<a href="https://www.youtube.com/watch?v=jLyudeHXjJc">https://www.youtube.com/watch?v=jLyudeHXjJc</a></p>
+<p>这篇视频介绍了AWS与Posit如何合作，帮助开发者和数据科学家构建从开发到生产级别的AI智能体（Agent）应用。</p>
+<p>核心内容围绕AWS最新发布的开源SDK——<strong>Strands Agents</strong>展开。其主要特点是：</p>
+<ol>
+<li><strong>简化开发</strong>：通过整合<strong>提示（Prompt）</strong>、**大语言模型（LLM）<strong>和</strong>工具（Tools）**三大核心组件，开发者仅需少量代码即可构建功能强大的智能体。</li>
+<li><strong>模型选择灵活</strong>：支持包括Amazon Bedrock、本地部署模型（通过Ollama）及OpenAI在内的多种大语言模型。</li>
+<li><strong>强大的工具集成</strong>：
+<ul>
+<li>提供计算器、文件操作等内置工具。</li>
+<li><strong>亮点功能</strong>：能轻松将任何现有的Python函数（只需添加描述性文档字符串）转换为智能体可调用的工具，对数据科学家极其友好。</li>
+<li>支持调用第三方API（如网页搜索）和连接企业知识库（如Pinecone向量数据库）。</li>
+</ul>
+</li>
+</ol>
+<p>视频最后在Positron环境中进行了现场演示，展示了如何逐步为一个智能体添加计算器、自定义Python函数、API调用等多种工具，并最终将其打包成一个可交互的Streamlit应用，证明了整个过程的简便与高效。</p>
+
+</div>
+</main>
+
+<section class="appendix">
+
+
+<div>
+  <div class="side side-left"><h3>作者简介</h3></div>
+  <div>
+
+
+
+
+
+<div>Chun-Hui Gao is a Research Associate at <a href="http://www.hzau.edu.cn">Huazhong Agricultural University</a>.</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div>
+  <div class="side side-left"><h3>重复使用</h3></div>
+  Text and figures are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution CC BY 4.0</a>. The source code is licensed under MIT. The full source is available at <a href="https://github.com/yihui/hugo-prose">https://github.com/yihui/hugo-prose</a>.
+</div>
+
+
+
+<div>
+  <div class="side side-left"><h3>欢迎修订</h3></div>
+  
+  
+  
+    
+    
+  
+  如果您发现本文里含有任何错误（包括错别字和标点符号），欢迎<a href="https://github.com/gaospecial/bio-spring/edit/master/content/post/2025-11-28-posit-conf-2025-ai/index.zh.md" id="edit-link">在本站的 GitHub 项目里提交修订意见。</a>
+</div>
+
+
+
+
+<div>
+  <div class="side side-left"><h3>引用本文</h3></div>
+  <p>如果您使用了本文的内容，请按照以下方式引用：</p>
+  <pre><code>gaoch (2025). Posit::conf(2025) 精选辑 - 人工智能. BIO-SPRING. www.bio-spring.top/post/2025/11/26/posit-conf-2025-ai/</code></pre>
+  <p>BibTeX citation</p>
+  <pre><code>@misc{
+  title = "Posit::conf(2025) 精选辑 - 人工智能",
+  author = "gaoch",
+  year = "2025",
+  journal = "BIO-SPRING",
+  note = "www.bio-spring.top/post/2025/11/26/posit-conf-2025-ai/"
+}</code></pre>
+</div>
+
+</section>
+
+
+
+<nav class="post-nav">
+  <span class="nav-next">&larr; <a href="www.bio-spring.top/post/2025/11/26/sample-level-enrichment-analysis/" title=下一篇&#32;(旧)>样本水平富集分析</a></span>
+  &hercon;
+  <span class="nav-prev"><a href="www.bio-spring.top/post/2025/11/27/posit-conf-2025-quarto/" title=上一篇&#32;(新)>Posit::conf(2025) 精选辑 - Quarto/文档生成</a> &rarr;</span>
+</nav>
+
+
+
+
+<section class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var disqus_js = '//bio-spring.disqus.com/embed.js';
+    var d = document, s = d.createElement('script');
+    s.src = disqus_js; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    var t = d.getElementById('disqus_thread');
+    var b = false, l = function(scroll) {
+      if (b) return;
+      (d.head || d.body).appendChild(s); b = true;
+      if (scroll) t.scrollIntoView();
+    }
+    s.onerror = function(e) {
+      if (sessionStorage.getItem('failure-note')) return;
+      t.innerText = 'Sorry, but you cannot make comments because Disqus failed to load for some reason. It is known to be blocked in China. If you are sure it is not blocked in your region, please refresh the page. 中国大陆地区读者需要翻墙才能发表评论。';
+      t.style.border = '1px dashed';
+      t.style.padding = '.5em';
+      t.style.background = 'lightyellow';
+      sessionStorage.setItem('failure-note', true);
+    };
+    
+    if (location.hash.match(/^#comment-[0-9]+$/)) return l(true);
+    var c = function() {
+      if (b) return;
+      var rect = t.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) l();
+    };
+    window.addEventListener('load', c);
+    d.addEventListener('scroll', c);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+</div>
+
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+<script src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils/js/number-sections.min.js,npm/@xiee/utils/js/toc.min.js,npm/@xiee/utils/js/toc-highlight.min.js,npm/@xiee/utils/js/sidenotes.min.js,npm/@xiee/utils/js/right-quote.min.js,npm/@xiee/utils/js/center-img.min.js,npm/@xiee/utils/js/fix-pandoc.min.js,npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+
+
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

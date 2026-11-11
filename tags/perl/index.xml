@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Perl on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/perl/</link>
+		<description>Recent content in Perl on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 14 Oct 2015 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/perl/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>A Genbank to BED converter</title>
+				<link>www.bio-spring.top/post/2015/10/14/2015-10-14-a-genbank-to-bed-converter/</link>
+				<pubDate>Wed, 14 Oct 2015 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2015/10/14/2015-10-14-a-genbank-to-bed-converter/</guid>
+				<description>&lt;p&gt;Like &lt;a href=&#34;http://bio-spring.top/a-genbenk-gtf-converter-derived-from-bioperl/&#34;&gt;the previous Genbank -&amp;gt; GTF&#xA;converter&lt;/a&gt;,&#xA;this script is also depended on BioPerl, so you need firstly get the&#xA;module installed in your system (&lt;a href=&#34;http://bio-spring.top/reinstall-bioperl/&#34;&gt;Install&#xA;BioPerl&lt;/a&gt;). To check whether&#xA;BioPerl is ready, just refer to this post:&#xA;&lt;a href=&#34;http://bio-spring.top/check-bioperl/&#34;&gt;bio-spring.top/check-bioperl/&lt;/a&gt; .&lt;/p&gt;&#xA;&lt;h2 id=&#34;synopsis&#34;&gt;SYNOPSIS&lt;/h2&gt;&#xA;&lt;p&gt;&lt;code&gt;     gb2bed.pl [options] filename&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;Options:&lt;br&gt;&#xA;&amp;ndash;help -h display this message&lt;br&gt;&#xA;&amp;ndash;input -i NCBI GenBank file&lt;br&gt;&#xA;&amp;ndash;out -o filename of bed output. [STDOUT]&lt;br&gt;&#xA;&amp;ndash;filter -f GenBank primary tag that will be filtered, may be set to&#xA;&amp;lsquo;gene&amp;rsquo;, &amp;lsquo;CDS&amp;rsquo;, &amp;lsquo;rRNA&amp;rsquo;, etc.&lt;br&gt;&#xA;&amp;ndash;keep -k GenBank primary tag will be keep. Default is CDS. [CDS]&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Fix “getopts.pl can not be located in @INC” error in SSPACE_Standard_v3.0.pl</title>
+				<link>www.bio-spring.top/post/2015/08/16/2015-08-16-sspace-getopts-error/</link>
+				<pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2015/08/16/2015-08-16-sspace-getopts-error/</guid>
+				<description>&lt;p&gt;SSPACE是一个常用的Scaffolding软件.当你有新的测序数据时,你可以使用SSPACE将原有的contigs延长,scaffolding等.&lt;/p&gt;&#xA;&lt;p&gt;在Ubuntu&#xA;14.04系统中运行该软件v3.0会出现错误.谷歌也没有发现好的解决方法,最终通过研究源代码,发现这是一个简单的问题,修订源代码之后,终于能够成功运行.&lt;/p&gt;&#xA;&lt;p&gt;两处修订如下:&lt;/p&gt;&#xA;&lt;p&gt;[cc lang=”perl”]&lt;br&gt;&#xA;#~ require “getopts.pl”;&lt;br&gt;&#xA;use Getopt::Std;&lt;br&gt;&#xA;[/cc]&lt;/p&gt;&#xA;&lt;p&gt;[cc lang=”perl”]&lt;br&gt;&#xA;#~ &amp;amp;Getopts(‘m:o:v:p:k:a:z:s:b:n:l:x:T:g:r:S:’);&lt;br&gt;&#xA;getopt(‘m:o:v:p:k:a:z:s:b:n:l:x:T:g:r:S:’);&lt;br&gt;&#xA;[/cc]&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>修复Bio::Tree::Draw::Cladogram 输出EPS BoundingBox错误的问题</title>
+				<link>www.bio-spring.top/post/2013/12/25/2013-12-25-fix-eps-boundingbox-error/</link>
+				<pubDate>Wed, 25 Dec 2013 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2013/12/25/2013-12-25-fix-eps-boundingbox-error/</guid>
+				<description>&lt;p&gt;使用Bio::Tree::Draw::Cladogram 输出的 EPS 文档在很多 EPS&#xA;查看软件（如Windows下面的ACDsee，gsView等）中不能打开，经查是由于&#xA;BoundingBox 出现浮点数所致，具体设计的代码为 Cladogram.pm 的 new 方法和&#xA;print 方法，简便起见，可以在原先的 443&#xA;行代码前面添加两行代码，以解决该问题。&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;如下所示 ：&lt;/p&gt;&#xA;&lt;p&gt;[perl]&lt;/p&gt;&#xA;&lt;p&gt;print $INFO “%!PS-Adobe-\n”;&lt;br&gt;&#xA;$width = int($width + 1); # BoundingBox should be int&lt;br&gt;&#xA;$height = int($height +1);&lt;br&gt;&#xA;print $INFO “%%BoundingBox: 0 0 “, $width, ” “, $height, “\n”;&lt;br&gt;&#xA;print $INFO “1 setlinewidth\n”;&lt;br&gt;&#xA;print $INFO “/$font findfont\n”;&lt;br&gt;&#xA;print $INFO “$size scalefont\n”;&lt;br&gt;&#xA;print $INFO “setfont\n”;&lt;/p&gt;&#xA;&lt;p&gt;[/perl]&lt;/p&gt;&#xA;&lt;p&gt;经测试，修改此处后，生成的　ＥＰＳ　文档不会再由于该错误无法打开和查看。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>使用正则表达式匹配DOI</title>
+				<link>www.bio-spring.top/post/2012/03/10/2012-03-10-using-regex-match-doi/</link>
+				<pubDate>Sat, 10 Mar 2012 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2012/03/10/2012-03-10-using-regex-match-doi/</guid>
+				<description>&lt;p&gt;先看几个DOI的例子：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;10.1093/nar/gkh458&lt;/li&gt;&#xA;&lt;li&gt;10.1146/annurev.micro.112408.134233&lt;/li&gt;&#xA;&lt;li&gt;10.1183/09031936.02.00400202&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;可以看出，DOI的编码以“10”开始，可以含有数字]0-9]，小数点，斜杠等分隔，但是其中不会出现空格。鉴于此，在perl中使用以下正则表达式匹配：&lt;/p&gt;&#xA;&lt;p&gt;[cc lang=”perl”]&lt;br&gt;&#xA;$str1 =~ /10\.[^\s\/]+\/[^\s]+/; # borrowed from Zotero&lt;br&gt;&#xA;$str2 =~ /\b(10\.\d+\/[^\s]+)\b/; # another one&lt;br&gt;&#xA;[/cc]&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Perl中的split函数和join函数：不同的参数书写样式</title>
+				<link>www.bio-spring.top/post/2011/03/13/2011-03-13-perl-split-join/</link>
+				<pubDate>Sun, 13 Mar 2011 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2011/03/13/2011-03-13-perl-split-join/</guid>
+				<description>&lt;p&gt;这两个函数其实是一对孪生函数，它们的作用是恰恰相反的。而我，就一直以为这两个函数的用法相同，其实它们是有很大的不同的。&lt;/p&gt;&#xA;&lt;p&gt;split的用法&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;split /PATTERN/,EXPR&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;[perl]split(/(?=\w)/, ‘hi there!’);[/perl]&lt;/p&gt;&#xA;&lt;p&gt;join的用法&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;join EXPR,LIST&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;[perl]$rec = join(‘:’,&#xA;$login,$passwd,$uid,$gid,$gcos,$home,$shell);[/perl]&lt;/p&gt;&#xA;&lt;p&gt;呵呵，搞不懂我想说什么。其实只是我在使用join函数的时候，用//把第一个参数圈起来了。&lt;/p&gt;&#xA;&lt;p&gt;你有没有犯过这种错误。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Perl LWP：从“国家地理每日图片”到“Cell最近一期的封面”</title>
+				<link>www.bio-spring.top/post/2010/12/08/2010-12-08-perl-lwp-image-fetch/</link>
+				<pubDate>Wed, 08 Dec 2010 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2010/12/08/2010-12-08-perl-lwp-image-fetch/</guid>
+				<description>&lt;p&gt;在网上看到了一个从国家地理杂志网站下载每日图片的Perl程序。因为网站改版，脚本已经不能正常运行，经过修改后，经测试可以将每日图片下载到当前目录，代码如下：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-lang:perl&#34;&gt;#!/usr/bin/perl&#xA;# author:&#xA;# Seraphxby&#xA;# Purpose:&#xA;# 查看国家地理每日图片的Perl脚本&#xA;# history:&#xA;# v0.1 first draft&#xA;# 2010-12-8 modified by gaospecial&#xA;use warnings;&#xA;use strict;&#xA;use LWP::Simple;&#xA;my $url=&#39;http://photography.nationalgeographic.com/photography/photo-of-the-day&#39;;&#xA;my $content = get( &amp;quot;$url&amp;quot; ) || die &amp;quot;get the page failed!\n&amp;quot;;&#xA;my $img;&#xA;if ($content =~ m/(.*?&amp;lt;\/a&amp;gt;)/s) {&#xA;$content = $1;&#xA;if($content =~ m/&amp;lt;img.*?src=&amp;quot;([^\t]*?)&amp;quot;/){ # 非贪婪的数量词 *?,匹配中不含有跳格\t&#xA;$img = $1;&#xA;if($img =~ m/^(.*?)([^\/]+$)/){&#xA;$url = $1;&#xA;$img = $2;&#xA;getstore($url.$img,$img) || die &amp;quot;get img failed!\n&amp;quot;;&#xA;&#xA;}&#xA;}&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt; &lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

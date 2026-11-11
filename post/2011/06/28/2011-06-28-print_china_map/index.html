@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> 使用Matlab画中国地图 | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="使用Matlab画中国地图">
+	<meta name="twitter:description" content="使用Matlab绘制中国地图十分方便，使用Mapping工具箱中的几条命令。
+介绍如下：
+设置坐标轴：setm命令。
+因为地球是圆的，所以地图的绘制涉及到投影的问题，跟普通的2-D或者3-D作图差别明显。setm命令专门用来设置map axis。例如：
+[cc lang=”matlab”]
+ax=worldmap(‘china’); %worldmap命令生成一个map axis，其各项属性可以用getm(ax)来获得
+setm(ax,’grid’,’off’) % 关闭grid，其实就是经线和纬线
+setm(ax,’frame’,’off’) % 关闭边框
+setm(ax,’parallellabel’,’off’) % 关闭坐标轴标记，相当于X轴
+setm(ax,’meridianlabel’,’off’) % 关闭坐标轴标记，相当于Y轴
+[/cc]
+绘制地图：geoshow或者mapshow
+这两个命令差别不大，系统在判断参数的时候会自动在二者之间切换。不过他们其实还是有差别的。geoshow会根据经度和纬度来作图，如果我们的坐标轴以经纬度来标记，那么用mapshow图像就会不正确。
+例如：
+[cc lang=”matlab”]
+geoshow(file) % 可以直接读取文件中数据作图
+[/cc]
+[cc lang=”matlab”]
+mapshow(file) % 可以直接读取文件中数据作图
+[/cc]
+地图数据下载
+中国的地图数据可以从国家基础地理信息系统的网站上下载，网址是http://nfgis.nsdi.gov.cn/。
+地图数据说明
+从国家基础地理信息系统的网站上下载得到的数据，分为两种：一种以“l”结尾，经过笔者的考虑，应当是line（线，曲线）的缩写，这些数据是线性的数据，描述了边界。另外一些数据，以“p”结尾，应当是polygon（多边形）的意思，这些数据描述了不同的区块。
+另外，每组数据都有3个文件，分别以“shp”，“dbf”，“shx”为扩展名。需要注意的是，虽然我们在作图时只用到了“shp”数据，但是显然这样的一组数据才是完整的数据。
+图片如下：
+国家基础地理信息系统版权所有
+这是一个以bou1_4l为基础的作图，可以看到南海的断续线。图内没有填充。
+这是一个以bou1_4p为基础的作图，不可以看到南海的断续线。图内有填充。
+这显然是由于曲线没有面积造成的。
+参考资料：
+MATLAB绘制中国地图 http://blog.sciencenet.cn/home.php?mod=space&amp;uid=428536&amp;do=blog&amp;id=307997">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container single">
+<main>
+
+<div class="article-meta">
+<h1><span class="title">使用Matlab画中国地图</span></h1>
+
+<h3 class="author">
+gaoch
+</h3>
+
+<h3 class="date">2011-06-28</h3>
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/%E5%85%B6%E5%AE%83">其它</a> <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF">信息技术</a> 
+  
+  
+  
+  Tags: <a href="/tags/%E6%97%A7%E6%96%87">旧文</a> <a href="/tags/wordpress">WordPress</a> <a href="/tags/matlab">MATLAB</a> <a href="/tags/%E5%9C%B0%E5%9B%BE">地图</a> 
+  
+  
+</p>
+</div>
+
+<div class="article">
+<p>使用Matlab绘制中国地图十分方便，使用Mapping工具箱中的几条命令。</p>
+<p>介绍如下：</p>
+<p><strong>设置坐标轴：setm命令。</strong><br>
+因为地球是圆的，所以地图的绘制涉及到投影的问题，跟普通的2-D或者3-D作图差别明显。setm命令专门用来设置map
+axis。例如：<br>
+[cc lang=”matlab”]<br>
+ax=worldmap(‘china’); %worldmap命令生成一个map
+axis，其各项属性可以用getm(ax)来获得<br>
+setm(ax,’grid’,’off’) % 关闭grid，其实就是经线和纬线<br>
+setm(ax,’frame’,’off’) % 关闭边框<br>
+setm(ax,’parallellabel’,’off’) % 关闭坐标轴标记，相当于X轴<br>
+setm(ax,’meridianlabel’,’off’) % 关闭坐标轴标记，相当于Y轴<br>
+[/cc]</p>
+<p><strong>绘制地图：geoshow或者mapshow</strong><br>
+这两个命令差别不大，系统在判断参数的时候会自动在二者之间切换。不过他们其实还是有差别的。geoshow会根据经度和纬度来作图，如果我们的坐标轴以经纬度来标记，那么用mapshow图像就会不正确。<br>
+例如：<br>
+[cc lang=”matlab”]<br>
+geoshow(file) % 可以直接读取文件中数据作图<br>
+[/cc]<br>
+[cc lang=”matlab”]<br>
+mapshow(file) % 可以直接读取文件中数据作图<br>
+[/cc]</p>
+<p><strong>地图数据下载</strong><br>
+中国的地图数据可以从国家基础地理信息系统的网站上下载，网址是<a href="http://nfgis.nsdi.gov.cn/">http://nfgis.nsdi.gov.cn/</a>。</p>
+<p><strong>地图数据说明</strong><br>
+从国家基础地理信息系统的网站上下载得到的数据，分为两种：一种以“l”结尾，经过笔者的考虑，应当是line（线，曲线）的缩写，这些数据是线性的数据，描述了边界。另外一些数据，以“p”结尾，应当是polygon（多边形）的意思，这些数据描述了不同的区块。<br>
+另外，每组数据都有3个文件，分别以“shp”，“dbf”，“shx”为扩展名。需要注意的是，虽然我们在作图时只用到了“shp”数据，但是显然这样的一组数据才是完整的数据。</p>
+<p><strong>图片如下：</strong><br>
+<strong>国家基础地理信息系统<img src="https://s.w.org/images/core/emoji/13.0.1/72x72/2122.png" class="wp-smiley" alt="™" />版权所有</strong><br>
+这是一个以bou1_4l为基础的作图，可以看到南海的断续线。图内没有填充。<br>
+<img src="https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2011/06/fig11.png" width="400" /><br>
+这是一个以bou1_4p为基础的作图，不可以看到南海的断续线。图内有填充。<br>
+这显然是由于曲线没有面积造成的。<br>
+<img src="https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2011/06/fig21.png" width="400" /></p>
+<p><strong>参考资料：</strong><br>
+MATLAB绘制中国地图
+<a href="http://blog.sciencenet.cn/home.php?mod=space&amp;uid=428536&amp;do=blog&amp;id=307997">http://blog.sciencenet.cn/home.php?mod=space&amp;uid=428536&amp;do=blog&amp;id=307997</a></p>
+
+</div>
+</main>
+
+<section class="appendix">
+
+
+<div>
+  <div class="side side-left"><h3>作者简介</h3></div>
+  <div>
+
+
+
+
+
+<div>Chun-Hui Gao is a Research Associate at <a href="http://www.hzau.edu.cn">Huazhong Agricultural University</a>.</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div>
+  <div class="side side-left"><h3>重复使用</h3></div>
+  Text and figures are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution CC BY 4.0</a>. The source code is licensed under MIT. The full source is available at <a href="https://github.com/yihui/hugo-prose">https://github.com/yihui/hugo-prose</a>.
+</div>
+
+
+
+<div>
+  <div class="side side-left"><h3>欢迎修订</h3></div>
+  
+  
+  
+    
+    
+  
+  如果您发现本文里含有任何错误（包括错别字和标点符号），欢迎<a href="https://github.com/gaospecial/bio-spring/edit/master/content/post/2011-06-28-print_china_map/index.zh.md" id="edit-link">在本站的 GitHub 项目里提交修订意见。</a>
+</div>
+
+
+
+
+<div>
+  <div class="side side-left"><h3>引用本文</h3></div>
+  <p>如果您使用了本文的内容，请按照以下方式引用：</p>
+  <pre><code>gaoch (2011). 使用Matlab画中国地图. BIO-SPRING. www.bio-spring.top/post/2011/06/28/2011-06-28-print_china_map/</code></pre>
+  <p>BibTeX citation</p>
+  <pre><code>@misc{
+  title = "使用Matlab画中国地图",
+  author = "gaoch",
+  year = "2011",
+  journal = "BIO-SPRING",
+  note = "www.bio-spring.top/post/2011/06/28/2011-06-28-print_china_map/"
+}</code></pre>
+</div>
+
+</section>
+
+
+
+<nav class="post-nav">
+  <span class="nav-next">&larr; <a href="www.bio-spring.top/post/2011/06/25/2011-06-25-matlab-colourful-barplot/" title=下一篇&#32;(旧)>在MATLAB中创建色彩绚丽的柱状图</a></span>
+  &hercon;
+  <span class="nav-prev"><a href="www.bio-spring.top/post/2011/07/16/2011-07-16-remove-dup-lines/" title=上一篇&#32;(新)>使用shell删除文本中的重复行</a> &rarr;</span>
+</nav>
+
+
+
+
+<section class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var disqus_js = '//bio-spring.disqus.com/embed.js';
+    var d = document, s = d.createElement('script');
+    s.src = disqus_js; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    var t = d.getElementById('disqus_thread');
+    var b = false, l = function(scroll) {
+      if (b) return;
+      (d.head || d.body).appendChild(s); b = true;
+      if (scroll) t.scrollIntoView();
+    }
+    s.onerror = function(e) {
+      if (sessionStorage.getItem('failure-note')) return;
+      t.innerText = 'Sorry, but you cannot make comments because Disqus failed to load for some reason. It is known to be blocked in China. If you are sure it is not blocked in your region, please refresh the page. 中国大陆地区读者需要翻墙才能发表评论。';
+      t.style.border = '1px dashed';
+      t.style.padding = '.5em';
+      t.style.background = 'lightyellow';
+      sessionStorage.setItem('failure-note', true);
+    };
+    
+    if (location.hash.match(/^#comment-[0-9]+$/)) return l(true);
+    var c = function() {
+      if (b) return;
+      var rect = t.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) l();
+    };
+    window.addEventListener('load', c);
+    d.addEventListener('scroll', c);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+</div>
+
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+<script src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils/js/number-sections.min.js,npm/@xiee/utils/js/toc.min.js,npm/@xiee/utils/js/toc-highlight.min.js,npm/@xiee/utils/js/sidenotes.min.js,npm/@xiee/utils/js/right-quote.min.js,npm/@xiee/utils/js/center-img.min.js,npm/@xiee/utils/js/fix-pandoc.min.js,npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+
+
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Anova on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/anova/</link>
+		<description>Recent content in Anova on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 24 Sep 2019 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/anova/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>ANOVA &#43; TurkeyHSD 分析及作图</title>
+				<link>www.bio-spring.top/post/2019/09/24/anova-turkeyhsd-plotting/</link>
+				<pubDate>Tue, 24 Sep 2019 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2019/09/24/anova-turkeyhsd-plotting/</guid>
+				<description>&lt;p&gt;先载入一个示例数据。该数据是研究摄入 VC 对小鼠牙齿生长作用的实验结果。VC 给药分成两种方式：VC-给予VC药片；OJ-给予相当量的橙汁。给药的量都包括0.5,1,2等三个梯度。&lt;/p&gt;&#xA;&lt;p&gt;从散点图上看，不同给药量之间应该有显著差异。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;data(&amp;quot;ToothGrowth&amp;quot;)&#xA;head(ToothGrowth)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code&gt;##    len supp dose&#xA;## 1  4.2   VC  0.5&#xA;## 2 11.5   VC  0.5&#xA;## 3  7.3   VC  0.5&#xA;## 4  5.8   VC  0.5&#xA;## 5  6.4   VC  0.5&#xA;## 6 10.0   VC  0.5&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dim(ToothGrowth)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code&gt;## [1] 60  3&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(ggplot2)&#xA;ggplot(ToothGrowth,aes(factor(dose),len)) + &#xA;  geom_boxplot(outlier.shape = NULL) + &#xA;  geom_jitter() +&#xA;  facet_wrap(~supp)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;img src=&#34;www.bio-spring.top/post/2019/09/24/anova-turkeyhsd-plotting/index.zh_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&#xA;&lt;p&gt;单因素方差分析使用 aov() 函数，随后，进一步使用 HSD.test 获取组间差异。 Tukey’s ‘Honest Significant Difference’ method 通常使用  stats::TukeyHSD() 函数， 但在这里，我们使用 HSD.test() 可以得到分组信息，用于后面的作图。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

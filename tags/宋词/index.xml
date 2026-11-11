@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>宋词 on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/%E5%AE%8B%E8%AF%8D/</link>
+		<description>Recent content in 宋词 on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 11 Apr 2011 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/%E5%AE%8B%E8%AF%8D/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>全宋词词频统计：东风何处是人间</title>
+				<link>www.bio-spring.top/post/2011/04/11/2011-04-11-song-ci-stats/</link>
+				<pubDate>Mon, 11 Apr 2011 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2011/04/11/2011-04-11-song-ci-stats/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;http://yixuan.cos.name/cn/2011/03/text-mining-of-song-poems/&#34;&gt;东风何处是人间 « Yixuan’s&#xA;Blog&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;对全宋词中词频统计之后的结果很有意思。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;不知各位看官看到上面这些既熟悉又悠远的话语又将作何感想？或许，她们就是我们千百年来的精神寄托吧。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;结果（排在第一的是无效字符，这跟数据源有关）：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;   Word Freq           Word Freq&#xA;1       1485        51  天上  368&#xA;2   东风 1382        52  杨柳  362&#xA;3   何处 1230        53  西湖  356&#xA;4   人间 1202        54  桃花  354&#xA;5   风流  857        55  扁舟  353&#xA;6   归去  812        56  消息  351&#xA;7   春风  802        57  憔悴  344&#xA;8   西风  779        58  何事  339&#xA;9   归来  771        59  芙蓉  338&#xA;10  江南  765        60  神仙  334&#xA;11  相思  753        61  一片  334&#xA;12  梅花  732        62  桃李  333&#xA;13  千里  676        63  人生  332&#xA;14  回首  656        64  十分  331&#xA;15  明月  651        65  心事  329&#xA;16  多少  648        66  黄花  328&#xA;17  如今  642        67  一声  325&#xA;18  阑干  630        68  佳人  324&#xA;19  年年  613        69  长安  321&#xA;20  万里  590        70  东君  319&#xA;21  一笑  582        71  断肠  316&#xA;22  黄昏  550        72  而今  315&#xA;23  当年  542        73  鸳鸯  314&#xA;24  天涯  537        74  为谁  313&#xA;25  相逢  528        75  十年  310&#xA;26  芳草  527        76  去年  309&#xA;27  尊前  516        77  少年  308&#xA;28  一枝  512        78  海棠  307&#xA;29  风雨  505        79  寂寞  306&#xA;30  流水  472        80  无情  306&#xA;31  依旧  472        81  不是  305&#xA;32  风吹  471        82  时候  304&#xA;33  风月  461        83  肠断  303&#xA;34  多情  457        84  富贵  303&#xA;35  故人  451        85  蓬莱  303&#xA;36  当时  450        86  昨夜  303&#xA;37  无人  445        87  行人  302&#xA;38  斜阳  438        88  今夜  301&#xA;39  不知  430        89  谁知  300&#xA;40  不见  429        90  不似  299&#xA;41  深处  422        91  江上  298&#xA;42  时节  403        92  悠悠  296&#xA;43  平生  398        93  几度  295&#xA;44  凄凉  398        94  青山  295&#xA;45  春色  394        95  何时  294&#xA;46  匆匆  383        96  天气  293&#xA;47  功名  383        97  惟有  293&#xA;48  一点  378        98  一曲  291&#xA;49  无限  377        99  月明  291&#xA;50  今日  369        100 往事  290&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+			</item>
+	</channel>
+</rss>

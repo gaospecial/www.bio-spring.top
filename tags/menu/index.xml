@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Menu on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/menu/</link>
+		<description>Recent content in Menu on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<atom:link href="www.bio-spring.top/tags/menu/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>About Hugo Prose</title>
+				<link>www.bio-spring.top/about/about.en/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/about/about.en/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;Hugo Prose&lt;/strong&gt; is a minimalist theme derived from the &lt;a href=&#34;https://github.com/yihui/hugo-xmin&#34;&gt;&lt;strong&gt;XMin&lt;/strong&gt;&#xA;theme&lt;/a&gt;, and inspired by&#xA;&lt;a href=&#34;https://wowchemy.com&#34;&gt;Wowchemy&lt;/a&gt; (previously known as the Academic theme),&#xA;&lt;a href=&#34;https://distill.pub&#34;&gt;Distill&lt;/a&gt;, and&#xA;&lt;a href=&#34;https://github.com/edwardtufte/tufte.css&#34;&gt;tufte.css&lt;/a&gt;. This theme itself is&#xA;completely plain-text and lightweight, and does not use any icons, images, or&#xA;emojis.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; By default, the theme only uses two JavaScript libraries, MathJax&#xA;and highlight.js, and they are loaded only when necessary. The rest of&#xA;JavaScript is written from scratch and also relatively short. This theme does&#xA;not use any CSS frameworks, and the full CSS code is also written from scratch&#xA;(about 300 lines).&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>主题介绍</title>
+				<link>www.bio-spring.top/about/about/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/about/about/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;Hugo Prose&lt;/strong&gt; 是一个非常轻量级的主题，拥有 &lt;a href=&#34;https://wowchemy.com&#34;&gt;Wowchemy&lt;/a&gt;、&lt;a href=&#34;https://distill.pub&#34;&gt;Distill&lt;/a&gt; 和 &lt;a href=&#34;https://github.com/edwardtufte/tufte.css&#34;&gt;tufte.css&lt;/a&gt; 的一些特性。这个主题仅使用了文本元素（不含任何图片、图标和表情）。这个主题默认集成了两个 JavaScript 库，分别是 &lt;a href=&#34;https://www.mathjax.org/&#34;&gt;MathJax&lt;/a&gt; 和 &lt;a href=&#34;https://highlightjs.org/&#34;&gt;highlight.js&lt;/a&gt;，用于显示数学公式和代码高亮。除此之外，还手打了几行 JavaScript 代码。该主题使用了 300 行自定义的 CSS，没有使用 CSS 库。&lt;/p&gt;&#xA;&lt;div class=&#34;quote-right&#34;&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;贫穷的不是拥有太少的人，而是渴望拥有更多的人。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;mdash; &lt;em&gt;《道德书简》&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;/div&gt;&#xA;&lt;p&gt;本页将介绍该主题的各种功能，供您摆弄。&lt;/p&gt;&#xA;&lt;h2 id=&#34;网站设置&#34;&gt;网站设置&lt;/h2&gt;&#xA;&lt;p&gt;以下是您可以为基于此主题的网站配置的选项。&lt;/p&gt;&#xA;&lt;h3 id=&#34;菜单&#34;&gt;菜单&lt;/h3&gt;&#xA;&lt;p&gt;每个页面的页眉和页脚都有一个菜单。页眉菜单在 &lt;code&gt;config.yaml&lt;/code&gt; 中 &lt;code&gt;menu&lt;/code&gt; 下面的 &lt;code&gt;header&lt;/code&gt; 选项中定义；页脚菜单在 &lt;code&gt;menu&lt;/code&gt; 下面的 &lt;code&gt;footer&lt;/code&gt; 选项中定义。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;menu:&#xA;  header:&#xA;    - name: Home&#xA;      url: &amp;quot;/&amp;quot;&#xA;      weight: 1&#xA;    - name: About&#xA;      url: &amp;quot;/about/&amp;quot;&#xA;      weight: 2&#xA;  footer:&#xA;    - name: Contact&#xA;      url: &amp;quot;/404.html&amp;quot;&#xA;      weight: 1&#xA;    - name: Categories&#xA;      url: &amp;quot;/categories/&amp;quot;&#xA;      weight: 2&#xA;      pre: &amp;quot;optional&amp;quot;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;菜单项的 &lt;code&gt;url&lt;/code&gt; 既可以相对 URL，也可以是外部链接（例如，&lt;code&gt;url: &amp;quot;https://github.com/yihui&amp;quot;&lt;/code&gt;）。菜单项的顺序由权重值决定。如果菜单项有 &lt;code&gt;pre&lt;/code&gt; 值，它将被用作菜单项的类。特殊值 &lt;code&gt;optional&lt;/code&gt; 表示该菜单项将在小屏幕上隐藏&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

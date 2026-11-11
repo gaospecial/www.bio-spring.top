@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Firefox on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/firefox/</link>
+		<description>Recent content in Firefox on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 14 Mar 2012 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/firefox/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>删除Zotero自动生成的Tags或关键词</title>
+				<link>www.bio-spring.top/post/2012/03/14/2012-03-14-delete-zotero-autotags/</link>
+				<pubDate>Wed, 14 Mar 2012 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2012/03/14/2012-03-14-delete-zotero-autotags/</guid>
+				<description>&lt;p&gt;添加项目时，Zotero默认将关键词以Tag的形式加入，这样可以快速的查看与某一关键词相关的条目。可是自动加入的Tag或关键词有太多太多，时间一长，Zotero数据库中会产生成百上千个关键词或Tag，导致其失去了便于检索的应用价值。&lt;/p&gt;&#xA;&lt;p&gt;所以，建议在取消该选项，而改为人工添加更加简单易记的关键词或Tag。&lt;/p&gt;&#xA;&lt;p&gt;那么，对于已经存在的Tag如何一下子全部删除呢？按照下面的步骤操作即可。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;打开Zotero配置页面，选择高级（Advanced），点击“打开数据名录”（Show&#xA;data directory）；&lt;/li&gt;&#xA;&lt;li&gt;关闭Firefox，关闭之前将本文用IE打开，或复制到一个文档中，以便随时参考；&lt;/li&gt;&#xA;&lt;li&gt;复制“数据目录”中的“zotero.sqlite”为“zotero.sqlite.bak”，即备份Zotero数据库；&lt;/li&gt;&#xA;&lt;li&gt;下面对Zotero数据库进行查询，可以使用任何熟悉的数据库工具，这里以“&lt;span&#xA;style=&#34;font-family: Arial;&#34;&gt;&lt;span&#xA;style=&#34;font-family: Arial; color: #000000; font-size: 12pt;&#34;&gt;SharpPlus&#xA;SQlite Developer”，操作如下：&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;span style=&#34;font-family: Arial;&#34;&gt;&lt;span&#xA;style=&#34;font-family: Arial; color: #000000; font-size: 12pt;&#34;&gt;注册数据库，根据向导选择zotero.sqlite文件。&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;span style=&#34;font-family: Arial;&#34;&gt;&lt;span&#xA;style=&#34;font-family: Arial; color: #000000; font-size: 12pt;&#34;&gt;双击导入的数据库。&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&#xA;&lt;li&gt;选择“工具”-“SQL编辑器”，在其中输入以下代码：&lt;br&gt;&#xA;[cc lang=”sql”]delete from itemTags where itemTags.tagID in&#xA;(select&lt;br&gt;&#xA;tags.TagID from tags where type = 1);&lt;br&gt;&#xA;delete from tags where type = 1;[/cc]&lt;/li&gt;&#xA;&lt;li&gt;选择“运行”，即窗口中第一个图标。&lt;/li&gt;&#xA;&lt;li&gt;这时候，窗口下半部分应当有信息出现“Query OK…”等等。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;关闭该工具，重新打开Firefox。&lt;/li&gt;&#xA;&lt;li&gt;完成。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Refer：&lt;a href=&#34;http://forums.zotero.org/discussion/4051/remove-all-tags/&#34;&gt;http://forums.zotero.org/discussion/4051/remove-all-tags/&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>“破解”zotero：打开zotero查找重复的功能</title>
+				<link>www.bio-spring.top/post/2011/05/09/2011-05-09-zotero-dup-remove/</link>
+				<pubDate>Mon, 09 May 2011 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2011/05/09/2011-05-09-zotero-dup-remove/</guid>
+				<description>&lt;p&gt;在文献管理软件EndNote中，有一项功能“查找重复”，个人觉得很有用。但是你一旦发现作为一个后期之秀，免费开源的文献管理软件——zotero，却没有这个功能，很纠结对不？&lt;/p&gt;&#xA;&lt;p&gt;我是很纠结。所以我一发现可以打开zotero的查找重复功能之后，马上分享给大家。&lt;/p&gt;&#xA;&lt;p&gt;在查看zotero的源代码的时候，我发现zotero本身带有“Show&#xA;Duplicates”的菜单项，只是被开发者隐藏了。可能是正在开发中，但是我发现这个功能其实是可用的。我打开“Show&#xA;Duplicates”的功能之后，可以正确的在库中找到重复的文献，并列出来。&lt;/p&gt;&#xA;&lt;p&gt;说了这么多废话，下面介绍一下怎么做：&lt;/p&gt;&#xA;&lt;p&gt;首先，找到你的firefox的profile文件夹，具体可以参看：http://support.mozilla.com/en-US/kb/Profiles。&lt;br&gt;&#xA;在windows系统中，按住“win徽标键+R”，打开运行命令框，输入“%APPDATA%\Mozilla\Firefox\Profiles\”，回车就会打开profile文件夹。&lt;/p&gt;&#xA;&lt;p&gt;然后，进入profile文件夹。通常只会有一个以“.default”结尾的文件夹，依次打开p8oh3vmw.default&#xA;》 extensions 》 &lt;a href=&#34;mailto:zotero@chnm.gmu.edu&#34;&gt;zotero@chnm.gmu.edu&lt;/a&gt; 》chrome文件夹，会发现一个文件&#xA;zotero.jar&#xA;。这是一个zip格式压缩的文件，将该文件用winrar解压缩（到当前文件夹即可）。&lt;/p&gt;&#xA;&lt;p&gt;接着，进入 content 》 zotero 文件，用文本编辑器打开  zoteroPane.xul&#xA;文件，找到下面一行：&lt;/p&gt;&#xA;&lt;p&gt;&lt;span class=&#34;filepath&#34;&gt;&amp;lt;menuitem&#xA;id=”zotero-tb-actions-showDuplicates” label=”Show Duplicates”&#xA;oncommand=”ZoteroPane_Local.showDuplicates()” hidden=”true”/&amp;gt;&lt;br&gt;&#xA;&lt;/span&gt;&lt;br&gt;&#xA;&lt;span class=&#34;filepath&#34;&gt;将其改为：&lt;/span&gt;&lt;span class=&#34;filepath&#34;&gt;&lt;br&gt;&#xA;&amp;lt;menuitem id=”zotero-tb-actions-showDuplicates” label=”Show&#xA;Duplicates” oncommand=”ZoteroPane_Local.showDuplicates()”&#xA;hidden=”false”/&amp;gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p&gt;然后，返回上级目录，将整个原来解压缩出来的东西重新打包，命名为zotero.jar，并替换掉相应的原文件。&lt;/p&gt;&#xA;&lt;p&gt;恭喜你，成功了！&lt;/p&gt;&#xA;&lt;p&gt;现在重新打开firefox试一试。你会发现在zotero的齿轮图标下面，多了一个”Show&#xA;duplicates“的项目，点点，看是不是你想要的。&lt;br&gt;&#xA;&lt;img src=&#34;https://cloudfs-spring.oss-cn-qingdao.aliyuncs.com/bio_spring_uploads/2011/05/1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;备注：&lt;br&gt;&#xA;本操作在zotero 2.1.6版本上实验成功，与2.1以下版本可能并不兼容。&lt;br&gt;&#xA;如果觉得麻烦，可以找我要改好的zotero文件，请自行查毒。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

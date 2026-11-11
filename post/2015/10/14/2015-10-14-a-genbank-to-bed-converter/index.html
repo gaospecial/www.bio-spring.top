@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> A Genbank to BED converter | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="A Genbank to BED converter">
+	<meta name="twitter:description" content="Like the previous Genbank -&gt; GTF converter, this script is also depended on BioPerl, so you need firstly get the module installed in your system (Install BioPerl). To check whether BioPerl is ready, just refer to this post: bio-spring.top/check-bioperl/ .
+SYNOPSIS gb2bed.pl [options] filename
+Options:
+–help -h display this message
+–input -i NCBI GenBank file
+–out -o filename of bed output. [STDOUT]
+–filter -f GenBank primary tag that will be filtered, may be set to ‘gene’, ‘CDS’, ‘rRNA’, etc.
+–keep -k GenBank primary tag will be keep. Default is CDS. [CDS]">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container single">
+<main>
+
+<div class="article-meta">
+<h1><span class="title">A Genbank to BED converter</span></h1>
+
+<h3 class="author">
+gaoch
+</h3>
+
+<h3 class="date">2015-10-14</h3>
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/%E5%85%B6%E5%AE%83">其它</a> <a href="/categories/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF">信息技术</a> <a href="/categories/%E7%94%9F%E7%89%A9%E5%AD%A6">生物学</a> 
+  
+  
+  
+  Tags: <a href="/tags/%E6%97%A7%E6%96%87">旧文</a> <a href="/tags/wordpress">WordPress</a> <a href="/tags/bioperl">BioPerl</a> <a href="/tags/bed">BED</a> <a href="/tags/genbank">GenBank</a> <a href="/tags/ncbi">NCBI</a> <a href="/tags/perl">perl</a> 
+  
+  
+</p>
+</div>
+
+<div class="article">
+<p>Like <a href="http://bio-spring.top/a-genbenk-gtf-converter-derived-from-bioperl/">the previous Genbank -&gt; GTF
+converter</a>,
+this script is also depended on BioPerl, so you need firstly get the
+module installed in your system (<a href="http://bio-spring.top/reinstall-bioperl/">Install
+BioPerl</a>). To check whether
+BioPerl is ready, just refer to this post:
+<a href="http://bio-spring.top/check-bioperl/">bio-spring.top/check-bioperl/</a> .</p>
+<h2 id="synopsis">SYNOPSIS</h2>
+<p><code>     gb2bed.pl [options] filename</code></p>
+<p>Options:<br>
+&ndash;help -h display this message<br>
+&ndash;input -i NCBI GenBank file<br>
+&ndash;out -o filename of bed output. [STDOUT]<br>
+&ndash;filter -f GenBank primary tag that will be filtered, may be set to
+&lsquo;gene&rsquo;, &lsquo;CDS&rsquo;, &lsquo;rRNA&rsquo;, etc.<br>
+&ndash;keep -k GenBank primary tag will be keep. Default is CDS. [CDS]</p>
+<p>Examples:</p>
+<p>perl gb2bed.pl -i seq.gb -o seq.bed<br>
+perl gb2bed.pl -i seq.gb -k CDS -o seq.bed<br>
+perl gb2bed.pl seq.gb &gt; seq.bed</p>
+<p>Read Pod for further information.</p>
+<p><code>#!/usr/bin/perl</code></p>
+<p>=pod</p>
+<p>=head1 NAME</p>
+<p>gb2bed.pl &ndash; Genbank -&gt; BED</p>
+<p>=head1 SYNOPSIS</p>
+<p>gb2bed.pl [options] filename</p>
+<p>Options:<br>
+&ndash;help -h display this message<br>
+&ndash;input -i NCBI GenBank file<br>
+&ndash;out -o filename of bed output. [STDOUT]<br>
+&ndash;filter -f GenBank primary tag that will be filtered, may be set to
+&lsquo;gene&rsquo;, &lsquo;CDS&rsquo;, &lsquo;rRNA&rsquo;, etc.<br>
+&ndash;keep -k GenBank primary tag will be keep. Default is CDS. [CDS]</p>
+<p>Examples:</p>
+<p>perl gb2bed.pl -i seq.gb -o seq.bed<br>
+perl gb2bed.pl -i seq.gb -k CDS -o seq.bed<br>
+perl gb2bed.pl seq.gb &gt; seq.bed</p>
+<p>=head1 DESCRIPTION</p>
+<p>Use this program to generate bioconductor friendly BED files from NCBI
+GenBank.<br>
+Six columns will be extracted:</p>
+<ol>
+<li>chrom - name of the chromosome or scaffold. Any valid
+seq_region_name can be used, and chromosome names can be given with or
+without the &lsquo;chr&rsquo; prefix.</li>
+<li>chromStart - Start position of the feature in standard chromosomal
+coordinates (i.e. first base is 0).</li>
+<li>chromEnd - End position of the feature in standard chromosomal
+coordinates</li>
+<li>name - Label to be displayed under the feature, if turned on in
+&ldquo;Configure this page&rdquo;. [locus_tag]</li>
+<li>score - A score between 0 and 1000. [0]</li>
+<li>strand - defined as + (forward) or - (reverse).</li>
+</ol>
+<p>=head1 AUTHOR</p>
+<p>Chun-Hui, Gao (<a href="mailto:gaoch@thelifesciencecentury.com">gaoch@thelifesciencecentury.com</a>)<br>
+Copyright (c) 2015 <a href="https://www.thelifesciencecentury.com">www.thelifesciencecentury.com</a>.</p>
+<p>=cut</p>
+<p>use strict;<br>
+use Data::Dumper;<br>
+use Pod::Usage;<br>
+use Bio::SeqIO;<br>
+use Getopt::Long;</p>
+<p>my ($help, $genbank_input, $output, @filters, @keep);</p>
+<p>my $ok= GetOptions( &lsquo;help|h&rsquo; =&gt; \$help,<br>
+&lsquo;input|i=s&rsquo; =&gt; \$genbank_input,<br>
+&lsquo;filter|f=s&rsquo; =&gt; \@filters,<br>
+&lsquo;keep|k=s&rsquo; =&gt; \@keep,<br>
+&lsquo;out|o=s&rsquo; =&gt; \$output );<br>
+pod2usage(2) if $help || !$ok;</p>
+<p>$genbank_input = shift @ARGV unless ($genbank_input );</p>
+<p>@keep = (&lsquo;gene&rsquo;) unless $#keep &gt;= 0;</p>
+<p>open *IN, &ldquo;&lt; $genbank_input &quot; or die pod2usage(2); my $out; if
+($output) { open $out, &ldquo;&gt; $output&rdquo; or die &ldquo;Can&rsquo;t open file
+$output:$@\n&rdquo;;<br>
+}<br>
+else {<br>
+$out = *STDOUT;<br>
+}</p>
+<p>my %filter;<br>
+map {$filter{$_}++} @filters;<br>
+my %keep;<br>
+map {$keep{$_}++} @keep;<br>
+my $in = Bio::SeqIO-&gt;new(-fh =&gt; \*IN, -format =&gt;
+&ldquo;genbank&rdquo;);<br>
+while ( my $seq = $in-&gt;next_seq() ) {<br>
+my $chr = $seq-&gt;accession_number;</p>
+<p>my @all_SeqFeatures = $seq-&gt;get_all_SeqFeatures;</p>
+<p>#~ warn &ldquo;# working on $chr\n&rdquo;;<br>
+if ($#filters &gt;= 0){<br>
+@all_SeqFeatures = grep { !defined $filter{$_-&gt;primary_tag} }
+@all_SeqFeatures;<br>
+}<br>
+if ($#keep &gt;= 0) {<br>
+@all_SeqFeatures = grep { defined $keep{$_-&gt;primary_tag} }
+@all_SeqFeatures;<br>
+}</p>
+<p># abort if there are no features<br>
+warn &ldquo;$chr has no features, skipping\n&rdquo; and next<br>
+if $#all_SeqFeatures &lt; 0; for my $feature ( @all_SeqFeatures ) {
+my ($start, $end, $name, $strand); $start = $feature-&gt;start - 1; #
+bed base is 0, while genbank is 1<br>
+$end = $feature-&gt;end;<br>
+($name) = $feature-&gt;get_tag_values(&rsquo;locus_tag&rsquo;);<br>
+$strand = $feature-&gt;strand;<br>
+$strand = $strand &lt; 0 ? &lsquo;-&rsquo; : &lsquo;+&rsquo;; print $out join(&rdquo;\t&quot;, $chr,
+$start, $end, $name, 0, $strand), &ldquo;\n&rdquo;; } }</p>
+
+</div>
+</main>
+
+<section class="appendix">
+
+
+<div>
+  <div class="side side-left"><h3>作者简介</h3></div>
+  <div>
+
+
+
+
+
+<div>Chun-Hui Gao is a Research Associate at <a href="http://www.hzau.edu.cn">Huazhong Agricultural University</a>.</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div>
+  <div class="side side-left"><h3>重复使用</h3></div>
+  Text and figures are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution CC BY 4.0</a>. The source code is licensed under MIT. The full source is available at <a href="https://github.com/yihui/hugo-prose">https://github.com/yihui/hugo-prose</a>.
+</div>
+
+
+
+<div>
+  <div class="side side-left"><h3>欢迎修订</h3></div>
+  
+  
+  
+    
+    
+  
+  如果您发现本文里含有任何错误（包括错别字和标点符号），欢迎<a href="https://github.com/gaospecial/bio-spring/edit/master/content/post/2015-10-14-a-genbank-to-bed-converter/index.zh.md" id="edit-link">在本站的 GitHub 项目里提交修订意见。</a>
+</div>
+
+
+
+
+<div>
+  <div class="side side-left"><h3>引用本文</h3></div>
+  <p>如果您使用了本文的内容，请按照以下方式引用：</p>
+  <pre><code>gaoch (2015). A Genbank to BED converter. BIO-SPRING. www.bio-spring.top/post/2015/10/14/2015-10-14-a-genbank-to-bed-converter/</code></pre>
+  <p>BibTeX citation</p>
+  <pre><code>@misc{
+  title = "A Genbank to BED converter",
+  author = "gaoch",
+  year = "2015",
+  journal = "BIO-SPRING",
+  note = "www.bio-spring.top/post/2015/10/14/2015-10-14-a-genbank-to-bed-converter/"
+}</code></pre>
+</div>
+
+</section>
+
+
+
+<nav class="post-nav">
+  <span class="nav-next">&larr; <a href="www.bio-spring.top/post/2015/09/27/2015-09-27-cloudfs-upload-failed/" title=下一篇&#32;(旧)>cloudfs无法上传的故障排除</a></span>
+  &hercon;
+  <span class="nav-prev"><a href="www.bio-spring.top/post/2015/10/14/2015-10-14-a-genbank-gtf-converter-derived-from-bioperl/" title=上一篇&#32;(新)>A Genbank –&gt; GTF converter derived from BioPerl</a> &rarr;</span>
+</nav>
+
+
+
+
+<section class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var disqus_js = '//bio-spring.disqus.com/embed.js';
+    var d = document, s = d.createElement('script');
+    s.src = disqus_js; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    var t = d.getElementById('disqus_thread');
+    var b = false, l = function(scroll) {
+      if (b) return;
+      (d.head || d.body).appendChild(s); b = true;
+      if (scroll) t.scrollIntoView();
+    }
+    s.onerror = function(e) {
+      if (sessionStorage.getItem('failure-note')) return;
+      t.innerText = 'Sorry, but you cannot make comments because Disqus failed to load for some reason. It is known to be blocked in China. If you are sure it is not blocked in your region, please refresh the page. 中国大陆地区读者需要翻墙才能发表评论。';
+      t.style.border = '1px dashed';
+      t.style.padding = '.5em';
+      t.style.background = 'lightyellow';
+      sessionStorage.setItem('failure-note', true);
+    };
+    
+    if (location.hash.match(/^#comment-[0-9]+$/)) return l(true);
+    var c = function() {
+      if (b) return;
+      var rect = t.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) l();
+    };
+    window.addEventListener('load', c);
+    d.addEventListener('scroll', c);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+</div>
+
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+<script src="//yihui.org/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+<script src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils/js/number-sections.min.js,npm/@xiee/utils/js/toc.min.js,npm/@xiee/utils/js/toc-highlight.min.js,npm/@xiee/utils/js/sidenotes.min.js,npm/@xiee/utils/js/right-quote.min.js,npm/@xiee/utils/js/center-img.min.js,npm/@xiee/utils/js/fix-pandoc.min.js,npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+
+
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

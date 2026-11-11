@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>NOD32 on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/nod32/</link>
+		<description>Recent content in NOD32 on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 13 Dec 2011 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/nod32/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>NOD32更新病毒库失败，提示“打开套接字错误”的解决办法</title>
+				<link>www.bio-spring.top/post/2011/12/13/2011-12-13-rest-winsock/</link>
+				<pubDate>Tue, 13 Dec 2011 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2011/12/13/2011-12-13-rest-winsock/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;&lt;span style=&#34;font-size: medium;&#34;&gt;方法如下：&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;按住“Win徽标键 + R”；&lt;/li&gt;&#xA;&lt;li&gt;在打开的“运行”窗口中输入“cmd”；&lt;/li&gt;&#xA;&lt;li&gt;在新打开的“命令提示符”中输入“netsh winsock reset”；&lt;/li&gt;&#xA;&lt;li&gt;重新启动计算机；&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;如果问题已经解决，那么恭喜你！&lt;/p&gt;&#xA;&lt;p&gt;如果本文帮到了你，欢迎留言参与讨论！&lt;/p&gt;&#xA;&lt;p&gt;&lt;span&#xA;style=&#34;font-size: medium;&#34;&gt;&lt;strong&gt;以上方法可能还适用于以下几种情况：&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;在Windows7和以前的windows版本中重新安装TCP/IP协议；&lt;/li&gt;&#xA;&lt;li&gt;网络连接正常，但是不能正常上网浏览的故障；&lt;/li&gt;&#xA;&lt;li&gt;Ping 路由器可以 ping 的通，但是不能联网；&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;=============== 万能的分割线 ================&lt;/p&gt;&#xA;&lt;p&gt;下面解释一下原因：&lt;/p&gt;&#xA;&lt;p&gt;什么是“套接字”？&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://baike.baidu.com/view/538713.htm#2&#34;&gt;套接字，是支持TCP/IP的网络通信的基本操作单元，可以看做是不同主机之间的进程进行双向通信的端面点，简单的说就是通信的两方的一种约定，用套接字中的相关函数来完成通信过程&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://baike.baidu.com/view/538713.htm#2&#34;&gt;非常非常简单的举例说明下:Socket=Ip address+ TCP/UDP port. that’s&#xA;all~&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;通过以上的例子，我们可以将套接字看成是一种网络通信过程中的封装过程。计算机中有很多的应用程序，每个应用程序的网络请求可以指派一个&#xA;Port，网络的响应后，将相应的响应再返回给以上指定的&#xA;Port，从而使得各个网络应用各得其所，不会出现信息传递的错误。&lt;/p&gt;&#xA;&lt;p&gt;当我重置了系统，或者是其它软件操作，人为操作造成系统的 TCP/IP&#xA;协议改动，就会出现莫名其妙的故障。&lt;/p&gt;&#xA;&lt;p&gt;我的故障是：可以正常连接无线路由器；也可以看到网上邻居中的计算机；Ping&#xA;路由器的IP 192.168.1.1 也有相应；但是无法打开网页；无法登陆QQ等等。&lt;/p&gt;&#xA;&lt;p&gt;通过以上的操作，我们实际上重装了 TCP/IP&#xA;协议（所以我们还有别的很多方法来解决这一故障），于是问题便解决了。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

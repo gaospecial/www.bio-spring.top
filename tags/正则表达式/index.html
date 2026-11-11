@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> 正则表达式 | BIO-SPRING</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@v1.13.54/css/article.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils/css/heading-anchor.min.css">
+    <link rel="stylesheet" href="/www.bio-spring.top/css/style.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/fonts.css" />
+    <link rel="stylesheet" href="/www.bio-spring.top/css/custom.css" />
+    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="正则表达式">
+	<meta name="twitter:description" content="Chun-Hui Gao&#39;s personal website built through Hugo and blogdown with the hugo-prose theme.">
+
+
+  </head>
+
+  <body>
+
+    <nav class="menu sticky-top">
+    <ul>
+      <li class="left">
+        <a class="brand" href="/" aria-label="BIO-SPRING">
+          <img class="site-logo" src="/www.bio-spring.top/images/logo.png" alt="BIO-SPRING" />
+        </a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top">Home</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/post/">Blog</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/publication/full-publication-list/">Publication</a>
+      </li>
+      
+      <li>
+        <a href="/www.bio-spring.top/teaching/">Teaching</a>
+      </li>
+      
+      <li id="menu-search">
+        <a href="/www.bio-spring.top/#">Search</a>
+      </li>
+      
+    </ul>
+    </nav>
+
+
+<div class="container list">
+<main>
+
+<h1>正则表达式</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="article-list post-card">
+    <div class="card-flex">
+    <div class="card-body">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="categories">
+      <a href="/categories/%E5%85%B6%E5%AE%83/">其它</a>
+    </div>
+    
+    
+    <h1><a href="www.bio-spring.top/post/2012/03/10/2012-03-10-using-regex-match-doi/">使用正则表达式匹配DOI</a></h1>
+    <div>
+      <span>2012-03-10</span>
+      <span>gaoch</span>
+    </div>
+    <div class="summary">
+      
+      
+      
+      
+      先看几个DOI的例子：
+[&hellip;] 可以看出，DOI的编码以“10”开始，可以含有数字]0-9]，小数点，斜杠等分隔，但是其中不会出现空格。鉴于此，在perl中使用以下正则表达式匹配：
+[cc lang=”perl”]
+$str1 =~ /10\.[^\s\/]+\/[^\s]+/; # borrowed from Zotero
+$str2 =~ &hellip;
+      <a href="www.bio-spring.top/post/2012/03/10/2012-03-10-using-regex-match-doi/" class="more" title=阅读全文>阅读全文 &rarr;</a>
+    </div>
+    </div>
+    
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+</main>
+</div>
+
+  <footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-77M8KZTCMR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-77M8KZTCMR');
+        }
+      </script>
+
+
+
+
+
+  <div class="footer">
+  
+  <ul class="copyright">
+    <li>© <a href="https://bio-spring.top">Bio-Spring</a> 2006 &ndash; 2026 <a href="https://beian.miit.gov.cn">豫ICP备2021003240号</a></li>
+  </ul>
+  
+  <ul>
+    
+    <li>
+      <a href="/www.bio-spring.top/404.html">Contact</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/categories/">Categories</a>
+    </li>
+    
+    <li class="optional">
+      <a href="/www.bio-spring.top/tags/">Tags</a>
+    </li>
+    
+    <li id="menu-edit">
+      <a href="#">Suggest an edit</a>
+    </li>
+    
+    <li>
+      <a href="#">Back to top</a>
+    </li>
+    
+  </ul>
+  </div>
+  
+  <div class="footer hidden">
+  
+
+  </div>
+  
+  </footer>
+  <script src="/www.bio-spring.top/js/features.js" defer></script>
+  </body>
+</html>
+

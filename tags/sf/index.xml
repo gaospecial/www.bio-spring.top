@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Sf on BIO-SPRING</title>
+		<link>www.bio-spring.top/tags/sf/</link>
+		<description>Recent content in Sf on BIO-SPRING</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 10 Feb 2020 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="www.bio-spring.top/tags/sf/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Install sf (classInt)</title>
+				<link>www.bio-spring.top/post/2020/02/10/install-sf-classint/</link>
+				<pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+				<guid>www.bio-spring.top/post/2020/02/10/install-sf-classint/</guid>
+				<description>&lt;p&gt;在 Ubuntu 18.04 LTS 上面安装 R 包 &lt;code&gt;sf&lt;/code&gt; 卡在了 &lt;code&gt;classInt&lt;/code&gt; 上面。提示：&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;* installing *source* package ‘classInt’ ...&#xA;** package ‘classInt’ successfully unpacked and MD5 sums checked&#xA;** libs&#xA;gfortran   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-AitvI6/r-base-3.4.4=. -fstack-protector-strong  -c fish1.f -o fish1.o&#xA;gcc -std=gnu99 -I/usr/share/R/include -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-AitvI6/r-base-3.4.4=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o&#xA;g++ -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o classInt.so fish1.o init.o -lgfortran -lm -lquadmath -L/usr/lib/R/lib -lR&#xA;/usr/bin/ld: cannot find -lgfortran&#xA;collect2: error: ld returned 1 exit status&#xA;/usr/share/R/share/make/shlib.mk:6: recipe for target &#39;classInt.so&#39; failed&#xA;make: *** [classInt.so] Error 1&#xA;ERROR: compilation failed for package ‘classInt’&#xA;* removing ‘/usr/local/lib/R/site-library/classInt’&#xA;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;提示意思就是 &lt;code&gt;libgfortran.so&lt;/code&gt; 不存在而造成的错误。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
